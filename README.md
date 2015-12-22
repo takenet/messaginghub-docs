@@ -3,13 +3,13 @@ This repository hosts the documentation for the [Messaging Hub](http://messaging
 
 ## Getting Started
 
-To get started with the Messaging Hub, see the [Getting Started](http://messaging-hub-portal.readthedocs.org/en/latest/getting-started/) page.
+To get started with the Messaging Hub, see the [Getting Started](http://messaginghubdocs-en-us.readthedocs.org/en/latest/getting-started/) page.
 
 ## Documentation 
 
-**English**: [http://messaging-hub-portal.readthedocs.org](http://messaging-hub-portal.readthedocs.org)
+**English**: [http://messaginghubdocs-en-us.readthedocs.org](http://messaginghubdocs-en-us.readthedocs.org)
 
-**Brazilian Portuguese**: [http://portal-do-messaging-hub.readthedocs.org](http://portal-do-messaging-hub.readthedocs.org)
+**Brazilian Portuguese**: [http://messaginghubdocs-pt-br.readthedocs.org](http://messaginghubdocs-pt-br.readthedocs.org)
 
 ### About the Documentation
 
