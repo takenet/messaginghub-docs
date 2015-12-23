@@ -1,0 +1,8 @@
+{% if author.github %}
+  {% assign authorUrl = author.github %}  
+{% elsif author.twitter %}
+  {% assign authorUrl = author.twitter %}  
+{% elsif author.blog %}
+  {% assign authorUrl = author.blog %}  
+{% endif %}
+<a class="post-author" href="{{ authorUrl }}" target="_blank">{{ author.username }}</a>

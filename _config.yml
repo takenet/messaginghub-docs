@@ -1,0 +1,47 @@
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+relative_permalinks: true
+
+# Setup
+title:            Messaging Hub Docs
+tagline:          'Takenet'
+description:      ''
+url:              takenet.github.io/messaginghub-docs
+baseurl:          /
+
+# Multilingual Support
+defaults:
+-
+    scope:
+      path: en
+    values:
+      layout: default
+      lang: en
+
+-
+    scope:
+      path: pt
+    values:
+      layout: default
+      lang: pt
+
+t:
+  en:
+    home:  "Home"
+
+  en:
+    home:  "Início"
+
+author:
+  name:           'Take.net'
+  url:            take.net
+
+# Custom vars
+version:          0.1.0
+
+github:
+  repo:           https://github.com/takenet/messaginghub-docs
