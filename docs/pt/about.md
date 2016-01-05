@@ -1,1 +1,4 @@
-# Sobre
+---
+layout: page
+title: Sobre
+---

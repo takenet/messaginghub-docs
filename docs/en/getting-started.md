@@ -1,28 +1,30 @@
-# Getting Started
-
+---
+layout: page
+title: Getting Started
+---
 To get started with the Messaging Hub, this tutorial will show you how to create and register a custom application in the Messaging Hub and publish it in the [Omni](http://www.omnisms.com.br/webtools/) application.
 
 ## Creating your application
 
-The templates for a getting started application can be downloaded from [our SDK page](http://messaginghub.io/docs/sdks/introduction).
+The templates for a getting started application can be downloaded from [our SDK page](../sdks).
 
 They are already configured to connect to the Messaging Hub when the application starts, but before, you need to register it.
 
 ## Registering your application
 
-You need to register the application in the [Messaging Hub Console](http://messaginghub.io/console).
+You need to register the application in the [Messaging Hub Console](http://console.messaginghub.io).
 To do so, follow these steps:
 
-- Access [http://messaginghub.io/console](http://messaginghub.io/console) and create your profile.
-- Go to [http://messaginghub.io/application/add](http://messaginghub.io/application/add) to register the application.
+- Access [http://console.messaginghub.io](http://console.messaginghub.io) and create your profile.
+- Go to [http://console.messaginghub.io/application/add](http://console.messaginghub.io/application/add) to register the application.
 - Inform a name, select an image and inform a text that describes it. 
 
 ## Publishing your application
 
-Still in the [Messaging Hub Console](http://messaginghub.io/console), you need to publish your application in the Omni domain to make it available as a service in the Omni services catalog.
+Still in the [Messaging Hub Console](http://console.messaginghub.io), you need to publish your application in the Omni domain to make it available as a service in the Omni services catalog.
 To do so, follow these steps:
 
-- In the [http://messaginghub.io/application/list](http://messaginghub.io/application/list), find your application and click the `Details` button.
+- In the [http://console.messaginghub.io/application/list](http://console.messaginghub.io/application/list), find your application and click the `Details` button.
 - Click the `Domains` tab, find the `Omni` domain and click `Activate`.
 - Click `Activate` again and you are done. In a few moments your application will be registered in the Omni services catalog.
 

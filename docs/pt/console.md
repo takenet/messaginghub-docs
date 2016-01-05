@@ -1,1 +1,4 @@
-# Console
+---
+layout: page
+title: Console
+---
