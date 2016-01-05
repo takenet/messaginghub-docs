@@ -4,7 +4,7 @@ To get started with the Messaging Hub, this tutorial will show you how to create
 
 ## Creating your application
 
-The templates for a getting started application can be downloaded from [our SDK page](../sdks).
+The templates for a getting started application can be downloaded from [our SDK page](http://messaginghub.io/docs/sdks/introduction).
 
 They are already configured to connect to the Messaging Hub when the application starts, but before, you need to register it.
 
