@@ -1,7 +1,4 @@
----
-layout: page
-title: Serviços
----
+# Serviços
 
 **Serviços** são *building blocks* para aplicações de mensagem que encapsulam funcionalidades comuns para a construção das mesmas. Eles são como aplicações *especiais* que ao invés de possuirem um identificador simples (*name@msging.net*), possuem um subdomínio no Messaging Hub (*anything@myservice.msging.net*) recebendo todas mensagens, notificações e comandos endereçados ao mesmo.
 

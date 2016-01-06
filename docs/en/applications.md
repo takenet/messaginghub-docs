@@ -1,7 +1,4 @@
----
-layout: page
-title: Applications
----
+# Applications
 
 **Applications** or **message smart contacts** are the elements of the Messaging Hub that receives and send messages throught a connection. Each one have an unique name, that is used for message addressing and an API key that allows the connection by developers.
 

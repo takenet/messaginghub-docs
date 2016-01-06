@@ -1,7 +1,4 @@
----
-layout: page
-title: Services
----
+# Services
 
 **Service** are *building blocks* for messaging applications that encapsulates common functionality for they construction. They are like *special* applications which instead of having a simple identifier (*name@msging.net*) they have a subdomain within the Messaging Hub (*anything@myservice.msging.net*) receiving all messages, notifications and commands addressed to it.
 

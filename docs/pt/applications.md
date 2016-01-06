@@ -1,7 +1,4 @@
----
-layout: page
-title: Aplicações
----
+# Aplicações
 
 **Aplicações** ou **message smart contacts** são elementos do Messaging Hub que podem receber e enviar mensagens através de uma conexão. Cada uma possui um nome único, utilizado para o endereçamento das mensagens e uma API key, que permite a conexão por parte dos desenvolvedores. 
 

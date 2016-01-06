@@ -1,7 +1,4 @@
----
-layout: page
-title: Domains
----
+# Domains
 
 **Domains** are message networks connected to the Messaging Hub where **applications** can receive and send messages. Each domain has an identifier, which is normally a [FQDN](https://pt.wikipedia.org/wiki/FQDN).
 
