@@ -10,16 +10,16 @@ They are already configured to connect to the Messaging Hub when the application
 
 ## Registering your application
 
-You need to register the application in the [Messaging Hub Console](http://messaginghub.io/console).
+You need to register the application in the [Messaging Hub Console](http://messaginghub.io/home/console).
 To do so, follow these steps:
 
-- Access [http://messaginghub.io/console](http://messaginghub.io/console) and create your profile.
+- Access [http://messaginghub.io/home/console](http://messaginghub.io/home/console) and create your profile.
 - Go to [http://messaginghub.io/application/add](http://messaginghub.io/application/add) to register the application.
 - Inform a name, select an image and inform a text that describes it. 
 
 ## Publishing your application
 
-Still in the [Messaging Hub Console](http://messaginghub.io/console), you need to publish your application in the Omni domain to make it available as a service in the Omni services catalog.
+Still in the [Messaging Hub Console](http://messaginghub.io/home/console), you need to publish your application in the Omni domain to make it available as a service in the Omni services catalog.
 To do so, follow these steps:
 
 - In the [http://messaginghub.io/application/list](http://messaginghub.io/application/list), find your application and click the `Details` button.
