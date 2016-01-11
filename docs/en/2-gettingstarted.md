@@ -1,5 +1,3 @@
-# Getting Started
-
 To get started with the Messaging Hub, this tutorial will show you how to create and register a custom application in the Messaging Hub and publish it in the [Omni](http://www.omnisms.com.br/webtools/) application.
 
 ## Creating your application

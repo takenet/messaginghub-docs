@@ -1,5 +1,3 @@
-# Como Começar?
-
 Para começar com o Messaging Hub, este turorial irá apresentar como criar e registrar uma aplicação personalizada no Messaging Hub e publicá-la no aplicativo [Omni](http://www.omnisms.com.br/webtools/).
 
 ## Criando sua aplicação

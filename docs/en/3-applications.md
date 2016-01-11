@@ -1,5 +1,3 @@
-# Applications
-
 **Applications** or **message smart contacts** are the elements of the Messaging Hub that receives and send messages throught a connection. Each one have an unique name, that is used for message addressing and an API key that allows the connection by developers.
 
 The creation and management of applications are made in the [portal](http://messaginghub.io), where the developers have access to information like usage statistics, domains and connected services.
