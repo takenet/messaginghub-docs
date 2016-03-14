@@ -1,4 +1,4 @@
-It is also possible, and recomended, to registrar your applications using our Web API.
+It is also possible, and recommended, to register your applications using our Web API.
 
 ## API Reference Documentation
 
