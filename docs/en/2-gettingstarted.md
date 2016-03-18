@@ -13,7 +13,7 @@ You need to register the application in the [Console](http://messaginghub.io/hom
 Still in the [Console](http://messaginghub.io/home/console), you need to publish your application on a domain. These domains represents apps or messaging services already integrated with Messaging Hub.
 
 To do so, follow these steps:
-- Click the [List](http://messaginghub.io/application/list)
+- Click the [List](http://messaginghub.io/application/list)  in `Applications` tab
 - Find your application and click the `Details` button
 - Click the `Domains` tab
 - find the desired domain and click `Activate`
