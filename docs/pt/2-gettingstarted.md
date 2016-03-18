@@ -14,7 +14,7 @@ Ainda no [Console](http://messaginghub.io/home/console), você deve publicar sua
 Estes domínios representam aplicativos ou serviços de mensageria já integrados ao Messaging Hub.
 
 Para isso, siga os seguintes passos:
-- Clique em [Listar](http://messaginghub.io/application/list)
+- Clique em [Listar](http://messaginghub.io/application/list) na aba `Aplicações`
 - Encontre sua aplicação e clique em `Detalhes`
 - Clique na aba `Domínios`
 - Encontre o domínio desejado e clique em `Ativar`
