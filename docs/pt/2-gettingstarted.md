@@ -5,19 +5,21 @@ Este guia rápido visa ajudar, de forma curta e simples, a utilizar o Messaging 
 Você precisa registrar sua aplicação através do [Console](http://messaginghub.io/home/console).
 Para isso, siga os seguintes passos:
 - Acesse o [Console](http://messaginghub.io/home/console) e crie seu perfil.
-- Clique em `[Adicionar]`(http://messaginghub.io/application/add).
+- Clique em [Adicionar](http://messaginghub.io/application/add).
 - Registre sua aplicação informando os dados necessários.
 
 ## Domínio
 
-Ainda no [Console](http://messaginghub.io/home/console), você deve publicar sua aplicação em um Domínio. 
-Estes domínios aplicativos ou serviços de mensageria já integrados ao Messaging Hub.
+Ainda no [Console](http://messaginghub.io/home/console), você deve publicar sua aplicação em um domínio. 
+Estes domínios representam aplicativos ou serviços de mensageria já integrados ao Messaging Hub.
 
 Para isso, siga os seguintes passos:
-- Através do `[Listar]`(http://messaginghub.io/application/list), encontre sua aplicação e clique em `Detalhes`.
-- Clique na aba `Domínios`, encontre  o domínio desejado e clique em `Ativar`.
+- Clique em [Listar](http://messaginghub.io/application/list).
+- Encontre sua aplicação e clique em `Detalhes`.
+- Clique na aba `Domínios`.
+- Encontre o domínio desejado e clique em `Ativar`.
 
-Pronto. Em alguns minutos sua aplicação estará disponível para uso.
+Pronto! Em alguns minutos sua aplicação estará disponível para uso.
 
 Para saber mais sobre domínios e entender como usá-los, acesse [Domínios](http://messaginghub.io/docs/home/domains). 
 
