@@ -24,4 +24,4 @@ To learn more about domains and understand how to use them, see [Domain] (http:/
 
 ## Messages, commands e notifications
 
-To send and receive messages with your new application, you must use [SDKs] (http://messaginghub.io/docs/sdks) available.
+To send and receive messages with your new application, you must use [SDKs] (http://messaginghub.io/docs/sdks/gettingstarted) available.
