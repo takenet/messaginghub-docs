@@ -20,8 +20,8 @@ To do so, follow these steps:
 
 Done! In a few minutes your application will be available for use.
 
-To learn more about domains and understand how to use them, see [Domain] (http://messaginghub.io/docs/home/domains).
+To learn more about domains and understand how to use them, see [Domain](http://messaginghub.io/docs/home/domains).
 
 ## Messages, commands e notifications
 
-To send and receive messages with your new application, you must use [SDKs] (http://messaginghub.io/docs/sdks/introduction) available.
+To send and receive messages with your new application, you must use [SDKs](http://messaginghub.io/docs/sdks/introduction) available.
