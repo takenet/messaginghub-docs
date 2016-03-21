@@ -25,4 +25,4 @@ Para saber mais sobre domínios e entender como usá-los, acesse [Domínios](htt
 
 ## Mensagens, comandos e notificações
 
-Para enviar e receber as mensagens com sua nova aplicação, você deverá utilizar [SDKs](http://messaginghub.io/docs/sdks) disponíveis.
+Para enviar e receber as mensagens com sua nova aplicação, você deverá utilizar [SDKs](http://messaginghub.io/docs/sdks/gettingstarted) disponíveis.
