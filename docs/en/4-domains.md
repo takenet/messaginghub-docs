@@ -12,4 +12,4 @@ Remark: *Messaging Hub applications* are called *Services* in the OMNI app.
 
 ## Tangram
 
-The Tangram domain developed and maintained by [Take.net](http://take.net) allow your application to use *SMS* to send and receive messages. In order to configure your application to use this domain, contact the Tangram team at *servicedesk@takenet.com.br*, get your configuration parameters and do to the *Messaging Hub Portal* to activate the domain for your application.
+The Tangram domain, developed and maintained by [Take.net](http://take.net), allow your application to use *SMS* to send and receive messages. In order to configure your application to use this domain, contact the Tangram team at *servicedesk@takenet.com.br*, get your configuration parameters and do to the *Messaging Hub Portal* to activate the domain for your application.
