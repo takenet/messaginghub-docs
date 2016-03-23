@@ -1,4 +1,4 @@
-These short and simples gettingstart intended to help usage the Messaging Hub for send and receive messages ando also commands and notifications.
+This document intends to help the usage of the Messaging Hub for sending and receiving messages, commands and notifications.
 
 ## Application
 
