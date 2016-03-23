@@ -12,4 +12,4 @@ Observação: *Aplicações do Messaging Hub* são chamadas de *Serviços* pelo 
 
 ## Tangram
 
-O domínio [Tangram](http://pt.slideshare.net/scpassos/takenet-corporate-presentation-2956620) permite que suas aplicações usem *SMS* para enviar e receber mensagens. Para configurar suas aplicações para usar este domínio, contacte a equipe Tangram em *servicedesk@takenet.com.br*, obtenha seus parâmetros de configuração e acesse o *Portal do Messaging Hub* para ativar o domínio para sua aplicação.
+O domínio Tangram, desenvolvido e mantido pela [Take.net](http://take.net), permite que suas aplicações usem *SMS* para enviar e receber mensagens. Para configurar suas aplicações para usar este domínio, contacte a equipe Tangram em *servicedesk@takenet.com.br*, obtenha seus parâmetros de configuração e acesse o *Portal do Messaging Hub* para ativar o domínio para sua aplicação.
