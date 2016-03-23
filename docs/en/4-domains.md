@@ -5,3 +5,11 @@ In order to traffic envelopes (messages, commands and notifications) in a domain
 ## OMNI
 
 [OMNI](http://letsomni.com.br/business/) is an App available in [Google Play](https://play.google.com/store/apps/details?id=net.take.omni) for companies to communicate with their customers and manage your service profile.
+
+After activating the domain OMNI for your application, you can customize it accessing the [Let´s OMNI Portal](http://letsomni.com.br/business)
+
+Remark: *Messaging Hub applications* are called *Services* in the OMNI app.
+
+## Tangram
+
+The Tangram domain allow your application to use *SMS* to send and receive messages. In order to configure your application to use the Tangram domain, contact the Tangram team at *servicedesk@takenet.com.br*, get your configuration parameters and do to the *Messaging Hub Portal* to activate the domain for your application.
