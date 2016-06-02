@@ -6,5 +6,8 @@ Na visão do cliente, a interação é realizada com o serviço de forma que o c
 
 ## Configuração
 
-
-
+| Nome                | Descrição                                                                              |
+|---------------------|----------------------------------------------------------------------------------------|
+| Telefone Omni       | Número de telefone do atendente                                                        |
+| Nome do atendente   | Nome completo do atendente                                                             |
+| Resposta automática | Texto que será enviado ao cliente quando ele interagir pela primeira vez com o contato |
