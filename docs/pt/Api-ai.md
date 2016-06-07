@@ -1,6 +1,6 @@
 ### Funcionamento
 
-O contato do tipo **Atendimento Automatizado** consiste em um serviço que irá responder seus clientes através de um fluxo criado no [api.ai](https://api.ai/){:target="_blank"}.
+O contato do tipo **Atendimento Automatizado** consiste em um serviço que irá responder seus clientes através de um fluxo criado no [api.ai](https://api.ai/).
 
 Se você não conhece o api.ai, você pode consultar esse [guia rápido](https://docs.api.ai/v17/docs/apiai-in-2-minutes-1).
 
