@@ -26,7 +26,8 @@ O cabeçalho deve ficar então:
 ```
 Authorization: Basic bWVzc2FnaW5naHViQHRha2VuZXQuY29tLmJyOjEyMzQ=
 ```
-Além do cabeçalho, os dados da mensagem devem ser enviados no corpo da requisição.
+Além do cabeçalho, os dados da mensagem devem ser enviados no corpo da requisição. A mensagem deve ser um *JSON* no formato determinado pelo protocolo LIME. Para maiores informações, consulte [a documentação do protocolo](http://limeprotocol.org/#message).
+
 Suponha que tenho um contato com o identificador **messaginghubapp**
 Segue um exemplo de envio completo, incluindo os cabeçalhos e a mensagem:
 ```
@@ -46,7 +47,7 @@ Content-Length: 131
 
 Para receber mensagens, uma url deve ser configurada, que é o endereço onde o MessagingHub irá postar as mensagens para o contato customizado.
 
-O MessagingHub fará um POST Http com a mensagem no formato Json. Segue um exemplo:
+O MessagingHub fará um POST Http com a mensagem no formato JSON, também no formato definido pelo [protocolo LIME](http://limeprotocol.org/#notification). Abaixo um exemplo:
 ```
 {
   "id": "52198482-0FD5-4572-8E04-649691ACAA9C",
