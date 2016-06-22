@@ -1,6 +1,6 @@
 ### Funcionamento
 
-O contato do tipo **Integração Api** consiste em um serviço que pode ser totalmente customizado pelo usuário.
+O contato do tipo **Chat Bot (SDK)** consiste em um serviço que pode ser totalmente customizado pelo usuário.
 
 Este tipo de contato exige desenvolvimento e recomendamos que seja feito com o auxílio de nossas SDKs.
 
