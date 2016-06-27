@@ -23,6 +23,9 @@ Abaixo a representação JSON de uma mensagem:
 
 ```
 
+Para maiores detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/index.html#message).
+
+
 ## Tipos de mensagem
 
 O Messaging Hub possui uma infraestrutura que permite que os Chat Bots sejam construídos usando uma linguagem canônica, que é devidamente traduzida para as mensagens específicas de cada um dos canais disponíveis, como Facebook Messenger, Skype, SMS.
