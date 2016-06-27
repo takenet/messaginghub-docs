@@ -1,6 +1,6 @@
 # Notificações
 
-Uma **notificação** provê informações de uma mensagem enviada. 
+Uma **notificação** provê informações sobre uma mensagem enviada. 
 
 Cada notificação possui:
 - **id**: Identificador da mensagem relacionada. 
