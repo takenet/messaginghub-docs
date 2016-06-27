@@ -9,3 +9,5 @@ Para permitir que o proprietário do contato realize a cobrança dos seus servi�
 Não é necessário ser um desenvolvedor para utilizar estas funcionalidades, já que os **modelos** oferecem uma forma prática e amigável do proprietário oferecer serviços que utilizam todas as funcionalidades da plataforma, requerindo apenas uma rápida customização. Para maiores informações, consulte a seção *Modelos* desta documentação.
 
 E para desenvolvedores, é possível escolher entre utilizar os **SDKs** permitem a construção de contatos de maneira flexível e escalável ou **webhook**, a maneira mais rápida e simples para recebimento e envio de mensagens e notificações.
+
+O **Omni Messaging Hub** utiliza o [protocolo LIME](http://limeprotocol.org) para comunicação entre os contatos e os clientes, e a maior parte dos conceitos vêm deste protocolo. 
