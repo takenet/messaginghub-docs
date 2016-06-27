@@ -42,3 +42,5 @@ E uma falha no servidor:
 }
 
 ```
+
+Para maiores detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/index.html#notification).
