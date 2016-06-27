@@ -27,7 +27,7 @@ Abaixo a representação JSON de uma mensagem:
 
 O Messaging Hub possui uma infraestrutura que permite que os Chat Bots sejam construídos usando uma linguagem canônica, que é devidamente traduzida para as mensagens específicas de cada um dos canais disponíveis, como Facebook Messenger, Skype, SMS.
 
-## Os tipos canônicos disponíveis são:
+Os tipos canônicos disponíveis são:
 
 - **PlainText:** - MIME: `text/plain` - Este é o tipo de mensagem padrão e é utilizado para o envio de mensagens de texto simples.
 - **MediaLink:** - MIME: `application/vnd.lime.media-link+json` - O tipo MediaLink é usado para enviar imagens, sons, vídeos e outros arquivos de mídia. Em canais que não suportam essas mídias, um link para um endereço web contendo o arquivo será enviado.
