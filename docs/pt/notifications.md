@@ -6,7 +6,7 @@ Cada notificação possui:
 - **id**: Identificador da mensagem relacionada. 
 - **from**: Endereço do originador da notificação. Uma notificação pode ser gerada pelo servidor (`postmaster@msging.net`) ou pelo cliente final, dependendo do **evento**.
 - **to**: Endereço do destinatário da mensagem.
-- **event**: Evento relacionado a mensagem. Alguns eventos dependem da capacidade do canal. Os valores válidos são:
+- **event**: Evento relacionado a mensagem. Os eventos do destinatário dependem do canal, podendo não estar disponíveis. Os valores válidos são:
   * **accepted**: A mensagem foi aceita pelo servidor.
   * **dispatched**: A mensagem saiu do servidor e foi despachada ao destinatário.
   * **received**: O destinatário recebeu a mensagem.
