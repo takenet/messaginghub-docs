@@ -1,4 +1,4 @@
-### Como usar
+### Instalação
 
 Se você estiver usando `node.js` (ou `webpack`), é necessário apenas instalar o pacote `messaginghub-client` do registro do `npm`.
 
