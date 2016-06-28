@@ -13,7 +13,7 @@ Lembrando que para utilizar o pacote  `messaginghub-client` desta forma, é nece
 <script src="./node_modules/messaginghub-client/dist/messaginghub-client.js" type="text/javascript"></script>
 ```
 
-Você também pode utilizar o script disponibilizado pelo [npmcdn](https://npmcdn.com):
+Você também pode utilizar o script disponibilizado pelo [npmcdn](https://npmcdn.com), caso não esteja utilizando o `npm` para desenvolvimento:
 ```html
 <script src="https://npmcdn.com/lime-js" type="text/javascript"></script>
 <script src="https://npmcdn.com/lime-transport-websocket" type="text/javascript"></script>
