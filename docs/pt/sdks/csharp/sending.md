@@ -1,6 +1,6 @@
 ### Enviar
 
-Para o envio de mensagens e notificações, deve-se utilizar uma instância de `IMessagingHubSender`, que é injetada automaticamente nos construtores dos `receivers` registrados no seue projeto, além da classe `Startup`.
+Para o envio de mensagens e notificações, deve-se utilizar uma instância de `IMessagingHubSender`, que é injetada automaticamente nos construtores dos `receivers` registrados no projeto, além da classe `Startup`.
 
 Abaixo um exemplo de como responder a uma mensagem recebida:
 
