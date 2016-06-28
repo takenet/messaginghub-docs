@@ -1,4 +1,4 @@
-# Notificações
+### Notificações
 
 Uma **notificação** provê informações sobre uma mensagem enviada. 
 
