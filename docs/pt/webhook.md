@@ -1,6 +1,6 @@
 ### Webhook
 
-O contato do tipo **Webhook** consiste em um serviço que será customizado pelo usuário através de uma integração por *webhooks*. A troca de mensagens será toda feita através do protocolo HTTP e a hospedagem fica a cargo do usuário.
+O contato do tipo **Webhook** consiste em um serviço que será customizado pelo usuário através de uma integração por **endpoints HTTP** para troca de mensagens e notificações.
 
 ### Envio de mensagens
 
