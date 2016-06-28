@@ -18,3 +18,9 @@ Você também pode utilizar as distribuições disponibilizadas pelo [npmcdn](ht
 <script src="https://npmcdn.com/lime-transport-websocket" type="text/javascript"></script>
 <script src="https://npmcdn.com/messaginghub-client" type="text/javascript"></script>
 ```
+Você precisará de um identificador e uma chave de acesso para sua aplicação, para poder interagir com o Messaging Hub. Para obtê-los, faça o seguinte:
+- Acesse o [Painel Omni](http://omni.messaginghub.io/portal).
+- Na aba `Contatos` clique em `Criar Contato`.
+- Preencha com os parâmetros requeridos e na próxima etapa escolha a opção `Chat Bot (SDK)`
+- Pronto, seu contato foi criado e o identificador e chave de acesso serão exibidos.
+
