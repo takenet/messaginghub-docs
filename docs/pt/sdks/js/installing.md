@@ -1,11 +1,10 @@
 ### Instalação
 
-Se você estiver usando `node.js` (ou `webpack`), é necessário apenas instalar o pacote `messaginghub-client` do registro do `npm`.
+Se você estiver usando `node.js` (ou `webpack`), é necessário apenas instalar o pacote `messaginghub-client` pelo `npm`.
 
     npm install --save messaginghub-client
 
-Mas caso esteja construindo uma aplicação web (no browser) e esteja utilizando Javascript "puro", você pode instalar o pacote pelo `npm` e depois incluir o *script* com a tag `<script>`.
-Lembrando que para utilizar o pacote  `messaginghub-client` desta forma, é necessário que seja também seja instalado e referenciado o pacote `lime-js`, além do pacote do transporte `lime-websocket-transport`:
+Mas caso esteja construindo uma aplicação web (no browser) e esteja utilizando Javascript "puro", é possível instalar pacote pelo `npm` e incluir o *script* com a tag `<script>`. Para utilizar o pacote  `messaginghub-client` desta forma, é necessário que seja também seja instalado e referenciado o pacote `lime-js`, além do pacote do transporte `lime-websocket-transport`:
 
 ```html
 <script src="./node_modules/lime-js/dist/lime.js" type="text/javascript"></script>
