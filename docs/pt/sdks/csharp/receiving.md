@@ -1,4 +1,4 @@
-### Recebendo
+### Receber
 
 O recebimento de mensagens e notificações é feito através das interfaces de `IMessageReceiver` e `INotificationReceiver` respectivamente.
 
