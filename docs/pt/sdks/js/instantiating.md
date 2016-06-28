@@ -4,7 +4,6 @@ Para instanciar o cliente, basta iniciar a classe `MessagingHubClient`, informan
 
 ```javascript
 
-// e.g.
 var client = new MessagingHubClient('ws://msging.net:8081', new Lime.WebSocketTransport());
 ```
 
