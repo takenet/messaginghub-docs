@@ -1,4 +1,4 @@
-# Endereçamento
+### Endereçamento
 
 Toda mensagem e notificação trocadas entre **contatos** e **clientes** no **Omni Messaging Hub** possui **endereços** do *originador* e *destinatário*.
 
