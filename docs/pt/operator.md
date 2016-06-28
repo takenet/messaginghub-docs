@@ -1,6 +1,6 @@
-### Atendimento humano
+### Atendimento manual
 
-O modelo  **Atendimento Humano** consiste em um serviço que irá redirecionar as mensagens de seus clientes para um determinado usuário do Omni que chamamos de atendente.
+O modelo**atendimento manual** consiste em um serviço que irá redirecionar as mensagens de seus clientes para um determinado usuário do Omni que chamamos de atendente.
 
 Na visão do atendente, uma thread é criada para cada cliente e o atendimento é feito de forma individual.
 
