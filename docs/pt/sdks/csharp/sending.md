@@ -23,3 +23,16 @@ public class PlainTextMessageReceiver : IMessageReceiver
     }
 }
 ```
+
+O envio ocorre de forma assíncrona, sendo que atualizações de status da mensagem são entregues à aplicação através de **notificações**.
+
+Esta classe também permite o envio de **comandos** ao servidor, de maneira semelhante:
+
+```csharp
+var command = new Command {
+    Method = CommandMethod.Get,
+    Uri = new LimeUri("/account")
+};
+
+var response = await _sender.SendCommandAsync(command);
+```
