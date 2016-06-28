@@ -3,7 +3,7 @@
 Uma **mensagem** permite a troca de conteúdos entre clientes e contatos.
 
 Cada mensagem possui:
-- **from**: Identificador único da mensagem. O *id* é utilizado como referência para notificações.
+- **id**: Identificador único da mensagem. O *id* é utilizado como referência para notificações. Este valor pode ser omitido, caso o originador não tenha interesse em notificações, mesmo em caso de falhas.
 - **from**: Endereço do originador da mensagem.
 - **to**: Endereço do destinatário da mensagem.
 - **type**: Declaração do tipo do conteúdo da mensagem, no formato MIME. O mesmo pode ser do tipo **plain** (por exemplo, *text/plain*) ou **JSON** (por exemplo, *application/vnd.lime.media-link+json*). 
@@ -22,6 +22,9 @@ Abaixo a representação JSON de uma mensagem:
 }
 
 ```
+
+Para maiores detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/index.html#message).
+
 
 ## Tipos de mensagem
 
