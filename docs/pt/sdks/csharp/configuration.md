@@ -1,6 +1,7 @@
-### Application.json
+### Configuração
 
-O arquivo `application.json` define o funcionamento do seu contato, além dos `receiver` e suas configurações.
+A configuração da sua aplicação deve ser realizada através do arquivo `application.json` criado no seu projeto, que define o funcionamento do seu contato, além dos `receiver` e suas configurações.
+
 Abaixo, todas as propriedades que podem ser definidas através deste arquivo:
 
 | Propriedade | Descrição                                                                        | Exemplo                 |
