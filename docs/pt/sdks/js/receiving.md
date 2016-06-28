@@ -12,11 +12,14 @@ client.addMessageReceiver("text/plain", function(message) {
 ```
 Adicionando um receiver de notificação para o evento `received`:
 
+```javascript
 client.addNotificationReceiver("received", function(notification) {
   // Processe a notificação recebida
 });
 
-É possível informar uma função para o filtro das mensagens e notificações:
+```
+
+É possível ainda informar uma função para o filtro das mensagens e notificações:
 
 Adicionando um receiver de mensagem com um filtro de originador:
 
