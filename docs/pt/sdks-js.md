@@ -1,4 +1,4 @@
-### Chat Bot SDK Javascript
+### SDK Javascript
 
 O SDK Javascript permite a construção de contatos utilizando o Javascript, utilizando conexão persistente Websocket.
 
