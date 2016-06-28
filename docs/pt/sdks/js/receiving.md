@@ -34,3 +34,12 @@ client.addNotificationReceiver(() => true, function(message) {
 });
 
 ```
+
+Os métodos de registro dos receivers retornam um `handler` que pode ser utilizado para remoção do registro:
+
+```javascript
+var removeJsonReceiver = client.addMessageReceiver("application/json", handleJson);
+// ...
+removeJsonReceiver();
+```
+
