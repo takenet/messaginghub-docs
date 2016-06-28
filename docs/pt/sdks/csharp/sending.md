@@ -36,3 +36,4 @@ var command = new Command {
 
 var response = await _sender.SendCommandAsync(command);
 ```
+Neste caso, a resposta do comando é recebida de forma síncrona, na resposta da chamada do método `SendCommandAsync`.
