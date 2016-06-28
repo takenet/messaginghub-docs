@@ -1,4 +1,4 @@
-### Criando o cliente
+### Instanciando o cliente
 
 Para instanciar o cliente, basta iniciar a classe `MessagingHubClient`, informando a `URI` do servidor e o *transporte* para conexão.
 
