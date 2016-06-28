@@ -1,8 +1,10 @@
-As **extensões** são serviços conectados ao Messaging Hub de onde as **aplicações** podem consumir. Cada extensão tem um identificador, que normalmente é um [FQDN](https://pt.wikipedia.org/wiki/FQDN).
+### Extensões
 
-## BROADCAST
+As **extensões** são serviços conectados ao Messaging Hub que provêm funcionalidades comuns que **contatos** podem utilizar em sua construção. Cada extensão tem um identificador, que normalmente é um [FQDN](https://pt.wikipedia.org/wiki/FQDN).
 
-O **Broadcast** é um serviço diponível no Messaging Hub atravez do endereço postmaster@broadcast.msging.net para que empresas possam gerenciar listas de distribuição e enviar mensagens para determina lista.
+### Broadcast
+
+O **Broadcast** é um serviço diponível no Messaging Hub atravez do endereço `postmaster@broadcast.msging.net` para que os contatos possam gerenciar listas de distribuição e seus destinatários e que permitem a realização de envios em massa a estas listas.
 
 ### Disponivel nos canais
 
