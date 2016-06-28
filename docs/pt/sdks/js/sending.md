@@ -18,7 +18,7 @@ Neste exemplo, o cliente foi conectado com uma chave de acesso e após a realiza
 ```javascript
 client.connectWithKey(identifier, key)
     .then(function(session) {
-      // send a "received" notification to some user
+      // Enviando uma notificação "received" 
       var notification = { id: "ef16284d-09b2-4d91-8220-74008f3a5788", to: "my@friend.com", event: Lime.NotificationEvent.RECEIVED };
       client.sendNotification(notification);
     });
