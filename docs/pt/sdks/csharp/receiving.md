@@ -2,7 +2,7 @@
 
 O recebimento de mensagens e notificações é feito através das interfaces de `IMessageReceiver` e `INotificationReceiver` respectivamente.
 
-Um `IMessageReceiver` pode ser definido da seguinte forma;
+Um `IMessageReceiver` pode ser definido da seguinte forma:
 
 ```csharp
 public class PlainTextMessageReceiver : IMessageReceiver
