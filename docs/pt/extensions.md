@@ -14,4 +14,4 @@ O serviço de Broadcast esta disponível nos seguintes domínios:
 |Omni       |x          |Não precisa de interação do usuário                    |
 |Skype      |x          |Necessário interação prévia do usuário com o serviço   |
 |SMS        |x          |Não precisa de interação do usuário                    |
-|Telegram   |           |                                                       |
+|Telegram   |x          |Necessário interação prévia do usuário com o serviço   |
