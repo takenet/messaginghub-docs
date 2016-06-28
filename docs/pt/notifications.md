@@ -10,7 +10,7 @@ Cada notificação possui:
   * **accepted**: A mensagem foi aceita pelo servidor.
   * **dispatched**: A mensagem saiu do servidor e foi despachada ao destinatário.
   * **received**: O destinatário recebeu a mensagem.
-  * **consumed**: O destinatário consumiu (leu) a mensagem.
+  * **consumed**: O destinatário leu a mensagem.
   * **failed**: A mensagem falhou. Neste caso, a propriedade **reason** deve estar presente.
 - **reason**: Motivo da falha da mensagem.
 
