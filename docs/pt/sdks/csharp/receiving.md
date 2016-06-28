@@ -15,7 +15,13 @@ public class PlainTextMessageReceiver : IMessageReceiver
 }
 ```
 
-E um `INotificationReceiver` pode ser definido da seguinte forma:
+Alguns pontos importantes:
+
+- Antes de o método `ReceiveAsync` ser executado, uma notificação do tipo `Event.Received` é automaticamente enviada a quem lhe enviou a mensagem.
+- Após o método `ReceiveAsync` ser executado, caso nenhuma exceção tenha ocorrido, uma notificação do tipo `Event.Consumed` é automaticamente enviada a quem lhe enviou a mensagem.
+- Caso uma exceção tenha ocorrido no método `ReceiveAsync`, uma notificação do tipo `Event.Failed` é automaticamente enviada a quem lhe enviou a mensagem.
+
+Um `INotificationReceiver` pode ser definido da seguinte forma:
 
 ```csharp
 public class ConsumedNotificationReceiver : INotificationReceiver
@@ -27,5 +33,7 @@ public class ConsumedNotificationReceiver : INotificationReceiver
     }
 }
 ```
+
+As notificações são *fire-and-forget* e caso haja alguma falha durante a execução do método `ReceiveAsync`, a mesma será ignorada.
 
 O registro das implementações destas interfaces deve ser feito no arquivo `application.json` do projeto. Para maiores detalhes, consulte a seção **Instalação**.
