@@ -7,6 +7,6 @@ Basicamente, seu contato pode ser criado de três formas:
 - Através de webhooks
 - Através de um SDK
 
-No menu lateral você encontra a documentação para cada caso. Se ainda não conseguir ajuda, entre em contato conosco através do e-mail `dev.messaginghub.ti@takenet.com.br´ que teremos o prazer em ajudá-lo.
+No menu lateral você encontra a documentação para cada caso. Se ainda não conseguir ajuda, entre em contato conosco através do e-mail dev.messaginghub.ti@takenet.com.br que teremos o prazer em ajudá-lo.
 
 Você também pode contribuir com esta documentação no [Github](https://github.com/takenet/messaginghub-docs).
