@@ -2,7 +2,7 @@
 
 O recebimento de mensagens e notificações é feito através das interfaces de `IMessageReceiver` e `INotificationReceiver` respectivamente.
 
-Um `MessageReceiver` pode ser definido da seguinte forma;
+Um `IMessageReceiver` pode ser definido da seguinte forma;
 
 ```csharp
 public class PlainTextMessageReceiver : IMessageReceiver
@@ -11,6 +11,19 @@ public class PlainTextMessageReceiver : IMessageReceiver
     {
         // Write the received message to the console
         Console.WriteLine(message.Content.ToString());
+    }
+}
+```
+
+E um `INotificationReceiver` pode ser definido da seguinte forma:
+
+```csharp
+public class ConsumedNotificationReceiver : INotificationReceiver
+{
+    public async Task ReceiveAsync(Notification notification, CancellationToken cancellationToken)
+    {
+        // Write the received notification to the console
+        Console.WriteLine(notification.ToString());
     }
 }
 ```
