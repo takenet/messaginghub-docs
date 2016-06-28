@@ -15,4 +15,4 @@ public class PlainTextMessageReceiver : IMessageReceiver
 }
 ```
 
-O registro das implementações destas interfaces deve ser feito no arquivo `application.json` do projeto, que foi adicionado após a instalação do pacote `Takenet.MessagingHub.Client.Template`.
+O registro das implementações destas interfaces deve ser feito no arquivo `application.json` do projeto. Para maiores detalhes, consulte a seção **Instalação**.
