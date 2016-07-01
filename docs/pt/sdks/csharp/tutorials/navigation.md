@@ -1,0 +1,9 @@
+### Tutorial: Navegação
+
+Neste tutorial, será demonstrado uma forma de construir um contato que responde automaticamente comandos de texto enviados pelos usuários.
+
+O primeiro passo é, no Visual Studio, criar um novo projeto do tipo *Class Library* e instalar o pacote do SDK via **NuGet**, através do comando:
+
+    Install-Package Takenet.MessagingHub.Client.Template
+  
+Desta forma, é adicionado ao projeto entre outras dependências, o arquivo `application.json`, onde ficam registrados os **receivers** de mensagens e notificações. Os **receivers** são as entidades responsáveis por processar as mensagens e notificações recebidas e, se necessário, enviar uma resposta ao usuário.
