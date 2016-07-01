@@ -37,7 +37,7 @@ Imagine que nosso contato deva responder a comando com o texto `ajuda` com uma m
 - Incluir um filtro de tipo *texto* e conteúdo *ajuda*
 - Retornar a mensagem de ajuda ao originador
 
-Para facilitar, o SDK inclui alguns *receivers* para ações comuns, como mensagens estáticas, não sendo necessário neste primeiro caso de uso implementar o *receiver* para envio da mensagem de resposta. Neste caso, a sessão `messageReceivers` ficaria da seguinte forma:
+Para facilitar, o SDK inclui alguns *receivers* para ações comuns, como mensagens estáticas, não sendo necessário neste primeiro caso de uso implementar o *receiver* para envio da mensagem de resposta. Para isso, basta utilizar a propriedade `response` e incluir a mensagem de resposta ao cliente. Neste caso, a sessão `messageReceivers` ficaria da seguinte forma:
 
 ```json
   "messageReceivers": [
@@ -101,7 +101,8 @@ Podemos retornar, ao invés de um texto simples, uma tipo de mensagem complexa c
     }
   ]
 ```
-Para cada uma das opções do `Select`, devemos incluir um *receiver* para a palavra defina em `value`, que é o valor esperado como resposta do cliente. Mas é importante também suportar o envio do número e o texto da opção, já que em canais não estruturados (como SMS) não há garantia que o cliente responderá com a opção esperada. Um receiver para a primeira opção seria:
+Para cada uma das opções do `Select`, devemos incluir um *receiver* para a palavra defina em `value`, que é o valor esperado como resposta do cliente. Mas é importante também suportar o envio do número e o texto da opção, já que em canais não estruturados (como SMS) não há garantia que o cliente responderá com a opção esperada. Um receiver para a primeira opção (`texto`) seria:
+
 ```json
     {
       "mediaType": "text/plain",
@@ -112,3 +113,64 @@ Para cada uma das opções do `Select`, devemos incluir um *receiver* para a pal
       }
     }
 ```    
+Neste caso, retornarmos uma mensagem simples mas suportando diversos comandos diferentes para ativar o receiver. Para a segunda opção, temos:
+
+```json
+    {
+      "mediaType": "text/plain",
+      "content": "^(imagem|uma imagem|2)$",
+      "response": {
+        "mediaType": "application/vnd.lime.media-link+json",
+        "jsonContent": {
+          "type": "image/jpeg",
+          "uri": "http://static.boredpanda.com/blog/wp-content/uploads/2015/09/Instagrams-most-famous-cat-Nala165604f5fc88e5f.jpg",
+          "text": "Miau!"
+        }
+      }
+    }
+```    
+
+Aqui retornamos um tipo complexo `MediaLink` com uma imagem. A terceira opção (`data`) inclui um conteúdo dinâmico e por este motivo, não podemos utilizar a propriedade `response`. Portanto, devemos criar uma classe para processar o texto e responder ao usuário, como a seguir:
+
+```csharp
+    public class DateMessageReceiver : IMessageReceiver
+    {
+        private readonly IMessagingHubSender _sender;
+        private readonly CultureInfo _cultureInfo;
+        private readonly string _messageTemplate;
+
+        public DateMessageReceiver(IMessagingHubSender sender, IDictionary<string, object> settings)
+        {
+            _sender = sender;
+            if (settings.ContainsKey("culture"))
+            {            
+                _cultureInfo = new CultureInfo((string)settings["culture"]);
+            }
+            else
+            {
+                _cultureInfo = CultureInfo.InvariantCulture;
+            }
+
+            _messageTemplate = (string)settings["message"];
+        }
+
+        public Task ReceiveAsync(Message envelope, CancellationToken cancellationToken = new CancellationToken())
+        {
+            return _sender.SendMessageAsync(string.Format(_messageTemplate, DateTime.Now.ToString("g", _cultureInfo)), envelope.From, cancellationToken);
+        }
+    }
+```
+
+Nossa classe recebe pelo construtor suas **configurações** que incluem o modelo do texto de resposta e de cultura, que são definidas no registro do *receiver* no arquivo `application.json`. É sempre uma boa idéia utilizar a propriedade `settings` para definir valores estáticos, o que permite modificações no comportamento do seu contato sem a necessidade de recompilar o código. O registro do mesmo ficaria da seguinte forma:
+
+```json
+    {
+      "mediaType": "text/plain",
+      "content": "^(data|a data atual|3)$",
+      "type": "DateMessageReceiver",
+      "settings": {
+        "culture": "pt-BR",
+        "message": "A data atual é {0}."
+      }
+    }
+```
