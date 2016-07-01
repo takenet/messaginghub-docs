@@ -37,7 +37,7 @@ Imagine que nosso contato deva responder a comando com o texto `ajuda` com uma m
 - Incluir um filtro de tipo *texto* e conteúdo *ajuda*
 - Retornar a mensagem de ajuda ao originador
 
-Para facilitar, o SDK inclui alguns *receivers* para ações comuns, como mensagens estáticas, não sendo necessário neste primeiro caso de uso implementar o *receiver* para envio da mensagem. Neste caso, a sessão receivers ficaria da seguinte forma:
+Para facilitar, o SDK inclui alguns *receivers* para ações comuns, como mensagens estáticas, não sendo necessário neste primeiro caso de uso implementar o *receiver* para envio da mensagem de resposta. Neste caso, a sessão `messageReceivers` ficaria da seguinte forma:
 
 ```json
   "messageReceivers": [
@@ -51,7 +51,7 @@ Para facilitar, o SDK inclui alguns *receivers* para ações comuns, como mensag
     }
   ]
 ```
-Desta forma, se o cliente enviar a palavra `ajuda`, ele receberá uma mensagem do tipo `text/plain` com conteúdo `Olá, seja bem-vindo ao serviço de ajuda do Messaging Hub.`. Se quisermos incluir outras palavras para a ativação do comando, basta alterar a propriedade `content` e alterar a expressão regular de filtro, como por exemplo:
+Desta forma, se o cliente enviar a palavra `ajuda`, ele receberá uma mensagem do tipo `text/plain` com conteúdo `Olá, seja bem-vindo ao serviço de ajuda do Messaging Hub.`. Se quisermos incluir outras palavras para a ativação do comando, basta alterar a propriedade `content` e incluir outras palavras na expressão regular de filtro, como a seguir:
 
 ```json
   "messageReceivers": [
@@ -101,3 +101,14 @@ Podemos retornar, ao invés de um texto simples, uma tipo de mensagem complexa c
     }
   ]
 ```
+Para cada uma das opções do `Select`, devemos incluir um *receiver* para a palavra defina em `value`, que é o valor esperado como resposta do cliente. Mas é importante também suportar o envio do número e o texto da opção, já que em canais não estruturados (como SMS) não há garantia que o cliente responderá com a opção esperada. Um receiver para a primeira opção seria:
+```json
+    {
+      "mediaType": "text/plain",
+      "content": "^(texto|um texto|1)$",
+      "response": {
+        "mediaType": "text/plain",
+        "plainContent": "Este é um texto simples, sem nada de especial."
+      }
+    }
+```    
