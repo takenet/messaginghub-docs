@@ -29,6 +29,7 @@ Abaixo um exemplo do arquivo `application.json` criado em um novo projeto:
   "schemaVersion": 2
 }
 ```
+> Para obter um `identifier` e `accessKey`, acesse o portal http://omni.messaginghub.io e registre seu contato, utilizando a opção Chat Bot SDK
 
 Neste caso, existe apenas um **receiver** de mensagem registrado, com um filtro do tipo de conteúdo `text/plain` sendo que seu processamento é feito pela classe `PlainTextMessageReceiver` que deve existir no projeto.
 
