@@ -51,7 +51,7 @@ Para facilitar, o SDK inclui alguns *receivers* para ações comuns, como mensag
     }
   ]
 ```
-Desta forma, se o cliente enviar a palavra `ajuda`, ele receberá uma mensagem do tipo `text/plain` com conteúdo `Olá, seja bem-vindo ao serviço de ajuda do Messaging Hub.`. Se quisermos incluir outras palavras para a ativação do comando, basta alterar a propriedade content e alterar a expressão regular de filtro, como por exemplo:
+Desta forma, se o cliente enviar a palavra `ajuda`, ele receberá uma mensagem do tipo `text/plain` com conteúdo `Olá, seja bem-vindo ao serviço de ajuda do Messaging Hub.`. Se quisermos incluir outras palavras para a ativação do comando, basta alterar a propriedade `content` e alterar a expressão regular de filtro, como por exemplo:
 
 ```json
   "messageReceivers": [
@@ -61,6 +61,42 @@ Desta forma, se o cliente enviar a palavra `ajuda`, ele receberá uma mensagem d
       "response": {
         "mediaType": "text/plain",
         "plainContent": "Olá, seja bem-vindo ao serviço de ajuda do Messaging Hub."
+      }
+    }
+  ]
+```
+Podemos retornar, ao invés de um texto simples, uma tipo de mensagem complexa como um **Select**, que mostra um menu de opções ao usuário. Para isso, basta utilizarmos a propriedade `jsonContent` ao invés de `plainContent`, como abaixo:
+
+```json
+  "messageReceivers": [
+    {
+      "mediaType": "text/plain",
+      "content": "^(inicio|iniciar|começar|ajuda)$",
+      "response": {
+        "mediaType": "application/vnd.lime.select+json",
+        "jsonContent": {
+          "text": "Olá, seja bem-vindo ao serviço de ajuda do Messaging Hub. Escolha o que você deseja receber:",
+          "options": [
+            {
+              "order": 1,
+              "text": "Um TEXTO",
+              "type": "text/plain",
+              "value": "texto"
+            },
+            {
+              "order": 2,
+              "text": "Uma IMAGEM",
+              "type": "text/plain",
+              "value": "imagem"
+            },
+            {
+              "order": 3,
+              "text": "A DATA atual",
+              "type": "text/plain",
+              "value": "data"
+            }
+          ]
+        }
       }
     }
   ]
