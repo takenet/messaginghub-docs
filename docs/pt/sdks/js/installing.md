@@ -1,8 +1,12 @@
 ### Instalação
 
-Se você estiver usando `node.js` (ou `webpack`), é necessário apenas instalar o pacote `messaginghub-client` pelo `npm`.
+#### Node.js
 
-    npm install --save messaginghub-client
+Se você estiver usando `node.js` (ou `webpack`), é necessário instalar o pacote `messaginghub-client` que disponibiliza o cliente do MessagingHub e algum transporte (conexão) pelo `npm`.
+
+    npm install --save messaginghub-client lime-websocket-transport
+    
+#### Browser
 
 Mas caso esteja construindo uma aplicação web (no browser) e esteja utilizando Javascript "puro", é possível instalar pacote pelo `npm` e incluir o *script* com a tag `<script>`. Para utilizar o pacote  `messaginghub-client` desta forma, é necessário que seja também seja instalado e referenciado o pacote `lime-js`, além do pacote do transporte `lime-websocket-transport`:
 
@@ -23,4 +27,3 @@ Você precisará de um identificador e uma chave de acesso para sua aplicação,
 - Na aba `Contatos` clique em `Criar Contato`.
 - Preencha com os parâmetros requeridos e na próxima etapa escolha a opção `Chat Bot (SDK)`
 - Pronto, seu contato foi criado e o identificador e chave de acesso serão exibidos.
-
