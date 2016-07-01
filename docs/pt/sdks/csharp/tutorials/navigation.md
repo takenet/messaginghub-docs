@@ -30,4 +30,38 @@ Abaixo um exemplo do arquivo `application.json` criado em um novo projeto:
 }
 ```
 
-Neste caso, existe apenas um **receiver** de mensagem registrado, com um filtro do tipo de conteúdo `text/plain` sendo que seu processamento é feito pela classe `PlainTextMessageReceiver` que deve estar registrada no projeto.
+Neste caso, existe apenas um **receiver** de mensagem registrado, com um filtro do tipo de conteúdo `text/plain` sendo que seu processamento é feito pela classe `PlainTextMessageReceiver` que deve existir no projeto.
+
+Imagine que nosso contato deva responder a comando com o texto `ajuda` com uma mensagem estática de auxílio ao usuário. Desta forma, precisamos:
+- Registrar um novo receiver de mensagem
+- Incluir um filtro de tipo *texto* e conteúdo *ajuda*
+- Retornar a mensagem de ajuda ao originador
+
+Para facilitar, o SDK inclui alguns *receivers* para ações comuns, como mensagens estáticas, não sendo necessário neste primeiro caso de uso implementar o *receiver* para envio da mensagem. Neste caso, a sessão receivers ficaria da seguinte forma:
+
+```json
+  "messageReceivers": [
+    {
+      "mediaType": "text/plain",
+      "content": "ajuda",
+      "response": {
+        "mediaType": "text/plain",
+        "plainContent": "Olá, seja bem-vindo ao serviço de ajuda do Messaging Hub."
+      }
+    }
+  ]
+```
+Desta forma, se o cliente enviar a palavra `ajuda`, ele receberá uma mensagem do tipo `text/plain` com conteúdo `Olá, seja bem-vindo ao serviço de ajuda do Messaging Hub.`. Se quisermos incluir outras palavras para a ativação do comando, basta alterar a propriedade content e alterar a expressão regular de filtro, como por exemplo:
+
+```json
+  "messageReceivers": [
+    {
+      "mediaType": "text/plain",
+      "content": "^(inicio|iniciar|começar|ajuda)$",
+      "response": {
+        "mediaType": "text/plain",
+        "plainContent": "Olá, seja bem-vindo ao serviço de ajuda do Messaging Hub."
+      }
+    }
+  ]
+```
