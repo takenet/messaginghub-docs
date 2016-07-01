@@ -175,7 +175,7 @@ Nossa classe recebe pelo construtor suas **configurações** que incluem o model
       }
     }
 ```
-Por fim, imagine que seu contato deve retornar uma mensagem de erro estática no caso do cliente enviar algum comando desconhecido. Para isso, é necessário registrar um *receiver* sem filtros mas com **prioridade** menor que os demais *receivers* existentes. Por padrão, os *receivers* são registrados com a prioridade mais alta (**zero**) e basta incluir um *receiver* com prioridade menor para que receba as mensagens não tratadas pelos outros e resposta ao usuário. Ficaria da seguinte forma:
+Por fim, imagine que seu contato deve retornar uma mensagem de erro estática no caso do cliente enviar algum comando desconhecido. Para isso, é necessário registrar um *receiver* sem filtros mas com **prioridade** menor que os demais *receivers* existentes. Por padrão, os *receivers* são registrados com a prioridade mais alta (**zero**) e basta incluir um *receiver* com prioridade menor para que receba as mensagens não tratadas pelos outros para responder o usuário. Ficaria da seguinte forma:
 
 ```json
     {
