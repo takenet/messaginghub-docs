@@ -182,7 +182,7 @@ Por fim, imagine que seu contato deve retornar uma mensagem de erro estática no
       "priority": "100",
       "response": {
       "mediaType": "text/plain",
-      "plainContent": "Ops, não entendi o que você quis dizer. Envie a palavra AJUDA caso precise.\nOps, I didn't understand what you said. You can try send the word HELP if you are lost."
+      "plainContent": "Ops, não entendi o que você quis dizer. Envie a palavra AJUDA caso precise."
       }
     }
 ```    
