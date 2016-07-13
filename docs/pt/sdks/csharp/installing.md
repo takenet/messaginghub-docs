@@ -9,7 +9,7 @@ A partir do Package Manager Console, instale o template de aplicações usando:
     Install-Package Takenet.MessagingHub.Client.Template
     
 
-Este pacota instala todos as dependências necessárias, além de criar o arquivo `application.json` que define todas as configurações da sua aplicação.
+Este pacote instala todos as dependências necessárias, além de criar o arquivo `application.json` que define todas as configurações da sua aplicação.
 
 Você precisará de um identificador e uma chave de acesso, para poder se conectar ao Messaging Hub. Para obtê-los, faça o seguinte:
 - Acesse o [Painel Omni](http://omni.messaginghub.io/portal).
