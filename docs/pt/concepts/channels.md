@@ -13,7 +13,6 @@ Os seguintes canais estão atualmente disponíveis no **Omni Messaging Hub** par
 | Omni Mensagens     | 0mn.io                  |
 | Tangram (SMS)      | tangram.com.br          |
 | Take.IO (SMS)      | take.io                 |
-| Telegram           | telegram.gw.msging.net  |
 | Facebook Messenger | messenger.gw.msging.net |
 | Skype              | skype.gw.msging.net     |
 | Telegram           | telegram.gw.msging.net  |

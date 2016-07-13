@@ -240,7 +240,7 @@ public async Task ReceiveAsync(Message message, CancellationToken cancellationTo
             },
             new DocumentContainer
             {
-                Value = = new MediaLink
+                Value = new MediaLink
                 {
                     Text = "Café, o que mais seria?",
                     Size = 6679,

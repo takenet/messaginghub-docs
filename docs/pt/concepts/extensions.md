@@ -4,7 +4,7 @@ As **extensões** são serviços conectados ao Messaging Hub que provêm funcion
 
 ### Broadcast
 
-O **Broadcast** é um serviço diponível no Messaging Hub atravez do endereço `postmaster@broadcast.msging.net` para que os contatos possam gerenciar listas de distribuição e seus destinatários e que permitem a realização de envios em massa a estas listas.
+O **Broadcast** é um serviço diponível no Messaging Hub através do endereço `postmaster@broadcast.msging.net` para que os contatos possam gerenciar listas de distribuição e seus destinatários e que permitem a realização de envios em massa a estas listas.
 
 #### Disponibilidade
 
