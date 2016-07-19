@@ -37,7 +37,7 @@ Os tipos canônicos disponíveis são:
 - **WebLink** - `application/vnd.lime.web-link+json` - pode ser usado para enviar links para paginas web. Alguns canais, como o OMNI e o Facebook, fazem um excelente tratamento desse tipo, exibindo uma miniatura da página dentro da própria thread de mensagens.
 - **Select** - `application/vnd.lime.select+json` - permite o envio ao cliente do Chat Bot de uma lista de opções, da qual ele pode selecionar uma delas como resposta.
 - **Location** - `application/vnd.lime.location+json` - pode ser usado pelo canal para enviar ao Chat Bot a localização geográfica do cliente, ou para que o Chat Bot envie ao cliente uma determinada localização.
-- **Invoice** - `application/vnd.lime.invoice+json` - pode ser usado pelo Chat Bot para solicitar um pagamento a um canal de pagamento, como por exemplo o PagSeguro.
+- **Invoice** - `application/vnd.lime.invoice+json` - pode ser usado pelo Chat Bot para solicitar um pagamento através de um outro canal, como o PagSeguro.
 - **InvoiceStatus** - `application/vnd.lime.invoice-status+json` - são mensagens recebidas pelo Chat Bot, a partir do canal de pagamento, comunicando o status do pagamento solicitado.
 - **PaymentReceipt** - `application/vnd.lime.payment-receipt+json` - é o tipo de mensagem que deve ser enviado ao cliente que realizou um pagamento.
 - **DocumentCollection** - `application/vnd.lime.documentcollection+json` - permite que múltiplas mensagens sejam enviadas dentro de uma única mensagem.

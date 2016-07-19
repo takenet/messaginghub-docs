@@ -19,7 +19,7 @@ Veja um exemplo de como definir configurações neste arquivo:
 
 Neste caso, o cliente está sendo configurado utilizando a aplicação `xpto` e access key `cXkzT1Rp`, além de estar registrando um **MessageReceiver** do tipo `PlainTextMessageReceiver`, com um filtro pelo **media type** `text/plain`.
 
-Através do arquivo `application.json`, o desenvolvedor pode realizar a inicialização de forma transparente dos tipos utilizados pela aplicação. Isso significa que não é necessário se preocupar como a aplicação sera construída para funcionar, já que isso é tratado pelo utilitário `mhh.exe` instalado junto ao pacote.
+Através do arquivo `application.json`, o desenvolvedor pode realizar a inicialização de forma transparente dos tipos utilizados pela aplicação. Isso significa que não é necessário se preocupar como a aplicação será construída para funcionar, já que isso é tratado pelo utilitário `mhh.exe` instalado junto ao pacote.
 
 Todas as propriedades que podem ser definidas através deste arquivo:
 
