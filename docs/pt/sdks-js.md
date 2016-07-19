@@ -4,4 +4,4 @@ O cliente do Messaging Hub foi desenvolvido para tornar mais fácil o trabalho c
 
 O SDK Javascript permite a construção de contatos utilizando a linguagem de programação JavaScript tanto para browsers quanto para a plataforma [node.js](https://nodejs.org/) utilizando conexões persistentes WebSocket.
 
-Consulte o código do projeto [no Github](https://github.com/takenet/messaginghub-client-js).
+Consulte o código do projeto [no Github](https://github.com/takenet/messaginghub-client-js) para mais detalhes.

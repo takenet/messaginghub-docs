@@ -1,16 +1,16 @@
 ### Tipos de mensagem
 
-O **Omni Messaging Hub** define tipos de mensagem que são convertidos automaticamente para a melhor representação disponível em cada canal. Estes tipos são chamados **tipos canônicos**. Para maiores detalhes, consulte a seção *Conceitos > Mensagens* desta documentação.
+O **Omni Messaging Hub** define tipos de mensagem que são convertidos automaticamente para a melhor representação disponível em cada canal. Estes tipos são chamados **tipos canônicos**. Para mais detalhes, consulte a seção *Conceitos > Mensagens* desta documentação.
 
 Confira o Chat Bot [Message Types](https://github.com/takenet/messaginghub-client-csharp/tree/master/src/Samples/MessageTypes) para ver como usar cada um dos tipos de mensagem  do Messaging Hub.
 
 ### Mensagens de Texto Simples (PlainText)
 
-Mensagens de texto simples são suportadas em todos os canais, no entanto restrições podem se aplicar a alguns deles, como por exemplo o tamanho da mensagem.
+Mensagens de texto simples são suportadas em todos os canais. No entanto, restrições podem se aplicar a alguns deles, como por exemplo o tamanho da mensagem.
 
 *Exemplo:*
 
-O exemplo abaixo mostra como responder a uma mensagem recém recebida com uma mensagem de texto simples.
+O exemplo abaixo mostra como responder a uma mensagem recebida com uma mensagem de texto simples.
 ```csharp
 public async Task ReceiveAsync(Message message, CancellationToken cancellationToken)
 {
@@ -41,7 +41,7 @@ public async Task ReceiveAsync(Message message, CancellationToken cancellationTo
     await _sender.SendMessageAsync(document, message.From, cancellationToken);
 }
 ```
-Já para enviar o link para um página web, use o tipo WebLink:
+Já para enviar o link para uma página web, use o tipo WebLink:
 ```csharp
 public async Task ReceiveAsync(Message message, CancellationToken cancellationToken)
 {
@@ -62,7 +62,7 @@ public async Task ReceiveAsync(Message message, CancellationToken cancellationTo
 ```
 ### Enviando listas de opções (Select)
 
-Para enviar uma lista de opções para que o cliente escolha um delas como resposta, utilize o tipo Select:
+Para enviar uma lista de opções para que o cliente escolha uma delas como resposta, utilize o tipo Select:
 ```csharp
 public async Task ReceiveAsync(Message message, CancellationToken cancellationToken)
 {
@@ -96,7 +96,7 @@ public async Task ReceiveAsync(Message message, CancellationToken cancellationTo
 }
 ```
 **Observações:**
-- A propriedade Value é opcional, Mas caso informada, seu valor será enviado como resposta quando a opção for escolhida.
+- A propriedade Value é opcional, mas caso informada, seu valor será enviado como resposta quando a opção for escolhida.
 - Caso a propriedade Value não seja informada, ou a propriedade Order ou a propriedade Text deve estar presente. Se apenas uma delas estiver presente, este será o valor enviado como resposta. Caso contrário, o valor da propriedade Order será usado.
 
 **Restrições:**
@@ -124,7 +124,7 @@ public async Task ReceiveAsync(Message message, CancellationToken cancellationTo
 
 ### Processando Pagamentos (Invoice, InvoiceStatus e PaymentReceipt)
 
-Para realizar um pagamento através do seu Chat Bot, é necessário envolver um canal de pagamento. No momento apenas o canal PagSeguro é suportado e para solicitar o pagamento, o Chat Bot deve enviar uma mensagem do tipo Invoice para o canal de pagamento informando o endereço no formato abaixo:
+Para realizar um pagamento através do seu Chat Bot, é necessário envolver um canal de pagamento. Por enquanto, apenas o canal PagSeguro é suportado e para solicitar o pagamento, o Chat Bot deve enviar uma mensagem do tipo Invoice para o canal de pagamento informando o endereço no formato abaixo:
 ```csharp
 var toPagseguro = $"{Uri.EscapeDataString(message.From.ToIdentity().ToString())}@pagseguro.gw.msging.net"; // Ex: 5531988887777%400mn.io@pagseguro.gw.msging.net
 ```
@@ -152,14 +152,14 @@ public async Task ReceiveAsync(Message message, CancellationToken cancellationTo
     };
 
     var toPagseguro = $"{Uri.EscapeDataString(message.From.ToIdentity().ToString())}@pagseguro.gw.msging.net";
-    
+
     await _sender.SendMessageAsync(document, toPagseguro, cancellationToken);
 }
 ```
 **Importante:**
 - Para que esta solicitação de pagamento seja processada, o canal de pagamento PagSeguro deve ser habilitado para a seu Chat Bot no portal do Messaging Hub.
 
-Ao receber esta mensagem, o PagSeguro enviará ao cliente um link para realização do pagamento. Uma vez realizado, ou cancelado, o pagamento, uma mensagem do tipo InvoiceStatus será recebida pelo seu Chat Bot. Para isso um *Receiver* para o MediaType `application/vnd.lime.invoice-status+json`, o qual deve ser registrado no arquivo `application.json` da seguinte forma:
+Ao receber esta mensagem, o PagSeguro enviará ao cliente um link para realização do pagamento. Uma vez realizado ou cancelado o pagamento, uma mensagem do tipo InvoiceStatus será recebida pelo seu Chat Bot. Para isso um *Receiver* para o MediaType `application/vnd.lime.invoice-status+json`, o qual deve ser registrado no arquivo `application.json` da seguinte forma:
 ```js
 "messageReceivers": [
 {

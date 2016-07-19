@@ -34,6 +34,6 @@ public class ConsumedNotificationReceiver : INotificationReceiver
 }
 ```
 
-As notificações são *fire-and-forget* e caso haja alguma falha durante a execução do método `ReceiveAsync`, a mesma será ignorada.
+As notificações são *fire-and-forget* e caso haja alguma falha durante a execução do método `ReceiveAsync`, esta será ignorada.
 
-O registro das implementações destas interfaces deve ser feito no arquivo `application.json` do projeto. Para maiores detalhes, consulte a seção **Configuração**.
+O registro das implementações destas interfaces deve ser feito no arquivo `application.json` do projeto. Para mais detalhes, consulte a seção **Configuração**.

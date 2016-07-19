@@ -8,7 +8,7 @@ O **Broadcast** é um serviço diponível no Messaging Hub através do endereço
 
 #### Disponibilidade
 
-O serviço de Broadcast esta disponível nos seguintes domínios:
+O serviço de Broadcast está disponível nos seguintes domínios:
 
 |Domínio    |Disponível |Observação                                             |
 |---	    |---	    |---                                                    |

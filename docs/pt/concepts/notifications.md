@@ -1,9 +1,9 @@
 ### Notificações
 
-Uma **notificação** provê informações sobre uma mensagem enviada. 
+Uma **notificação** provê informações sobre uma mensagem enviada.
 
 Cada notificação possui:
-- **id**: Identificador da mensagem relacionada. 
+- **id**: Identificador da mensagem relacionada.
 - **from**: Endereço do originador da notificação. Uma notificação pode ser gerada pelo servidor (`postmaster@msging.net`) ou pelo cliente final, dependendo do **evento**.
 - **to**: Endereço do destinatário da mensagem.
 - **event**: Evento relacionado a mensagem. Os eventos do destinatário dependem do canal, podendo não estar disponíveis. Os valores válidos são:
@@ -14,7 +14,7 @@ Cada notificação possui:
   * **failed**: A mensagem falhou. Neste caso, a propriedade **reason** deve estar presente.
 - **reason**: Motivo da falha da mensagem.
 
-Abaixo a representação JSON de uma notificação de recebimento no destinatário:
+Veja a representação JSON de uma notificação de recebimento no destinatário:
 
 ```json
 
@@ -43,4 +43,4 @@ E uma falha no servidor:
 
 ```
 
-Para maiores detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/index.html#notification).
+Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/index.html#notification).
