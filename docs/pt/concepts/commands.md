@@ -32,8 +32,8 @@ Abaixo uma representação JSON de um comando para criação de uma lista de dis
   "id":  "92c35942-f4f1-4891-b60e-e1c294ea1b64",
   "to": "postmaster@broadcast.msging.net",
   "method": "set",
-  "type": "application/vnd.iris.distribution-list+json",
   "uri": "/lists",
+  "type": "application/vnd.iris.distribution-list+json",
   "resource": {
     "identity":  "list@broadcast.msging.net"
   }
