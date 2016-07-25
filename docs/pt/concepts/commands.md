@@ -1,6 +1,6 @@
 ### Comandos
 
-Um **comando** permite a consulta e manipulação de recursos do servidor e de extensões do **Omni Messaging Hub**. Provê uma interface pedido-resposta, semelhante ao HTTP, com verbos e URIs.
+Um **comando** permite a consulta e manipulação de recursos do servidor e de extensões do **Omni Messaging Hub**. Provê uma interface pedido-resposta, semelhante ao HTTP, com verbos e URIs. 
 
 Cada comando possui:
 - **id**: Identificador único do comando. O *id* é utilizado como referência nas respostas dos comandos. Este valor é obrigatório, exceto para comandos do método `observe`.
@@ -14,4 +14,40 @@ Cada comando possui:
   * **subscribe** - Assina um recurso para recebimento de notificações de mudança do valor definido na **uri**.
   * **unsubscribe** - Remove uma assinatura de um recurso.
   * **observe** - Notifica sobre mudanças no valor de um recurso e normalmente são emitidos pelo servidor ou uma extensão. Comandos com este método são emitidos são unidirecionais e o destinatário não deve enviar uma resposta aos mesmos. Por este motivo, não possuem **id**.
+- **type** - Declaração do tipo do valor de **resource**, no formato MIME.
+- **resource** - Representação JSON do recurso. Deve estar presente em requisições dos métodos **set** e **observe** e respostas de sucesso do método **get**.
+
+Além das propriedades acima, a resposta de um comando pode conter:
+- **status** - Indica o resultado do processamento do comando, sendo obrigatório nas respostas. Os valores válidos são:
+  * **success** - O comando foi processado com sucesso. No caso de comandos com o método **get**, o valor de **resource** deve estar presente.
+  * **failure** - Um problema ocorreu durante o processamento do comando. Neste caso, a propriedade **reason** da resposta deve estar presente.
+- **reason** - Indica o motivo da falha do processamento do comando. Contém as seguintes propriedades:
+  * **code** - Código numérico da falha. Este valor é obrigatório.
+  * **description** - Mensagem de descrição da falha.
+  
+Abaixo uma representação JSON de um comando para criação de uma lista de distribuição:
+
+```json
+{
+  "id":  "92c35942-f4f1-4891-b60e-e1c294ea1b64",
+  "to": "postmaster@broadcast.msging.net",
+  "method": "set",
+  "type": "application/vnd.iris.distribution-list+json",
+  "uri": "/lists",
+  "resource": {
+    "identity":  "list@broadcast.msging.net"
+  }
+} 
+```
+E a resposta de sucesso:
+```json
+{
+  "id": "92c35942-f4f1-4891-b60e-e1c294ea1b64",
+  "from": "postmaster@broadcast.msging.net/#hmgirismsging2",
+  "to": "andreb@msging.net/default",
+  "method": "set",
+  "status": "success"
+} 
+```
+  
 
