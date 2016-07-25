@@ -4,8 +4,8 @@ Uma **mensagem** permite a troca de conteúdos entre clientes e contatos.
 
 Cada mensagem possui:
 - **id**: Identificador único da mensagem. O *id* é utilizado como referência para notificações. Este valor pode ser omitido, caso o originador não tenha interesse em notificações, mesmo em caso de falhas.
-- **from**: Endereço do originador da mensagem.
-- **to**: Endereço do destinatário da mensagem.
+- **from**: Endereço do originador da mensagem. Este valor pode ser omitido nas mensagens, sendo que por padrão é considerado o endereço do contato conectado.
+- **to**: Endereço do destinatário da mensagem. Este valor deve estar presente.
 - **type**: Declaração do tipo do conteúdo da mensagem, no formato MIME. O mesmo pode ser do tipo **plain** (por exemplo, `text/plain`) ou **JSON** (por exemplo, `application/vnd.lime.media-link+json`).
 - **content**: Conteúdo da mensagem.
 
