@@ -44,7 +44,7 @@ E a resposta de sucesso:
 {
   "id": "92c35942-f4f1-4891-b60e-e1c294ea1b64",
   "from": "postmaster@broadcast.msging.net/#hmgirismsging2",
-  "to": "andreb@msging.net/default",
+  "to": "my-contact@msging.net/default",
   "method": "set",
   "status": "success"
 } 
