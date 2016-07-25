@@ -10,4 +10,6 @@ Não é necessário ser um desenvolvedor para utilizar estas funcionalidades, j�
 
 Para desenvolvedores, é possível escolher entre utilizar **webhooks**, a maneira mais rápida e simples para recebimento e envio de mensagens e notificações ou os **SDKs**, que permitem a construção de contatos de maneira flexível e escalável.
 
+Os desenvolvedores também podem contar com **extensões** que encapsulam funcionalidades comuns utilizadas por aplicações de mensagem, como agendamento e envio em massa de mensagens.
+
 O **Omni Messaging Hub** utiliza o [protocolo LIME](http://limeprotocol.org) para comunicação entre os contatos e os clientes, e a maior parte dos conceitos vêm deste protocolo.
