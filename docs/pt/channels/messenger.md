@@ -9,7 +9,7 @@ O canal **Messenger** é o canal da plataforma de mensagens do [Facebook](https:
 
 | Nome               | MIME                                  | Suporte   | Observação                                                   |
 |--------------------|---------------------------------------|-----------|--------------------------------------------------------------|
-| Texto              | text/plain                            | Sim       |                                                              |
+| Text               | text/plain                            | Sim       |                                                              |
 | MediaLink          | application/vnd.lime.media-link+json  | Sim       |                                                              |
 | WebLink            | application/vnd.lime.web-link+json    | Sim       |                                                              |
 | Select             | application/vnd.lime.select+json      | Sim       | Com botões ou quick reply, dependendo do valor de `scope`    |
