@@ -1,6 +1,6 @@
 ### Endereçamento
 
-Todas as mensagens e notificações trocadas entre **contatos** e **clientes** no **Omni Messaging Hub** possuem **endereços** do *originador* e *destinatário*.
+Todos [envelopes](http://limeprotocol.org/#envelope) (mensagens, notificações e comandos) trocados entre **contatos** e **clientes** no **Omni Messaging Hub** possuem **endereços** do *originador* e *destinatário*.
 
 O endereço é apresentado no formato `nome@domínio/instância`, sendo:
 - **nome**: Identificador do cliente no canal. O formato do nome muda de acordo com o canal, podendo ser o número de telefone em alguns canais (como SMS) ou identificadores internos de cada plataforma (como no Messenger). Este valor é obrigatório.
@@ -11,4 +11,4 @@ Normalmente, a interação de um contato com o cliente começa após o recebimen
 
 Os endereços podem ter ciclo de vida diferentes dependendo dos canais, podendo ser **transientes** - válidos apenas por um certo tempo (como no *Telegram*); **por escopo** - válidos em certas condições (como no *Messenger*, onde o endereço é válido apenas para um determinado originador); e **persistentes**, sempre válidos (no *SMS* e *Omni*). Os contatos devem levar estas características em consideração ao construir as interações.
 
-Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/index.html#concepts).
+Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/#concepts).
