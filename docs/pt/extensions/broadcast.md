@@ -32,3 +32,15 @@ Resposta em caso de sucesso:
   "to": "contact@msging.net/default"
 }
 ```
+
+#### Disponibilidade
+
+O serviço de Broadcast está disponível nos seguintes domínios:
+
+|Domínio    |Disponível |Observação                                             |
+|---	    |---	    |---                                                    |
+|Messenger  |x          |Necessário interação prévia do usuário com o serviço   |
+|Omni       |x          |Não precisa de interação do usuário                    |
+|Skype      |x          |Necessário interação prévia do usuário com o serviço   |
+|SMS        |x          |Não precisa de interação do usuário                    |
+|Telegram   |x          |Necessário interação prévia do usuário com o serviço   |
