@@ -28,8 +28,8 @@ Resposta em caso de sucesso:
   "method": "set",
   "status": "success",
   "id": "985ae07e-84eb-40fb-a3e1-6e9f20a29eb7",
-  "from": "postmaster@msging.net/#hmgirismsging1",
-  "to": "andreb@msging.net/default"
+  "from": "postmaster@msging.net/#irismsging1",
+  "to": "contact@msging.net/default"
 }
 ```
 
