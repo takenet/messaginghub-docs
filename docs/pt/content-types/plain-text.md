@@ -1,4 +1,7 @@
 ### Texto
+| MIME type                | 
+|--------------------------|
+| text/plain               |
 
 Permite o envio e recebimento de mensagens de texto simples.
 
