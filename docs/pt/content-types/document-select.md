@@ -11,7 +11,7 @@ Menu com imagem no cabeçalho e um link e texto como opções
 ```json
 {
     "id":"3",
-    "to":"5531999900000@0mn.io",
+    "to":"1042221589186385@messenger.gw.msging.net",
     "type":"application/vnd.lime.document-select+json",
     "content":{
         "header":{
