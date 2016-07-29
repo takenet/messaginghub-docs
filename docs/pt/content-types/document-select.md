@@ -7,6 +7,7 @@ Permite o envio de um menu de opções aos clientes, podendo o cabeçalho e as o
 
 ####Exemplos
 
+Menu com imagem no cabeçalho e um link e texto como opções
 ```json
 {
     "id":"3",
