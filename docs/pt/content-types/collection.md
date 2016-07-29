@@ -3,11 +3,66 @@
 |--------------------------------------|
 | application/vnd.lime.collection+json |
 
-Permite o envio de **múltiplos conteúdos** em uma única mensagem. Alguns canais suportam este tipo de agregação com layouts especiais (por exemplo, no Facebook Messenger uma coleção de **menu multimídia** é exibido como um *carousel*). Nos demais canais, são enviadas múltiplas mensagens.
+Permite o envio de **múltiplos conteúdos** do mesmo tipo em uma única mensagem. Alguns canais suportam este tipo de agregação com layouts especiais (por exemplo, no Facebook Messenger uma coleção de **menu multimídia** é exibido como um *carousel*). Nos demais canais, são enviadas múltiplas mensagens.
+
+É possível enviar conteúdos de tipos diferentes, utilizando uma coleção do tipo **container**.
 
 #### Exemplos
-Uma coleção de **menu multimídia**
+Uma coleção de **texto**
+```json
+{
+	"to": "553199990000@0mn.io",
+	"type": "application/vnd.lime.document-collection+json",
+	"content": {
+		"itemType": "text/plain",
+		"items": [
+            "Texto 1",
+            "Texto 2",
+            "Texto 3"
+		]
+	}
+}
+```
 
+Uma coleção de tipos diferentes, utilizando **container**
+```json
+{
+	"to": "553199990000@0mn.io",
+	"type": "application/vnd.lime.document-collection+json",
+	"content": {
+		"itemType": "application/vnd.lime.document-container+json",
+		"items": [
+			{
+				"type": "application/vnd.lime.media-link+json",
+				"value": {
+					"text": "Seja bem-vindo a nossa loja!",
+					"type": "image/jpeg",
+					"uri": "http://petersapparel.parseapp.com/img/item100-thumb.png"
+				}
+			},
+			{
+				"type": "application/vnd.lime.select+json",
+				"value": {
+					"text": "Escolha o que deseja fazer",
+					"options": [
+					    {
+					        "order": 1,
+					        "text": "Ver nosso estoque"
+					    },
+					    {
+					        "order": 2,
+					        "text": "Acompanhar um pedido"
+					    }
+					]
+				}
+			}			
+		]
+	}
+}
+
+```
+
+Uma coleção de **menu multimídia**
 ```json
 {
     "id": "5",
