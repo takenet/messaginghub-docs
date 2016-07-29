@@ -1,7 +1,7 @@
 ### Menu multimídia
-| MIME type                            | 
-|--------------------------------------|
-| application/vnd.lime.document-select+json |
+| MIME type                                 | C#                                        |
+|-------------------------------------------|-------------------------------------------|
+| application/vnd.lime.document-select+json | [Lime.Messaging.Contents.DocumentSelect](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Messaging/Contents/DocumentSelect.cs) |
 
 Permite o envio de um menu de opções aos clientes, podendo o cabeçalho e as opções serem, além de **texto**, outros tipos de conteúdo como **link de mídia** ou **link web**. Para cada opção, é possível definir um documento que é entregue ao contato quando o cliente realiza uma escolha (depende de suporte do canal).
 
