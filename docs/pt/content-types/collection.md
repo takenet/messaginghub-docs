@@ -1,7 +1,7 @@
 ### Coleção
-| MIME type                            | 
-|--------------------------------------|
-| application/vnd.lime.collection+json |
+| MIME type                            | C#                                 |
+|--------------------------------------|------------------------------------|
+| application/vnd.lime.collection+json | [Lime.Protocol.DocumentCollection](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Protocol/DocumentCollection.cs) |
 
 Permite o envio de **múltiplos conteúdos** do mesmo tipo em uma única mensagem. Alguns canais suportam este tipo de agregação com layouts especiais (por exemplo, no Facebook Messenger uma coleção de **menu multimídia** é exibido como um *carousel*). Nos demais canais, são enviadas múltiplas mensagens.
 
