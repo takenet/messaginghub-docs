@@ -3,15 +3,15 @@
 |--------------------------------------|
 | application/vnd.lime.collection+json |
 
-Permite o envio de **múltiplos conteúdos* em uma única mensagem. Alguns canais suportam este tipo de agregação com layouts especiais (por exemplo, no Facebook Messenger uma coleção de **menu multimídia** é exibido como um *carousel*). Nos demais canais, são enviadas múltiplas mensagens.
+Permite o envio de **múltiplos conteúdos** em uma única mensagem. Alguns canais suportam este tipo de agregação com layouts especiais (por exemplo, no Facebook Messenger uma coleção de **menu multimídia** é exibido como um *carousel*). Nos demais canais, são enviadas múltiplas mensagens.
 
 #### Exemplos
 Uma coleção de **menu multimídia**
 
 ```json
 {
-    "id": "message-id",
-    "to": "%messengerIdentity",
+    "id": "5",
+    "to": "1042221589186385@messenger.gw.msging.net",
     "type": "application/vnd.lime.collection+json",
     "content": {
         "itemType": "application/vnd.lime.document-select+json",
@@ -20,8 +20,8 @@ Uma coleção de **menu multimídia**
                 "header": {
                     "type": "application/vnd.lime.media-link+json",
                     "value": {
-                        "title": "First element",
-                        "text": "First element text",
+                        "title": "Titulo",
+                        "text": "Este é o primeiro item",
                         "type": "image/jpeg",
                         "uri": "http://www.isharearena.com/wp-content/uploads/2012/12/wallpaper-281049.jpg"
                     }
@@ -31,7 +31,7 @@ Uma coleção de **menu multimídia**
                         "label": {
                             "type": "application/vnd.lime.web-link+json",
                             "value": {
-                                "title": "First weblink",
+                                "title": "Link",
                                 "uri": "https://server.com/first/link1"
                             }
                         }
@@ -39,7 +39,7 @@ Uma coleção de **menu multimídia**
                     {
                         "label": {
                             "type": "text/plain",
-                            "value": "First text"
+                            "value": "Texto 1"
                         },
                         "value": {
                             "type": "application/json",
@@ -55,8 +55,8 @@ Uma coleção de **menu multimídia**
                 "header": {
                     "type": "application/vnd.lime.media-link+json",
                     "value": {
-                        "title": "Second element",
-                        "text": "Second element text",
+                        "title": "Titulo 2",
+                        "text": "Este é outro item",
                         "type": "image/jpeg",
                         "uri": "http://www.freedigitalphotos.net/images/img/homepage/87357.jpg"
                     }
@@ -66,7 +66,7 @@ Uma coleção de **menu multimídia**
                         "label": {
                             "type": "application/vnd.lime.web-link+json",
                             "value": {
-                                "title": "Second",
+                                "title": "Segundo link",
                                 "text": "Weblink",
                                 "uri": "https://server.com/second/link2"
                             }
@@ -75,7 +75,7 @@ Uma coleção de **menu multimídia**
                     {
                         "label": {
                             "type": "text/plain",
-                            "value": "Second text"
+                            "value": "Segundo texto"
                         },
                         "value": {
                             "type": "application/json",
@@ -88,7 +88,7 @@ Uma coleção de **menu multimídia**
                     {
                         "label": {
                             "type": "text/plain",
-                            "value": "Second text 2"
+                            "value": "Mais um texto"
                         },
                         "value": {
                             "type": "application/json",
