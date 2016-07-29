@@ -159,3 +159,5 @@ Uma coleção de **menu multimídia**
     }
 }
 ```
+
+Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/content-types.html#collection).
