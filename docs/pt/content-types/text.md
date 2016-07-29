@@ -17,3 +17,5 @@ Enviando uma mensagem para um destinatário do Omni:
     "content": "Seja bem-vindo ao nosso serviço! Como podemos te ajudar?"
 }
 ```
+
+Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/content-types.html#text).
