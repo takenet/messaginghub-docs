@@ -1,7 +1,7 @@
 ### Link de mídia
-| MIME type                            | 
-|--------------------------------------|
-| application/vnd.lime.media-link+json |
+| MIME type                            | C#                                   |
+|--------------------------------------|--------------------------------------|
+| application/vnd.lime.media-link+json | [Lime.Messaging.Contents.MediaLink](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Messaging/Contents/MediaLink.cs) |
 
 Permite o envio e recebimento de links para conteúdos multimídia. O link pode ser qualquer **URI** válida, mas a maioria dos canais suportam apenas conteúdos servidos pelo protocolo **HTTP/HTTPS**. É possível incluir um título e um texto, além de *metadados* da imagem como MIME type, tamanho e *preview*.
 
