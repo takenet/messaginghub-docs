@@ -10,43 +10,43 @@ Permite o envio de um menu de opções aos clientes, podendo o cabeçalho e as o
 Menu com imagem no cabeçalho e um link e texto como opções
 ```json
 {
-    "id": "3",
-    "to": "1042221589186385@messenger.gw.msging.net",
-    "type": "application/vnd.lime.document-select+json",
-    "content": {
-        "header": {
-            "type": "application/vnd.lime.media-link+json",
-            "value": {
-                "title": "Seja bem-vindo ao Chapeleiro Maluco",
-                "text": "Aqui temos o melhor chapéu para sua cabeça.",
-                "type": "image/jpeg",
-                "uri": "http://petersapparel.parseapp.com/img/item100-thumb.png"
-            }
-        },
-        "options": [
-            {
-                "label": {
-                    "type": "application/vnd.lime.web-link+json",
-                    "value": {
-                        "text": "Visitar site",
-                        "uri": "https://petersapparel.parseapp.com/view_item?item_id=100"
-                    }
-                }
-            },
-            {
-                "label": {
-                    "type": "text/plain",
-                    "value": "Ver estoque"
-                },
-                "value": {
-                    "type": "application/json",
-                    "value": {
-                        "action": "show-items"
-                    }
-                }
-            }
-        ]
-    }
+    "id": "3",
+    "to": "1042221589186385@messenger.gw.msging.net",
+    "type": "application/vnd.lime.document-select+json",
+    "content": {
+        "header": {
+            "type": "application/vnd.lime.media-link+json",
+            "value": {
+                "title": "Seja bem-vindo ao Chapeleiro Maluco",
+                "text": "Aqui temos o melhor chapéu para sua cabeça.",
+                "type": "image/jpeg",
+                "uri": "http://petersapparel.parseapp.com/img/item100-thumb.png"
+            }
+        },
+        "options": [
+            {
+                "label": {
+                    "type": "application/vnd.lime.web-link+json",
+                    "value": {
+                        "text": "Visitar site",
+                        "uri": "https://petersapparel.parseapp.com/view_item?item_id=100"
+                    }
+                }
+            },
+            {
+                "label": {
+                    "type": "text/plain",
+                    "value": "Ver estoque"
+                },
+                "value": {
+                    "type": "application/json",
+                    "value": {
+                        "action": "show-items"
+                    }
+                }
+            }
+        ]
+    }
 }
 ```
 
