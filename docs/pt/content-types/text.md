@@ -1,7 +1,7 @@
 ### Texto
-| MIME type                | 
-|--------------------------|
-| text/plain               |
+| MIME type                | C#                                  |
+|--------------------------|-------------------------------------|
+| text/plain               | [Lime.Messaging.Contents.PlainText](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Messaging/Contents/PlainText.cs) |
 
 Permite o envio e recebimento de mensagens de texto simples.
 
