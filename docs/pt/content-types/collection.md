@@ -12,7 +12,7 @@ Uma coleção de **texto**
 ```json
 {
 	"to": "553199990000@0mn.io",
-	"type": "application/vnd.lime.document-collection+json",
+	"type": "application/vnd.lime.collection+json",
 	"content": {
 		"itemType": "text/plain",
 		"items": [
@@ -28,9 +28,9 @@ Uma coleção de tipos diferentes, utilizando **container**
 ```json
 {
 	"to": "553199990000@0mn.io",
-	"type": "application/vnd.lime.document-collection+json",
+	"type": "application/vnd.lime.collection+json",
 	"content": {
-		"itemType": "application/vnd.lime.document-container+json",
+		"itemType": "application/vnd.lime.container+json",
 		"items": [
 			{
 				"type": "application/vnd.lime.media-link+json",
