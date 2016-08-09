@@ -51,3 +51,13 @@ Menu com imagem no cabeçalho e um link e texto como opções
 ```
 
 Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/content-types.html#document-select).
+
+#### Mapeamento nos canais
+
+| Canal              | Tipo                    | 
+|--------------------|-------------------------|
+| Omni               | Menu multimídia         |
+| Messenger          | [Generic template](https://developers.facebook.com/docs/messenger-platform/send-api-reference/generic-template)|
+| SMS                | Texto                   |
+| Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|
+| Telegram           | [Message](https://core.telegram.org/bots/api#message)|
