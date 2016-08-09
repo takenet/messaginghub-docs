@@ -1,7 +1,7 @@
 ### Agendamento
 | Endereço                        | URI base     | Permissões requeridas   | 
 |---------------------------------|--------------|-------------------------|
-| postmaster@scheduler.msging.net | /schedule    | Envio de mensagens      |
+| postmaster@scheduler.msging.net | /schedules   | Envio de mensagens      |
 
 A extensão **agendamento** permite o agendamento do envio de mensagens em nome dos contatos para uma data e horário específico. Qualquer tipo de mensagem pode ser agendada, inclusive mensagens de **envio em massa** (para uma lista de distribuição). O horário do agendamento deve ser realizado no fuso GMT 0.
 
