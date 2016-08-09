@@ -161,3 +161,13 @@ Uma coleção de **menu multimídia**
 ```
 
 Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/content-types.html#collection).
+
+### Mapeamento nos canais
+
+| Canal              | Tipo                    | 
+|--------------------|-------------------------|
+| Omni               | Multiplas mensagens     |
+| Messenger          | Multiplas mensagens / [Generic template](https://developers.facebook.com/docs/messenger-platform/send-api-reference/generic-template) (se for uma coleção de **menu multimídia)|
+| SMS                | Texto                   |
+| Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|
+| Telegram           | [Message](https://core.telegram.org/bots/api#message)|
