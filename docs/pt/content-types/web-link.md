@@ -1,4 +1,4 @@
-### Texto
+### Link da web
 | MIME type                | C#                                  |
 |--------------------------|-------------------------------------|
 | application/vnd.lime.web-link+json               | [Lime.Messaging.Contents.WebLink](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Messaging/Contents/WebLink.cs) |
