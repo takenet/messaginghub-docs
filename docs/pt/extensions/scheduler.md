@@ -5,7 +5,7 @@
 
 A extensão **agendamento** permite o agendamento do envio de mensagens em nome dos contatos para uma data e horário específico. Qualquer tipo de mensagem pode ser agendada, inclusive mensagens de **envio em massa** (para uma lista de distribuição). O horário do agendamento deve ser realizado no fuso GMT 0.
 
-As notificações recebidas são encaminhadas ao contato quando recebidas pela extensão.
+As notificações são encaminhadas ao contato quando recebidas pela extensão.
 
 #### Exemplos
 Agendando uma nova mensagem para o dia 25/07/2016 às 17:50h (GMT 0):
