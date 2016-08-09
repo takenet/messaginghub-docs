@@ -41,3 +41,13 @@ Menu com opções numeradas
     }
 }
 ```
+
+### Mapeamento nos canais
+
+| Canal              | Tipo                    | 
+|--------------------|-------------------------|
+| Omni               | Menu                    |
+| Messenger          | [Button template](https://developers.facebook.com/docs/messenger-platform/send-api-reference/button-template) (no escopo padrão) e [Quick replies](https://developers.facebook.com/docs/messenger-platform/send-api-reference/quick-replies) (no escopo *immediate*)|
+| SMS                | Texto                   |
+| Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|
+| Telegram           | [Message](https://core.telegram.org/bots/api#message)|
