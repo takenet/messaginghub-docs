@@ -47,7 +47,7 @@ Revogando as mesmas permissões:
 Resposta em caso de sucesso:
 ```json
 {
-  "method": "set",
+  "method": "delete",
   "status": "success",
   "id": "2",
   "from": "postmaster@msging.net/#irismsging1",
