@@ -11,7 +11,7 @@ As notificações são encaminhadas ao contato quando recebidas pela extensão.
 Agendando uma nova mensagem para o dia 25/07/2016 às 17:50h (GMT 0):
 ```json
 {  
-  "id": "456bf289-9f12-4de2-9852-21538a47bf57",
+  "id": "1",
   "to": "postmaster@scheduler.msging.net",
   "method": "set",
   "uri": "/schedules",
@@ -30,12 +30,12 @@ Agendando uma nova mensagem para o dia 25/07/2016 às 17:50h (GMT 0):
 
 Resposta em caso de sucesso:
 ```json
-{  
-  "method": "set",
-  "status": "success",
-  "id": "456bf289-9f12-4de2-9852-21538a47bf57",
+{ 
+  "id": "1",
   "from": "postmaster@scheduler.msging.net/#irismsging1",
-  "to": "contact@msging.net/default"
+  "to": "contact@msging.net/default",
+  "method": "set",
+  "status": "success"
 }
 ```
 
@@ -44,10 +44,10 @@ Para dar as permissões requeridas pela extensão, é necessário enviar um coma
 
 ```json
 {  
-  "id": "985ae07e-84eb-40fb-a3e1-6e9f20a29eb7",
+  "id": "2",
   "method": "set",
-  "type": "application/vnd.lime.delegation+json",
   "uri": "/delegations",
+  "type": "application/vnd.lime.delegation+json",
   "resource": {  
     "target": "postmaster@scheduler.msging.net",
     "envelopeTypes": [  
@@ -59,10 +59,10 @@ Para dar as permissões requeridas pela extensão, é necessário enviar um coma
 Resposta em caso de sucesso:
 ```json
 {
+  "from": "postmaster@msging.net/#irismsging1",
+  "to": "contact@msging.net/default",
   "method": "set",
   "status": "success",
-  "id": "985ae07e-84eb-40fb-a3e1-6e9f20a29eb7",
-  "from": "postmaster@msging.net/#irismsging1",
-  "to": "contact@msging.net/default"
+  "id": "2"
 }
 ```
