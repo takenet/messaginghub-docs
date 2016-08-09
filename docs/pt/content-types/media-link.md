@@ -42,3 +42,14 @@ Enviando o link de um audio:
 ```
 
 Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/content-types.html#media-link).
+
+### Mapeamento nos canais
+
+| Canal              | Tipo                    | 
+|--------------------|-------------------------|
+| Omni               | Link multimídia         |
+| Messenger          | [Attachments](https://developers.facebook.com/docs/messenger-platform/send-api-reference/image-attachment) (image/audio/video/file, dependendo do MIME type)  |
+| SMS                | Texto                   |
+| Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|
+| Telegram           | [Message](https://core.telegram.org/bots/api#message)|
+
