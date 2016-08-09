@@ -1,16 +1,89 @@
-### Broadcast
+### Envio em massa
 | Endereço                        | URI base     | Permissões requeridas   | 
 |---------------------------------|--------------|-------------------------|
 | postmaster@broadcast.msging.net | /lists       | Envio de mensagens      |
 
-A extensão **broadcast** permite o gerenciamento de listas de distribuição e o envio de mensagem em massa.
+A extensão **envio em massa** permite a criação e gestão de listas de distribuição e seus membros para o envio de mensagem em massa. Desta forma, um contato que precisa enviar uma mesma mensagem para mais de um destinatário pode criar uma lista com os endereços dos destinatários e realizar o envio apenas uma vez, para o endereço da lista.
+
+Cada lista de distribuição possui um endereço único no formato `nome-da-lista@broadcast.msging.net` além dos membros, que são os destinatários de mensagens enviadas a esta lista. Somente o contato que criou uma determinada lista tem permissões de enviar mensagens a mesma.
+
+#### Exemplos
+
+Criando uma nova lista de distribuição:
+```json
+{  
+  "id": "1",
+  "to": "postmaster@broadcast.msging.net",
+  "method": "set",
+  "type": "application/vnd.iris.distribution-list+json",
+  "uri": "/lists",
+  "resource": {  
+    "identity": "noticias@broadcast.msging.net"
+  }
+}
+```
+
+Resposta em caso de sucesso:
+```json
+{
+  "id": "1",
+  "from": "postmaster@broadcast.msging.net/#irismsging1",
+  "to": "contact@msging.net/default",
+  "method": "set",
+  "status": "success"
+}
+```
+
+Adicionando um membro a lista de distribuição existente:
+```json
+{  
+  "id": "2",
+  "to": "postmaster@broadcast.msging.net",
+  "method": "set",
+  "uri": "/lists/noticias@broadcast.msging.net/recipients",
+  "type": "application/vnd.lime.identity",
+  "resource": "551100001111@0mn.io"
+}
+```
+
+Resposta em caso de sucesso:
+```json
+{
+  "id": "2",
+  "from": "postmaster@broadcast.msging.net/#irismsging1",
+  "to": "contact@msging.net/default",
+  "method": "set",
+  "status": "success"
+}
+```
+
+Removendo um membro a lista de distribuição existente:
+```json
+{  
+  "id": "3",
+  "to": "postmaster@broadcast.msging.net",
+  "method": "delete",
+  "uri": "/lists/noticias@broadcast.msging.net/recipients/551100001111@0mn.io"
+}
+```
+
+Resposta em caso de sucesso:
+```json
+{
+  "id": "3",
+  "from": "postmaster@broadcast.msging.net/#irismsging1",
+  "to": "contact@msging.net/default",
+  "method": "set",
+  "status": "success"
+}
+```
 
 #### Delegação
 Para dar as permissões requeridas pela extensão, é necessário enviar um comando de delegação:
 
 ```json
 {  
-  "id": "985ae07e-84eb-40fb-a3e1-6e9f20a29eb7",
+  "id": "4",
   "method": "set",
   "type": "application/vnd.lime.delegation+json",
   "uri": "/delegations",
@@ -25,11 +98,11 @@ Para dar as permissões requeridas pela extensão, é necessário enviar um coma
 Resposta em caso de sucesso:
 ```json
 {
-  "method": "set",
-  "status": "success",
-  "id": "985ae07e-84eb-40fb-a3e1-6e9f20a29eb7",
+  "id": "4",
   "from": "postmaster@msging.net/#irismsging1",
-  "to": "contact@msging.net/default"
+  "to": "contact@msging.net/default",
+  "method": "set",
+  "status": "success"
 }
 ```
 
