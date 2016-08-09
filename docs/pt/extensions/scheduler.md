@@ -3,12 +3,12 @@
 |---------------------------------|--------------|-------------------------|
 | postmaster@scheduler.msging.net | /schedule    | Envio de mensagens      |
 
-A extensão **agendamento** permite o agendamento do envio de mensagens em nome dos contatos. Qualquer tipo de mensagem pode ser agendada, inclusive mensagens de **envio em massa** (para uma lista de distribuição). 
+A extensão **agendamento** permite o agendamento do envio de mensagens em nome dos contatos para uma data e horário específico. Qualquer tipo de mensagem pode ser agendada, inclusive mensagens de **envio em massa** (para uma lista de distribuição). O horário do agendamento deve ser realizado no fuso GMT 0.
 
 As notificações recebidas são encaminhadas ao contato quando recebidas pela extensão.
 
 #### Exemplos
-Agendando uma nova mensagem:
+Agendando uma nova mensagem para o dia 25/07/2016 às 17:50h (GMT 0):
 ```json
 {  
   "id": "456bf289-9f12-4de2-9852-21538a47bf57",
