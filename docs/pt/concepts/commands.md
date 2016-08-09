@@ -50,4 +50,4 @@ E a resposta de sucesso:
 } 
 ```
   
-Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/resources.html#delegation).
+Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/index.html#command).
