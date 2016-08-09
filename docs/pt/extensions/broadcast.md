@@ -7,6 +7,8 @@ A extensão **envio em massa** permite a criação e gestão de listas de distri
 
 Cada lista de distribuição possui um endereço único no formato `nome-da-lista@broadcast.msging.net` além dos membros, que são os destinatários de mensagens enviadas a esta lista. Somente o contato que criou uma determinada lista tem permissões de enviar mensagens a mesma.
 
+As notificações são encaminhadas ao contato quando recebidas pela extensão.
+
 #### Exemplos
 
 Criando uma nova lista de distribuição:
