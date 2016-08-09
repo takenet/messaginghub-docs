@@ -1,9 +1,9 @@
-### Scheduler
+### Agendamento
 | Endereço                        | URI base     | Permissões requeridas   | 
 |---------------------------------|--------------|-------------------------|
 | postmaster@scheduler.msging.net | /schedule    | Envio de mensagens      |
 
-A extensão **scheduler** permite o agendamento do envio de mensagens em nome dos contatos. Qualquer tipo de mensagem pode ser agendada, inclusive mensagens de **envio em massa** (para uma lista de distribuição). 
+A extensão **agendamento** permite o agendamento do envio de mensagens em nome dos contatos. Qualquer tipo de mensagem pode ser agendada, inclusive mensagens de **envio em massa** (para uma lista de distribuição). 
 
 As notificações recebidas são encaminhadas ao contato quando recebidas pela extensão.
 
