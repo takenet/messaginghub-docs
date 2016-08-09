@@ -8,3 +8,36 @@ Permite o envio de um menu de opções aos clientes para a realização de uma e
 Alguns canais suportam a limitação do escopo das opções, que determina por quanto tempo as mesmas são válidas para seleção por parte do usuário. Por exemplo, em alguns casos as opções enviadas só podem ser selecionadas pelo cliente naquele momento e devem desaparecer após a escolha. Neste caso, o escopo é **imediato**. Em outros, as opções são válidas para seleção em qualquer momento, sendo o escopo **persistente**.
 
 Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/content-types.html#select).
+
+####Exemplos
+
+Menu com opções numeradas
+```json
+{
+    "id":"3",
+    "to":"1042221589186385@messenger.gw.msging.net",
+    "type":"application/vnd.lime.document-select+json",
+    "content":{
+        "text":"Escolha uma opção",
+        "options":[
+            {
+                "order":1,
+                "text":"Primeira opção"
+            },
+            {
+                "order":2,
+                "text":"Segunda opção"
+            },
+            {
+                "order":3,
+                "text":"Terceira opção",
+                "type":"application/json",
+                "value":{
+                    "key1":"value1",
+                    "key2":2
+                }
+            }
+        ]
+    }
+}
+```
