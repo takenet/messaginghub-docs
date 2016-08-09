@@ -49,7 +49,7 @@ Para mais detalhes, consulte a especificação do [protocolo LIME](http://limepr
 |--------------------|-------------------------|
 | Omni               | Link multimídia         |
 | Messenger          | [Attachments](https://developers.facebook.com/docs/messenger-platform/send-api-reference/image-attachment) (image/audio/video/file, dependendo do MIME type)  |
-| SMS                | Texto                   |
+| SMS                | Texto com link          |
 | Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|
 | Telegram           | [Message](https://core.telegram.org/bots/api#message)|
 
