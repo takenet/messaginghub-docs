@@ -3,7 +3,9 @@
 |-----------------------|--------------|-------------------------|
 | postmaster@msging.net (endereço padrão, não é necessário informar) | /buckets | Nenhuma                 |
 
-A extensão **armazenamento** permite o armazenamento de documentos JSON no servidor em um espaço isolado de cada contato. Para cada documento existe um identificador definido no momento da criação que deve ser utilizada para acesso posterior. É possível definir uma data de expiração opcional para o documento. Tanto o identificador quanto a expiração devem ser definidos na **URI** do comando.
+A extensão **armazenamento** permite o armazenamento de documentos JSON no servidor em um espaço isolado de cada contato. Esta extensão é útil armazenar informações de clientes que interagiram com o contato, como configurações e estado de navegação.
+
+Para cada documento existe um identificador definido no momento da criação que deve ser utilizada para acesso posterior. É possível definir uma data de expiração opcional para o documento. Tanto o identificador quanto a expiração devem ser definidos na **URI** do comando.
 
 #### Exemplos
 Armazenando um documento JSON genérico com o identificador **xyz1234**:
@@ -12,8 +14,8 @@ Armazenando um documento JSON genérico com o identificador **xyz1234**:
 {  
   "id": "1",
   "method": "set",
-  "type": "application/json",
   "uri": "/buckets/xyz1234",
+  "type": "application/json",
   "resource": {  
     "key1": "value1",
     "key2": 2,
@@ -40,8 +42,8 @@ Armazenando um documento do tipo customizado **application/x-my-type+json** com 
 {  
   "id": "2",
   "method": "set",
-  "type": "application/x-my-type+json",
   "uri": "/buckets/abcd9876?expiration=30000",
+  "type": "application/x-my-type+json",
   "resource": {  
     "myTypeKey1": "value1",
     "myTypeKey2": 2
