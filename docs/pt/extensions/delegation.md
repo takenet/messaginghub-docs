@@ -54,3 +54,5 @@ Resposta em caso de sucesso:
   "to": "contact@msging.net/default"
 }
 ```
+
+Para mais detalhes, consulte a especificação do recurso **delegation** no [protocolo LIME](http://limeprotocol.org/resources.html#delegation).
