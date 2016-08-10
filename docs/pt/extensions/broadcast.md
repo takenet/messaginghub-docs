@@ -11,8 +11,7 @@ As notificações são encaminhadas ao contato quando recebidas pela extensão.
 
 #### Exemplos
 
-Criando uma nova lista de distribuição:
----------------------------------------
+##### Criando uma nova lista de distribuição:
 ```json
 {  
   "id": "1",
@@ -36,8 +35,7 @@ Resposta em caso de sucesso:
 }
 ```
 
-Adicionando um membro a lista de distribuição existente:
----------------------------------------
+##### Adicionando um membro a lista de distribuição existente:
 ```json
 {  
   "id": "2",
@@ -59,8 +57,7 @@ Resposta em caso de sucesso:
 }
 ```
 
-Removendo um membro a lista de distribuição existente:
----------------------------------------
+##### Removendo um membro a lista de distribuição existente:
 ```json
 {  
   "id": "3",
@@ -80,8 +77,7 @@ Resposta em caso de sucesso:
 }
 ```
 
-Enviando uma mensagem para a lista de distribuição:
----------------------------------------
+##### Enviando uma mensagem para a lista de distribuição:
 ```json
 {  
   "id": "4",
@@ -120,7 +116,6 @@ Notificações enviadas pelos membros da lista à lista de distribuição e enca
 
 #### Delegação
 Para dar as permissões requeridas pela extensão, é necessário enviar um comando de delegação:
-
 ```json
 {  
   "id": "4",
