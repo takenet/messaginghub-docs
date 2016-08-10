@@ -30,5 +30,5 @@ Para mais detalhes, consulte a especificação do [protocolo LIME](http://limepr
 | Messenger          | [Generic template](https://developers.facebook.com/docs/messenger-platform/send-api-reference/generic-template)|
 | SMS                | Texto com link          |
 | Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|
-| Telegram           | [Message](https://core.telegram.org/bots/api#message)|
+| Telegram           | [Location](https://core.telegram.org/bots/api#location)|
 
