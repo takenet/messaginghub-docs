@@ -28,7 +28,7 @@ Para mais detalhes, consulte a especificação do [protocolo LIME](http://limepr
 | Canal              | Tipo                    | 
 |--------------------|-------------------------|
 | Omni               | Link web                |
-| Messenger          | [Button template](https://developers.facebook.com/docs/messenger-platform/send-api-reference/button-template)|
+| Messenger          | [Generic template](https://developers.facebook.com/docs/messenger-platform/send-api-reference/generic-template)|
 | SMS                | Texto com link          |
 | Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|
 | Telegram           | [Message](https://core.telegram.org/bots/api#message)|
