@@ -8,7 +8,7 @@ A extensão **armazenamento** permite o armazenamento de documentos JSON no serv
 Para cada documento existe um identificador definido no momento da criação que deve ser utilizada para acesso posterior. É possível definir uma data de expiração opcional para o documento. Tanto o identificador quanto a expiração devem ser definidos na **URI** do comando.
 
 #### Exemplos
-##### Armazenando um documento JSON genérico com o identificador **xyz1234**:
+1. Armazenando um documento JSON genérico com o identificador **xyz1234**:
 ```json
 {  
   "id": "1",
@@ -35,7 +35,7 @@ Resposta em caso de sucesso:
 }
 ```
 
-##### Armazenando um documento do tipo customizado **application/x-my-type+json** com o identificador **abcd9876** e expiração de 30000 ms (30 segundos):
+2. Armazenando um documento do tipo customizado **application/x-my-type+json** com o identificador **abcd9876** e expiração de 30000 ms (30 segundos):
 ```json
 {  
   "id": "2",
@@ -59,7 +59,7 @@ Resposta em caso de sucesso:
 }
 ```
 
-##### Obtendo um documento existente com o identificador **xyz1234**:
+3. Obtendo um documento existente com o identificador **xyz1234**:
 ```json
 {  
   "id": "3",
