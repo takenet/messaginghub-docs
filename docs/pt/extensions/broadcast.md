@@ -80,6 +80,43 @@ Resposta em caso de sucesso:
 }
 ```
 
+Enviando uma mensagem para a lista de distribuição:
+```json
+{  
+  "id": "4",
+  "to": "noticias@broadcast.msging.net",
+  "type": "text/plain",
+  "content": "Olá participantes desta lista!"
+}
+```
+
+Notificações enviadas pela extensão **lista de distribuição**:
+```json
+{
+  "id": "4",
+  "from": "postmaster@broadcast.msging.net/#irismsging1",
+  "to": "contact@msging.net/default",
+  "event": "received"
+}
+```
+```json
+{
+  "id": "4",
+  "from": "postmaster@broadcast.msging.net/#irismsging1",
+  "to": "contact@msging.net/default",
+  "event": "consumed"
+}
+```
+Notificações enviadas pelos membros da lista à lista de distribuição e encaminhadas ao proprietário da lista (o endereço do destinatário está codificado na instância do originador da notificação):
+```json
+{
+  "id": "4",
+  "from": "noticias@broadcast.msging.net/551100001111%400mn.io%2Fdefault",
+  "to": "contact@msging.net/default",
+  "event": "received"
+}
+```
+
 #### Delegação
 Para dar as permissões requeridas pela extensão, é necessário enviar um comando de delegação:
 
