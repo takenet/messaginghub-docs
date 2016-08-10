@@ -13,10 +13,10 @@ Enviando uma mensagem para um destinatário do Omni:
 {
     "id": "1",
     "to": "553199991111@0mn.io",
-    "type": "application/vnd.lime.web-link+json ",
+    "type": "application/vnd.lime.web-link+json",
     "content": { 
         "uri": "http://limeprotocol.org/content-types.html#web-link",
-        "text": "Segue documentação do web-link",
+        "text": "Segue documentação do web-link"
     }
 }
 ```
