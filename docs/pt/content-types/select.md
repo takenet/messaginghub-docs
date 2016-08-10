@@ -9,8 +9,7 @@ Alguns canais suportam a limitação do escopo das opções, que determina por q
 
 Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/content-types.html#select).
 
-####Exemplos
-
+####Exemplo
 Menu com opções numeradas
 ```json
 {
