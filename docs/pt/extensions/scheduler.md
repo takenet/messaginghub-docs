@@ -8,7 +8,7 @@ A extensão **agendamento** permite o agendamento do envio de mensagens em nome 
 As notificações são encaminhadas ao contato quando recebidas pela extensão.
 
 #### Exemplos
-Agendando uma nova mensagem para o dia 25/07/2016 às 17:50h (GMT 0):
+1 - Agendando uma nova mensagem para o dia 25/07/2016 às 17:50h (GMT 0):
 ```json
 {  
   "id": "1",
@@ -27,7 +27,6 @@ Agendando uma nova mensagem para o dia 25/07/2016 às 17:50h (GMT 0):
   }
 }
 ```
-
 Resposta em caso de sucesso:
 ```json
 { 
