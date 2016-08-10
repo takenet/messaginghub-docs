@@ -25,7 +25,7 @@ Criando uma nova lista de distribuição:
 }
 ```
 
-Resposta em caso de sucesso:
+> Resposta em caso de sucesso:
 ```json
 {
   "id": "1",
@@ -48,7 +48,7 @@ Adicionando um membro a lista de distribuição existente:
 }
 ```
 
-Resposta em caso de sucesso:
+> Resposta em caso de sucesso:
 ```json
 {
   "id": "2",
@@ -68,8 +68,8 @@ Removendo um membro a lista de distribuição existente:
   "uri": "/lists/noticias@broadcast.msging.net/recipients/551100001111@0mn.io"
 }
 ```
+> Resposta em caso de sucesso:
 
-Resposta em caso de sucesso:
 ```json
 {
   "id": "3",
@@ -89,8 +89,8 @@ Enviando uma mensagem para a lista de distribuição:
   "content": "Olá participantes desta lista!"
 }
 ```
+> Notificações enviadas pela extensão **lista de distribuição**:
 
-Notificações enviadas pela extensão **lista de distribuição**:
 ```json
 {
   "id": "4",
@@ -107,7 +107,8 @@ Notificações enviadas pela extensão **lista de distribuição**:
   "event": "consumed"
 }
 ```
-Notificações enviadas pelos membros da lista à lista de distribuição e encaminhadas ao proprietário da lista (o endereço do destinatário está codificado na instância do originador da notificação):
+> Notificações enviadas pelos membros da lista à lista de distribuição e encaminhadas ao proprietário da lista (o endereço do destinatário está codificado na instância do originador da notificação):
+
 ```json
 {
   "id": "4",
