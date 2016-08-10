@@ -1,10 +1,10 @@
 ### Webhook
 
-O contato do tipo **Webhook** consiste em um serviço que será customizado pelo usuário através de uma integração por **endpoints HTTP** para troca de mensagens e notificações.
+Um contato do tipo **Webhook** permite ao desenvolvedor realizar a integração através **endpoints HTTP** para troca de mensagens, notificações e comandos.
 
-### Envio de mensagens
+#### Envio de mensagens
 
-Para enviar mensagens, a aplicação deverá fazer um POST HTTP na url exibida nas configurações do contato. A requisição deve conter um cabeçalho de autorização(*Authorization*) com o tipo *Basic* utilizando os dados de acesso do usuário ao portal.
+Para enviar mensagens, a aplicação deverá fazer um `HTTP POST`na URL exibida nas configurações do contato. A requisição deve conter um cabeçalho de autorização (`Authorization`) com o tipo `Basic` utilizando os dados de acesso do usuário ao portal.
 
 Abaixo um exemplo de montagem do cabeçalho:
 
@@ -22,10 +22,9 @@ O cabeçalho fica, então:
 ```
 Authorization: Basic bWVzc2FnaW5naHViQHRha2VuZXQuY29tLmJyOjEyMzQ=
 ```
-Além do cabeçalho, os dados da mensagem devem ser enviados no corpo da requisição. A mensagem deve ser um *JSON* no formato determinado pelo protocolo LIME. Para mais detalhes, veja [a documentação do protocolo](http://limeprotocol.org/#message).
+Além do cabeçalho, os dados da mensagem devem ser enviados no corpo da requisição. A mensagem deve ser um *JSON* no formato determinado pelo protocolo LIME. Para mais detalhes, consulte [a documentação do protocolo](http://limeprotocol.org/#message).
 
-Suponha que exista um contato com o identificador **messaginghubapp**
-Veja como seria o envio completo, incluindo os cabeçalhos e a mensagem:
+Suponha que exista um contato com o identificador **messaginghubapp**, veja como seria o envio completo, incluindo os cabeçalhos e a mensagem:
 ```
 POST https://api.messaginghub.io/applications/messaginghubapp/messages HTTP/1.1
 Content-Type: application/json
@@ -39,7 +38,7 @@ Content-Length: 131
   "content": "Hello World!"
 }
 ```
-### Recebimento de mensagens e notificações
+#### Recebimento de mensagens e notificações
 
 Para receber as mensagens, a url deve ser configurada, que é o endereço onde o MessagingHub irá postar as mensagens para o contato customizado.
 
@@ -53,7 +52,7 @@ O MessagingHub fará um POST Http com a mensagem no formato JSON, também no for
   "content": "Hello World!"
 }
 ```
-Opcionalmente, uma url de notificações pode ser configurada, que será onde o MessagingHub entregará o status das mensagens enviadas.
+Opcionalmente, uma URL de notificações pode ser configurada, que será onde o MessagingHub entregará o status das mensagens enviadas.
 
 Nesse caso também será realizado um POST HTTP com a informação no formato Json. Veja um exemplo:
 ```
@@ -64,7 +63,7 @@ Nesse caso também será realizado um POST HTTP com a informação no formato Js
   "event": "received"
 }
 ```
-### Configuração
+#### Configuração
 
 | Nome                | Descrição                                                                               |
 |---------------------|-----------------------------------------------------------------------------------------|
