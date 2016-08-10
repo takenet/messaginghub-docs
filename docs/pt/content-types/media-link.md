@@ -8,8 +8,7 @@ Permite o envio e recebimento de links para conteúdos multimídia. O link pode 
 > Nota: O suporte a metadados varia por canal podendo ser ignorados se não suportado
 
 #### Exemplos
-Enviando o link de uma imagem incluindo título, texto descritivo e metadados:
-
+1 - Enviando o link de uma imagem incluindo título, texto descritivo e metadados:
 ```json
 {
     "id": "1",
@@ -27,16 +26,16 @@ Enviando o link de uma imagem incluindo título, texto descritivo e metadados:
 }
 ```
 
-Enviando o link de um audio:
-
+2 - Enviando o link de um audio:
 ```json
 {
-    "id": "1",
+    "id": "2",
     "to": "553199991111@0mn.io",
     "type": "application/vnd.lime.media-link+json",
     "content": {
         "type": "audio/mp3",
-        "uri": "http://soundbible.com/grab.php?id=1954&type=mp3"
+        "uri": "http://blaamandagjazzband.dk/jazz/mp3/basin_street_blues.mp3",
+        "size": 3124123
     }
 }
 ```
