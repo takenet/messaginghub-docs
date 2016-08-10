@@ -9,4 +9,3 @@ Basicamente, seu contato pode ser criado de três formas:
 
 No menu lateral você encontra o passo a passo para cada situação. Caso você tenha alguma dúvida, entre em contato conosco através do e-mail dev.messaginghub.ti@takenet.com.br que iremos lhe ajudar.
 
-Você também pode contribuir com esta documentação no [Github](https://github.com/takenet/messaginghub-docs).
