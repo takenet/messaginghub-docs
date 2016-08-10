@@ -1,7 +1,7 @@
 ### Armazenamento
-| Endereço              | URI base     | Permissões requeridas   | 
-|-----------------------|--------------|-------------------------|
-| postmaster@msging.net (endereço padrão, não é necessário informar) | /buckets | Nenhuma                 |
+| Endereço              | URI base     | Permissões requeridas   | C#              |
+|-----------------------|--------------|-------------------------|------------------
+| postmaster@msging.net (endereço padrão, não é necessário informar) | /buckets | Nenhuma | [BucketExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Bucket/BucketExtension.cs) |
 
 A extensão **armazenamento** permite o armazenamento de documentos JSON no servidor em um espaço isolado de cada contato. Esta extensão é útil armazenar informações de clientes que interagiram com o contato, como configurações e estado de navegação.
 
