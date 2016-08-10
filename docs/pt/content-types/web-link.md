@@ -3,7 +3,7 @@
 |--------------------------|-------------------------------------|
 | application/vnd.lime.web-link+json               | [Lime.Messaging.Contents.WebLink](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Messaging/Contents/WebLink.cs) |
 
-Permite o envio de uma página da web.
+Permite o envio de um link para uma página da web, podendo incluir metadados como título e um texto descritivo do link, além de uma imagem miniatura.
 
 #### Exemplo
 
