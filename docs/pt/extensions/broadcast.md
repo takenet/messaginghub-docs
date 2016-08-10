@@ -11,7 +11,7 @@ As notificações são encaminhadas ao contato quando recebidas pela extensão.
 
 #### Exemplos
 
-##### Criando uma nova lista de distribuição:
+1 - Criando uma nova lista de distribuição:
 ```json
 {  
   "id": "1",
@@ -35,7 +35,7 @@ Resposta em caso de sucesso:
 }
 ```
 
-##### Adicionando um membro a lista de distribuição existente:
+2 - Adicionando um membro a lista de distribuição existente:
 ```json
 {  
   "id": "2",
@@ -57,7 +57,7 @@ Resposta em caso de sucesso:
 }
 ```
 
-##### Removendo um membro a lista de distribuição existente:
+3 - Removendo um membro a lista de distribuição existente:
 ```json
 {  
   "id": "3",
@@ -77,7 +77,7 @@ Resposta em caso de sucesso:
 }
 ```
 
-##### Enviando uma mensagem para a lista de distribuição:
+4 - Enviando uma mensagem para a lista de distribuição:
 ```json
 {  
   "id": "4",
