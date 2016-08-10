@@ -118,7 +118,7 @@ Notificações enviadas pelos membros da lista à lista de distribuição e enca
 Para dar as permissões requeridas pela extensão, é necessário enviar um comando de delegação:
 ```json
 {  
-  "id": "4",
+  "id": "5",
   "method": "set",
   "type": "application/vnd.lime.delegation+json",
   "uri": "/delegations",
@@ -133,7 +133,7 @@ Para dar as permissões requeridas pela extensão, é necessário enviar um coma
 Resposta em caso de sucesso:
 ```json
 {
-  "id": "4",
+  "id": "5",
   "from": "postmaster@msging.net/#irismsging1",
   "to": "contact@msging.net/default",
   "method": "set",
