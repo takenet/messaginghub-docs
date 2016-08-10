@@ -8,8 +8,7 @@ A extensão **delegação** permite o contato dar permissões a outras identidad
 É necessário efetuar a delegação apenas uma vez para cada identidade.
 
 #### Exemplos
-Dando permissões de envio de mensagens à identidade **postmaster@broadcast.msging.net**:
-
+1 - Dando permissões de envio de mensagens à identidade **postmaster@broadcast.msging.net**:
 ```json
 {  
   "id": "1",
@@ -35,8 +34,7 @@ Resposta em caso de sucesso:
 }
 ```
 
-Revogando as mesmas permissões:
-
+2 - Revogando as mesmas permissões:
 ```json
 {  
   "id": "2",
