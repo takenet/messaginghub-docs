@@ -12,6 +12,7 @@ As notificações são encaminhadas ao contato quando recebidas pela extensão.
 #### Exemplos
 
 Criando uma nova lista de distribuição:
+---------------------------------------
 ```json
 {  
   "id": "1",
@@ -24,8 +25,7 @@ Criando uma nova lista de distribuição:
   }
 }
 ```
-
-> Resposta em caso de sucesso:
+Resposta em caso de sucesso:
 ```json
 {
   "id": "1",
@@ -37,6 +37,7 @@ Criando uma nova lista de distribuição:
 ```
 
 Adicionando um membro a lista de distribuição existente:
+---------------------------------------
 ```json
 {  
   "id": "2",
@@ -47,8 +48,7 @@ Adicionando um membro a lista de distribuição existente:
   "resource": "551100001111@0mn.io"
 }
 ```
-
-> Resposta em caso de sucesso:
+Resposta em caso de sucesso:
 ```json
 {
   "id": "2",
@@ -60,6 +60,7 @@ Adicionando um membro a lista de distribuição existente:
 ```
 
 Removendo um membro a lista de distribuição existente:
+---------------------------------------
 ```json
 {  
   "id": "3",
@@ -68,8 +69,7 @@ Removendo um membro a lista de distribuição existente:
   "uri": "/lists/noticias@broadcast.msging.net/recipients/551100001111@0mn.io"
 }
 ```
-> Resposta em caso de sucesso:
-
+Resposta em caso de sucesso:
 ```json
 {
   "id": "3",
@@ -81,6 +81,7 @@ Removendo um membro a lista de distribuição existente:
 ```
 
 Enviando uma mensagem para a lista de distribuição:
+---------------------------------------
 ```json
 {  
   "id": "4",
@@ -89,8 +90,7 @@ Enviando uma mensagem para a lista de distribuição:
   "content": "Olá participantes desta lista!"
 }
 ```
-> Notificações enviadas pela extensão **lista de distribuição**:
-
+Notificações enviadas pela extensão **lista de distribuição**:
 ```json
 {
   "id": "4",
@@ -107,7 +107,7 @@ Enviando uma mensagem para a lista de distribuição:
   "event": "consumed"
 }
 ```
-> Notificações enviadas pelos membros da lista à lista de distribuição e encaminhadas ao proprietário da lista (o endereço do destinatário está codificado na instância do originador da notificação):
+Notificações enviadas pelos membros da lista à lista de distribuição e encaminhadas ao proprietário da lista (o endereço do destinatário está codificado na instância do originador da notificação):
 
 ```json
 {
