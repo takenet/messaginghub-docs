@@ -8,7 +8,7 @@ Permite o envio de **múltiplos conteúdos** do mesmo tipo em uma única mensage
 É possível enviar conteúdos de tipos diferentes, utilizando uma coleção do tipo **container**.
 
 #### Exemplos
-Uma coleção de **texto**
+1 - Uma coleção de **texto**
 ```json
 {
 	"to": "553199990000@0mn.io",
@@ -24,7 +24,7 @@ Uma coleção de **texto**
 }
 ```
 
-Uma coleção de tipos diferentes, utilizando **container**
+2 - Uma coleção de tipos diferentes, utilizando **container**
 ```json
 {
 	"to": "553199990000@0mn.io",
@@ -62,7 +62,7 @@ Uma coleção de tipos diferentes, utilizando **container**
 
 ```
 
-Uma coleção de **menu multimídia**
+3 - Uma coleção de **menu multimídia**
 ```json
 {
     "id": "5",
