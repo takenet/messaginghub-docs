@@ -15,7 +15,8 @@ Enviando uma localização com latitude, longitude e altitude:
     "content": {
         "latitude": -19.918899,
         "longitude": -43.959275,
-        "altitude": 853
+        "altitude": 853,
+        "text": "Sede da Take.net"
     }
 }
 ```
