@@ -28,7 +28,7 @@ Resposta em caso de sucesso:
   "method": "get",
   "status": "success",
   "resource": {
-    "fullName": "Astraugésilo de Athaíde",
+    "fullName": "Astraugésilo de Athayde",
     "photoUri": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xtf1/v/t1.0-1/p200x200/14429_1013121325123122924983_n.jpg"
   }
 }
