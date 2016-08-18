@@ -6,7 +6,7 @@ Cada mensagem possui:
 - **id**: Identificador único da mensagem. O *id* é utilizado como referência para notificações. Este valor pode ser omitido, caso o originador não tenha interesse em notificações, mesmo em caso de falhas.
 - **from**: Endereço do originador da mensagem. Este valor pode ser omitido nas mensagens, sendo que por padrão é considerado o endereço do contato conectado.
 - **to**: Endereço do destinatário da mensagem. Este valor deve estar presente.
-- **type**: Declaração do tipo do conteúdo da mensagem, no formato MIME. O mesmo pode ser do tipo **plain** (por exemplo, `text/plain`) ou **JSON** (por exemplo, `application/vnd.lime.media-link+json`).
+- **type**: Declaração do tipo do conteúdo da mensagem, no formato MIME. O mesmo pode ser do tipo **plain** (por exemplo, `text/plain`) ou **JSON** (por exemplo, `application/vnd.lime.media-link+json`). Consulte a seção **Tipos de conteúdo** para maiores informações.
 - **content**: Conteúdo da mensagem.
 
 Abaixo temos a representação JSON de uma mensagem:
@@ -22,25 +22,4 @@ Abaixo temos a representação JSON de uma mensagem:
 }
 
 ```
-
 Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/index.html#message).
-
-### Tipos de mensagem
-
-O **Omni Messaging Hub** utiliza tipos de conteúdo definidos pelo protocolo LIME e realiza a conversão destes tipos para o formato mais adequado em cada canal. Cada tipo possui um MIME type e um schema JSON apresentados neste documentação e nos SDKs.
-
-Os tipos canônicos disponíveis são:
-
-- **PlainText** - `text/plain` - é o tipo de mensagem padrão e é utilizado para o envio de mensagens de texto simples.
-- **MediaLink** - `application/vnd.lime.media-link+json` - é usado para enviar imagens, sons, vídeos e outros arquivos de mídia. Em canais que não suportam essas mídias, um link para um endereço web contendo o arquivo será enviado.
-- **WebLink** - `application/vnd.lime.web-link+json` - pode ser usado para enviar links para paginas web. Alguns canais, como o OMNI e o Facebook, fazem um excelente tratamento desse tipo, exibindo uma miniatura da página dentro da própria thread de mensagens.
-- **Select** - `application/vnd.lime.select+json` - permite o envio ao cliente do Chat Bot de uma lista de opções, da qual ele pode selecionar uma delas como resposta.
-- **Location** - `application/vnd.lime.location+json` - pode ser usado pelo canal para enviar ao Chat Bot a localização geográfica do cliente, ou para que o Chat Bot envie ao cliente uma determinada localização.
-- **Invoice** - `application/vnd.lime.invoice+json` - pode ser usado pelo Chat Bot para solicitar um pagamento através de um outro canal, como o PagSeguro.
-- **InvoiceStatus** - `application/vnd.lime.invoice-status+json` - são mensagens recebidas pelo Chat Bot, a partir do canal de pagamento, comunicando o status do pagamento solicitado.
-- **PaymentReceipt** - `application/vnd.lime.payment-receipt+json` - é o tipo de mensagem que deve ser enviado ao cliente que realizou um pagamento.
-- **DocumentCollection** - `application/vnd.lime.documentcollection+json` - permite que múltiplas mensagens sejam enviadas dentro de uma única mensagem.
-- **DocumentContainer** - `application/vnd.lime.documentcontainer+json` - encapsula um conteúdo de forma a ser utilizado junto ao DocumentCollection para envio de multiplos conteúdos diferentes. Útil para mandar conteúdos compostos (texto + imagem).
-
-
-Para mais detalhes, consulte a especificação de tipos de conteúdo do [protocolo LIME](http://limeprotocol.org/content-types.html).
