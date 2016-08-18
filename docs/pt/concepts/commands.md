@@ -29,7 +29,7 @@ Abaixo uma representação JSON de um comando para criação de uma lista de dis
 
 ```json
 {
-  "id":  "92c35942-f4f1-4891-b60e-e1c294ea1b64",
+  "id":  "1",
   "to": "postmaster@broadcast.msging.net",
   "method": "set",
   "uri": "/lists",
@@ -39,15 +39,29 @@ Abaixo uma representação JSON de um comando para criação de uma lista de dis
   }
 } 
 ```
-E a resposta de sucesso:
+No caso de uma resposta de sucesso:
 ```json
 {
-  "id": "92c35942-f4f1-4891-b60e-e1c294ea1b64",
+  "id": "1",
   "from": "postmaster@broadcast.msging.net/#hmgirismsging2",
   "to": "my-contact@msging.net/default",
   "method": "set",
   "status": "success"
 } 
 ```
+E no caso de uma falha:
+```json
+{
+  "id": "1",
+  "from": "postmaster@broadcast.msging.net/#hmgirismsging2",
+  "to": "my-contact@msging.net/default",
+  "method": "set",
+  "status": "failure",
+  "reason": {
+   "code": 60,
+   "description": "Invalid list identifier"
+  }
+} 
+```  
   
 Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/index.html#command).
