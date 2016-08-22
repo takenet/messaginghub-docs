@@ -55,7 +55,7 @@ Para mais detalhes, consulte a especificação do [protocolo LIME](http://limepr
 
 | Canal              | Tipo                    | 
 |--------------------|-------------------------|
-| Omni               | Menu multimídia         |
+| Omni               | Menu (apenas texto)     |
 | Messenger          | [Generic template](https://developers.facebook.com/docs/messenger-platform/send-api-reference/generic-template)|
 | SMS                | Texto                   |
 | Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|
