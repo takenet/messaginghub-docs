@@ -46,7 +46,7 @@ O MessagingHub fará um POST Http com a mensagem no formato JSON, também no for
 ```
 {
   "id": "52198482-0FD5-4572-8E04-649691ACAA9C",
-  "from": "user@0mn.io/4ac58r6e3"
+  "from": "user@0mn.io/4ac58r6e3",
   "to": "messaginghubapp@msging.net",
   "type": "text/plain",
   "content": "Hello World!"
