@@ -4,7 +4,7 @@ Um contato do tipo **Webhook** permite ao desenvolvedor realizar a integração 
 
 #### Envio de mensagens
 
-Para enviar mensagens, a aplicação deverá fazer um `HTTP POST`na URL exibida nas configurações do contato. A requisição deve conter um cabeçalho de autorização (`Authorization`) com o tipo `Basic` utilizando os dados de acesso do usuário ao portal.
+Para enviar mensagens, a aplicação deverá fazer um `HTTP POST` na URL exibida nas configurações do contato. A requisição deve conter um cabeçalho de autorização (`Authorization`) com o tipo `Basic` utilizando os dados de acesso do usuário ao portal.
 
 Abaixo um exemplo de montagem do cabeçalho:
 
@@ -40,19 +40,17 @@ Content-Length: 131
 ```
 #### Recebimento de mensagens e notificações
 
-Para receber as mensagens, a url deve ser configurada, que é o endereço onde o MessagingHub irá postar as mensagens para o contato customizado.
-
 O MessagingHub fará um POST Http com a mensagem no formato JSON, também no formato definido pelo [protocolo LIME](http://limeprotocol.org/#notification), conforme o exemplo abaixo:
 ```
 {
   "id": "52198482-0FD5-4572-8E04-649691ACAA9C",
-  "from": "user@0mn.io/4ac58r6e3"
+  "from": "user@0mn.io/4ac58r6e3",
   "to": "messaginghubapp@msging.net",
   "type": "text/plain",
   "content": "Hello World!"
 }
 ```
-Opcionalmente, uma URL de notificações pode ser configurada, que será onde o MessagingHub entregará o status das mensagens enviadas.
+Cao seja configurado a URL de notificações, o MessagingHub entregará nessa URL as notificações contendo os status das mensagens.
 
 Nesse caso também será realizado um POST HTTP com a informação no formato Json. Veja um exemplo:
 ```
