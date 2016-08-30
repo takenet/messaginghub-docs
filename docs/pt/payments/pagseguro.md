@@ -46,7 +46,7 @@ Enviando uma solicitação de pagamento para um usuário do Facebook Messenger u
     "content": {
         "created": "2016-08-26T19:03:37.024Z",
         "dueTo": "2016-08-27T19:03:37.024Z",
-        "currency": "BLR",
+        "currency": "BRL",
         "total": 10.85,
         "items": [{
                 "quantity": 1.0,
@@ -101,7 +101,7 @@ Opcionalmente pode ser enviado um [recibo de pagamento](./#/docs/content-types/p
     "content": {
         "paidOn": "2016-08-26T19:03:37.024Z",
         "code": "215BF6B5-01EF-4F9A-A944-0BC05FD0F228",
-        "currency": "BLR",
+        "currency": "BRL",
         "total": 10.85,
         "items": [{
                 "quantity": 1.0,
