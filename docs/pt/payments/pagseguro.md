@@ -50,7 +50,7 @@ Enviando uma solicitação de pagamento para um usuário do Facebook Messenger u
         "total": 10.85,
         "items": [{
                 "quantity": 1.0,
-                "unit": 0.01,
+                "unit": 10.85,
                 "currency": "BRL",
                 "total" :10.85,
                 "description": "Item 1"
@@ -105,7 +105,7 @@ Opcionalmente pode ser enviado um [recibo de pagamento](./#/docs/content-types/p
         "total": 10.85,
         "items": [{
                 "quantity": 1.0,
-                "unit": 0.01,
+                "unit": 10.85,
                 "currency": "BRL",
                 "total": 10.85,
                 "description": "Item 1"
