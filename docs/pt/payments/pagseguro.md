@@ -46,11 +46,11 @@ Enviando uma solicitação de pagamento para um usuário do Facebook Messenger u
     "content": {
         "created": "2016-08-26T19:03:37.024Z",
         "dueTo": "2016-08-27T19:03:37.024Z",
-        "currency": "BLR",
+        "currency": "BRL",
         "total": 10.85,
         "items": [{
                 "quantity": 1.0,
-                "unit": 0.01,
+                "unit": 10.85,
                 "currency": "BRL",
                 "total" :10.85,
                 "description": "Item 1"
@@ -75,7 +75,7 @@ Será gerada uma transação no PagSeguro que será enviada para o usuário `104
 }
 ```
 
-Quando usuário efetuar o pagamento será enviada uma mensagem do tipo [status do pagamento](./#/docs/content-types/invoice-status), o identificador da mensagem será o mesmo da solicitação de pagamento.
+Quando o usuário efetuar o pagamento será enviada uma mensagem do tipo [status do pagamento](./#/docs/content-types/invoice-status), o identificador da mensagem será o mesmo da solicitação de pagamento.
 
 ```json
 {
@@ -101,11 +101,11 @@ Opcionalmente pode ser enviado um [recibo de pagamento](./#/docs/content-types/p
     "content": {
         "paidOn": "2016-08-26T19:03:37.024Z",
         "code": "215BF6B5-01EF-4F9A-A944-0BC05FD0F228",
-        "currency": "BLR",
+        "currency": "BRL",
         "total": 10.85,
         "items": [{
                 "quantity": 1.0,
-                "unit": 0.01,
+                "unit": 10.85,
                 "currency": "BRL",
                 "total": 10.85,
                 "description": "Item 1"
