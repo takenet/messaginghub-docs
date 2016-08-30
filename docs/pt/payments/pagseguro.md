@@ -75,7 +75,7 @@ Será gerada uma transação no PagSeguro que será enviada para o usuário `104
 }
 ```
 
-Quando usuário efetuar o pagamento será enviada uma mensagem do tipo [status do pagamento](./#/docs/content-types/invoice-status), o identificador da mensagem será o mesmo da solicitação de pagamento.
+Quando o usuário efetuar o pagamento será enviada uma mensagem do tipo [status do pagamento](./#/docs/content-types/invoice-status), o identificador da mensagem será o mesmo da solicitação de pagamento.
 
 ```json
 {
