@@ -77,12 +77,13 @@ Será gerada uma transação no PagSeguro que será enviada automaticamente para
 }
 ```
 
-Quando o usuário efetuar o pagamento será enviada uma mensagem do tipo [status do pagamento](./#/docs/content-types/invoice-status), o identificador da mensagem será o mesmo da solicitação de pagamento.
+Quando houver alteração no status do pagamento (ex: o usuário pagou), será enviada uma mensagem do tipo [status do pagamento](./#/docs/content-types/invoice-status) ao contato, sendo o identificador da mensagem o mesmo da solicitação de pagamento original.
 
 ```json
 {
     "id": "2",
     "from": "1042221589186385%40messenger.gw.msging.net@pagseguro.gw.msging.net",
+    "to": "contact@msging.net/default",
     "pp": "postmaster@pagseguro.gw.msging.net",
     "type": "application/vnd.lime.invoice-status+json",
     "content": {
@@ -93,7 +94,7 @@ Quando o usuário efetuar o pagamento será enviada uma mensagem do tipo [status
 }
 ```
 
-Após receber o pagamento, o contato pode opcionalmente enviar um [recibo de pagamento](./#/docs/content-types/payment-receipt) ao cliente.
+E após receber o pagamento, o contato pode opcionalmente enviar um [recibo de pagamento](./#/docs/content-types/payment-receipt) ao cliente.
 
 ```json
 {
