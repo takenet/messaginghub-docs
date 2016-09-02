@@ -62,7 +62,7 @@ Enviando uma solicitação de pagamento para um usuário do Facebook Messenger u
 }
 ```
 
-Será gerada uma transação no PagSeguro que será enviada para o usuário `1042221589186385@messenger.gw.msging.net` como um [link web](./#/docs/content-types/web-link), o identificador da mensagem será o mesmo da solicitação de pagamento.
+Será gerada uma transação no PagSeguro que será enviada automaticamente para o usuário `1042221589186385@messenger.gw.msging.net` como um [link web](./#/docs/content-types/web-link), o identificador da mensagem será o mesmo da solicitação de pagamento.
 
 ```json
 {
