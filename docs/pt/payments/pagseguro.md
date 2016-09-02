@@ -1,16 +1,18 @@
 ### PagSeguro
 | FQDN                     | Tipo de identificador                                         | 
 |--------------------------|---------------------------------------------------------------|
-| @pagseguro.gw.msging.net | Identidade ([nome e domínio](./#/docs/concepts/addressing))   | 
+| @pagseguro.gw.msging.net | Identidade ([nome e domínio do canal original](./#/docs/concepts/addressing)) no formato [URL encoded](http://www.w3schools.com/tags/ref_urlencode.asp) | 
 
 O canal **PagSeguro** é o canal de pagamentos do [UOL](https://pagseguro.uol.com.br/) para receber e enviar pagamentos com flexibilidade e segurança.
+
+O endereço do destinatário do pedido de pagamento deve ser o identificador do destinatário 
 
 #### Delegação
 Para dar as permissões requeridas pela extensão, é necessário enviar um comando de delegação:
 
 ```json
 {  
-  "id": "5",
+  "id": "1",
   "method": "set",
   "type": "application/vnd.lime.delegation+json",
   "uri": "/delegations",
@@ -26,7 +28,7 @@ Resposta em caso de sucesso:
 
 ```json
 {
-  "id": "5",
+  "id": "1",
   "from": "postmaster@msging.net/#irismsging1",
   "to": "contact@msging.net/default",
   "method": "set",
@@ -40,7 +42,7 @@ Enviando uma solicitação de pagamento para um usuário do Facebook Messenger u
 
 ```json
 {
-    "id": "1",
+    "id": "2",
     "to": "1042221589186385%40messenger.gw.msging.net@pagseguro.gw.msging.net",
     "type": "application/vnd.lime.invoice+json",
     "content": {
@@ -64,7 +66,7 @@ Será gerada uma transação no PagSeguro que será enviada para o usuário `104
 
 ```json
 {
-    "id": "1",
+    "id": "2",
     "to": "1042221589186385@messenger.gw.msging.net",
     "pp": "postmaster@pagseguro.gw.msging.net",
     "type": "application/vnd.lime.web-link+json",
@@ -79,7 +81,7 @@ Quando o usuário efetuar o pagamento será enviada uma mensagem do tipo [status
 
 ```json
 {
-    "id": "1",
+    "id": "2",
     "from": "1042221589186385%40messenger.gw.msging.net@pagseguro.gw.msging.net",
     "pp": "postmaster@pagseguro.gw.msging.net",
     "type": "application/vnd.lime.invoice-status+json",
@@ -91,11 +93,11 @@ Quando o usuário efetuar o pagamento será enviada uma mensagem do tipo [status
 }
 ```
 
-Opcionalmente pode ser enviado um [recibo de pagamento](./#/docs/content-types/payment-receipt) 
+Após receber o pagamento, o contato pode opcionalmente enviar um [recibo de pagamento](./#/docs/content-types/payment-receipt) ao cliente.
 
 ```json
 {
-    "id": "1",
+    "id": "3",
     "to": "1042221589186385@messenger.gw.msging.net",
     "type": "application/vnd.lime.payment-receipt+json",
     "content": {
