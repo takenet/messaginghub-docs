@@ -39,7 +39,7 @@ Todas as propriedades que podem ser definidas através deste arquivo:
 | settingsType | Nome do tipo .NET que será usado para deserializar as configurações. Pode ser o nome simples do tipo (se estiver na mesma **assembly** do arquivo `application.json`) ou o nome qualificado com **assembly**.    | ApplicationSettings     | null |
 | messageReceivers | Array de **message receivers**, que são tipos especializados para recebimento de mensagens. | *Veja abaixo* | null |
 | notificationReceivers | Array de **notification receivers**, que são tipos especializados para recebimento de notificações. | *Veja abaixo* | null |
-| throughput | Limite de envelopes processados por minuto. | 20 | 10 |
+| throughput | Limite de envelopes processados por segundo. | 20 | 10 |
 | maxConnectionRetries | Limite de tentativas para reconexão com o host 1-5. | 20 | 10 |
 | routingRule | Regra para roteamento de mensagem | Instance | Identity |
 
