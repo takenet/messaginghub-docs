@@ -16,11 +16,11 @@ Caso esteja construindo uma aplicação web (no browser) e esteja utilizando Jav
 <script src="./node_modules/messaginghub-client/dist/messaginghub-client.js" type="text/javascript"></script>
 ```
 
-Você também pode utilizar as distribuições disponibilizadas pelo [npmcdn](https://npmcdn.com), caso não esteja utilizando o `npm` para desenvolvimento:
+Você também pode utilizar as distribuições disponibilizadas pelo [unpkg](https://unpkg.com), caso não esteja utilizando o `npm` para desenvolvimento:
 ```html
-<script src="https://npmcdn.com/lime-js" type="text/javascript"></script>
-<script src="https://npmcdn.com/lime-transport-websocket" type="text/javascript"></script>
-<script src="https://npmcdn.com/messaginghub-client" type="text/javascript"></script>
+<script src="https://unpkg.com/lime-js" type="text/javascript"></script>
+<script src="https://unpkg.com/lime-transport-websocket" type="text/javascript"></script>
+<script src="https://unpkg.com/messaginghub-client" type="text/javascript"></script>
 ```
 Você precisará de um identificador e uma chave de acesso para sua aplicação, para poder interagir com o Messaging Hub. Para obtê-los:
 - Acesse o [Painel Omni](http://omni.messaginghub.io/portal).
