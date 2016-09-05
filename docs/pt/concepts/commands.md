@@ -1,6 +1,6 @@
 ### Comandos
 
-Um **comando** permite a consulta e manipulação de recursos do servidor e de extensões do **Omni Messaging Hub**. Provê uma interface pedido-resposta, semelhante ao HTTP, com verbos e URIs. 
+Um **comando** permite a consulta e manipulação de recursos do servidor e de extensões do **Blip Messaging Hub**. Provê uma interface pedido-resposta, semelhante ao HTTP, com verbos e URIs. 
 
 Cada comando possui:
 - **id**: Identificador único do comando. O *id* é utilizado como referência nas respostas dos comandos. Este valor é obrigatório, exceto para comandos do método `observe`.
