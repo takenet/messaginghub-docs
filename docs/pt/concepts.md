@@ -1,6 +1,6 @@
 ### Conceitos
 
-O **Omni Messaging Hub** permite que aplicações de mensagem (chamadas aqui de **contatos inteligentes** ou apenas **contatos**) sejam construídas uma única vez e disponibilizadas em diversos **canais de mensagem**, como *Messenger*, *Skype* ou o próprio [*Omni*](https://play.google.com/store/apps/details?id=net.take.omni).
+O **Blip Messaging Hub** permite que aplicações de mensagem (chamadas aqui de **contatos inteligentes** ou apenas **contatos**) sejam construídas uma única vez e disponibilizadas em diversos **canais de mensagem**, como *Messenger*, *Skype* ou o próprio [*Omni*](https://play.google.com/store/apps/details?id=net.take.omni).
 
 Para permitir que o proprietário do contato realize a cobrança dos seus serviços, existem integrações com **canais de pagamento**, como o *Pagseguro*.
 
@@ -10,4 +10,4 @@ Para desenvolvedores, é possível escolher entre utilizar **webhooks**, a manei
 
 Os desenvolvedores também podem contar com **extensões** que encapsulam funcionalidades comuns utilizadas por aplicações de mensagem, como o *envio em massa* e *agendamento*.
 
-O **Omni Messaging Hub** utiliza o [protocolo LIME](http://limeprotocol.org) para comunicação entre os contatos e os clientes, e a maior parte dos conceitos vêm deste protocolo. Os **envelopes** são os *containers* de informação definidas pelo protocolo e podem ser **mensagem**, **notificação** e **comando**, sendo transmitidos no formato **JSON**.
+O **Blip Messaging Hub** utiliza o [protocolo LIME](http://limeprotocol.org) para comunicação entre os contatos e os clientes, e a maior parte dos conceitos vêm deste protocolo. Os **envelopes** são os *containers* de informação definidas pelo protocolo e podem ser **mensagem**, **notificação** e **comando**, sendo transmitidos no formato **JSON**.
