@@ -1,6 +1,6 @@
 ### Início
 
-Bem-vindo ao **Omni Messaging Hub**! Vamos apresentar os conceitos básicos da plataforma para lhe ajudar na construção do seu contato inteligente.
+Bem-vindo ao **Blip Messaging Hub**! Vamos apresentar os conceitos básicos da plataforma para lhe ajudar na construção do seu contato inteligente.
 
 Basicamente, seu contato pode ser criado de três formas:
 - Através de um modelo
