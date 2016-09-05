@@ -1,6 +1,6 @@
 ### Endereçamento
 
-Todos [envelopes](http://limeprotocol.org/#envelope) (mensagens, notificações e comandos) trocados entre **contatos** e **clientes** no **Omni Messaging Hub** possuem **endereços** do *originador* e *destinatário*.
+Todos [envelopes](http://limeprotocol.org/#envelope) (mensagens, notificações e comandos) trocados entre **contatos** e **clientes** no **Blip Messaging Hub** possuem **endereços** do *originador* e *destinatário*.
 
 O endereço é apresentado no formato `nome@domínio/instância`, sendo:
 - **nome**: Identificador do cliente no canal. O formato do nome muda de acordo com o canal, podendo ser o número de telefone em alguns canais (como SMS) ou identificadores internos de cada plataforma (como no Messenger). Este valor é obrigatório.
