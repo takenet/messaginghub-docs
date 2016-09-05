@@ -1,6 +1,6 @@
 ### Tipos de mensagem
 
-O **Omni Messaging Hub** define tipos de mensagem que são convertidos automaticamente para a melhor representação disponível em cada canal. Estes tipos são chamados **tipos canônicos**. Para mais detalhes, consulte a seção *Conceitos > Mensagens* desta documentação.
+O **Blip Messaging Hub** define tipos de mensagem que são convertidos automaticamente para a melhor representação disponível em cada canal. Estes tipos são chamados **tipos canônicos**. Para mais detalhes, consulte a seção *Conceitos > Mensagens* desta documentação.
 
 Confira o Chat Bot [Message Types](https://github.com/takenet/messaginghub-client-csharp/tree/master/src/Samples/MessageTypes) para ver como usar cada um dos tipos de mensagem  do Messaging Hub.
 
