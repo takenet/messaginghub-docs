@@ -16,6 +16,9 @@ Enviando um recibo de pagamento para um usuário do Facebook Messenger:
     "content": {
         "paidOn": "2016-08-26T19:03:37.024Z",
         "code": "215BF6B5-01EF-4F9A-A944-0BC05FD0F228",
+        "method": {
+                "name": "Cartão de crédito"
+        },
         "currency": "BRL",
         "total": 10.85,
         "items": [{
