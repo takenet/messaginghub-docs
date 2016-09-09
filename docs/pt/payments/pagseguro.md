@@ -105,6 +105,9 @@ E após receber o pagamento, o contato pode opcionalmente enviar um [recibo de p
         "paidOn": "2016-08-26T19:03:37.024Z",
         "code": "215BF6B5-01EF-4F9A-A944-0BC05FD0F228",
         "currency": "BRL",
+        "method": {
+                "name": "PagSeguro"
+        },
         "total": 10.85,
         "items": [{
                 "quantity": 1.0,
