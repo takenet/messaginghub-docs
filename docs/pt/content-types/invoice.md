@@ -16,12 +16,12 @@ Enviando uma solicitação de pagamento para um usuário do Facebook Messenger u
     "content": {
         "created":"2016-08-26T19:03:37.024Z",
         "dueTo":"2016-08-27T19:03:37.024Z",
-        "currency":"BLR",
+        "currency":"BRL",
         "total":10.85,
         "items":[
             {
                 "quantity":1.0,
-                "unit":0.01,
+                "unit":10.85,
                 "currency":"BRL",
                 "total":10.85,
                 "description":"Assinatura Qual é o Hit"
