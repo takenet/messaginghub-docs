@@ -16,10 +16,10 @@ Authorization: Key bWVzc2FnaW5naHViQHRha2VuZXQuY29tLmJyOjEyMzQ=
 Content-Length: 131
 
 {
-  "id": "7438EF90-2E9A-4B18-B84E-0C5C68536176",
-  "to": "user@0mn.io",
+  "id": "1",
+  "to": "551100001111@0mn.io",
   "type": "text/plain",
-  "content": "Hello World!"
+  "content": "Olá, como podemos te ajudar?"
 }
 ```
 #### Recebimento de mensagens e notificações
@@ -27,20 +27,20 @@ Content-Length: 131
 A URL de mensagens configurada receberá um `HTTP POST` com a mensagem no formato JSON, também no formato definido pelo [protocolo LIME](http://limeprotocol.org/#message), conforme o exemplo abaixo:
 ```
 {
-  "id": "52198482-0FD5-4572-8E04-649691ACAA9C",
-  "from": "user@0mn.io/4ac58r6e3",
+  "id": "99cf454e-f25d-4ebd-831f-e48a1c612cd4",
+  "from": "551100001111@0mn.io/4ac58r6e3",
   "to": "messaginghubapp@msging.net",
   "type": "text/plain",
-  "content": "Hello World!"
+  "content": "Ajuda"
 }
 ```
 Caso seja configurado a URL de notificações, será entregue nessa URL as notificações contendo os status das mensagens.
 
-Nesse caso também será realizado um `HTTP POST` com a informação no formato JSON, conforme formato definido pelo [protocolo LIME](http://limeprotocol.org/#notification). Veja um exemplo:
+Nesse caso também será realizado um `HTTP POST` com a informação no formato JSON, conforme formato definido pelo [protocolo LIME](http://limeprotocol.org/#notification). Veja um exemplo de uma notificação de mensagem recebida pelo destinatário:
 ```
 {
-  "id": "7438EF90-2E9A-4B18-B84E-0C5C68536176",
-  "from": "user@0mn.io/4ac58r6e3",
+  "id": "1",
+  "from": "551100001111@0mn.io/4ac58r6e3",
   "to": "messaginghubapp@msging.net/7a8fr233x",
   "event": "received"
 }
@@ -48,11 +48,9 @@ Nesse caso também será realizado um `HTTP POST` com a informação no formato 
 
 #### Envio de notificações
 
-Para que a situação das mensagens no histórico seja feita adequadamente e o correto funcionamento dos canais seja garantido, após cada mensagem recebida deve ser enviada uma notificação. 
+Para que o histórico de mensagens seja exibido de forma correta, é importante que os contatos enviem notificações de processamento das mensagens aos clientes. Para isso, é necessário enviar uma notificação com o evento `consumed`. E em caso de erros inesperados de processamento, deve ser enviada notificação com evento `failed`. A requisição também deve conter um cabeçalho de autorização (`Authorization`) com o tipo `Key`, conforme exibido nas configurações do contato.
 
-Se o bot processou corretamente a mensagem deve ser enviada notificação com evento `consumed`. Em caso de erros inesperados deve ser enviada notificação com evento `failed`. A requisição também deve conter um cabeçalho de autorização (`Authorization`) com o tipo `Key`, conforme exibido nas configurações do contato.
-
-Suponha que exista um contato com o identificador **messaginghubapp**, veja como seria o envio completo, incluindo os cabeçalhos e o corpo da requisição, para uma mensagem com Id **7438EF90-2E9A-4B18-B84E-0C5C68536176** processada corretamente:
+Por exemplo, suponha que exista um contato com o identificador **messaginghubapp**, veja como seria o envio completo da notificação, incluindo os cabeçalhos e o corpo da requisição para uma mensagem com id **99cf454e-f25d-4ebd-831f-e48a1c612cd4** processada corretamente:
 ```
 POST https://msging.net/notifications HTTP/1.1
 Content-Type: application/json
@@ -60,16 +58,63 @@ Authorization: Key bWVzc2FnaW5naHViQHRha2VuZXQuY29tLmJyOjEyMzQ=
 Content-Length: 131
 
 {
-  "id": "7438EF90-2E9A-4B18-B84E-0C5C68536176",
-  "from": "messaginghubapp@msging.net/7a8fr233x",
-  "to": "user@0mn.io/4ac58r6e3",
+  "id": "99cf454e-f25d-4ebd-831f-e48a1c612cd4",
+  "from": "551100001111@0mn.io/4ac58r6e3",
   "event": "consumed"
 }
+```
+
+#### Envio de comandos
+
+O envio de comandos é útil para o uso das extensões da plataforma, como **agendamento** ou **armazenamento**. Estes devem ser enviados na URL `/commands`, se forma similar a mensagens e notificações:
+
+```
+POST https://msging.net/commands HTTP/1.1
+Content-Type: application/json
+Authorization: Key bWVzc2FnaW5naHViQHRha2VuZXQuY29tLmJyOjEyMzQ=
+Content-Length: 393
+
+{  
+  "id": "2",
+  "to": "postmaster@scheduler.msging.net",
+  "method": "set",
+  "uri": "/schedules",
+  "type": "application/vnd.iris.schedule+json",
+  "resource": {  
+    "message": {  
+      "id": "ad19adf8-f5ec-4fff-8aeb-2e7ebe9f7a67",
+      "to": "destination@msging.net",
+      "type": "text/plain",
+      "content": "Teste agendamento"
+    },
+    "when": "2016-07-25T17:50:00.000Z"
+  }
+}
+```
+
+A resposta do comando é entregue imediatamente na resposta HTTP, como abaixo:
+
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Date: Mon, 12 Sep 2016 17:35:02 GMT
+Content-Length: 131
+
+{  
+  "id":"2",
+  "from":"postmaster@scheduler.msging.net/#irismsging1",
+  "to":"messaginghubapp@msging.net",
+  "method":"set",
+  "status":"success"
+}
+
 ```
 
 #### Configuração
 
 | Nome                | Descrição                                                                               |
 |---------------------|-----------------------------------------------------------------------------------------|
-| Url de envio de mensagem                | Endereço onde o MessagingHub irá postar as mensagens                 |
-| Url de envio de notificação     | Endereço onde o MessagingHub irá postar as notificações                       |
+| Url de envio de mensagem                | Endereço onde o MessagingHub irá postar as mensagens                |
+| Url de envio de notificação     | Endereço onde o MessagingHub irá postar as notificações                     |
