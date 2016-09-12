@@ -22,30 +22,6 @@ Content-Length: 131
   "content": "Olá, como podemos te ajudar?"
 }
 ```
-#### Recebimento de mensagens e notificações
-
-A URL de mensagens configurada receberá um `HTTP POST` com a mensagem no formato JSON, também no formato definido pelo [protocolo LIME](http://limeprotocol.org/#message), conforme o exemplo abaixo:
-```
-{
-  "id": "99cf454e-f25d-4ebd-831f-e48a1c612cd4",
-  "from": "551100001111@0mn.io/4ac58r6e3",
-  "to": "messaginghubapp@msging.net",
-  "type": "text/plain",
-  "content": "Ajuda"
-}
-```
-Caso seja configurado a URL de notificações, será entregue nessa URL as notificações contendo os status das mensagens.
-
-Nesse caso também será realizado um `HTTP POST` com a informação no formato JSON, conforme formato definido pelo [protocolo LIME](http://limeprotocol.org/#notification). Veja um exemplo de uma notificação de mensagem recebida pelo destinatário:
-```
-{
-  "id": "1",
-  "from": "551100001111@0mn.io/4ac58r6e3",
-  "to": "messaginghubapp@msging.net/7a8fr233x",
-  "event": "received"
-}
-```
-
 #### Envio de notificações
 
 Para que o histórico de mensagens seja exibido de forma correta, é importante que os contatos enviem notificações de processamento das mensagens aos clientes. Para isso, é necessário enviar uma notificação com o evento `consumed`. E em caso de erros inesperados de processamento, deve ser enviada notificação com evento `failed`. A requisição também deve conter um cabeçalho de autorização (`Authorization`) com o tipo `Key`, conforme exibido nas configurações do contato.
@@ -112,6 +88,37 @@ Content-Length: 131
   "status":"success"
 }
 
+```
+#### HTTP Status Code
+
+| Code                | Descrição                                                                               |
+|---------------------|-----------------------------------------------------------------------------------------|
+| 201                 | Envelope aceito pelo servidor               |
+| 400     | Indica algum problema com o formato ou campos do envelope enviado                     |
+| 401     | Indica algum problema ou falta do cabeçalho Authorization                     |
+
+#### Recebimento de mensagens e notificações
+
+A URL de mensagens configurada receberá um `HTTP POST` com a mensagem no formato JSON, também no formato definido pelo [protocolo LIME](http://limeprotocol.org/#message), conforme o exemplo abaixo:
+```
+{
+  "id": "99cf454e-f25d-4ebd-831f-e48a1c612cd4",
+  "from": "551100001111@0mn.io/4ac58r6e3",
+  "to": "messaginghubapp@msging.net",
+  "type": "text/plain",
+  "content": "Ajuda"
+}
+```
+Caso seja configurado a URL de notificações, será entregue nessa URL as notificações contendo os status das mensagens.
+
+Nesse caso também será realizado um `HTTP POST` com a informação no formato JSON, conforme formato definido pelo [protocolo LIME](http://limeprotocol.org/#notification). Veja um exemplo de uma notificação de mensagem recebida pelo destinatário:
+```
+{
+  "id": "1",
+  "from": "551100001111@0mn.io/4ac58r6e3",
+  "to": "messaginghubapp@msging.net/7a8fr233x",
+  "event": "received"
+}
 ```
 
 #### Configuração
