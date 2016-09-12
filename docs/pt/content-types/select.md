@@ -13,7 +13,7 @@ Para mais detalhes, consulte a especificação do [protocolo LIME](http://limepr
 Menu com opções numeradas
 ```json
 {
-    "id":"3",
+    "id":"311F87C0-F938-4FF3-991A-7C5AEF7771A5",
     "to":"1042221589186385@messenger.gw.msging.net",
     "type":"application/vnd.lime.select+json",
     "content":{
@@ -40,6 +40,49 @@ Menu com opções numeradas
     }
 }
 ```
+Quando o usuário seleciona uma opção, uma mensagem é retornada conforme a regra:
+
+- Se a opção contém o campo 'value' ele será retornado.
+- Caso contrário, será retornado o valor do campo 'order' se ele estiver preenchido.
+- Caso nenhum dos valores acima esteja preenchido será retornado o campo 'text'.
+
+Exemplo de retorno do menu acima:
+
+Ao selecionar a primeira opção:
+```json
+{
+    "id": "f8cf7a7a-be4f-473a-8516-60d55534b5a6",
+    "from": "1042221589186385@messenger.gw.msging.net",
+    "to": "blipcontact@msging.net",
+    "type": "text/plain",
+    "content": "1"
+}
+```
+Ao selecionar a segunda opção:
+```json
+{
+    "id": "76CB408D-39E6-4212-8AA1-7435B42A6993",
+    "from": "1042221589186385@messenger.gw.msging.net",
+    "to": "blipcontact@msging.net",
+    "type": "text/plain",
+    "content": "2"
+}
+```
+E por último ao selecionar a terceira opção:
+```json
+{
+    "id": "035E675C-D25B-437D-80BD-057AD6F70671",
+    "from": "1042221589186385@messenger.gw.msging.net",
+    "to": "blipcontact@msging.net",
+    "type": "application/json",
+    "content": {
+        "key1":"value1",
+        "key2":2
+    }
+}
+```
+
+O tipo('type') da mensagem de retorno será sempre o mesmo da opção escolhida. Quando não for definido um valor para o campo 'value' o tipo será 'text/plain'.
 
 ### Mapeamento nos canais
 
