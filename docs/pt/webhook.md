@@ -91,7 +91,7 @@ Content-Length: 131
 ```
 #### Códigos de retorno para envio
 
-| Code                | Descrição                                                                               |
+| Código              | Descrição                                                                               |
 |---------------------|-----------------------------------------------------------------------------------------|
 | 201                 | Envelope aceito pelo servidor               |
 | 400     | Indica algum problema com o formato ou campos do envelope enviado                     |
