@@ -93,9 +93,9 @@ Content-Length: 131
 
 | Código              | Descrição                                                                               |
 |---------------------|-----------------------------------------------------------------------------------------|
-| 201                 | Envelope aceito pelo servidor               |
-| 400     | Indica algum problema com o formato ou campos do envelope enviado                     |
-| 401     | Indica algum problema ou falta do cabeçalho Authorization                     |
+| 202 (Accepted)                 | Envelope aceito pelo servidor               |
+| 400 (Bad Request)    | Indica algum problema com o formato ou campos do envelope enviado                     |
+| 401 (Unauthorized)    | Indica algum problema ou falta do cabeçalho Authorization                     |
 
 #### Recebimento de mensagens e notificações
 
