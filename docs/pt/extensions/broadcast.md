@@ -1,7 +1,7 @@
 ### Envio em massa
 | Endereço                        | URI base     | Permissões requeridas   | C#                     |
 |---------------------------------|--------------|-------------------------|------------------------|
-| postmaster@broadcast.msging.net | /lists       | Envio de mensagens      | [BroadcastExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Broadcast/BroadcastExtension.cs) |
+| postmaster@broadcast.msging.net | /lists       | Envio de mensagens       | [BroadcastExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Broadcast/BroadcastExtension.cs) |
 
 A extensão **envio em massa** permite a criação e gestão de listas de distribuição e seus membros para o envio de mensagem em massa. Desta forma, um contato que precisa enviar uma mesma mensagem para mais de um destinatário pode criar uma lista com os endereços dos destinatários e realizar o envio apenas uma vez, para o endereço da lista.
 
@@ -115,31 +115,7 @@ Notificações enviadas pelos membros da lista à lista de distribuição e enca
 ```
 
 #### Delegação
-Para dar as permissões requeridas pela extensão, é necessário enviar um comando de delegação:
-```json
-{  
-  "id": "5",
-  "method": "set",
-  "type": "application/vnd.lime.delegation+json",
-  "uri": "/delegations",
-  "resource": {  
-    "target": "postmaster@broadcast.msging.net",
-    "envelopeTypes": [  
-      "message"
-    ]
-  }
-}
-```
-Resposta em caso de sucesso:
-```json
-{
-  "id": "5",
-  "from": "postmaster@msging.net/#irismsging1",
-  "to": "contact@msging.net/default",
-  "method": "set",
-  "status": "success"
-}
-```
+Esta extensão já possui permissões de envio em nome dos contatos, portanto não é necessário a realização de delegação.
 
 #### Disponibilidade
 
