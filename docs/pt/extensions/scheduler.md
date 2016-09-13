@@ -1,7 +1,7 @@
 ### Agendamento
 | Endereço                        | URI base     | Permissões requeridas   | C#               |
 |---------------------------------|--------------|-------------------------|------------------|
-| postmaster@scheduler.msging.net | /schedules   | Envio de mensagens      | [SchedulerExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Scheduler/SchedulerExtension.cs) |
+| postmaster@scheduler.msging.net | /schedules   | Envio de mensagens (automática) | [SchedulerExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Scheduler/SchedulerExtension.cs) |
 
 A extensão **agendamento** permite o agendamento do envio de mensagens em nome dos contatos para uma data e horário específico. Qualquer tipo de mensagem pode ser agendada, inclusive mensagens de **envio em massa** (para uma lista de distribuição). O horário do agendamento deve ser realizado no fuso GMT 0.
 
@@ -39,29 +39,4 @@ Resposta em caso de sucesso:
 ```
 
 #### Delegação
-Para dar as permissões requeridas pela extensão, é necessário enviar um comando de delegação:
-
-```json
-{  
-  "id": "2",
-  "method": "set",
-  "uri": "/delegations",
-  "type": "application/vnd.lime.delegation+json",
-  "resource": {  
-    "target": "postmaster@scheduler.msging.net",
-    "envelopeTypes": [  
-      "message"
-    ]
-  }
-}
-```
-Resposta em caso de sucesso:
-```json
-{
-  "from": "postmaster@msging.net/#irismsging1",
-  "to": "contact@msging.net/default",
-  "method": "set",
-  "status": "success",
-  "id": "2"
-}
-```
+Esta extensão já possui permissões de envio em nome dos contatos, portanto não é necessário a realização de delegação.
