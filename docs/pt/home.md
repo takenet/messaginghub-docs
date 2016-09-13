@@ -7,5 +7,5 @@ Basicamente, seu contato pode ser criado de três formas:
 - Através de webhooks
 - Através de um SDK
 
-No menu lateral você encontra o passo a passo para cada situação. Caso você tenha alguma dúvida, entre em contato conosco através do e-mail dev.messaginghub.ti@takenet.com.br que iremos lhe ajudar.
+No menu lateral você encontra o passo a passo para cada situação. Caso você tenha alguma dúvida, entre em contato conosco através do [Messenger}(https://www.facebook.com/blipajuda) ou [Telegram](https://telegram.me/blip_ajuda_bot) que iremos lhe ajudar.
 
