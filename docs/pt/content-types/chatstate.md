@@ -30,10 +30,10 @@ Enviando estado *digitando* para usuário do Telegram:
 
 ### Mapeamento nos canais
 
-| Canal              | Estados suportados      | 
-|--------------------|-------------------------|
-| Omni               | Todos |
-| Messenger          | Nenhum |
-| SMS                | Nenhum |
-| Skype              | Nenhum |
-| Telegram           | *composing* (somente envio) |
+| Canal              | Tipo      | Estados suportados      | 
+|--------------------|-----------|-------------------------|
+| Omni               | Estado da Conversa | Todos |
+| Messenger          | [Sender Actions](https://developers.facebook.com/docs/messenger-platform/send-api-reference/sender-actions) | *composing* e *paused* (somente envio) |
+| SMS                | - | Nenhum |
+| Skype              | - | Nenhum |
+| Telegram           | [SendChatAction](https://core.telegram.org/bots/api#sendchataction) | *composing* (somente envio) |
