@@ -9,6 +9,6 @@ O endereço é apresentado no formato `nome@domínio/instância`, sendo:
 
 Normalmente, a interação de um contato com o cliente começa após o recebimento de uma mensagem, que por sua vez possui um endereço de origem. Neste caso, basta o contato responder a este endereço - de maneira inalterada - para que seja garantida a entrega da mensagem.
 
-Os endereços podem ter ciclo de vida diferentes dependendo dos canais, podendo ser **transientes** - válidos apenas por um certo tempo (como no *Telegram*); **por escopo** - válidos em certas condições (como no *Messenger*, onde o endereço é válido apenas para um determinado originador); e **persistentes**, sempre válidos (no *SMS* e *Omni*). Os contatos devem levar estas características em consideração ao construir as interações.
+Os endereços podem ter ciclo de vida diferentes dependendo dos canais, podendo ser **por escopo** - válidos em certas condições (como no *Messenger*, onde o endereço é válido apenas para um determinado originador) e **persistentes**, sempre válidos (no *SMS* e *Omni*). Os contatos devem levar estas características em consideração ao construir as interações.
 
 Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/#concepts).
