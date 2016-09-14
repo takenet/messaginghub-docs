@@ -32,7 +32,7 @@ Enviando estado *digitando* para usuário do Telegram:
 
 | Canal              | Estados suportados      | 
 |--------------------|-------------------------|
-| Omni               | Completo |
+| Omni               | Todos |
 | Messenger          | Nenhum |
 | SMS                | Nenhum |
 | Skype              | Nenhum |
