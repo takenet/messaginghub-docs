@@ -13,13 +13,13 @@ Permite o envio e recebimento de informação sobre o estado atual da conversa. 
 | *deleting*    | Apagando mensagem (que estava sendo preparada) |
 | *gone*        | Saiu/terminou a conversa  |
 
+De forma geral não há necessidade de receber notificações de entrega de mensagens com este conteúdo, portanto é recomendado omitir o  Id nestas mensagens.
 Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/content-types.html#chatstate).
 
 ####Exemplo
 Enviando estado *digitando* para usuário do Telegram:
 ```json
 {
-    "id":"311F87C0-F938-4FF3-991A-7C5AEF7771A5",
     "to":"104222@telegram.gw.msging.net",
     "type":"application/vnd.lime.chatstate+json",
     "content": {
