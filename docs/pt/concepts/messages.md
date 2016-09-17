@@ -3,7 +3,7 @@
 Uma **mensagem** permite a troca de conteúdos entre clientes e contatos.
 
 Cada mensagem possui:
-- **id**: Identificador único da mensagem. O *id* é utilizado como referência para notificações, portanto **não reutilize o mesmo *id* da mensagem**. Este valor pode ser omitido caso o originador não tenha interesse em notificações, mesmo em caso de falhas.
+- **id**: Identificador único da mensagem. O *id* é utilizado como referência para notificações, portanto **evite reutilizar o mesmo *id***. Uma forma de garantir a unicidade é utilizar um [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) a cada mensagem. Este valor pode ser omitido caso o originador não tenha interesse em notificações, mesmo em caso de falhas.
 - **from**: Endereço do originador da mensagem. Este valor pode ser omitido nas mensagens, sendo que por padrão é considerado o endereço do contato conectado.
 - **to**: Endereço do destinatário da mensagem. Este valor deve estar presente.
 - **type**: Declaração do tipo do conteúdo da mensagem, no formato MIME. O mesmo pode ser do tipo **plain** (por exemplo, `text/plain`) ou **JSON** (por exemplo, `application/vnd.lime.media-link+json`). Consulte a seção **Tipos de conteúdo** para maiores informações.
