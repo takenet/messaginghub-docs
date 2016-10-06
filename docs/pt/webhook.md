@@ -22,6 +22,7 @@ Content-Length: 131
   "content": "Olá, como podemos te ajudar?"
 }
 ```
+Para mais informações sobre mensagens consulte a [documentação de **Mensagens**](.#/docs/concepts/messages) ou a [documentação do tipos de conteúdo suportados](.#/docs/content-types).
 
 ##### Recebimento notificações
 Caso seja configurada a URL de notificações do contato, serão entregues nessa URL as notificações contendo os _status_ das mensagens. Observe que as notificações são enviadas pelo *clientes*, informando se receberam ou não uma mensagem enviada pelo *contato*.
@@ -35,6 +36,7 @@ Nesse caso também será realizado um `HTTP POST` com a informação no formato 
   "event": "received"
 }
 ```
+Para mais informações e exemplos de notificações consulte a [documentação de **Notificações**](.#/docs/concepts/notifications)
 
 ---
 
