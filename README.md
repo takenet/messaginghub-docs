@@ -1,14 +1,14 @@
-# Messaging Hub Documentation
+# Blip Messaging Hub Documentation
 
-This repository hosts the documentation for the [Messaging Hub](http://messaginghub.io)
+This repository hosts the documentation for the [Blip Messaging Hub](https://blip.ai/)
 
 ## Getting Started
 
-To get started with the Messaging Hub, see the [Getting Started](http://messaginghub.io/docs/root/getting-started) page.
+To get started with the Messaging Hub, see the [Getting Started](https://blip.ai/portal/#/docs/home) page.
 
 ## Documentation 
 
-The full documentation can be found at [http://takenet.github.io/messaginghub-docs](http://messaginghub.io/docs/root/introduction).
+The full documentation can be found at [https://blip.ai/portal/#/docs/home](https://blip.ai/portal/#/docs/home).
 
 ## License
 
