@@ -36,10 +36,10 @@ Resposta em caso de sucesso:
 2 - Recuperando eventos por dia:
 
 Possíveis filtros via querystring:
-|QueryString        |Observação                                   |
-|---|---| 
-|take              |Quantidade de items retornados               |
-|filterDate         |Buscar eventos anteriores a essa data   |
+|QueryString        |Observação                                |
+|-------------------|------------------------------------------| 
+|take               |Quantidade de items retornados            |
+|filterDate         |Buscar eventos anteriores a essa data     |
 
 ```json
 {  
