@@ -36,6 +36,7 @@ Resposta em caso de sucesso:
 2 - Recuperando eventos por dia:
 
 Possíveis filtros via querystring:
+
 | QueryString        | Observação                                |
 |--------------------|-------------------------------------------| 
 | take               | Quantidade de items retornados            |
