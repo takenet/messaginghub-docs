@@ -1,7 +1,7 @@
 ### Controlador de eventos
 | Endereço              | URI base     | Permissões requeridas   | C#                 |
 |-----------------------|--------------|-------------------------|--------------------|
-| postmaster@msging.net (endereço padrão, não é necessário informar) | /event-track | Nenhuma | [EventTrackerExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/EventTracker/EventTrackerExtension.cs) |
+| postmaster@msging.net (endereço padrão, não é necessário informar) | /event-track | Nenhuma | [EventTrackExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/EventTrack/EventTrackExtension.cs) |
 
 A extensão **controlador de eventos** permite o contato registrar eventos no **Blip Messaging Hub** permitindo assim extrair relatorios. 
 
