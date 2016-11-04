@@ -25,6 +25,11 @@ namespace ResumeBot.Services
 
         private const int MaxRetries = 3;
 
+        public async Task<HttpResponseMessage> SendMessageAsync(object jsonMessage, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return await SendAsync(Uri, HttpMethod.Post, jsonMessage, cancellationToken);
+        }
+
         public async Task<HttpResponseMessage> SendMessageAsync(string jsonMessage, CancellationToken cancellationToken = default(CancellationToken))
         {
             return await SendAsync(Uri, HttpMethod.Post, jsonMessage, cancellationToken);
