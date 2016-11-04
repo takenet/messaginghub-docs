@@ -16,7 +16,7 @@ namespace ResumeBot.Controllers
 
         public MessagesController()
         {
-            webClientService = new WebClientService(new Uri("https://msging.net/messages"), "add-your-key-here");
+            webClientService = new WebClientService(new Uri("https://msging.net/messages"), "<your-api-key-here>");
         }
         
         // POST api/messages
@@ -59,14 +59,20 @@ namespace ResumeBot.Controllers
                     break;
             }
 
-            var replyMessage = "{'id': '"+ Guid.NewGuid() + "', 'to': '" + from + "', 'type': 'text/plain', 'content': '" + messageContent + "'}";
+            var replyMessage = new
+            {
+                id = Guid.NewGuid(),
+                to = from,
+                type = "text/plain",
+                content = messageContent
+            };
 
             await ReplyMessageAsync(replyMessage);
 
             return Ok();
         }
 
-        private async Task ReplyMessageAsync(string message)
+        private async Task ReplyMessageAsync(object message)
         {
             var response = await webClientService.SendMessageAsync(message);
         }
