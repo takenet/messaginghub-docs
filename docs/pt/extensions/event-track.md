@@ -13,7 +13,7 @@ Caso seja registrado o mesmo evento/ação uma segunda vez no mesmo dia será so
 {  
   "id": "9494447a-2581-4597-be6a-a5dff33af156",
   "method": "set",
-  "type": "application/vnd.lime.event-tracker+json",
+  "type": "application/vnd.iris.eventTrack+json",
   "uri": "/event-track",
   "resource": {  
     "category": "Boleto",
