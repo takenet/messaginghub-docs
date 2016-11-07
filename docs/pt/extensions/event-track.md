@@ -16,8 +16,8 @@ Caso seja registrado o mesmo evento/ação uma segunda vez no mesmo dia sera som
   "type": "application/vnd.lime.event-tracker+json",
   "uri": "/event-track",
   "resource": {  
-    "event": "SeriesBreakingBad",
-    "action": "Play"
+    "category": "Boleto",
+    "action": "Vencido"
   }
 }
 ```
@@ -33,7 +33,33 @@ Resposta em caso de sucesso:
 ```
 
 
-2 - Recuperando eventos por dia:
+2 - Recuperando lista de eventos:
+```json
+{  
+  "id": "1",
+  "method": "get",
+  "uri": "/event-track"
+}
+```
+Resposta em caso de sucesso:
+```json
+{
+  "method": "get",
+  "status": "success",
+  "id": "1",
+  "from": "postmaster@msging.net/#irismsging1",
+  "to": "contact@msging.net/default",
+  "resource": [{
+      "category": "Boleto"
+  },
+  {
+      "category": "Cartão"
+  }]
+}
+```
+
+
+3 - Recuperando contadores do evento:
 
 Possíveis filtros via querystring:
 
@@ -45,7 +71,7 @@ Possíveis filtros via querystring:
 {  
   "id": "1",
   "method": "get",
-  "uri": "/event-track"
+  "uri": "/event-track/boleto"
 }
 ```
 
@@ -58,14 +84,14 @@ Resposta em caso de sucesso:
   "from": "postmaster@msging.net/#irismsging1",
   "to": "contact@msging.net/default",
   "resource": [{
-      "event": "SeriesBreakingBad",
-      "action": "Play",
+      "category": "Boleto",
+      "action": "Vencido",
       "storageDate": "2016-01-01",
       "count": 10
   },
   {
-      "event": "SeriesBreakingBad",
-      "action": "Play",
+      "category": "Boleto",
+      "action": "Vencido",
       "storageDate": "2016-01-02",
       "count": 20
   }]
