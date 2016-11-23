@@ -16,4 +16,4 @@ Será criado um projeto vazio, apenas com o arquivo *Web.config*. Daí, basta ex
 Install-Package Takenet.MessagingHub.Client.WebTemplate
 ```
 
-No mais, basta incluir seus arquivos e configurar o `application.json` criado como um projeto qualquer. Para testar localmente, basta iniciar o *Debug* do Visual Studio. E para publicar, basta publicá-lo no IIS como uma aplicação web qualquer, lembrando de configurar o *application pool* para se manter ativo. Pode ser necessário na primeira vez ao publicar no servidor acessar a URL da aplicação web para que a aplicação seja inicializada.
+No mais, basta incluir seus arquivos e configurar o `application.json` criado como um projeto qualquer. Para testar localmente, utilize o *Debug* do Visual Studio. E para publicar, basta publicá-lo no IIS como uma aplicação web qualquer, lembrando de configurar o *application pool* para se manter ativo. Pode ser necessário na primeira vez ao publicar no servidor acessar a URL da aplicação web para que a aplicação seja inicializada.
