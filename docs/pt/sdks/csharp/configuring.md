@@ -40,8 +40,11 @@ Todas as propriedades que podem ser definidas através deste arquivo:
 | messageReceivers | Array de **message receivers**, que são tipos especializados para recebimento de mensagens. | *Veja abaixo* | null |
 | notificationReceivers | Array de **notification receivers**, que são tipos especializados para recebimento de notificações. | *Veja abaixo* | null |
 | throughput | Limite de envelopes processados por segundo. | 20 | 10 |
-| maxConnectionRetries | Limite de tentativas para reconexão com o host 1-5. | 20 | 10 |
+| maxConnectionRetries | Limite de tentativas para reconexão com o host (De 1-5). | 3 | 5 |
 | routingRule | Regra para roteamento de mensagem | Instance | Identity |
+| disableNotify | Desabilita a geração automatica de notificações de recebimento e consumidas geradas pelo bot | false | false |
+| channelCount | Quantidade de conexões que o bot vai criar para se connectar ao servidor | 1 | 5 | 
+| receiptEvents | Define os tipos de eventos que o servidor vai encaminhar para o bot | Event.Accepted, Event.Dispatched, Event.Received, Event.Consumed, Event.Failed | Event.Received |
 
 Cada **message receiver** pode possuir as seguintes propriedades:
 
