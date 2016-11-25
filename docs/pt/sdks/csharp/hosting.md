@@ -17,3 +17,22 @@ Install-Package Takenet.MessagingHub.Client.WebTemplate
 ```
 
 No mais, basta incluir seus arquivos e configurar o `application.json` criado como um projeto qualquer. Para testar localmente, utilize o *Debug* do Visual Studio. E para publicar, basta publicá-lo no IIS como uma aplicação web qualquer, lembrando de configurar o *application pool* para se manter ativo. Pode ser necessário na primeira vez ao publicar no servidor acessar a URL da aplicação web para que a aplicação seja inicializada.
+
+#### Hospedando como um serviço Windows
+
+É posssível instalar o utilitário `mmh.exe`como um serviço do Windows, o que permite que o mesmo continue sua execução em um servidor sem a necessidade de uma sessão de usuário conectada a máquina.
+
+Para isso, basta executar o seguinte comando:
+```
+mhh.exe install -serviceName NomeDoServico
+```
+
+O serviço criado pode ser iniciado através do utilitário `services.msc` do Windows ou através do comando `sc`, como abaixo:
+```
+sc start NomeDoServico
+```
+
+Para remover o serviço, utilize o comando abaixo:
+```
+mhh.exe uninstall -serviceName NomeDoServico
+```
