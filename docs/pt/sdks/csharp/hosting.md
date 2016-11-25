@@ -20,7 +20,7 @@ No mais, basta incluir seus arquivos e configurar o `application.json` criado co
 
 #### Hospedando como um serviço Windows
 
-É posssível instalar o utilitário `mmh.exe`como um serviço do Windows, o que permite que o mesmo continue sua execução em um servidor sem a necessidade de uma sessão de usuário conectada a máquina.
+É posssível instalar o utilitário `mmh.exe` - instalado através do pacote `Takenet.MessagingHub.Client.Host` - como um serviço do Windows, o que permite que o mesmo continue sua execução em um servidor sem a necessidade de uma sessão de usuário conectada a máquina.
 
 Para isso, basta executar o seguinte comando:
 ```
