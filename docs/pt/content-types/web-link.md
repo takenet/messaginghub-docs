@@ -33,7 +33,7 @@ Para mais detalhes, consulte a especificação do [protocolo LIME](http://limepr
 | Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|
 | Telegram           | [Message](https://core.telegram.org/bots/api#message)|
 
-Em alguns canais, é possível utilizar *URI schemes* especiais para a criação de links com comportamentos específicos. 
+Em alguns canais, é possível utilizar [URI schemes](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) especiais para a criação de links com comportamentos específicos. 
 
 | URI Scheme | Descrição                                                           | Canal     | Exemplo              |
 |------------|---------------------------------------------------------------------|-----------|----------------------|
