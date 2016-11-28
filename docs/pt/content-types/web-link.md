@@ -37,6 +37,6 @@ Em alguns canais, é possível utilizar [URI schemes](https://en.wikipedia.org/w
 
 | URI Scheme | Descrição                                                           | Canal     | Exemplo              |
 |------------|---------------------------------------------------------------------|-----------|----------------------|
-| tel        | Define um link para a ligação telefonica para o número especificado. Válido quando utilizado em um [menu](https://blip.ai/portal/#/docs/content-types/select). | Messenger | `tel:+5531999990000` |
-| share      | Define um link para compartilhamento da mensagem atual. Válido quando utilizado em um [menu](https://blip.ai/portal/#/docs/content-types/select). | Messenger | `share:`             |
+| `tel`      | Define um link para a ligação telefonica para o número especificado. Válido quando utilizado em um [menu](https://blip.ai/portal/#/docs/content-types/select). | Messenger | `tel:+5531999990000` |
+| `share`    | Define um link para compartilhamento da mensagem atual. Válido quando utilizado em um [menu](https://blip.ai/portal/#/docs/content-types/select). | Messenger | `share:`             |
 
