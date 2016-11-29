@@ -6,7 +6,9 @@ Todas as mensagens respondidas a partir do aplicativo serão entregues para os u
 Obviamente, é necessário que a pessoa que receberá e responderá as mensagens, que será chamada de atendente daqui em diante, instale o aplicativo e esteja online.
 
 Para encaminhar uma mensagem recebida para o atendente, utilize o método de extensão `ForwardMessageAsync`, informando o número celular do atendente (configurado ao instalar o aplicativo Blip Mensagens).
-Observe que o número deve ser informado com o código internacional (55) e DDD. Veja abaixo um exemplo de utilização:
+Observe que o número deve ser informado com o código internacional (55) e DDD. 
+
+Veja abaixo um exemplo de utilização:
 
 ```csharp
 public class PlainTextMessageReceiver : IMessageReceiver
@@ -29,7 +31,9 @@ public class PlainTextMessageReceiver : IMessageReceiver
 ```
 
 As mensagens respondidas pelo atendente são entregues novamente para seu contato, que **DEVE** repassar para o usuário. Para tanto é necessário registrar um  
-**MessageReceiver** adicional com filtro para o *mediaType* `application/vnd.omni.attendance+json`. Veja abaixo um exemplo:
+**MessageReceiver** adicional com filtro para o *mediaType* `application/vnd.omni.attendance+json`. 
+
+Veja abaixo um exemplo:
 
 ```json
 {
@@ -45,7 +49,9 @@ As mensagens respondidas pelo atendente são entregues novamente para seu contat
 A classe utilizada no exemplo chama-se `ForwardReplyMessageReceiver`, e deve ser adicionada ao projeto. 
 
 Para repassar a mensagem para o usuário, utilize o método de extensão `ForwardReplyAsync`. É interessante verificar também se a mensagem veio realmente do atendente, como medida de segurança, o que pode ser feito com o método
-de extensão `FromForwarder`. Abaixo está um exemplo de todo o código necessário na implementação desta classe.
+de extensão `FromForwarder`. 
+
+Abaixo está um exemplo de todo o código necessário na implementação desta classe.
 
 ```csharp
 public class ForwardReplyMessageReceiver : IMessageReceiver
