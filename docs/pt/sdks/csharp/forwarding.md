@@ -29,7 +29,7 @@ public class PlainTextMessageReceiver : IMessageReceiver
 ```
 
 As mensagens respondidas pelo atendente são entregues novamente para seu contato, que **DEVE** repassar para o usuário. Para tanto é necessário registrar um  
-**MessageReceiver** com filtro para o *mediaType* `application/vnd.omni.attendance+json`. Veja abaixo um exemplo:
+**MessageReceiver** adicional com filtro para o *mediaType* `application/vnd.omni.attendance+json`. Veja abaixo um exemplo:
 
 ```json
 {
@@ -37,8 +37,7 @@ As mensagens respondidas pelo atendente são entregues novamente para seu contat
     {
       "type": "ForwardReplyMessageReceiver",
       "mediaType": "application/vnd.omni.attendance+json"
-    },
-    // Demais MessageReceivers
+    }
   ]
 }
 ```
