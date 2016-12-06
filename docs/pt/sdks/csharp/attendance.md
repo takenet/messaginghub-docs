@@ -6,7 +6,8 @@ Todas as mensagens respondidas a partir do aplicativo serão entregues para os u
 Obviamente, é necessário que a pessoa que receberá e responderá as mensagens, que será chamada de atendente daqui em diante, instale o aplicativo e esteja online.
 
 Para encaminhar uma mensagem recebida para o atendente, utilize a extensão [AttendanceExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/AttendanceForwarding/IAttendanceExtension.cs).
-Basta fazer uma chamada ao método `ForwardMessageToAttendantAsync` informando o número celular do atendente (configurado ao instalar o aplicativo Blip Mensagens).
+
+Basta fazer uma chamada ao método `ForwardMessageToAttendantAsync` informando o número celular do atendente (configurado ao instalar o aplicativo BLiP Mensagens).
 Observe que o número deve ser informado com o código internacional (55) e DDD. 
 
 Veja abaixo um exemplo de utilização:
@@ -31,8 +32,9 @@ public class PlainTextMessageReceiver : IMessageReceiver
 }
 ```
 
-As mensagens respondidas pelo atendente são entregues novamente para seu contato, que **DEVE** repassar para o usuário. Para tanto é necessário registrar 
-no `application.json` um `MessageReceiver` adicional, já implementado pelo próprio SDK. 
+É **obrigatório** registrar no `application.json` um `MessageReceiver` adicional, já implementado pelo próprio SDK.
+Este `MessageReceiver` é responsável por repassar automaticamente as mensagens respondidas pelo atendente (que são entregues novamente para seu contato)
+ para o usuário. 
 
 Veja abaixo como deve ficar:
 
@@ -50,5 +52,5 @@ Veja abaixo como deve ficar:
 }
 ```
 
-Observe que é necessário definir a propriedade `settings` deste `MessageReceiver` com a chave **attendantIdentity**, com o mesmo número de celular utilizado no 
+Observe que é necessário definir a chave **attendantIdentity**, dentro da propriedade `settings` deste `MessageReceiver`, com o mesmo número de celular utilizado no 
 encaminhamento para o atendente. 
