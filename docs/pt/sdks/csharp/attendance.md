@@ -1,13 +1,13 @@
-### Atendimento Humano
+### Transferência de Atendimento 
 
 Em situações em que uma intervenção humana for necessária, como por exemplo em serviços de atendimento ao usuário, existe a possibilidade de utilizar
-o applicativo [BLiP Mensagens](https://play.google.com/store/apps/details?id=net.take.omni) para receber e responder mensagens de usuários interagindo com a aplicação.
-Todas as mensagens respondidas a partir do aplicativo serão entregues para os usuários como se tivessem sido geradas pelo seu contato, de forma transparente. 
-Obviamente, é necessário que a pessoa que receberá e responderá as mensagens, que será chamada de atendente daqui em diante, instale o aplicativo e esteja online.
+o aplicativo [BLiP Mensagens](https://play.google.com/store/apps/details?id=net.take.omni) ou o [BLiP Web](https://web.blip.ai/) para receber e responder mensagens de usuários interagindo com seu contato.
+Todas as mensagens respondidas a partir do aplicativo ou website serão entregues para os usuários como se tivessem sido geradas pelo seu contato, de forma transparente. 
+Obviamente, é necessário que a pessoa que receberá e responderá as mensagens, que será chamada de atendente daqui em diante, instale o aplicativo (se optar por usar o BLiP Mensagens) e esteja online (tanto aplicativo quanto website).
 
 Para encaminhar uma mensagem recebida para o atendente, utilize a extensão [AttendanceExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/AttendanceForwarding/IAttendanceExtension.cs).
 
-Basta fazer uma chamada ao método `ForwardMessageToAttendantAsync` informando o número celular do atendente (configurado ao instalar o aplicativo BLiP Mensagens).
+Basta fazer uma chamada ao método `ForwardMessageToAttendantAsync` informando o número de celular do atendente (configurado ao instalar o aplicativo BLiP Mensagens, ou na tela de cadastro do BLiP Web).
 Observe que o número deve ser informado com o código internacional (55) e DDD. 
 
 Veja abaixo um exemplo de utilização:
