@@ -41,7 +41,7 @@ Resposta em caso de sucesso:
 }
 ```
 
-1 - Consultando um agendamento já realizado (supondo que foi utilizado o exemplo anterior):
+2 - Consultando um agendamento já realizado (supondo que foi utilizado o exemplo anterior):
 
 ```json
 {  
@@ -76,7 +76,7 @@ Resposta em caso de sucesso:
   }
 }
 ```
-
+Os `status` possíveis são `scheduled`, `executed` e `canceled`. 
 
 #### Delegação
 Esta extensão já possui permissões de envio em nome dos contatos, portanto não é necessário a realização de delegação.
