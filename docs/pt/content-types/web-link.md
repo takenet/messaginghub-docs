@@ -16,7 +16,8 @@ Enviando uma mensagem para um destinatário do Omni:
     "type": "application/vnd.lime.web-link+json",
     "content": { 
         "uri": "http://limeprotocol.org/content-types.html#web-link",
-        "text": "Segue documentação do web-link"
+        "target": "self",
+        "text": "Segue documentação do web-link"        
     }
 }
 ```
