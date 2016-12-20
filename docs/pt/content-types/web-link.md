@@ -42,6 +42,6 @@ Em alguns canais, é possível utilizar [URI schemes](https://en.wikipedia.org/w
 | Messenger | `share`    | Define um link para compartilhamento da mensagem atual. Mapeado em um [Share button](https://developers.facebook.com/docs/messenger-platform/send-api-reference/share-button).  | `share:`             |
 
 - No Messenger, estas **URI schemes** são válidas somente se utilizadas junto a um [menu multimídia](https://blip.ai/portal/#/docs/content-types/document-select).
-- Para habilitar o uso de [extensões do Messenger](https://developers.facebook.com/docs/messenger-platform/messenger-extension) na página do link, basta incluir na *query string* o parâmetro `messengerExtensions` com valor `true`. No exemplo acima, o link ficaria: `http://limeprotocol.org/content-types.html#web-link?messengerExtensions=true`
+- Para habilitar o uso de [extensões do Messenger](https://developers.facebook.com/docs/messenger-platform/messenger-extension) na página do link, basta incluir na *query string* da URL o parâmetro `messengerExtensions` com valor `true`. No exemplo acima, o valor de `uri` ficaria da seguinte forma: `http://limeprotocol.org/content-types.html#web-link?messengerExtensions=true`
 
 
