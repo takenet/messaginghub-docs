@@ -22,9 +22,7 @@ Enviando uma mensagem para um destinatário do Omni:
 }
 ```
 
-É possível definir 
-
-Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/content-types.html#web-link).
+Em alguns canais, é possível definir como a página deve ser exibida - na mesma janela, uma nova ou com layouts especiais - através da propriedade `target`. Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/content-types.html#web-link).
 
 #### Mapeamento nos canais
 
