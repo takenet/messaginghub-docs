@@ -29,7 +29,7 @@ Para mais detalhes, consulte a especificação do [protocolo LIME](http://limepr
 | Canal              | Tipo                    | 
 |--------------------|-------------------------|
 | Omni               | Link web                |
-| Messenger          | [Generic template](https://developers.facebook.com/docs/messenger-platform/send-api-reference/generic-template)|
+| Messenger          | [Generic template](https://developers.facebook.com/docs/messenger-platform/send-api-reference/generic-template) ou [Button](https://developers.facebook.com/docs/messenger-platform/send-api-reference/buttons) (se utilizado junto a um [menu multimídia](https://blip.ai/portal/#/docs/content-types/document-select). |
 | SMS                | Texto com link          |
 | Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|
 | Telegram           | [Message](https://core.telegram.org/bots/api#message)|
