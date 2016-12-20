@@ -22,6 +22,8 @@ Enviando uma mensagem para um destinatário do Omni:
 }
 ```
 
+É possível definir 
+
 Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/content-types.html#web-link).
 
 #### Mapeamento nos canais
@@ -41,5 +43,7 @@ Em alguns canais, é possível utilizar [URI schemes](https://en.wikipedia.org/w
 | Messenger | `tel`      | Define um link para a ligação telefonica para o número especificado. Mapeado em um [Call button](https://developers.facebook.com/docs/messenger-platform/send-api-reference/call-button). | `tel:+5531999990000` |
 | Messenger | `share`    | Define um link para compartilhamento da mensagem atual. Mapeado em um [Call button](https://developers.facebook.com/docs/messenger-platform/send-api-reference/share-button).  | `share:`             |
 
-Observação: No Messenger, são válidos somente se utilizado junto a um [menu multimídia](https://blip.ai/portal/#/docs/content-types/document-select).
+- No Messenger, estas **URI schemes** são válidas somente se utilizadas junto a um [menu multimídia](https://blip.ai/portal/#/docs/content-types/document-select).
+- Para habilitar o uso de [extensões do Messenger](https://developers.facebook.com/docs/messenger-platform/messenger-extension) na página do link, basta incluir na *query string* o parâmetro `messengerExtensions` com valor `true`. No exemplo acima, o link ficaria: `http://limeprotocol.org/content-types.html#web-link?messengerExtensions=true`
+
 
