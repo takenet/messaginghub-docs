@@ -1,6 +1,6 @@
 ### Atendimento manual
 
-O modelo **Atendimento Manual** consiste em um serviço que irá redirecionar as mensagens dos clientes para um determinado usuário do BLiP App que chamamos de atendente.
+O modelo **Atendimento Manual** consiste em um serviço que irá redirecionar as mensagens dos clientes para um atendente, que pode estar em canais como e-mail, Zendesk ou no aplicativo [BLiP Mensagens](https://play.google.com/store/apps/details?id=net.take.omni).
 
 Na visão do Atendente, uma thread é criada para cada cliente e o atendimento é feito de forma individual.
 
