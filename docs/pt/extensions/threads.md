@@ -3,7 +3,7 @@
 |-----------------------|--------------|-------------------------|--------------------|
 | postmaster@msging.net (endereço padrão, não é necessário informar) | /threads | Nenhuma | [IThreadExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Threads/IThreadExtension.cs) |
 
-A extensão **Histórico de conversas** permite o contato recuperar as mensagens mais recentes trocadas com um determinado usuário de um canal. O retorno estará sempre em ordem decrescente da data das mensagens, ou seja, as mensagens mais recentes estarão listadas primeiro. 
+A extensão **Histórico de conversas** permite o chatbot recuperar as mensagens mais recentes trocadas com um determinado usuário de um canal. O retorno estará sempre em ordem decrescente da data das mensagens, ou seja, as mensagens mais recentes estarão listadas primeiro. 
 
 #### Exemplos
 1 - Recuperando a mensagem mais recente de cada conversa:

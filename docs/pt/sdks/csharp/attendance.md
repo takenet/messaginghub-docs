@@ -1,8 +1,8 @@
 ### Transferência de Atendimento 
 
 Em situações em que uma intervenção humana for necessária, como por exemplo em serviços de atendimento ao usuário, existe a possibilidade de utilizar
-o aplicativo [BLiP Mensagens](https://play.google.com/store/apps/details?id=net.take.omni) ou o [BLiP Web](https://web.blip.ai/) para receber e responder mensagens de usuários interagindo com seu contato.
-Todas as mensagens respondidas a partir do aplicativo ou website serão entregues para os usuários como se tivessem sido geradas pelo seu contato, de forma transparente. 
+o aplicativo [BLiP Mensagens](https://play.google.com/store/apps/details?id=net.take.omni) ou o [BLiP Web](https://web.blip.ai/) para receber e responder mensagens de usuários interagindo com seu chatbot.
+Todas as mensagens respondidas a partir do aplicativo ou website serão entregues para os usuários como se tivessem sido geradas pelo seu chatbot, de forma transparente. 
 Obviamente, é necessário que a pessoa que receberá e responderá as mensagens, que será chamada de atendente daqui em diante, instale o aplicativo (se optar por usar o BLiP Mensagens) e esteja online (tanto aplicativo quanto website).
 
 Para encaminhar uma mensagem recebida para o atendente, utilize a extensão [AttendanceExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/AttendanceForwarding/IAttendanceExtension.cs).
@@ -33,7 +33,7 @@ public class PlainTextMessageReceiver : IMessageReceiver
 ```
 
 É **obrigatório** registrar no `application.json` um `MessageReceiver` adicional, já implementado pelo próprio SDK.
-Este `MessageReceiver` é responsável por repassar automaticamente as mensagens respondidas pelo atendente (que são entregues novamente para seu contato)
+Este `MessageReceiver` é responsável por repassar automaticamente as mensagens respondidas pelo atendente (que são entregues novamente para seu chatbot)
  para o usuário. 
 
 Veja abaixo como deve ficar:

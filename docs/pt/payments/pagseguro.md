@@ -77,7 +77,7 @@ Será gerada uma transação no PagSeguro que será enviada automaticamente para
 }
 ```
 
-Quando houver alteração no status do pagamento (ex: o usuário pagou), será enviada uma mensagem do tipo [status do pagamento](./#/docs/content-types/invoice-status) ao contato, sendo o identificador da mensagem o mesmo da solicitação de pagamento original.
+Quando houver alteração no status do pagamento (ex: o usuário pagou), será enviada uma mensagem do tipo [status do pagamento](./#/docs/content-types/invoice-status) ao chatbot, sendo o identificador da mensagem o mesmo da solicitação de pagamento original.
 
 ```json
 {
@@ -94,7 +94,7 @@ Quando houver alteração no status do pagamento (ex: o usuário pagou), será e
 }
 ```
 
-E após receber o pagamento, o contato pode opcionalmente enviar um [recibo de pagamento](./#/docs/content-types/payment-receipt) ao cliente.
+E após receber o pagamento, o chatbot pode opcionalmente enviar um [recibo de pagamento](./#/docs/content-types/payment-receipt) ao cliente.
 
 ```json
 {

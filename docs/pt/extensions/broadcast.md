@@ -3,11 +3,11 @@
 |---------------------------------|--------------|-------------------------|------------------------|
 | postmaster@broadcast.msging.net | /lists       | Envio de mensagens       | [BroadcastExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Broadcast/BroadcastExtension.cs) |
 
-A extensão **envio em massa** permite a criação e gestão de listas de distribuição e seus membros para o envio de mensagem em massa. Desta forma, um contato que precisa enviar uma mesma mensagem para mais de um destinatário pode criar uma lista com os endereços dos destinatários e realizar o envio apenas uma vez, para o endereço da lista.
+A extensão **envio em massa** permite a criação e gestão de listas de distribuição e seus membros para o envio de mensagem em massa. Desta forma, um chatbot que precisa enviar uma mesma mensagem para mais de um destinatário pode criar uma lista com os endereços dos destinatários e realizar o envio apenas uma vez, para o endereço da lista.
 
-Cada lista de distribuição possui um endereço único no formato `nome-da-lista@broadcast.msging.net` além dos membros, que são os destinatários de mensagens enviadas a esta lista. Somente o contato que criou uma determinada lista tem permissões de enviar mensagens a mesma.
+Cada lista de distribuição possui um endereço único no formato `nome-da-lista@broadcast.msging.net` além dos membros, que são os destinatários de mensagens enviadas a esta lista. Somente o chatbot que criou uma determinada lista tem permissões de enviar mensagens a mesma.
 
-As notificações são encaminhadas ao contato quando recebidas pela extensão.
+As notificações são encaminhadas ao chatbot quando recebidas pela extensão.
 
 #### Exemplos
 
@@ -115,7 +115,7 @@ Notificações enviadas pelos membros da lista à lista de distribuição e enca
 ```
 
 #### Delegação
-Esta extensão já possui permissões de envio em nome dos contatos, portanto não é necessário a realização de delegação.
+Esta extensão já possui permissões de envio em nome dos chatbotos, portanto não é necessário a realização de delegação.
 
 #### Disponibilidade
 

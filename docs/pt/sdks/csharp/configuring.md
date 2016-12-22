@@ -1,6 +1,6 @@
 ### Configuração
 
-A configuração da sua aplicação deve ser realizada através do arquivo `application.json` criado no seu projeto, que define o funcionamento do seu contato, além dos `receiver` e suas configurações.
+A configuração da sua aplicação deve ser realizada através do arquivo `application.json` criado no seu projeto, que define o funcionamento do seu chatbot, além dos `receiver` e suas configurações.
 
 Veja um exemplo de como definir configurações neste arquivo:
 

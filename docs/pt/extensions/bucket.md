@@ -3,7 +3,7 @@
 |-----------------------|--------------|-------------------------|------------------
 | postmaster@msging.net (endereço padrão, não é necessário informar) | /buckets | Nenhuma | [BucketExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Bucket/BucketExtension.cs) |
 
-A extensão **armazenamento** permite o armazenamento de documentos JSON no servidor em um espaço isolado de cada contato. Esta extensão é útil armazenar informações de clientes que interagiram com o contato, como configurações e estado de navegação.
+A extensão **armazenamento** permite o armazenamento de documentos JSON no servidor em um espaço isolado de cada chatbot. Esta extensão é útil armazenar informações de clientes que interagiram com o chatbot, como configurações e estado de navegação.
 
 Para cada documento existe um identificador definido no momento da criação que deve ser utilizada para acesso posterior. É possível definir uma data de expiração opcional para o documento. Tanto o identificador quanto a expiração devem ser definidos na **URI** do comando.
 

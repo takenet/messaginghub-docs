@@ -4,7 +4,7 @@ Um **comando** permite a consulta e manipulação de recursos do servidor e de e
 
 Cada comando possui:
 - **id**: Identificador único do comando. O *id* é utilizado como referência nas respostas dos comandos. Este valor é obrigatório, exceto para comandos do método `observe`.
-- **from**: Endereço do originador do comando. Este valor pode ser omitido nas requisições, sendo que por padrão é considerado o endereço do contato conectado.
+- **from**: Endereço do originador do comando. Este valor pode ser omitido nas requisições, sendo que por padrão é considerado o endereço do chatbot conectado.
 - **to**: Endereço do destinatário do comando. Este valor pode ser omitido nas requisições, sendo que por padrão é considerado o endereço remoto (do servidor). Deve ser fornecido caso o comando seja enviado a uma **extensão**.
 - **uri**: O caminho no destinatário do recurso que o comando se refere. Este valor é obrigatório nas requisições e pode ser omitido nas respostas. 
 - **method** - Método para manipulação do recurso definido na **uri**. Este valor é obrigatório. Os valores possíveis são:

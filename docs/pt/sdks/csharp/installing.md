@@ -13,8 +13,8 @@ Este pacote instala todos as dependências necessárias e cria o arquivo `applic
 
 Você precisará de um identificador e uma chave de acesso para poder se conectar ao Messaging Hub. Para obtê-los:
 - Acesse o [Painel Blip](http://omni.messaginghub.io/portal).
-- Na aba `Contatos` clique em `Criar Contato`.
-- Preencha com os parâmetros requeridos e na próxima etapa escolha a opção `Chat Bot (SDK)`
-- Pronto, seu contato foi criado e o identificador e chave de acesso serão exibidos.
+- Na aba `Chatbots` clique em `Criar chatbot`.
+- Etapa escolha a opção `SDK` e preencha as informações solicitadas
+- Pronto, seu chatbot foi criado e o identificador e chave de acesso serão exibidos.
 
 O identificador e a chave de acesso devem ser definidos no arquivo `application.json` do seu projeto.
