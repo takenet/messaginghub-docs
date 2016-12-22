@@ -1,8 +1,8 @@
 ### Início
 
-Bem-vindo ao **Blip Messaging Hub**! Vamos apresentar os conceitos básicos da plataforma para lhe ajudar na construção do seu contato inteligente.
+Bem-vindo ao **Blip Messaging Hub**! Vamos apresentar os conceitos básicos da plataforma para lhe ajudar na construção do seu chatbot.
 
-Basicamente, seu contato pode ser criado de três formas:
+Basicamente, seu chatbot pode ser criado de três formas:
 - Através de um modelo
 - Através de webhooks
 - Através de um SDK
