@@ -37,7 +37,7 @@ Enviando um recibo de pagamento para um usuário do Facebook Messenger:
 
 | Canal              | Tipo                    | 
 |--------------------|-------------------------|
-| Omni               | Recibo de Pagamento                |
+| BLiP App           | Recibo de Pagamento                |
 | Messenger          | [Receipt template](https://developers.facebook.com/docs/messenger-platform/send-api-reference/receipt-template)|
 | SMS                | Texto         |
 | Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|

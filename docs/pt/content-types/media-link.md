@@ -46,7 +46,7 @@ Para mais detalhes, consulte a especificação do [protocolo LIME](http://limepr
 
 | Canal              | Tipo                    | 
 |--------------------|-------------------------|
-| Omni               | Link multimídia         |
+| BLiP App           | Link multimídia         |
 | Messenger          | [Attachments](https://developers.facebook.com/docs/messenger-platform/send-api-reference/image-attachment) (image/audio/video/file, dependendo do MIME type)  |
 | SMS                | Texto com link          |
 | Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|

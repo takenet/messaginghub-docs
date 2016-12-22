@@ -7,7 +7,7 @@ Permite o envio e recebimento de mensagens de texto simples.
 
 #### Exemplo
 
-Enviando uma mensagem para um destinatário do Omni:
+Enviando uma mensagem para um destinatário do BLiP App:
 
 ```json
 {
@@ -24,7 +24,7 @@ Para mais detalhes, consulte a especificação do [protocolo LIME](http://limepr
 
 | Canal              | Tipo                    | 
 |--------------------|-------------------------|
-| Omni               | Texto                   |
+| BLiP App           | Texto                   |
 | Messenger          | [Text message](https://developers.facebook.com/docs/messenger-platform/send-api-reference/text-message)|
 | SMS                | Texto                   |
 | Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|

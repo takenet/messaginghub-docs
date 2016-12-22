@@ -7,7 +7,7 @@ Permite o envio de um link para uma página da web, podendo incluir metadados co
 
 #### Exemplo
 
-Enviando uma mensagem para um destinatário do Omni:
+Enviando uma mensagem para um destinatário do BLiP App:
 
 ```json
 {
@@ -28,7 +28,7 @@ Em alguns canais, é possível definir como a página deve ser exibida - por exe
 
 | Canal              | Tipo                    | 
 |--------------------|-------------------------|
-| Omni               | Link web                |
+| BLiP App           | Link web                |
 | Messenger          | [Generic template](https://developers.facebook.com/docs/messenger-platform/send-api-reference/generic-template) ou [Button](https://developers.facebook.com/docs/messenger-platform/send-api-reference/buttons) (se utilizado junto a um [menu multimídia](https://blip.ai/portal/#/docs/content-types/document-select)). |
 | SMS                | Texto com link          |
 | Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|

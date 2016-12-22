@@ -10,7 +10,7 @@ Os seguintes canais estão disponíveis no **BLiP Messaging Hub** para publicaç
 
 | Nome               | FQDN                    |
 |--------------------|-------------------------|
-| Omni Mensagens     | 0mn.io                  |
+| BLiP App           | 0mn.io                  |
 | Tangram (SMS)      | tangram.com.br          |
 | Take.IO (SMS)      | take.io                 |
 | Facebook Messenger | messenger.gw.msging.net |

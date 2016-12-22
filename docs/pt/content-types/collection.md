@@ -166,7 +166,7 @@ Para mais detalhes, consulte a especificação do [protocolo LIME](http://limepr
 
 | Canal              | Tipo                    | 
 |--------------------|-------------------------|
-| Omni               | Não suporta   |
+| BLiP App           | Não suporta   |
 | Messenger          | Multiplas mensagens / [Generic template](https://developers.facebook.com/docs/messenger-platform/send-api-reference/generic-template) (se for uma coleção de **menu multimídia**)|
 | SMS                | Texto (múltiplas linhas) |
 | Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1) (múltiplas linhas)|

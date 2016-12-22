@@ -32,7 +32,7 @@ Enviando estado *digitando* para usuário do Telegram:
 
 | Canal              | Tipo      | Estados suportados      | 
 |--------------------|-----------|-------------------------|
-| Omni               | Estado da Conversa | Todos |
+| BLiP App           | Estado da Conversa | Todos |
 | Messenger          | [Sender Actions](https://developers.facebook.com/docs/messenger-platform/send-api-reference/sender-actions) | *composing* e *paused* (somente envio) |
 | SMS                | - | Nenhum |
 | Skype              | - | Nenhum |

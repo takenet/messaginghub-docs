@@ -88,7 +88,7 @@ O tipo('type') da mensagem de retorno será sempre o mesmo da opção escolhida.
 
 | Canal              | Tipo                    | 
 |--------------------|-------------------------|
-| Omni               | Menu (Obs.: O campo 'value' de cada um dos 'options' pode assumir qualquer tipo de Documento, exceto DocumentContainer)     |
+| BLiP App           | Menu (Obs.: O campo 'value' de cada um dos 'options' pode assumir qualquer tipo de Documento, exceto DocumentContainer)     |
 | Messenger          | [Button template](https://developers.facebook.com/docs/messenger-platform/send-api-reference/button-template) (no escopo padrão) e [Quick replies](https://developers.facebook.com/docs/messenger-platform/send-api-reference/quick-replies) (no escopo *immediate*)|
 | SMS                | Texto                   |
 | Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|

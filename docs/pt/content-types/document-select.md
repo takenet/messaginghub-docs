@@ -55,7 +55,7 @@ Para mais detalhes, consulte a especificação do [protocolo LIME](http://limepr
 
 | Canal              | Tipo                    | 
 |--------------------|-------------------------|
-| Omni               | Menu (Obs.: Os campos 'label' e 'header' podem assumir apenas o tipo PlainText. O campo 'value' de cada um dos 'options' pode assumir qualquer tipo de Documento, exceto DocumentContainer)     |
+| BLiP App           | Menu (Obs.: Os campos 'label' e 'header' podem assumir apenas o tipo PlainText. O campo 'value' de cada um dos 'options' pode assumir qualquer tipo de Documento, exceto DocumentContainer)     |
 | Messenger          | [Generic template](https://developers.facebook.com/docs/messenger-platform/send-api-reference/generic-template)|
 | SMS                | Texto                   |
 | Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|

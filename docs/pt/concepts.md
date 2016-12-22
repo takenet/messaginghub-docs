@@ -1,6 +1,6 @@
 ### Conceitos
 
-O **Blip Messaging Hub** permite que aplicações de mensagem (chamadas aqui de **contatos inteligentes** ou apenas **chatbots**) sejam construídas uma única vez e disponibilizadas em diversos **canais de mensagem**, como *Messenger*, *Skype* ou o próprio [*Omni*](https://play.google.com/store/apps/details?id=net.take.omni).
+O **Blip Messaging Hub** permite que aplicações de mensagem (chamadas aqui de **contatos inteligentes** ou apenas **chatbots**) sejam construídas uma única vez e disponibilizadas em diversos **canais de mensagem**, como *Messenger*, *Skype* ou o próprio [*BLiP App*](https://play.google.com/store/apps/details?id=net.take.omni).
 
 Para permitir que o proprietário do chatbot realize a cobrança dos seus serviços, existem integrações com **canais de pagamento**, como o *Pagseguro*.
 
