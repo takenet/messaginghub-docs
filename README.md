@@ -1,6 +1,6 @@
-# Blip Messaging Hub Documentation
+# BLiP Messaging Hub Documentation
 
-This repository hosts the documentation for the [Blip Messaging Hub](https://blip.ai/)
+This repository hosts the documentation for the [BLiP Messaging Hub](https://blip.ai/)
 
 ## Getting Started
 

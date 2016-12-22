@@ -1,6 +1,6 @@
 ### Início
 
-Bem-vindo ao **Blip Messaging Hub**! Vamos apresentar os conceitos básicos da plataforma para lhe ajudar na construção do seu chatbot.
+Bem-vindo ao **BLiP Messaging Hub**! Vamos apresentar os conceitos básicos da plataforma para lhe ajudar na construção do seu chatbot.
 
 Basicamente, seu chatbot pode ser criado de três formas:
 - Através de um modelo

@@ -138,5 +138,5 @@ Content-Length: 131
 
 | Nome                          | Descrição                                                                     |
 |-------------------------------|-------------------------------------------------------------------------------|
-| Url para receber mensagens    | Endereço onde o Blip irá postar as mensagens                                  |
-| Url para receber notificações | Endereço onde o Blip irá postar as notificações                               |
+| Url para receber mensagens    | Endereço onde o BLiP irá postar as mensagens                                  |
+| Url para receber notificações | Endereço onde o BLiP irá postar as notificações                               |

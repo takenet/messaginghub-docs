@@ -3,7 +3,7 @@
 |-----------------------|--------------|-------------------------|--------------------|
 | postmaster@msging.net (endereço padrão, não é necessário informar) | /delegations | Nenhuma | [DelegationExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Delegation/DelegationExtension.cs) |
 
-A extensão **delegação** permite o chatbot dar permissões a outras identidades do **Blip Messaging Hub** de realizar ações em seu nome, particularmente o envio de mensagens. O uso da **delegação** pode ser requerido por algumas extensões. 
+A extensão **delegação** permite o chatbot dar permissões a outras identidades do **BLiP Messaging Hub** de realizar ações em seu nome, particularmente o envio de mensagens. O uso da **delegação** pode ser requerido por algumas extensões. 
 
 É necessário efetuar a delegação apenas uma vez para cada identidade.
 
