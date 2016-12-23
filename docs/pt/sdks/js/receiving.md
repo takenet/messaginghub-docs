@@ -2,10 +2,10 @@
 
 O recebimento pelo cliente se dá através do registro de `receivers` para mensagens e notificações. É possível definir filtros para cada `receiver` no momento do registro.
 
-Adicionando um receiver de mensagem para o tipo `text/plain`:
+Adicionando um receiver de mensagem para todas as mensagens:
 
 ```javascript
-client.addMessageReceiver("text/plain", function(message) {
+client.addMessageReceiver(true, function(message) {
   // Processe a mensagem recebida
 });
 
