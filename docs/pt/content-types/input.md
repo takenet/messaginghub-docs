@@ -52,7 +52,7 @@ Para mais detalhes, consulte a especificação do [protocolo LIME](http://limepr
 | Canal              | Tipo                    | 
 |--------------------|-------------------------|
 | BLiP App           | Texto                   |
-| Messenger          | [Attachments](https://developers.facebook.com/docs/messenger-platform/send-api-reference/image-attachment) (image/audio/video/file, dependendo do MIME type)  |
+| Messenger          | [Text message](https://developers.facebook.com/docs/messenger-platform/send-api-reference/text-message) ou [Location](https://developers.facebook.com/docs/messenger-platform/send-api-reference/quick-replies) (se utilizado como label em um [menu multimídia](https://blip.ai/portal/#/docs/content-types/document-select) com escopo `immediate`).  |
 | SMS                | Texto                   |
 | Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|
 | Telegram           | [Message](https://core.telegram.org/bots/api#message)|
