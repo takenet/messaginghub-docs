@@ -1,4 +1,4 @@
-### Entrada
+### Entrada do usuário
 | MIME type                            | C#                                   |
 |--------------------------------------|--------------------------------------|
 | application/vnd.lime.input+json      | [Lime.Messaging.Contents.Input](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Messaging/Contents/Input.cs) |
