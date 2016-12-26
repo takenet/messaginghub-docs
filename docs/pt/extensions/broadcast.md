@@ -9,6 +9,10 @@ Cada lista de distribuição possui um endereço único no formato `nome-da-list
 
 As notificações são encaminhadas ao chatbot quando recebidas pela extensão.
 
+#### Listas padrão
+
+O BLiP automaticamente cria uma lista de distribuição com todos os endereços que já entraram em contato com seu chatbot. O endereço da mesma é `[identifier]+senders@broadcast.msging.net`, sendo `identifier` o identificador do seu chatbot, o mesmo utilizado junto com a chave de acesso para autenticação.
+
 #### Exemplos
 
 1 - Criando uma nova lista de distribuição:
