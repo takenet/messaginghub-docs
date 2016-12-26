@@ -5,6 +5,8 @@
 
 Permite o envio de solicitação de informações ao usuário de maneira estruturada, sendo possível definir regras de validação. É útil para construção de questionários ou obtenção de informações específicas, como localização ou uma imagem do usuário.
 
+A execução da regra de validação depende de suporte do canal.
+
 #### Exemplos
 1 - Solicitando o nome de um usuário:
 ```json
