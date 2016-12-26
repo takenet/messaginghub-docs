@@ -11,7 +11,9 @@ As notificações são encaminhadas ao chatbot quando recebidas pela extensão.
 
 #### Listas padrão
 
-O BLiP automaticamente cria uma lista de distribuição com todos os endereços que já entraram em contato com seu chatbot. O endereço da mesma é `[identifier]+senders@broadcast.msging.net`, sendo `identifier` o identificador do seu chatbot, o mesmo utilizado junto com a chave de acesso para autenticação.
+O BLiP automaticamente cria uma lista de distribuição com todos os endereços que já entraram em contato com seu chatbot. O endereço da mesma é `[identifier]+senders@broadcast.msging.net`, sendo `identifier` o identificador do seu chatbot, que é utilizado junto com a chave de acesso para autenticação. 
+
+Por exemplo, para um chatbot com identifier `mychatbot`, o endereço desta lista seria `mychatbot+senders@broadcast.msging.net`.
 
 #### Exemplos
 
