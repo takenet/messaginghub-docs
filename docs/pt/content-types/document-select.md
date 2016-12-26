@@ -56,6 +56,7 @@ Permite o envio de um menu de opções aos clientes, podendo o cabeçalho e as o
     "to": "1042221589186385@messenger.gw.msging.net",
     "type": "application/vnd.lime.document-select+json",
     "content": {
+        "scope": "immediate",
         "header": {
             "type": "text/plain",
             "value": "Por favor, compartilhe sua localização"
