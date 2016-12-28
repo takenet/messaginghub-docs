@@ -22,7 +22,7 @@ Você também pode utilizar as distribuições disponibilizadas pelo [unpkg](htt
 <script src="https://unpkg.com/lime-transport-websocket" type="text/javascript"></script>
 <script src="https://unpkg.com/messaginghub-client" type="text/javascript"></script>
 ```
-Você precisará de um identificador e uma chave de acesso para sua aplicação, para poder interagir com o Messaging Hub. Para obtê-los:
+Você precisará de um identificador e uma chave de acesso para sua aplicação, para realizar a conexão com o servidor do BLiP. Para obtê-los:
 - Acesse o [Painel BLiP](http://omni.messaginghub.io/portal).
 - Na aba `Chatbots` clique em `Criar chatbot`.
 - Preencha com os parâmetros requeridos e na próxima etapa escolha a opção `SDK`
