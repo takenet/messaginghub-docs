@@ -1,6 +1,12 @@
 ### Instanciando o cliente
 
-Para instanciar o cliente, utilize a classe `ClientBuilder`, informando as opções para conexão, como `identificador` e `chave de acesso` obtidas no portal do BLiP.
+Você precisará de um identificador e uma chave de acesso para sua aplicação, para realizar a conexão com o servidor do BLiP. Para obtê-los:
+- Acesse o [Painel BLiP](https://portal.blip.ai) e faça seu login
+- Na aba `Chatbots` clique em `Criar chatbot`
+- Preencha com os parâmetros requeridos e na próxima etapa escolha a opção `SDK`
+- Pronto, seu chatbot foi criado e o identificador e chave de acesso serão exibidos.
+
+Para instanciar o cliente, utilize a classe `ClientBuilder`, informando o `identificador` e `chave de acesso` obtidos:
 
 ```javascript
 
