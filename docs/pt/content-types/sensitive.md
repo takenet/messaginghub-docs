@@ -4,7 +4,7 @@
 |--------------------------------------|------------------------------------|
 | application/vnd.lime.sensitive+json  | [Lime.Messaging.Contents.SensitiveContainer](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Messaging/Contents/SensitiveContainer.cs) |
 
-Encapsula um conteúdo com sua declaração de tipo MIME, de forma a sinalizar a informação como *sensível* ou *confidencial*. Desta forma, o servidor trata a mesma de maneira diferente, não armazenando-a em nenhum momento.
+Encapsula um conteúdo com sua declaração de tipo MIME, de forma a sinalizar a informação como *sensível* ou *confidencial*. Desta forma, o servidor trata a mesma de maneira diferente, não armazenando-a em nenhum momento. O conteúdo encapsulado pode ser de qualquer tipo disponível.
 
 Importante: O não armazenamento é **restrito ao servidores do BLiP**, podendo um canal externo (*Messenger*, *Telegram*, etc.) armazenar a mesma de alguma maneira.
 
