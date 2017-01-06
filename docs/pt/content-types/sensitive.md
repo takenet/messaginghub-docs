@@ -6,7 +6,7 @@
 
 Encapsula um conteúdo com sua declaração de tipo MIME, de forma a sinalizar a informação como *sensível* ou *confidencial*. Desta forma, o servidor trata a mesma de maneira diferente, não armazenando-a em nenhum momento.
 
-Importante: O não armazenamento é **restrito ao servidores do BLiP**, podendo o canal externo armazenar a mesma de alguma maneira.
+Importante: O não armazenamento é **restrito ao servidores do BLiP**, podendo um canal externo (*Messenger*, *Telegram*, etc.) armazenar a mesma de alguma maneira.
 
 #### Exemplo
 Enviando uma senha no formato texto a um usuário do Messenger:
