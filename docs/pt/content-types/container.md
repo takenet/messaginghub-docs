@@ -4,7 +4,7 @@
 |--------------------------------------|------------------------------------|
 | application/vnd.lime.container+json | [Lime.Protocol.DocumentContainer](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Protocol/DocumentContainer.cs) |
 
-Encapsula um conteúdo JSON com sua declaração de tipo MIME, permitindo o envio de conteúdos diferentes em tipos compostos, como **coleção**. Por este motivo, não existe necessidade do uso deste tipo indivualmente.
+Encapsula um conteúdo com sua declaração de tipo MIME, permitindo o envio de conteúdos diferentes em tipos compostos, como **coleção**. Por este motivo, não existe necessidade do uso deste tipo indivualmente.
 
 #### Exemplo
 Uma coleção de tipos diferentes, utilizando **container**
