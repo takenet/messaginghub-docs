@@ -12,9 +12,9 @@ Importante: O não armazenamento é **restrito ao servidores do BLiP**, podendo 
 Enviando uma senha no formato texto a um usuário do Messenger:
 ```json
 {
-	"to": "1334448251684655@messenger.gw.msging.net",
-	"type": "application/vnd.lime.sensitive+json",
-	"content": {
+  "to": "1334448251684655@messenger.gw.msging.net",
+  "type": "application/vnd.lime.sensitive+json",
+  "content": {
     "type": "text/plain",
     "value": "A sua senha é 123456"
   }
