@@ -9,7 +9,7 @@ Encapsula um conteúdo com sua declaração de tipo MIME, de forma a sinalizar a
 Importante: O não armazenamento é **restrito ao servidores do BLiP**, podendo um canal externo (*Messenger*, *Telegram*, etc.) armazenar a mesma de alguma maneira.
 
 #### Exemplo
-Enviando uma senha no formato texto a um usuário do Messenger:
+1. Enviando uma senha no formato texto a um usuário do Messenger:
 ```json
 {
   "to": "1334448251684655@messenger.gw.msging.net",
@@ -17,6 +17,22 @@ Enviando uma senha no formato texto a um usuário do Messenger:
   "content": {
     "type": "text/plain",
     "value": "A sua senha é 123456"
+  }
+}
+
+```
+
+2. Enviando um link da web:
+```json
+{
+  "to": "1334448251684655@messenger.gw.msging.net",
+  "type": "application/vnd.lime.sensitive+json",
+  "content": {
+    "type": "application/vnd.lime.web-link+json",
+    "value": {
+      "text": "Segue o link para fechamento da sua conta",
+      "uri": "https://mystore.com/checkout?ID=A8DJS1JFV98AJKS9"
+    }
   }
 }
 
