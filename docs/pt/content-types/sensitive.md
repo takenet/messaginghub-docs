@@ -12,6 +12,7 @@ Importante: O não armazenamento é **restrito ao servidores do BLiP**, podendo 
 1 - Enviando uma senha no formato texto a um usuário do Messenger:
 ```json
 {
+  "id": "1",
   "to": "1334448251684655@messenger.gw.msging.net",
   "type": "application/vnd.lime.sensitive+json",
   "content": {
@@ -25,6 +26,7 @@ Importante: O não armazenamento é **restrito ao servidores do BLiP**, podendo 
 2 - Enviando um link da web:
 ```json
 {
+  "id": "2",
   "to": "1334448251684655@messenger.gw.msging.net",
   "type": "application/vnd.lime.sensitive+json",
   "content": {
