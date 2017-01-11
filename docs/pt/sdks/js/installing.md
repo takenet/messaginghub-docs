@@ -4,7 +4,7 @@
 
 Se você estiver usando `node.js` (ou `webpack`), é necessário instalar o pacote `messaginghub-client` que disponibiliza o cliente do MessagingHub e algum transporte (conexão) pelo `npm`.
 
-    npm install --save messaginghub-client lime-websocket-transport
+    npm install --save messaginghub-client
 
 #### Browser
 
