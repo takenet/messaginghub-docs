@@ -8,7 +8,7 @@ Abaixo um exemplo da realização da conexão e posteriormente o envio de uma me
 client.connect()
     .then(function(session) {
       // O cliente está conectado, portanto é possível realizar envios a partir daqui
-      var msg = { type: "application/json", content: "Hello, world", to: "553199990000@0mn.io" };
+      var msg = { type: "text/plain", content: "Hello, world", to: "553199990000@0mn.io" };
       client.sendMessage(msg);
     });
 ```
