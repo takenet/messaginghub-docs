@@ -8,10 +8,22 @@ Permite o envio de um conteúdo nativo de um canal, no formato JSON. Desta forma
 Note que desta forma, no caso de um chatbot **multicanal**, a responsabilidade de enviar o tipo correto para cada canal é do bot.
 
 #### Exemplos
-1 - Enviando uma mensagem do tipo **cartão de embarque** do Messenger:
+
+1 - Enviando uma mensagem do tipo **[texto](https://developers.facebook.com/docs/messenger-platform/send-api-reference/)** do Messenger:
 ```json
 {  
   "id":"1",
+  "to":"949839515125748@messenger.gw.msging.net",
+  "type":"application/json",
+  "content":{  
+    "text": "hello, world!"
+  }
+}
+```  
+2 - Enviando uma mensagem do tipo **[cartão de embarque](https://developers.facebook.com/docs/messenger-platform/send-api-reference/airline-boardingpass-template)** do Messenger:
+```json
+{  
+  "id":"2",
   "to":"949839515125748@messenger.gw.msging.net",
   "type":"application/json",
   "content":{  
@@ -110,10 +122,10 @@ Note que desta forma, no caso de um chatbot **multicanal**, a responsabilidade d
                 "value":"004"
               }
             ],
-            "logo_image_url":"https:\/\/www.example.com\/en\/logo.png",
-            "header_image_url":"https:\/\/www.example.com\/en\/fb\/header.png",
-            "qr_code":"M1JONES\/FARBOUND  CG4X7U nawouehgawgnapwi3jfa0wfh",
-            "above_bar_code_image_url":"https:\/\/www.example.com\/en\/PLAT.png",
+            "logo_image_url":"https://www.example.com/en/logo.png",
+            "header_image_url":"https://www.example.com/en/fb/header.png",
+            "qr_code":"M1JONES/FARBOUND  CG4X7U nawouehgawgnapwi3jfa0wfh",
+            "above_bar_code_image_url":"https://www.example.com/en/PLAT.png",
             "flight_info":{  
               "flight_number":"KL0642",
               "departure_airport":{  
