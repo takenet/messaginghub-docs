@@ -58,3 +58,13 @@ Permite o envio de uma lista de documentos diferentes uma única mensagem. É po
   }
 }
 ```
+
+### Mapeamento nos canais
+
+| Canal              | Tipo                    | 
+|--------------------|-------------------------|
+| BLiP App           | Não suportado           |
+| Messenger          | [List template](https://developers.facebook.com/docs/messenger-platform/send-api-reference/list-template)|
+| SMS                | Texto                   |
+| Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|
+| Telegram           | [Message](https://core.telegram.org/bots/api#message)|
