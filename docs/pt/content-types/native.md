@@ -67,10 +67,10 @@ Note que desta forma, no caso de um chatbot **multicanal**, a responsabilidade d
                 "value":"003"
               }
             ],
-            "logo_image_url":"https:\/\/www.example.com\/en\/logo.png",
-            "header_image_url":"https:\/\/www.example.com\/en\/fb\/header.png",
-            "qr_code":"M1SMITH\/NICOLAS  CG4X7U nawouehgawgnapwi3jfa0wfh",
-            "above_bar_code_image_url":"https:\/\/www.example.com\/en\/PLAT.png",
+            "logo_image_url":"https://www.example.com/en/logo.png",
+            "header_image_url":"https://www.example.com/en/fb/header.png",
+            "qr_code":"M1SMITH/NICOLAS  CG4X7U nawouehgawgnapwi3jfa0wfh",
+            "above_bar_code_image_url":"https://www.example.com/en/PLAT.png",
             "flight_info":{  
               "flight_number":"KL0642",
               "departure_airport":{  
@@ -90,7 +90,7 @@ Note que desta forma, no caso de um chatbot **multicanal**, a responsabilidade d
             }
           },
           {  
-            "passenger_name":"JONES\/FARBOUND",
+            "passenger_name":"JONES/FARBOUND",
             "pnr_number":"CG4X7U",
             "travel_class":"business",
             "seat":"74K",
