@@ -1,7 +1,7 @@
 ### Lista
 | MIME type                            | C#                                 |
 |--------------------------------------|------------------------------------|
-| application/vnd.lime.list+json       | [Lime.Protocol.DocumentCollection](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Messaging/Contents/DocumentList.cs) |
+| application/vnd.lime.list+json       | [Lime.Messaging.Contents.DocumentList](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Messaging/Contents/DocumentList.cs) |
 
 Permite o envio de uma lista de documentos diferentes uma única mensagem. É possível definir um documento como cabeçalho da lista.
 
