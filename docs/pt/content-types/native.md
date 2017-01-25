@@ -144,7 +144,7 @@ Note que desta forma, no caso de um chatbot **multicanal**, a responsabilidade d
 | Canal              | Tipo                    | 
 |--------------------|-------------------------|
 | BLiP App           | Não suportado           |
-| Messenger          | Suportado               |
+| Messenger          | Suportado (o valor de `content` se refere ao elemento `message` da [Send API](https://developers.facebook.com/docs/messenger-platform/send-api-reference/) do Messenger |
 | SMS                | Não suportado           |
 | Skype              | Não suportado           |
 | Telegram           | Não suportado           |
