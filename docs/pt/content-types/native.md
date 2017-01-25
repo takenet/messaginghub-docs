@@ -1,4 +1,4 @@
-### Nativo
+### Conteúdo nativo
 | MIME type                            | C#                                 |
 |--------------------------------------|------------------------------------|
 | application/json                     | [Lime.Protocol.JsonDocument](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Protocol/JsonDocument.cs) |
