@@ -14,6 +14,7 @@ Para instanciar o cliente, utilize a classe `ClientBuilder`, informando o `ident
 var client = new ClientBuilder()
     .withIdentifier(identifier)
     .withAccessKey(accessKey)
+    .withTransportFactory(() => new WebSocketTransport())
     .build();
 
 // Registra um receiver para mensagens do tipo 'text/plain'
