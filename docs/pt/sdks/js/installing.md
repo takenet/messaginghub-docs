@@ -8,7 +8,7 @@ Se você estiver usando `node.js` (ou `webpack`), é necessário instalar o paco
 
 #### Browser
 
-Caso esteja construindo uma aplicação web (no browser) e esteja utilizando Javascript "puro", é possível instalar pacote pelo `npm` e incluir o *script* com a tag `<script>`. Para utilizar o pacote  `messaginghub-client` desta forma, é necessário que seja também seja instalado e referenciado o pacote `lime-js`, além do pacote do transporte `lime-websocket-transport`:
+Caso esteja construindo uma aplicação web (no browser) e esteja utilizando Javascript "puro", é possível instalar pacote pelo `npm` e incluir o *script* com a tag `<script>`. Para utilizar o pacote  `messaginghub-client` desta forma, é necessário que seja também seja instalado e referenciado o pacote `lime-js`, além do pacote do transporte `lime-transport-websocket`:
 
 ```html
 <script src="./node_modules/lime-js/dist/lime.js" type="text/javascript"></script>
