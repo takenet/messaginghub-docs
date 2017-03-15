@@ -1,5 +1,5 @@
 
-### Perfil
+### Perfil do chatbot
 | Endereço              | URI base     | Permissões requeridas   | C#              |
 |-----------------------|--------------|-------------------------|-----------------|
 | postmaster@msging.net (endereço padrão, não é necessário informar) | /profile | Nenhuma | [ProfileExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Profile/ProfileExtension.cs) |
