@@ -7,11 +7,11 @@
 A extensão **perfil** permite a configuração de propriedades de perfil do chatbot, que podem refletir para o usuários nos canais publicados, dependendo do suporte. Cada propriedade é um **documento** de um tipo de conteúdo suportado pela plataforma.
 As propriedades suportadas atualmente são:
 
-| Nome             | Identificador   | Tipo de documento | Canais suportados   |
-|------------------|-----------------|-------------------|---------------------|
-| Mensagem inicial | greeting        | Texto             | Messenger           |
-| Menu persistente | persistent-menu | Menu multimídia   | Messenger           |
-| Botão começar    | get-started     | Texto             | Messenger           |
+| Nome             | Identificador     | Tipo de documento | Canais suportados   |
+|------------------|-------------------|-------------------|---------------------|
+| Mensagem inicial | `greeting`        | Texto             | Messenger           |
+| Menu persistente | `persistent-menu` | Menu multimídia   | Messenger           |
+| Botão começar    | `get-started`     | Texto             | Messenger           |
 
 #### Exemplos
 1 - Definindo a mensagem inicial:
@@ -175,8 +175,6 @@ Resposta em caso de sucesso:
   "status": "success"
 }
 ```
-
-#### Exemplos
 4 - Definindo o valor do botão começar:
 ```json
 {  
@@ -195,6 +193,27 @@ Resposta em caso de sucesso:
   "to": "contact@msging.net/default",
   "method": "set",
   "status": "success"
+}
+```
+
+5 - Consultando a mensagem inicial definida:
+```json
+{  
+  "id": "5",
+  "method": "get",
+  "uri": "/profile/greeting"  
+}
+```
+Resposta em caso de sucesso:
+```json
+{
+  "id": "5",
+  "from": "postmaster@msging.net/#irismsging1",
+  "to": "contact@msging.net/default",
+  "method": "get",
+  "status": "success",
+  "type": "text/plain",
+  "resource": "Olá, seja bem vindo a nosso serviço!"
 }
 ```
 
