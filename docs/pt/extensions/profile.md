@@ -5,6 +5,7 @@
 | postmaster@msging.net (endereço padrão, não é necessário informar) | /profile | Nenhuma | [ProfileExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Profile/ProfileExtension.cs) |
 
 A extensão **perfil** permite a configuração de propriedades de perfil do chatbot, que podem refletir para o usuários nos canais publicados, dependendo do suporte. Cada propriedade é um **documento** de um tipo de conteúdo suportado pela plataforma.
+
 As propriedades suportadas atualmente são:
 
 | Nome             | Identificador     | Tipo de documento | Canais suportados   |
