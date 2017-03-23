@@ -1,15 +1,16 @@
-### Mensagens
+### Messages
 
-Uma **mensagem** permite a troca de conteúdos entre clientes e chatbots.
+One **message** allows the content exchange between customers and chatbots.
 
-Cada mensagem possui:
-- **id**: Identificador único da mensagem. O *id* é utilizado como referência para notificações, portanto **evite reutilizar o mesmo id**. Uma forma de garantir a unicidade é utilizar um novo [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) a cada mensagem. Este valor pode ser omitido caso o originador não tenha interesse em notificações, mesmo em caso de falhas.
-- **from**: Endereço do originador da mensagem. Este valor pode ser omitido nas mensagens, sendo que por padrão é considerado o endereço do chatbot conectado.
-- **to**: Endereço do destinatário da mensagem. Este valor deve estar presente.
-- **type**: Declaração do tipo do conteúdo da mensagem, no formato MIME. O mesmo pode ser do tipo **plain** (por exemplo, `text/plain`) ou **JSON** (por exemplo, `application/vnd.lime.media-link+json`). Consulte a seção **Tipos de conteúdo** para maiores informações.
-- **content**: Conteúdo da mensagem.
+Each message has:
 
-Abaixo temos a representação JSON de uma mensagem:
+- **id**: Unique identifier. The *id* is used as reference for notifications, thus **avoid to reuse the same id**. One way to guarantee its uniqueness is using a new [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) for each message.
+- **from**: Originator’s address. This value may be omitted if the originator does not have interest on notifications, even in case of failures.
+- **to**: Recipient’s address. This value must be present.
+- **type**: Statement with content type, in MIME format. It can be of **plain** type (for example, `text/plain` ) or **JSON** (for example, `application/vnd.lime.media-link+json`). Check the **Content Types** section for more information.
+- **content**: Message content.
+
+See below the JSON representation of one message:
 
 ```json
 
@@ -18,8 +19,9 @@ Abaixo temos a representação JSON de uma mensagem:
   "from": "551199991111@0mn.io/182310923192",
   "to": "mycontact@msging.net",
   "type": "text/plain",
-  "content": "Olá mundo"
+  "content": "Hello World"
 }
 
 ```
-Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/index.html#message).
+
+For more information, check the [LIME protocol](http://limeprotocol.org/index.html#message) specification.

@@ -4,9 +4,9 @@ All the [envelopes](http://limeprotocol.org/#envelope) (messages, notifications 
 
 The address is presented in the format `name@domain/instance`, where:
 
-•	**name**: customer channel identifier. The name format change according to the channel, it can be the telephone number in some channels (such as SMS) or internal identifiers of each platform (such as in Messenger). This value is mandatory.
-•	**domain**: customer origin channel. The format is always a [FQDN](https://pt.wikipedia.org/wiki/FQDN), and each channel has a unique identifier. This value is mandatory.
-•	**instance**: *optional* identifier of the connection between the customer and the channel. It is used in channels where the customer may have more than one activated connection (for example, the mobile and the computer).
+- **name**: customer channel identifier. The name format change according to the channel, it can be the telephone number in some channels (such as SMS) or internal identifiers of each platform (such as in Messenger). This value is mandatory.
+- **domain**: customer origin channel. The format is always a [FQDN](https://pt.wikipedia.org/wiki/FQDN), and each channel has a unique identifier. This value is mandatory.
+- **instance**: *optional* identifier of the connection between the customer and the channel. It is used in channels where the customer may have more than one activated connection (for example, the mobile and the computer).
 
 Usually, the interaction of a chatbot and a customer starts after the message, which has a from address, is received. In this case, it is only necessary to answer to this address - in an unchanged way, in order to guarantee the message delivery. 
 
