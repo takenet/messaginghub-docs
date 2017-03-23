@@ -1,11 +1,11 @@
-### Início
+### Home
 
-Bem-vindo ao **BLiP Messaging Hub**! Vamos apresentar os conceitos básicos da plataforma para lhe ajudar na construção do seu chatbot.
+Welcome to **Blip Messaging Hub**! We will introduce the basics of the platform to help you build your chatbot.
 
-Basicamente, seu chatbot pode ser criado de três formas:
-- Através de um modelo
-- Através de webhooks
-- Através de um SDK
+You can create your chatbot in three ways:
 
-No menu lateral você encontra o passo a passo para cada situação. Caso você tenha alguma dúvida, entre em contato conosco através do [Messenger](http://m.me/blipajuda), [Telegram](https://telegram.me/blip_ajuda_bot) ou [Skype] (https://join.skype.com/bot/d58d9364-2498-4304-8400-6800c1fd2f2b?add) que iremos lhe ajudar.
+•	Through a template (without any code)
+•	Through webhooks
+•	Through a client (c# or javascript)
 
+In the side menu, you will find a step-by-step guide for each situation. In case you have any doubt, get in contact with us via [Messenger](http://m.me/blipajuda), [Telegram](https://telegram.me/blip_ajuda_bot) ou [Skype] (https://join.skype.com/bot/d58d9364-2498-4304-8400-6800c1fd2f2b?add). We will help you.
