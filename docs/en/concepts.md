@@ -1,13 +1,11 @@
-### Conceitos
+### Concepts
 
-O **BLiP Messaging Hub** permite que aplicações de mensagem (chamadas aqui de **contatos inteligentes** ou apenas **chatbots**) sejam construídas uma única vez e disponibilizadas em diversos **canais de mensagem**, como *Messenger*, *Skype* ou o próprio [*BLiP App*](https://play.google.com/store/apps/details?id=net.take.omni).
+**Blip Messaging Hub** allows that messaging apps (here also called **chatbots**, bots, intelligent contacts, or just, contacts) be built only once and made available in different **messaging channels**, such as *Messenger*, *Skype* or [*BLiP App*](https://play.google.com/store/apps/details?id=net.take.omni) (a Blip's channel).
 
-Para permitir que o proprietário do chatbot realize a cobrança dos seus serviços, existem integrações com **canais de pagamento**, como o *Pagseguro*.
+In order to allow the contact owner to perform his services’ charge, there are integrations with **payment channels**, such as *Pagseguro*. It is not necessary to be a developer if he wants to use these functionalities, once the **templates** have an easy and friendly way for the owner to offer services that use all the platform functions, when he only needs a quick customization.
 
-Não é necessário ser um desenvolvedor para utilizar estas funcionalidades, já que os **modelos** oferecem uma forma prática e amigável do proprietário oferecer serviços que utilizam todas as funções da plataforma, precisando apenas de uma rápida customização.
+For developers, it is possible to choose between using **webhooks**, the simplest and fastest way to receive and send messages and notifications, or the **SDKs** that enable to build contacts in a flexible and scalable way.
 
-Para desenvolvedores, é possível escolher entre utilizar **webhooks**, a maneira mais rápida e simples para recebimento e envio de mensagens e notificações ou os **SDKs**, que permitem a construção de chatbots de maneira flexível e escalável.
+Developers also can use on **extensions** that encapsulate common functionalities used in message applications, such as *message broadcast* and *scheduling*.
 
-Os desenvolvedores também podem contar com **extensões** que encapsulam funcionalidades comuns utilizadas por aplicações de mensagem, como o *envio em massa* e *agendamento*.
-
-O **BLiP Messaging Hub** utiliza o [protocolo LIME](http://limeprotocol.org) para comunicação entre os chatbots e os clientes, e a maior parte dos conceitos vêm deste protocolo. Os **envelopes** são os *containers* de informação definidas pelo protocolo e podem ser **mensagem**, **notificação** e **comando**, sendo transmitidos no formato **JSON**.
+**Blip Messaging Hub** uses [protocolo LIME](http://limeprotocol.org) for communication between chatbots and customers, great part of the concepts comes from this protocol. The **envelops** are information *containers* defined by the protocol and can be **message**, **notifications** and **command**, sent in **JSON** format.
