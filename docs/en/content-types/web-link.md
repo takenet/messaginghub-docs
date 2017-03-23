@@ -3,11 +3,11 @@
 |--------------------------|-------------------------------------|
 | application/vnd.lime.web-link+json               | [Lime.Messaging.Contents.WebLink](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Messaging/Contents/WebLink.cs) |
 
-Permite o envio de um link para uma página da web, podendo incluir metadados como título e um texto descritivo do link, além de uma imagem miniatura.
+Allows sending a link to a webpage, it is possible to include metadata such as title and a descriptive text of the link, and also a miniature image. 
 
-#### Exemplo
+#### Example
 
-Enviando uma mensagem para um destinatário do BLiP App:
+Sending a message to a BLiP App recipient:
 
 ```json
 {
@@ -17,31 +17,32 @@ Enviando uma mensagem para um destinatário do BLiP App:
     "content": { 
         "uri": "http://limeprotocol.org/content-types.html#web-link",
         "target": "self",
-        "text": "Segue documentação do web-link"        
+        "text": "Here is a documentation web-link"        
     }
 }
 ```
 
-Em alguns canais, é possível definir como a página deve ser exibida - por exemplo, na mesma janela, uma nova ou ocupando parte da tela do dispositivo - através da propriedade `target`. Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/content-types.html#web-link).
+In some channels is possible to define how the webpage will be diplayed (on the same window, openning a new window or occuping part of device window) through `target` property. For more details, check the [LIME protocol](http://limeprotocol.org/content-types.html#web-link) specification.
 
-#### Mapeamento nos canais
+#### Mapping on Channels
 
-| Canal              | Tipo                    | 
+| Channel              | Type                    | 
 |--------------------|-------------------------|
-| BLiP App           | Link web                |
-| Messenger          | [Generic template](https://developers.facebook.com/docs/messenger-platform/send-api-reference/generic-template) ou [Button](https://developers.facebook.com/docs/messenger-platform/send-api-reference/buttons) (se utilizado junto a um [menu multimídia](https://blip.ai/portal/#/docs/content-types/document-select)). |
-| SMS                | Texto com link          |
+| BLiP App           | Web Link                |
+| Messenger          | [Generic template](https://developers.facebook.com/docs/messenger-platform/send-api-reference/generic-template) or [Button](https://developers.facebook.com/docs/messenger-platform/send-api-reference/buttons) (if used with the [Multimedia Menu](https://blip.ai/portal/#/docs/content-types/document-select)). |
+| SMS                | Text with link          |
 | Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|
 | Telegram           | [Message](https://core.telegram.org/bots/api#message)|
 
-Em alguns canais, é possível utilizar [URI schemes](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) especiais para a criação de links com comportamentos específicos. 
 
-| Canal     | URI Scheme | Descrição                                                           | Exemplo              |
+In some channels, it is possible to use special [URI schemes](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) for the links creation with specific behaviors;
+
+| Channel     | URI Scheme | Description                                                           | Example              |
 |-----------|------------|---------------------------------------------------------------------|----------------------|
-| Messenger | `tel`      | Define um link para a ligação telefonica para o número especificado. Mapeado em um [Call button](https://developers.facebook.com/docs/messenger-platform/send-api-reference/call-button). | `tel:+5531999990000` |
-| Messenger | `share`    | Define um link para compartilhamento da mensagem atual. Mapeado em um [Share button](https://developers.facebook.com/docs/messenger-platform/send-api-reference/share-button).  | `share:`             |
+| Messenger | `tel`      | Defines a link for the telephone call to the specific number. Mapped to a [Call button](https://developers.facebook.com/docs/messenger-platform/send-api-reference/call-button). | `tel:+5531999990000` |
+| Messenger | `share`    | Defines a link to share current message. Mapped to a [Share button](https://developers.facebook.com/docs/messenger-platform/send-api-reference/share-button).  | `share:`             |
 
-- No Messenger, estas **URI schemes** são válidas somente se utilizadas junto a um [menu multimídia](https://blip.ai/portal/#/docs/content-types/document-select).
-- Para habilitar o uso de [extensões do Messenger](https://developers.facebook.com/docs/messenger-platform/messenger-extension) na página do link, basta incluir na *query string* da URL o parâmetro `messengerExtensions` com valor `true`. No exemplo acima, o valor de `uri` ficaria da seguinte forma: `http://limeprotocol.org/content-types.html#web-link?messengerExtensions=true`
+- On Messenger, these **URI schemes** are valid only if utilized together with a multimedia [Multimedia Menu](https://blip.ai/portal/#/docs/content-types/document-select).
+- To enable the use of [Messenger extensions](https://developers.facebook.com/docs/messenger-platform/messenger-extension) on link webpage, you must add on URL *query string* the `messengerExtensions` parameter with value `true`. For above sample, the `uri` value would be as follows: `http://limeprotocol.org/content-types.html#web-link?messengerExtensions=true`
 
 
