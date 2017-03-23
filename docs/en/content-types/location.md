@@ -1,4 +1,4 @@
-### Localização
+### Location
 | MIME type                            | C#                                   |
 |--------------------------------------|--------------------------------------|
 | application/vnd.lime.location+json | [Lime.Messaging.Contents.Location](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Messaging/Contents/Location.cs) |

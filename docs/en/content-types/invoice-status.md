@@ -1,4 +1,4 @@
-### Status do Pagamento
+### Payment Invoice Status
 | MIME type                            | C#                                   |
 |--------------------------------------|--------------------------------------|
 | application/vnd.lime.invoice-status+json | [Lime.Messaging.Contents.InvoiceStatus](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Messaging/Contents/InvoiceStatus.cs) |
@@ -27,3 +27,5 @@ Receiving a change in a payment status from an [invoice](./#/docs/content-types/
     }
 }
 ```
+
+**Note:** Payment invoices status are not mapped to channel's cards. The propose of this messages is only to control payment life cycle.

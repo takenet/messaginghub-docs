@@ -1,4 +1,4 @@
-### Solicitação de Pagamento
+### Payment Invoice
 | MIME type                            | C#                                   |
 |--------------------------------------|--------------------------------------|
 | application/vnd.lime.invoice+json | [Lime.Messaging.Contents.Invoice](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Messaging/Contents/Invoice.cs) |
@@ -31,3 +31,4 @@ Sending a payment request to a Facebook Messenger user using [PagSeguro](./#/doc
     }
 }
 ```
+**Note:** Payment invoices are not mapped to channel's cards. The propose of this messages is only to control payment life cycle.

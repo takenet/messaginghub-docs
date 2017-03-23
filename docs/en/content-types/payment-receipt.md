@@ -1,12 +1,12 @@
-### Recibo de Pagamento
+### Payment Receipt
 | MIME type                            | C#                                   |
 |--------------------------------------|--------------------------------------|
 | application/vnd.lime.payment-receipt+json | [Lime.Messaging.Contents.PaymentReceipt](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Messaging/Contents/PaymentReceipt.cs) |
 
-Envio de um recibo de pagamento. 
+Allows send a payment receipt to a customer
 
-#### Exemplo
-Enviando um recibo de pagamento para um usuário do Facebook Messenger:
+#### Example
+Sending a payment receipt to a Facebook Messenger user:
 
 ```json
 {
@@ -17,7 +17,7 @@ Enviando um recibo de pagamento para um usuário do Facebook Messenger:
         "paidOn": "2016-08-26T19:03:37.024Z",
         "code": "215BF6B5-01EF-4F9A-A944-0BC05FD0F228",
         "method": {
-                "name": "Cartão de crédito"
+                "name": "Credit Card"
         },
         "currency": "BRL",
         "total": 10.85,
@@ -33,12 +33,12 @@ Enviando um recibo de pagamento para um usuário do Facebook Messenger:
 }
 ```
 
-#### Mapeamento nos canais
+#### Mapping on Channels
 
-| Canal              | Tipo                    | 
+| Channel              | Type                    |  
 |--------------------|-------------------------|
-| BLiP App           | Recibo de Pagamento                |
+| BLiP App           | Payment Receipt         |
 | Messenger          | [Receipt template](https://developers.facebook.com/docs/messenger-platform/send-api-reference/receipt-template)|
-| SMS                | Texto         |
+| SMS                | Text         |
 | Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|
 | Telegram           | [Message](https://core.telegram.org/bots/api#message)|
