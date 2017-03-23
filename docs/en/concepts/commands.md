@@ -17,7 +17,6 @@ Each command has:
 - **type** – Declaration of the **resource** value type, in the MIME format.
 - **resource** – JSON resource representation. Must be present in requests of **set** and **observe** methods and success answers of **get** method.
 
-
 Besides the properties previously mentioned, a command answer may have:
 - **status** – Indicates the command processing result, it is mandatory in the answers. The valid values are:
   * **success** – The command was successfully processed. In case of **get** method command, the **resource** value must be present.
