@@ -3,12 +3,20 @@
 |--------------------------------------|------------------------------------|
 | application/vnd.lime.collection+json | [Lime.Protocol.DocumentCollection](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Protocol/DocumentCollection.cs) |
 
+Allows sending multiple contents of the same type in only one message. Some channels support this type of aggregation with special layouts (for example, in Facebook Messenger a multimedia menu collection is displayed as in a carousel). In other channels, multiple messages are sent.
+
+Examples:
+
+
+
 Permite o envio de **múltiplos conteúdos** do mesmo tipo em uma única mensagem. Alguns canais suportam este tipo de agregação com layouts especiais (por exemplo, no Facebook Messenger uma coleção de **menu multimídia** é exibido como um *carousel*). Nos demais canais, são enviadas múltiplas mensagens.
 
-É possível enviar conteúdos de tipos diferentes, utilizando uma coleção do tipo **container**.
+**Note:** It is possible to send different types contents, utilizing one collection of **container** type.
 
-#### Exemplos
-1 - Uma coleção de **texto**
+#### Examples
+
+1 – A **text** collection
+
 ```json
 {
 	"to": "553199990000@0mn.io",
@@ -16,15 +24,15 @@ Permite o envio de **múltiplos conteúdos** do mesmo tipo em uma única mensage
 	"content": {
 		"itemType": "text/plain",
 		"items": [
-            "Texto 1",
-            "Texto 2",
-            "Texto 3"
+            "Text 1",
+            "Text 2",
+            "Text 3"
 		]
 	}
 }
 ```
 
-2 - Uma coleção de tipos diferentes, utilizando **container**
+2 - A different types collection, using **container**
 ```json
 {
 	"to": "553199990000@0mn.io",
@@ -35,7 +43,7 @@ Permite o envio de **múltiplos conteúdos** do mesmo tipo em uma única mensage
 			{
 				"type": "application/vnd.lime.media-link+json",
 				"value": {
-					"text": "Seja bem-vindo a nossa loja!",
+					"text": "Welcome to our store!",
 					"type": "image/jpeg",
 					"uri": "http://petersapparel.parseapp.com/img/item100-thumb.png"
 				}
@@ -43,15 +51,15 @@ Permite o envio de **múltiplos conteúdos** do mesmo tipo em uma única mensage
 			{
 				"type": "application/vnd.lime.select+json",
 				"value": {
-					"text": "Escolha o que deseja fazer",
+					"text": "Choice what you need",
 					"options": [
 					    {
 					        "order": 1,
-					        "text": "Ver nosso estoque"
+					        "text": "See our stock"
 					    },
 					    {
 					        "order": 2,
-					        "text": "Acompanhar um pedido"
+					        "text": "Follow an order"
 					    }
 					]
 				}
@@ -62,7 +70,7 @@ Permite o envio de **múltiplos conteúdos** do mesmo tipo em uma única mensage
 
 ```
 
-3 - Uma coleção de **menu multimídia**
+3 - A **multimedia menu** collection
 ```json
 {
     "id": "5",
@@ -75,8 +83,8 @@ Permite o envio de **múltiplos conteúdos** do mesmo tipo em uma única mensage
                 "header": {
                     "type": "application/vnd.lime.media-link+json",
                     "value": {
-                        "title": "Titulo",
-                        "text": "Este é o primeiro item",
+                        "title": "Title",
+                        "text": "This is a first item",
                         "type": "image/jpeg",
                         "uri": "http://www.isharearena.com/wp-content/uploads/2012/12/wallpaper-281049.jpg"
                     }
@@ -94,7 +102,7 @@ Permite o envio de **múltiplos conteúdos** do mesmo tipo em uma única mensage
                     {
                         "label": {
                             "type": "text/plain",
-                            "value": "Texto 1"
+                            "value": "Text 1"
                         },
                         "value": {
                             "type": "application/json",
@@ -110,8 +118,8 @@ Permite o envio de **múltiplos conteúdos** do mesmo tipo em uma única mensage
                 "header": {
                     "type": "application/vnd.lime.media-link+json",
                     "value": {
-                        "title": "Titulo 2",
-                        "text": "Este é outro item",
+                        "title": "Title 2",
+                        "text": "This is another item",
                         "type": "image/jpeg",
                         "uri": "http://www.freedigitalphotos.net/images/img/homepage/87357.jpg"
                     }
@@ -121,7 +129,7 @@ Permite o envio de **múltiplos conteúdos** do mesmo tipo em uma única mensage
                         "label": {
                             "type": "application/vnd.lime.web-link+json",
                             "value": {
-                                "title": "Segundo link",
+                                "title": "Second link",
                                 "text": "Weblink",
                                 "uri": "https://server.com/second/link2"
                             }
@@ -130,7 +138,7 @@ Permite o envio de **múltiplos conteúdos** do mesmo tipo em uma única mensage
                     {
                         "label": {
                             "type": "text/plain",
-                            "value": "Segundo texto"
+                            "value": "Second text"
                         },
                         "value": {
                             "type": "application/json",
@@ -143,7 +151,7 @@ Permite o envio de **múltiplos conteúdos** do mesmo tipo em uma única mensage
                     {
                         "label": {
                             "type": "text/plain",
-                            "value": "Mais um texto"
+                            "value": "More one text"
                         },
                         "value": {
                             "type": "application/json",
@@ -160,14 +168,14 @@ Permite o envio de **múltiplos conteúdos** do mesmo tipo em uma única mensage
 }
 ```
 
-Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/content-types.html#collection).
+For more details, check the [LIME protocol](http://limeprotocol.org/content-types.html#collection) specification.
 
-### Mapeamento nos canais
+#### Mapping on Channels
 
-| Canal              | Tipo                    | 
+| Channel              | Type                    | 
 |--------------------|-------------------------|
-| BLiP App           | Não suporta   |
-| Messenger          | Multiplas mensagens / [Generic template](https://developers.facebook.com/docs/messenger-platform/send-api-reference/generic-template) (se for uma coleção de **menu multimídia**)|
-| SMS                | Texto (múltiplas linhas) |
-| Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1) (múltiplas linhas)|
-| Telegram           | [Message](https://core.telegram.org/bots/api#message) (múltiplas linhas)|
+| BLiP App           | Not Support   |
+| Messenger          | Multiple messages / [Generic template](https://developers.facebook.com/docs/messenger-platform/send-api-reference/generic-template) (if is a **multimedia menu** collection)|
+| SMS                | Text (multiple lines) |
+| Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1) (multiple lines)|
+| Telegram           | [Message](https://core.telegram.org/bots/api#message) (multiple lines)|
