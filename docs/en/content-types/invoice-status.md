@@ -3,17 +3,17 @@
 |--------------------------------------|--------------------------------------|
 | application/vnd.lime.invoice-status+json | [Lime.Messaging.Contents.InvoiceStatus](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Messaging/Contents/InvoiceStatus.cs) |
 
-Mensagem recebida quando houver alterações no status do pagamento. 
+Message received when there are changes in the payment status.
 
 | Status                            | Descrição |
 |--------------------------------------|--------------------------------------|
-|Cancelled|O pagamento foi cancelado por qualquer uma das partes|
-|Completed|O pagamento foi realizado|
-|Refunded|Um pagamento realizado foi estornado para o pagador|
+|Cancelled|Payment was cancelled for any of the two parties|
+|Completed|Payment done with succes|
+|Refunded|A payment was returned to the payer|
 
-#### Exemplo
-Recebendo uma alteração no status do pagamento de uma [solicitação](./#/docs/content-types/invoice) no [PagSeguro](./#/docs/payments/pagseguro):
+#### Example
 
+Receiving a change in a payment status from an [invoice](./#/docs/content-types/invoice) in [PagSeguro](./#/docs/payments/pagseguro):
 ```json
 {
     "id": "1",
