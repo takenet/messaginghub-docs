@@ -1,23 +1,24 @@
-### Estado da conversa
+### Chat state
 | MIME type                                 | C#                                        |
 |-------------------------------------------|-------------------------------------------|
 | application/vnd.lime.chatstate+json | [Lime.Messaging.Contents.ChatState](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Messaging/Contents/ChatState.cs) |
 
-Permite o envio e recebimento de informação sobre o estado atual da conversa. Os estados possíveis são:
+Allows sending and receiving the information about the conversation current status. Possible status are:
 
-| Estado        | Descrição                          |
+| State        | Description                          |
 |---------------|------------------------------------|
-| *starting*    | Iniciando nova conversa |
-| *composing*   | Digitando/preparando uma mensagem  |
-| *paused*      | Digitação de nova mensagem foi interrompida (e não enviada)  |
-| *deleting*    | Apagando mensagem (que estava sendo preparada) |
-| *gone*        | Saiu/terminou a conversa  |
+| *starting*    | Initiating new conversation |
+| *composing*   | Typing/preparing a message  |
+| *paused*      | New message typing interrupted, message not sent   |
+| *deleting*    | Deleting message (which was being prepared) |
+| *gone*        | Exit/Conversation finished  |
 
-De forma geral não há necessidade de receber notificações de entrega de mensagens com este conteúdo, portanto é recomendado omitir o  Id nestas mensagens.
-Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/content-types.html#chatstate).
+In general, there is no need to receive delivery notifications messages with this content, thus it is recommended to omit the *Id* in these messages. For more details,check the [LIME protocol](http://limeprotocol.org/content-types.html#chatstate) specification.
 
-####Exemplo
-Enviando estado *digitando* para usuário do Telegram:
+#### Example
+
+Sending status *typing* to Telegram user:
+
 ```json
 {
     "to":"104222@telegram.gw.msging.net",
@@ -28,12 +29,12 @@ Enviando estado *digitando* para usuário do Telegram:
 }
 ```
 
-### Mapeamento nos canais
+### Mapping on Channels
 
-| Canal              | Tipo      | Estados suportados      | 
+| Channel              | Type      | Supported states      | 
 |--------------------|-----------|-------------------------|
-| BLiP App           | Estado da Conversa | Todos |
-| Messenger          | [Sender Actions](https://developers.facebook.com/docs/messenger-platform/send-api-reference/sender-actions) | *composing* e *paused* (somente envio) |
-| SMS                | - | Nenhum |
-| Skype              | - | Nenhum |
-| Telegram           | [SendChatAction](https://core.telegram.org/bots/api#sendchataction) | *composing* (somente envio) |
+| BLiP App           | Chat State | All |
+| Messenger          | [Sender Actions](https://developers.facebook.com/docs/messenger-platform/send-api-reference/sender-actions) | *composing* and *paused* (only for send) |
+| SMS                | - | None |
+| Skype              | - | None |
+| Telegram           | [SendChatAction](https://core.telegram.org/bots/api#sendchataction) | *composing* (only for send) |
