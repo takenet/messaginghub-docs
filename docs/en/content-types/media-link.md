@@ -1,14 +1,15 @@
-### Link de mídia
+### Media Link
 | MIME type                            | C#                                   |
 |--------------------------------------|--------------------------------------|
 | application/vnd.lime.media-link+json | [Lime.Messaging.Contents.MediaLink](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Messaging/Contents/MediaLink.cs) |
 
-Permite o envio e recebimento de links para conteúdos multimídia. O link pode ser qualquer **URI** válida, mas a maioria dos canais suportam apenas conteúdos servidos pelo protocolo **HTTP/HTTPS**. É possível incluir um título e um texto, além de *metadados* da imagem como MIME type, tamanho e *preview*.
+Allows sending and receiving links for multimedia contents. The link can be any valid **URI**, but great part of the channels support only contents served by **HTTP/HTTPS** protocol. It is possible to include a title and a text, besides image *metadada* such as MIME type, size and *preview*.
 
-> Nota: O suporte a metadados varia por canal podendo ser ignorados se não suportado
+> Note: The metadata support varies per channel, it may be ignored if not supported.
 
-#### Exemplos
-1 - Enviando o link de uma imagem incluindo título, texto descritivo e metadados:
+#### Examples
+1 - Sending the link of an image including title, descriptive text and metadata:
+
 ```json
 {
     "id": "1",
@@ -26,7 +27,7 @@ Permite o envio e recebimento de links para conteúdos multimídia. O link pode 
 }
 ```
 
-2 - Enviando o link de um audio:
+2 - Sending an audio link:
 ```json
 {
     "id": "2",
@@ -40,15 +41,15 @@ Permite o envio e recebimento de links para conteúdos multimídia. O link pode 
 }
 ```
 
-Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/content-types.html#media-link).
+For more details, check the [LIME protocol](http://limeprotocol.org/content-types.html#media-link) specification.
 
-### Mapeamento nos canais
+### Mapping on Channels
 
-| Canal              | Tipo                    | 
+| Channel              | Type                    | 
 |--------------------|-------------------------|
-| BLiP App           | Link multimídia         |
-| Messenger          | [Attachments](https://developers.facebook.com/docs/messenger-platform/send-api-reference/image-attachment) (image/audio/video/file, dependendo do MIME type)  |
-| SMS                | Texto com link          |
+| BLiP App           | Media Link         |
+| Messenger          | [Attachments](https://developers.facebook.com/docs/messenger-platform/send-api-reference/image-attachment) (image/audio/video/file, depending of MIME type)  |
+| SMS                | Text with link          |
 | Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|
 | Telegram           | [Message](https://core.telegram.org/bots/api#message)|
 
