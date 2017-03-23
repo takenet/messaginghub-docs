@@ -3,10 +3,11 @@
 |--------------------------------------|--------------------------------------|
 | application/vnd.lime.invoice+json | [Lime.Messaging.Contents.Invoice](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Messaging/Contents/Invoice.cs) |
 
-Permite o envio de uma solicitação de pagamento para um canal de pagamento. 
+Allows sending a payment request to a payment channel.
 
-#### Exemplo
-Enviando uma solicitação de pagamento para um usuário do Facebook Messenger usando o [PagSeguro](./#/docs/payments/pagseguro):
+#### Example
+
+Sending a payment request to a Facebook Messenger user using [PagSeguro](./#/docs/payments/pagseguro):
 
 ```json
 {
@@ -24,7 +25,7 @@ Enviando uma solicitação de pagamento para um usuário do Facebook Messenger u
                 "unit":10.85,
                 "currency":"BRL",
                 "total":10.85,
-                "description":"Assinatura Qual é o Hit"
+                "description":"Subscription for product: Hit"
             }
         ]
     }

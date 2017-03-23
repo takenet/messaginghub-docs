@@ -5,9 +5,6 @@
 
 Allows sending and receiving geographic information.
 
-
-
-
 #### Example
 
 Sending a location with latitude, longitude and altitude:
