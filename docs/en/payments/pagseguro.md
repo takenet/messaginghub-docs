@@ -3,12 +3,13 @@
 |--------------------------|---------------------------------------------------------------|
 | @pagseguro.gw.msging.net | Identidade ([nome e domínio do canal original](./#/docs/concepts/addressing)) no formato [URL encoded](http://www.w3schools.com/tags/ref_urlencode.asp) | 
 
-O canal **PagSeguro** é o canal de pagamentos do [UOL](https://pagseguro.uol.com.br/) para receber e enviar pagamentos com flexibilidade e segurança.
+**PagSeguro** channel is [UOL's](https://pagseguro.uol.com.br/) payment channel to receive and send payments with flexibility and security. 
 
-O endereço do destinatário do pedido de pagamento deve ser o identificador do destinatário 
+The order recipient’s address shall be the recipient’s identifier.
 
-#### Delegação
-Para dar as permissões requeridas pela extensão, é necessário enviar um comando de delegação:
+#### Delegation
+
+In order to provide permissions requested by extension, it is necessary to send a delegation command:
 
 ```json
 {  
@@ -24,7 +25,7 @@ Para dar as permissões requeridas pela extensão, é necessário enviar um coma
   }
 }
 ```
-Resposta em caso de sucesso:
+Answer on success case:
 
 ```json
 {
@@ -36,9 +37,9 @@ Resposta em caso de sucesso:
 }
 ```
 
-#### Exemplo
+#### Example
 
-Enviando uma solicitação de pagamento para um usuário do Facebook Messenger usando o [PagSeguro](./#/docs/payments/pagseguro):
+Sending a payment request to a Facebook Messenger user, with [PagSeguro](./#/docs/payments/pagseguro):
 
 ```json
 {
@@ -62,7 +63,7 @@ Enviando uma solicitação de pagamento para um usuário do Facebook Messenger u
 }
 ```
 
-Será gerada uma transação no PagSeguro que será enviada automaticamente para o usuário `1042221589186385@messenger.gw.msging.net` como um [link web](./#/docs/content-types/web-link), o identificador da mensagem será o mesmo da solicitação de pagamento.
+PagSeguro will generate a transaction which will be automatically sent to user `1042221589186385@messenger.gw.msging.net` as a [web link](./#/docs/content-types/web-link), the message identifier will be the same as the payment request’s. 
 
 ```json
 {
@@ -72,12 +73,12 @@ Será gerada uma transação no PagSeguro que será enviada automaticamente para
     "type": "application/vnd.lime.web-link+json",
     "content": { 
         "uri": "https://pagseguro.uol.com.br/pagamento",
-        "text": "Segue link do pagamento"
+        "text": "Your payment link"
     }
 }
 ```
 
-Quando houver alteração no status do pagamento (ex: o usuário pagou), será enviada uma mensagem do tipo [status do pagamento](./#/docs/content-types/invoice-status) ao chatbot, sendo o identificador da mensagem o mesmo da solicitação de pagamento original.
+When there is payment status change (for example: user has payed), a [payment status](./#/docs/content-types/invoice-status) message will be sent to the chatbot, the message identifier will be the same as the original payment request’s.
 
 ```json
 {
@@ -94,7 +95,7 @@ Quando houver alteração no status do pagamento (ex: o usuário pagou), será e
 }
 ```
 
-E após receber o pagamento, o chatbot pode opcionalmente enviar um [recibo de pagamento](./#/docs/content-types/payment-receipt) ao cliente.
+After receiving the payment, the chatbot may optionally send a [payment receipt](./#/docs/content-types/payment-receipt) to customer. 
 
 ```json
 {

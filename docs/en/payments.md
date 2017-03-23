@@ -1,5 +1,5 @@
-### Canais de Pagamentos
+### Payment Channels
 
-Os **canais de pagamentos** são integrações com fornecedores de pagamentos conectadas ao **BLiP Messaging Hub** nas quais os chatbots podem receber e enviar pagamentos para os clientes. Cada canal possui um identificador que é utilizado no endereçamento, localizado antes do `@` do endereço.
+**Payment channels** are integrations with payment suppliers connected to **Blip Messaging Hub**, in which the contacts may receive and send payment from and to customers. Each channel has one identifier that is utilized in the addressing, located before the `@` of the address.
 
-Para receber ou enviar pagamentos a um canal, o chatbot deve estar configurado no mesmo. A configuração é feita através do portal, onde algumas informações específicas do canal serão requeridas, como **tokens** das APIs por exemplo. É necessário um cadastro prévio em cada canal, geralmente através do site do fornecedor.
+In order to receive or send payments to a channel, contact shall be configured on it. Configuration is made through the portal, where some specific channel information, such as the APIs’ **tokens** for example, will be requested. It is necessary to fullfill a previous registration form on each channel, normally through the supplier’s site. 
