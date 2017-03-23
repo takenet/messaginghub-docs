@@ -1,12 +1,13 @@
-### Menu multimídia
+### Multimedia Menu
 | MIME type                                 | C#                                        |
 |-------------------------------------------|-------------------------------------------|
 | application/vnd.lime.document-select+json | [Lime.Messaging.Contents.DocumentSelect](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Messaging/Contents/DocumentSelect.cs) |
 
-Permite o envio de um menu de opções aos clientes, podendo o cabeçalho e as opções serem, além de **texto**, outros tipos de conteúdo como **link de mídia** ou **link web**. Para cada opção, é possível definir um documento que é entregue ao chatbot quando o cliente realiza uma escolha (depende de suporte do canal).
+Allows sending an options menu to customers, the header and options can be, besides **text**, other types of content such as **media link** or **web link**. For each option, it is possible to define a document that is delivered to the contact when the customer performs a choice (depending on the channel support).
 
-####Exemplo
-1 - Menu com imagem no cabeçalho e um link e texto como opções:
+#### Example
+
+1 - Menu with image in the header and a link and text as options:
 ```json
 {
     "id": "1",
@@ -16,8 +17,8 @@ Permite o envio de um menu de opções aos clientes, podendo o cabeçalho e as o
         "header": {
             "type": "application/vnd.lime.media-link+json",
             "value": {
-                "title": "Seja bem-vindo ao Chapeleiro Maluco",
-                "text": "Aqui temos o melhor chapéu para sua cabeça.",
+                "title": "Welcome to mad hatter",
+                "text": "Here we have the best hats to your head.",
                 "type": "image/jpeg",
                 "uri": "http://petersapparel.parseapp.com/img/item100-thumb.png"
             }
@@ -27,7 +28,7 @@ Permite o envio de um menu de opções aos clientes, podendo o cabeçalho e as o
                 "label": {
                     "type": "application/vnd.lime.web-link+json",
                     "value": {
-                        "text": "Visitar site",
+                        "text": "Go to site",
                         "uri": "https://petersapparel.parseapp.com/view_item?item_id=100"
                     }
                 }
@@ -35,7 +36,7 @@ Permite o envio de um menu de opções aos clientes, podendo o cabeçalho e as o
             {
                 "label": {
                     "type": "text/plain",
-                    "value": "Ver estoque"
+                    "value": "Show stock"
                 },
                 "value": {
                     "type": "application/json",
@@ -49,7 +50,7 @@ Permite o envio de um menu de opções aos clientes, podendo o cabeçalho e as o
 }
 ```
 
-2 - Solicitando a localização de um usuário do Messenger:
+2 - Getting the location of a Messenger user:
 ```json
 {
     "id": "2",
@@ -59,7 +60,7 @@ Permite o envio de um menu de opções aos clientes, podendo o cabeçalho e as o
         "scope": "immediate",
         "header": {
             "type": "text/plain",
-            "value": "Por favor, compartilhe sua localização"
+            "value": "Please, share your location"
         },
         "options": [
             {
@@ -78,14 +79,14 @@ Permite o envio de um menu de opções aos clientes, podendo o cabeçalho e as o
 }
 ```
 
-Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/content-types.html#document-select).
+For more details, check the [LIME protocol](http://limeprotocol.org/content-types.html#document-select) specification.
 
-#### Mapeamento nos canais
+#### Mapping on Channels
 
-| Canal              | Tipo                    | 
+| Channel              | Type                    | 
 |--------------------|-------------------------|
-| BLiP App           | Menu (Obs.: Os campos 'label' e 'header' podem assumir apenas o tipo PlainText. O campo 'value' de cada um dos 'options' pode assumir qualquer tipo de Documento, exceto DocumentContainer)     |
+| BLiP App           | Menu (Note: The properties 'label' and 'header' can assign just the PlainText content. The property 'value' of each one of 'options' can assign any type of Document, with exception of DocumentContainer)     |
 | Messenger          | [Generic template](https://developers.facebook.com/docs/messenger-platform/send-api-reference/generic-template)|
-| SMS                | Texto                   |
+| SMS                | Text                   |
 | Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|
 | Telegram           | [Message](https://core.telegram.org/bots/api#message)|
