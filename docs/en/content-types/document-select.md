@@ -5,7 +5,7 @@
 
 Allows sending an options menu to customers, the header and options can be, besides **text**, other types of content such as **media link** or **web link**. For each option, it is possible to define a document that is delivered to the contact when the customer performs a choice (depending on the channel support).
 
-#### Example
+#### Examples
 
 1 - Menu with image in the header and a link and text as options:
 ```json
