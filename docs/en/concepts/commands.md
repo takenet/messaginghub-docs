@@ -1,32 +1,32 @@
-### Comandos
+### Commands
 
-Um **comando** permite a consulta e manipulação de recursos do servidor e de extensões do **BLiP Messaging Hub**. Provê uma interface pedido-resposta, semelhante ao HTTP, com verbos e URIs. 
+A **command** allows query and manipulation of server resources and **Blip Messaging Hub** extensions. It provides an interface request-answer, similar to HTTP, with verbs and URIs.
 
-Cada comando possui:
-- **id**: Identificador único do comando. O *id* é utilizado como referência nas respostas dos comandos. Este valor é obrigatório, exceto para comandos do método `observe`.
-- **from**: Endereço do originador do comando. Este valor pode ser omitido nas requisições, sendo que por padrão é considerado o endereço do chatbot conectado.
-- **to**: Endereço do destinatário do comando. Este valor pode ser omitido nas requisições, sendo que por padrão é considerado o endereço remoto (do servidor). Deve ser fornecido caso o comando seja enviado a uma **extensão**.
-- **uri**: O caminho no destinatário do recurso que o comando se refere. Este valor é obrigatório nas requisições e pode ser omitido nas respostas. 
-- **method** - Método para manipulação do recurso definido na **uri**. Este valor é obrigatório. Os valores possíveis são:
-  * **get** - Obtém um valor existente.
-  * **set** - Cria ou atualiza um valor.
-  * **delete** - Remove um valor existente.
-  * **subscribe** - Assina um recurso para recebimento de notificações de mudança do valor definido na **uri**.
-  * **unsubscribe** - Remove uma assinatura de um recurso.
-  * **observe** - Notifica sobre mudanças no valor de um recurso e normalmente são emitidos pelo servidor ou uma extensão. Comandos com este método são emitidos são unidirecionais e o destinatário não deve enviar uma resposta aos mesmos. Por este motivo, não possuem **id**.
-- **type** - Declaração do tipo do valor de **resource**, no formato MIME.
-- **resource** - Representação JSON do recurso. Deve estar presente em requisições dos métodos **set** e **observe** e respostas de sucesso do método **get**.
+Each command has:
 
-Além das propriedades acima, a resposta de um comando pode conter:
-- **status** - Indica o resultado do processamento do comando, sendo obrigatório nas respostas. Os valores válidos são:
-  * **success** - O comando foi processado com sucesso. No caso de comandos com o método **get**, o valor de **resource** deve estar presente.
-  * **failure** - Um problema ocorreu durante o processamento do comando. Neste caso, a propriedade **reason** da resposta deve estar presente.
-- **reason** - Indica o motivo da falha do processamento do comando. Contém as seguintes propriedades:
-  * **code** - Código numérico da falha. Este valor é obrigatório.
-  * **description** - Mensagem de descrição da falha.
-  
-Abaixo uma representação JSON de um comando para criação de uma lista de distribuição:
+- **id**: unique command identifier. The *id* is used as reference in the answers to commands. This value is mandatory, with exception to method `observe` commands. 
+- **from**: Command originator address. This value may be omitted in the requests, as default it is considered the connected contact address.
+- **to**: Command recipient address. This value may be omitted in the requests, as default it is considered the server remote address. It must be provided in case the command is sent to an **extension**.
+- **uri**: The path at the recipient the resource the command refers to. This value is mandatory in the requests and can be omitted in the answers.
+- **method** – Method for resource manipulation defined at **uri**. This value is mandatory. Possible values are:
+  * **get** – Acquires an existent value.
+  * **set** – Creates or updates a value.
+  * **delete** – Removes an existent value.
+  * **Subscribe** – Signs a resource to receive change notifications of the defined value at the **uri**.
+  * **Unsubscribe** – Removes a signature of a resource. Usually they are sent by the server or an extension. Commands with this method are sent are unidirectional and the recipient may not send an answer. For this reason, they do not have **id**.
+- **type** – Declaration of the **resource** value type, in the MIME format.
+- **resource** – JSON resource representation. Must be present in requests of **set** and **observe** methods and success answers of **get** method.
 
+
+Besides the properties previously mentioned, a command answer may have:
+- **status** – Indicates the command processing result, it is mandatory in the answers. The valid values are:
+  * **success** – The command was successfully processed. In case of **get** method command, the **resource** value must be present.
+  * **failure** – a problem occurred during the command processing. In this case, the answer **reason** property must be present.
+- **reason** – Indicates the command processing failure reason. It contains the following properties:
+  * **code** – Failure numeric code. This value is mandatory.
+  * **description** – Failure description message.
+
+See below a JSON representation of a command for the distribution list creation.
 ```json
 {
   "id":  "1",
@@ -39,7 +39,7 @@ Abaixo uma representação JSON de um comando para criação de uma lista de dis
   }
 } 
 ```
-No caso de uma resposta de sucesso:
+In the case of a successful answer:
 ```json
 {
   "id": "1",
@@ -49,7 +49,7 @@ No caso de uma resposta de sucesso:
   "status": "success"
 } 
 ```
-E no caso de uma falha:
+In the case of a failure:
 ```json
 {
   "id": "1",
@@ -62,6 +62,5 @@ E no caso de uma falha:
    "description": "Invalid list identifier"
   }
 } 
-```  
-  
-Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/index.html#command).
+```
+For more details, check the [LIME protocol](http://limeprotocol.org/index.html#notification) specification.
