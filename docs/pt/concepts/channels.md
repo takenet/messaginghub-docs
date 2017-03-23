@@ -1,12 +1,12 @@
-### Canais
+### Channels
 
-Os **canais** são redes de mensagem conectadas ao **BLiP Messaging Hub** nas quais os chatbot podem receber e enviar mensagens para os clientes destas redes. Cada canal possui um identificador que é utilizado no endereçamento, localizado após o `@` do endereço.
+**Channels** are message nets connected to **Blip Messaging Hub** in which the chatbots are able to receive and to send messages to these nets' customers. Each channel has an identifier used on addressing. This identifier appear after the `@` on address.
 
-Para receber ou enviar mensagens a um canal, o chatbot deve estar publicada nele. A publicação é feita através do portal, que pode requerer informações específicas que ajudam a identificar o chatbot neste canal, como **tokens** das APIs, por exemplo. Normalmente é necessário um cadastro prévio em cada canal antes da publicação, através de uma ferramenta específica.
+In order to receive or to send messages to a channel, the chatbot may be published on it. The publishing is done through the portal, which may request specific information that help to identify the chatbot in this channel, such as APIs’ **tokens** for example. Usually, it is necessary a previous registration in each channel, through a specific tool, before publishing.
 
-Cada canal possui capacidades diferentes, como formatos de mensagem suportados ou eventos de notificação.
+Each channel has different capacities, such as supported message formats or notification events.
 
-Os seguintes canais estão disponíveis no **BLiP Messaging Hub** para publicação:
+The follow channels are available in **BLiP Messaging Hub** plataform:
 
 | Nome               | FQDN                    |
 |--------------------|-------------------------|
