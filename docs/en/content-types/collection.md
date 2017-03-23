@@ -174,7 +174,7 @@ For more details, check the [LIME protocol](http://limeprotocol.org/content-type
 
 | Channel              | Type                    | 
 |--------------------|-------------------------|
-| BLiP App           | Not Support   |
+| BLiP App           | Does not support   |
 | Messenger          | Multiple messages / [Generic template](https://developers.facebook.com/docs/messenger-platform/send-api-reference/generic-template) (if is a **multimedia menu** collection)|
 | SMS                | Text (multiple lines) |
 | Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1) (multiple lines)|

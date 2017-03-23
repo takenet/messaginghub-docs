@@ -4,10 +4,11 @@
 |--------------------------------------|------------------------------------|
 | application/vnd.lime.container+json | [Lime.Protocol.DocumentContainer](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Protocol/DocumentContainer.cs) |
 
-Encapsula um conteúdo com sua declaração de tipo MIME, permitindo o envio de conteúdos diferentes em tipos compostos, como **coleção**. Por este motivo, não existe necessidade do uso deste tipo indivualmente.
+Encapsulates a JSON content with its MIME type declaration, allowing sending different contents in composite types, such as **collection**. For this reason, there is no need to use this type individually.
 
-#### Exemplo
-Uma coleção de tipos diferentes, utilizando **container**
+#### Example
+
+A collection of different types, utilizing **container**
 ```json
 {
 	"to": "553199990000@0mn.io",
@@ -18,7 +19,7 @@ Uma coleção de tipos diferentes, utilizando **container**
 			{
 				"type": "application/vnd.lime.media-link+json",
 				"value": {
-					"text": "Seja bem-vindo a nossa loja!",
+					"text": "Welcome to our store!",
 					"type": "image/jpeg",
 					"uri": "http://petersapparel.parseapp.com/img/item100-thumb.png"
 				}
@@ -26,15 +27,15 @@ Uma coleção de tipos diferentes, utilizando **container**
 			{
 				"type": "application/vnd.lime.select+json",
 				"value": {
-					"text": "Escolha o que deseja fazer",
+					"text": "Choice what you need",
 					"options": [
 					    {
 					        "order": 1,
-					        "text": "Ver nosso estoque"
+					        "text": "See stock"
 					    },
 					    {
 					        "order": 2,
-					        "text": "Acompanhar um pedido"
+					        "text": "Follow an order"
 					    }
 					]
 				}
