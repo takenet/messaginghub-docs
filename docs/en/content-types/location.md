@@ -3,10 +3,14 @@
 |--------------------------------------|--------------------------------------|
 | application/vnd.lime.location+json | [Lime.Messaging.Contents.Location](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Messaging/Contents/Location.cs) |
 
-Permite o envio e recebimento de informações geográficas. 
+Allows sending and receiving geographic information.
 
-#### Exemplo
-Enviando uma localização com latitude, longitude e altitude:
+
+
+
+#### Example
+
+Sending a location with latitude, longitude and altitude:
 ```json
 {
     "id": "1",
@@ -16,20 +20,20 @@ Enviando uma localização com latitude, longitude e altitude:
         "latitude": -19.918899,
         "longitude": -43.959275,
         "altitude": 853,
-        "text": "Sede da Take.net"
+        "text": "Take's place"
     }
 }
 ```
 
-Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/content-types.html#location).
+For more details, check the [LIME protocol](http://limeprotocol.org/content-types.html#location) specification.
 
-### Mapeamento nos canais
+#### Mapping on Channels
 
-| Canal              | Tipo                    | 
+| Channel              | Type                    |  
 |--------------------|-------------------------|
-| BLiP App           | Localização             |
+| BLiP App           | Location             |
 | Messenger          | [Generic template](https://developers.facebook.com/docs/messenger-platform/send-api-reference/generic-template)|
-| SMS                | Texto com link          |
+| SMS                | Text with link          |
 | Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|
 | Telegram           | [Location](https://core.telegram.org/bots/api#location)|
 

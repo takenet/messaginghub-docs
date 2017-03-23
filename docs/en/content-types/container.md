@@ -46,3 +46,4 @@ A collection of different types, utilizing **container**
 
 ```
 
+For more details, check the [LIME protocol](http://limeprotocol.org/content-types.html#document-container) specification.
