@@ -8,4 +8,4 @@ For developers, it is possible to choose between using **webhooks**, the simples
 
 Developers also can use on **extensions** that encapsulate common functionalities used in message applications, such as *message broadcast* and *scheduling*.
 
-**Blip Messaging Hub** uses [protocolo LIME](http://limeprotocol.org) for communication between chatbots and customers, great part of the concepts comes from this protocol. The **envelops** are information *containers* defined by the protocol and can be **message**, **notifications** and **command**, sent in **JSON** format.
+**Blip Messaging Hub** uses [LIME protocol](http://limeprotocol.org) for communication between chatbots and customers, great part of the concepts comes from this protocol. The **envelops** are information *containers* defined by the protocol and can be **message**, **notifications** and **command**, sent in **JSON** format.
