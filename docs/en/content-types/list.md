@@ -1,12 +1,12 @@
-### Lista
+### List
 | MIME type                            | C#                                 |
 |--------------------------------------|------------------------------------|
 | application/vnd.lime.list+json       | [Lime.Messaging.Contents.DocumentList](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Messaging/Contents/DocumentList.cs) |
 
-Permite o envio de uma lista de documentos diferentes uma única mensagem. É possível definir um documento como cabeçalho da lista.
+Allows send a list of different documents on a single message. Is also possible define a document as a list header.
 
-#### Exemplos
-1 - Enviando uma lista com cabeçalho de **links da web** para um usuário do Messenger:
+#### Examples
+1 - Sending a list with a **weblink** header to a Messenger user:
 ```json
 {  
   "id":"1",
@@ -59,12 +59,12 @@ Permite o envio de uma lista de documentos diferentes uma única mensagem. É po
 }
 ```
 
-### Mapeamento nos canais
+#### Mapping on Channels
 
-| Canal              | Tipo                    | 
+| Channel              | Type                    | 
 |--------------------|-------------------------|
-| BLiP App           | Não suportado           |
+| BLiP App           | Does not support           |
 | Messenger          | [List template](https://developers.facebook.com/docs/messenger-platform/send-api-reference/list-template)|
-| SMS                | Texto                   |
+| SMS                | Text                   |
 | Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|
 | Telegram           | [Message](https://core.telegram.org/bots/api#message)|
