@@ -61,7 +61,7 @@ Resposta em caso de sucesso:
 }
 ```
 
-3 - Obtendo informações do cliente `553199991111@0mn.io` no **Omni**
+3 - Obtendo informações do cliente `553199991111@0mn.io` no **Blip App**
 ```json
 {  
   "id": "3",

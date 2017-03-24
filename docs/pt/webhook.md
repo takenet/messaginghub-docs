@@ -1,14 +1,14 @@
 ### Webhook
 
-Um contato do tipo **Webhook** permite ao desenvolvedor realizar a integração através **endpoints HTTP** para troca de mensagens, notificações e comandos.
+Um *chatbot* do tipo **Webhook** permite ao desenvolvedor realizar a integração através **endpoints HTTP** para troca de mensagens, notificações e comandos.
 
 #### Envio de mensagens
 
-Para enviar mensagens, a aplicação deverá fazer um `HTTP POST` na URL exibida nas configurações do contato. A requisição deve conter um cabeçalho de autorização (`Authorization`) com o tipo `Key`, conforme exibido nas configurações do contato.
+Para enviar mensagens, a aplicação deverá fazer um `HTTP POST` na URL exibida nas configurações do chatbot. A requisição deve conter um cabeçalho de autorização (`Authorization`) com o tipo `Key`, conforme exibido nas configurações do chatbot.
 
 Os dados da mensagem devem ser enviados no corpo da requisição. A mensagem deve ser um *JSON* no formato determinado pelo protocolo LIME. Para mais detalhes, consulte [a documentação do protocolo](http://limeprotocol.org/#message).
 
-Suponha que exista um contato com o identificador **messaginghubapp**, veja como seria o envio completo, incluindo os cabeçalhos e a mensagem:
+Suponha que exista um chatbot com o identificador **messaginghubapp**, veja como seria o envio completo, incluindo os cabeçalhos e a mensagem:
 ```
 POST https://msging.net/messages HTTP/1.1
 Content-Type: application/json
@@ -25,7 +25,7 @@ Content-Length: 131
 Para mais informações sobre mensagens consulte a [documentação de **Mensagens**](.#/docs/concepts/messages) ou a [documentação do tipos de conteúdo suportados](.#/docs/content-types).
 
 ##### Recebimento notificações
-Caso seja configurada a URL de notificações do contato, serão entregues nessa URL as notificações contendo os _status_ das mensagens. Observe que as notificações são enviadas pelo *clientes*, informando se receberam ou não uma mensagem enviada pelo *contato*.
+Caso seja configurada a URL de notificações do chatbot, serão entregues nessa URL as notificações contendo os _status_ das mensagens. Observe que as notificações são enviadas pelo *clientes*, informando se receberam ou não uma mensagem enviada pelo chatbot.
 
 Nesse caso também será realizado um `HTTP POST` com a informação no formato JSON, conforme formato definido pelo [protocolo LIME](http://limeprotocol.org/#notification). Veja um exemplo de uma notificação da mensagem anterior:
 ```
@@ -55,9 +55,9 @@ A URL de mensagens configurada receberá um `HTTP POST` com a mensagem enviada p
 
 ##### Envio de notificações
 
-Para que o histórico de mensagens seja exibido de forma correta, é importante que os contatos enviem notificações de processamento das mensagens recebidas, para os clientes que as originaram. 
+Para que o histórico de mensagens seja exibido de forma correta, é importante que os chatbots enviem notificações de processamento das mensagens recebidas, para os clientes que as originaram. 
 
-Para isso, é necessário enviar uma notificação com o evento `consumed`. E em caso de erros inesperados de processamento, deve ser enviada notificação com evento `failed`. A requisição também deve conter um cabeçalho de autorização (`Authorization`) com o tipo `Key`, conforme exibido nas configurações do contato.
+Para isso, é necessário enviar uma notificação com o evento `consumed`. E em caso de erros inesperados de processamento, deve ser enviada notificação com evento `failed`. A requisição também deve conter um cabeçalho de autorização (`Authorization`) com o tipo `Key`, conforme exibido nas configurações do chatbot.
 
 Por exemplo, supondo que a mensagem recebida no exemplo anterior foi processada, o envio completo da notificação, incluindo os cabeçalhos e o corpo da requisição para a mensagem (cujo id é **99cf454e-f25d-4ebd-831f-e48a1c612cd4**) será:
 ```
@@ -128,15 +128,15 @@ Content-Length: 131
 
 | Código              | Descrição                                                                               |
 |---------------------|-----------------------------------------------------------------------------------------|
-| 202 (Accepted)                 | Envelope aceito pelo servidor               |
-| 400 (Bad Request)    | Indica algum problema com o formato ou campos do envelope enviado                     |
-| 401 (Unauthorized)    | Indica algum problema ou falta do cabeçalho Authorization                     |
+| 202 (Accepted)      | Envelope aceito pelo servidor                                                           |
+| 400 (Bad Request)   | Indica algum problema com o formato ou campos do envelope enviado                       |
+| 401 (Unauthorized)  | Indica algum problema ou falta do cabeçalho Authorization                               |
 
 ---
 
 #### Configuração
 
-| Nome                | Descrição                                                                               |
-|---------------------|-----------------------------------------------------------------------------------------|
-| Url de envio de mensagem                | Endereço onde o MessagingHub irá postar as mensagens                |
-| Url de envio de notificação     | Endereço onde o MessagingHub irá postar as notificações                     |
+| Nome                          | Descrição                                                                     |
+|-------------------------------|-------------------------------------------------------------------------------|
+| Url para receber mensagens    | Endereço onde o BLiP irá postar as mensagens                                  |
+| Url para receber notificações | Endereço onde o BLiP irá postar as notificações                               |

@@ -1,6 +1,6 @@
 ### Tutorial: Navegação
 
-Neste tutorial, será demonstrado uma forma de construir um contato que responde automaticamente comandos de texto enviados pelos usuários.
+Neste tutorial, será demonstrado uma forma de construir um chatbot que responde automaticamente comandos de texto enviados pelos usuários.
 
 O primeiro passo é, no Visual Studio, criar um novo projeto do tipo *Class Library* e instalar o pacote do SDK via **NuGet**, através do comando:
 
@@ -29,11 +29,11 @@ Abaixo um exemplo do arquivo `application.json` criado em um novo projeto:
   "schemaVersion": 2
 }
 ```
-> Para obter um `identifier` e `accessKey`, acesse o portal http://omni.messaginghub.io e registre seu contato, utilizando a opção Chat Bot SDK
+> Para obter um `identifier` e `accessKey`, acesse o portal http://omni.messaginghub.io e registre seu chatbot, utilizando a opção Chat Bot SDK
 
 Neste caso, existe apenas um **receiver** de mensagem registrado, com um filtro do tipo de conteúdo `text/plain` sendo que seu processamento é feito pela classe `PlainTextMessageReceiver` que deve existir no projeto.
 
-Imagine que nosso contato deva responder a comando com o texto `ajuda` com uma mensagem estática de auxílio ao usuário. Desta forma, precisamos:
+Imagine que nosso chatbot deva responder a comando com o texto `ajuda` com uma mensagem estática de auxílio ao usuário. Desta forma, precisamos:
 - Registrar um novo receiver de mensagem
 - Incluir um filtro de tipo *texto* e conteúdo *ajuda*
 - Retornar a mensagem de ajuda ao originador
@@ -162,7 +162,7 @@ Aqui retornamos um tipo complexo `MediaLink` com uma imagem. A terceira opção 
     }
 ```
 
-Nossa classe recebe pelo construtor suas **configurações** que incluem o modelo do texto de resposta e de cultura, que são definidas no registro do *receiver* no arquivo `application.json`. É sempre uma boa idéia utilizar a propriedade `settings` para definir valores estáticos, o que permite modificações no comportamento do seu contato sem a necessidade de recompilar o código. O registro do mesmo ficaria da seguinte forma:
+Nossa classe recebe pelo construtor suas **configurações** que incluem o modelo do texto de resposta e de cultura, que são definidas no registro do *receiver* no arquivo `application.json`. É sempre uma boa idéia utilizar a propriedade `settings` para definir valores estáticos, o que permite modificações no comportamento do seu chatbot sem a necessidade de recompilar o código. O registro do mesmo ficaria da seguinte forma:
 
 ```json
     {
@@ -175,7 +175,7 @@ Nossa classe recebe pelo construtor suas **configurações** que incluem o model
       }
     }
 ```
-Por fim, imagine que seu contato deve retornar uma mensagem de erro estática no caso do cliente enviar algum comando desconhecido. Para isso, é necessário registrar um *receiver* sem filtros mas com **prioridade** menor que os demais *receivers* existentes. Por padrão, os *receivers* são registrados com a prioridade mais alta (**zero**) e basta incluir um *receiver* com prioridade menor para que receba as mensagens não tratadas pelos outros para responder o usuário. Ficaria da seguinte forma:
+Por fim, imagine que seu chatbot deve retornar uma mensagem de erro estática no caso do cliente enviar algum comando desconhecido. Para isso, é necessário registrar um *receiver* sem filtros mas com **prioridade** menor que os demais *receivers* existentes. Por padrão, os *receivers* são registrados com a prioridade mais alta (**zero**) e basta incluir um *receiver* com prioridade menor para que receba as mensagens não tratadas pelos outros para responder o usuário. Ficaria da seguinte forma:
 
 ```json
     {

@@ -4,7 +4,7 @@ O modelo **Atendimento Automatizado** consiste em um serviço que irá responder
 
 Se você não conhece o **api.ai**, você pode consultar esse [guia rápido](https://docs.api.ai/v17/docs/apiai-in-2-minutes-1).
 
-Para cada fluxo criado no api.ai você pode gerar uma chave de integração que será necessária na configuração do seu contato. Consulte a documentação de [autenticação](https://docs.api.ai/docs/authentication) do api.ai para mais informações. Você irá precisar do *Access Token*.
+Para cada fluxo criado no api.ai você pode gerar uma chave de integração que será necessária na configuração do seu chatbot. Consulte a documentação de [autenticação](https://docs.api.ai/docs/authentication) do api.ai para mais informações. Você irá precisar do *Access Token*.
 
 ### Configuração
 

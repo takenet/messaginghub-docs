@@ -1,6 +1,6 @@
 ### Configuração
 
-A configuração da sua aplicação deve ser realizada através do arquivo `application.json` criado no seu projeto, que define o funcionamento do seu contato, além dos `receiver` e suas configurações.
+A configuração da sua aplicação deve ser realizada através do arquivo `application.json` criado no seu projeto, que define o funcionamento do seu chatbot, além dos `receiver` e suas configurações.
 
 Veja um exemplo de como definir configurações neste arquivo:
 
@@ -25,7 +25,7 @@ Todas as propriedades que podem ser definidas através deste arquivo:
 
 | Propriedade | Descrição                                                                        | Exemplo                 | Valor padrão |
 |-------------|----------------------------------------------------------------------------------|-------------------------|--------------|
-| identifier     | O identificador da aplicação no Messaging Hub, gerado através do [Painel Blip](http://omni.messaginghub.io). | myapplication           | null |
+| identifier     | O identificador da aplicação no Messaging Hub, gerado através do [Painel BLiP](http://omni.messaginghub.io). | myapplication           | null |
 | domain      | O domínio **lime** para conexão. Atualmente o único valor suportado é `msging.net`.| msging.net              | msging.net |
 | hostName    | O endereço do host para conexão com o servidor.                                  | msging.net              | msging.net |
 | accessKey   | A chave de acesso da aplicação para autenticação, no formato **base64**.         | MTIzNDU2                 |null |
