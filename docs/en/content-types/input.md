@@ -1,14 +1,16 @@
-### Entrada do usuário
+### User input
 | MIME type                            | C#                                   |
 |--------------------------------------|--------------------------------------|
 | application/vnd.lime.input+json      | [Lime.Messaging.Contents.Input](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Messaging/Contents/Input.cs) |
 
-Permite o envio de solicitação de informações ao usuário de maneira estruturada, sendo possível definir regras de validação. É útil para construção de questionários ou obtenção de informações específicas, como localização ou uma imagem do usuário.
+Allows send a structured user information request where is possible define validations rules.
 
-A execução da regra de validação depende de suporte do canal.
+This document is useful to build questions forms or to get specific informations, like cell phone, images, locations, or some identity number.
 
-#### Exemplos
-1 - Solicitando o nome de um usuário:
+The execution of validation rules depends of channel support.
+
+#### Examples
+1 - Requesting user name:
 ```json
 {
     "id": "1",
@@ -17,7 +19,7 @@ A execução da regra de validação depende de suporte do canal.
     "content": {
         "label": {
           "type": "text/plain",
-          "value": "Qual o seu nome?"
+          "value": "What is your name?"
         },
         "validation": {
           "rule": "text"          
@@ -26,7 +28,7 @@ A execução da regra de validação depende de suporte do canal.
 }
 ```
 
-2 - Solicitando a localização de um usuário:
+2 - Requesting user location:
 ```json
 {
     "id": "2",
@@ -35,7 +37,7 @@ A execução da regra de validação depende de suporte do canal.
     "content": {
         "label": {
           "type": "text/plain",
-          "value": "Envie sua localização para podermos te atender melhor"
+          "value": "Send your location please!"
         },
         "validation": {
           "rule": "type",
@@ -45,15 +47,15 @@ A execução da regra de validação depende de suporte do canal.
 }
 ```
 
-Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/content-types.html#input).
+For more details, check the [LIME protocol](http://limeprotocol.org/content-types.html#input) specification.
 
-### Mapeamento nos canais
+#### Mapping on Channels
 
-| Canal              | Tipo                    | 
+| Channel              | Type                    | 
 |--------------------|-------------------------|
-| BLiP App           | Texto                   |
+| BLiP App           | Text                   |
 | Messenger          | [Location](https://developers.facebook.com/docs/messenger-platform/send-api-reference/quick-replies) |
-| SMS                | Texto                   |
+| SMS                | Text                   |
 | Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|
 | Telegram           | [Message](https://core.telegram.org/bots/api#message)|
 
