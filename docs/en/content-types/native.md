@@ -1,15 +1,15 @@
-### Conteúdo nativo
+### Native Content
 | MIME type                            | C#                                 |
 |--------------------------------------|------------------------------------|
 | application/json                     | [Lime.Protocol.JsonDocument](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Protocol/JsonDocument.cs) |
 
-Permite o envio de um conteúdo nativo de um canal, no formato JSON. Desta forma, é possível utilizar todos os recursos disponíveis em um canal mesmo que não haja mapeamento para um tipo canônico do BLiP.
+Allows send a native content of some channel using JSON format. Is possible use any channel available resource even this content is yet not supported as a BLiP canonical type.
 
-Note que desta forma, no caso de um chatbot **multicanal**, a responsabilidade de enviar o tipo correto para cada canal é do bot.
+Note that for a **multi channel** chatbot the responsability of send the correct content type to each channel is of chatbot developer.
 
-#### Exemplos
+#### Examples
 
-1 - Enviando uma mensagem do tipo **[texto](https://developers.facebook.com/docs/messenger-platform/send-api-reference/)** do Messenger:
+1 - Sending a Messenger **[text](https://developers.facebook.com/docs/messenger-platform/send-api-reference/)** message:
 ```json
 {  
   "id":"1",
@@ -20,7 +20,7 @@ Note que desta forma, no caso de um chatbot **multicanal**, a responsabilidade d
   }
 }
 ```  
-2 - Enviando uma mensagem do tipo **[cartão de embarque](https://developers.facebook.com/docs/messenger-platform/send-api-reference/airline-boardingpass-template)** do Messenger:
+2 - Sending an **[airline boardingpass template](https://developers.facebook.com/docs/messenger-platform/send-api-reference/airline-boardingpass-template)** message type to Messenger:
 ```json
 {  
   "id":"2",
@@ -151,12 +151,12 @@ Note que desta forma, no caso de um chatbot **multicanal**, a responsabilidade d
 }
 ```
 
-### Mapeamento nos canais
+### Mapping on Channels
 
-| Canal              | Tipo                    | 
+| Channel              | Type                    | 
 |--------------------|-------------------------|
-| BLiP App           | Não suportado           |
-| Messenger          | Suportado (o valor de `content` se refere ao elemento `message` da [Send API](https://developers.facebook.com/docs/messenger-platform/send-api-reference/) do Messenger |
-| SMS                | Não suportado           |
-| Skype              | Não suportado           |
-| Telegram           | Não suportado           |
+| BLiP App           | Does not support           |
+| Messenger          | Supported (the property `content` refers to `message` element of Messenger [Send API](https://developers.facebook.com/docs/messenger-platform/send-api-reference/)  |
+| SMS                | Does not support           |
+| Skype              | Does not support           |
+| Telegram           | Does not support           |
