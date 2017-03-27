@@ -3,4 +3,5 @@
 |--------------------------|----------------------------------------|
 | @skype.gw.msging.net     | Live ID                                |
 
-**Skype** channel allows sending messages through [Skype Microsoft’s app](https://www.skype.com).
+
+O canal **Skype** permite o envio de mensagens através do aplicativo [Skype](https://www.skype.com) da Microsoft.

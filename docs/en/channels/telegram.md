@@ -3,5 +3,4 @@
 |--------------------------|----------------------------------------|
 | @telegram.gw.msging.net  | Chat ID                                |
 
-
-O canal **Telegram** permite o envio de mensagens através do aplicativo [Telegram Messenger](https://telegram.org/) disponível para Web, Android, iOS, Windows e OSX.
+**Telegram** channel allows sending messages through [Telegram Messenger app](https://telegram.org/). Available for Web, Android, iOS, Windows and OSX. 
