@@ -1,15 +1,15 @@
-### Informação confidencial
+### Sensitive Information
 
 | MIME type                            | C#                                 |
 |--------------------------------------|------------------------------------|
 | application/vnd.lime.sensitive+json  | [Lime.Messaging.Contents.SensitiveContainer](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Messaging/Contents/SensitiveContainer.cs) |
 
-Encapsula um conteúdo com sua declaração de tipo MIME, de forma a sinalizar a informação como *sensível* ou *confidencial*. Desta forma, o servidor trata a mesma de maneira diferente, não armazenando-a em nenhum momento. O conteúdo encapsulado pode ser de qualquer tipo disponível.
+This type wrapper a message content in order to signal that informations is confidential or sensitive. Thus, the server will handle the message in a different way and will not storing anything. The wrapped content can be of any available BLiP type.
 
-Importante: O não armazenamento é **restrito ao servidores do BLiP**, podendo um canal externo (*Messenger*, *Telegram*, etc.) armazenar a mesma de alguma maneira.
+**Important Note**: Any external channel (e.g. *Messenger*, *Telegram*) **can storage your sensitive informations**. Pay attention on particular security police of each channel.
 
-#### Exemplo
-1 - Enviando uma senha no formato texto a um usuário do Messenger:
+#### Examples
+1 - Sending a password using text content for a Messenger user:
 ```json
 {
   "id": "1",
@@ -17,13 +17,13 @@ Importante: O não armazenamento é **restrito ao servidores do BLiP**, podendo 
   "type": "application/vnd.lime.sensitive+json",
   "content": {
     "type": "text/plain",
-    "value": "A sua senha é 123456"
+    "value": "Your password is 123456"
   }
 }
 
 ```
 
-2 - Enviando um link da web:
+2 - Sending a weblink:
 ```json
 {
   "id": "2",
@@ -32,7 +32,7 @@ Importante: O não armazenamento é **restrito ao servidores do BLiP**, podendo 
   "content": {
     "type": "application/vnd.lime.web-link+json",
     "value": {
-      "text": "Segue o link para fechamento da sua conta",
+      "text": "Follow the link to finish your account",
       "uri": "https://mystore.com/checkout?ID=A8DJS1JFV98AJKS9"
     }
   }
