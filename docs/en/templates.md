@@ -1,4 +1,5 @@
-### Modelos
+### Templates
 
-Um **modelo** é uma maneira rápida para a criação de um **chatbot** sem a necessidade de codificação por parte do proprietário.
-É necessário apenas a configuração dos parâmetros do modelo pelo portal e imediatamente este estará disponível para publicação nos canais conectados ao **BLiP Messaging Hub**.
+Template is a quickly way to create a chatbot without write any code. It's necessary only set some template settings on portal and your chatbot will be available to be published into any **BLiP Messaging Hub** channel.
+
+**Important Note:** All chatbot created using template are hosted by BLiP.
