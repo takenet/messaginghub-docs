@@ -1,5 +1,5 @@
 ### BLiP
-| FQDN                     | Tipo de identificador       | 
+| FQDN                     | Identifier type       | 
 |--------------------------|-----------------------------|
 | @0mn.io                  | MSISDN                      |
 

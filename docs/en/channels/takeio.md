@@ -1,7 +1,7 @@
 
 ### Take.io (SMS)
 
-| FQDN         | Tipo de identificador |
+| FQDN         | Identifier type |
 |--------------|-----------------------|
 | @take.io     | MSISDN                |
 

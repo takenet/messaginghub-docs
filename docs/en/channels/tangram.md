@@ -1,5 +1,5 @@
 ### Tangram (SMS)
-| FQDN                     | Tipo de identificador                  | 
+| FQDN                     | Identifier type                  | 
 |--------------------------|----------------------------------------|
 | @tangram.com.br          | MSISDN                                 |
 
