@@ -1,5 +1,5 @@
 ### SDK C\# 
 
-O SDK C# do BLiP Messaging Hub foi desenvolvido para tornar mais fácil o trabalho com o [protocolo Lime](http://limeprotocol.org) para troca de mensagens entre as aplicações e serviços de mensageria integrados ao Messaging Hub através de interface fluente.
+If you are a C# developer and want create a chatbot with **BLiP Messaging Hub** so you must use the BLiP SDK C#. It was developed to make easy to send and receive BLiP messages.
 
-Consulte o código do projeto [no Github](https://github.com/takenet/messaginghub-client-csharp/).
+Go to [Github](https://github.com/takenet/messaginghub-client-csharp/) to see the source code.
