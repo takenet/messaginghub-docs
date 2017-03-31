@@ -15,7 +15,7 @@ Para criar um tunel entre dois *chatbots*, basta o **emissor** enviar uma mensag
 [identifier-do-receptor]@tunnel.msging.net/[endereco-do-originador]
 ```
 Onde:
-- **identifier-do-receptor** - O identificador do bot de destino
+- **identifier-do-receptor** - O identificador do bot que deve receber a mensagem encaminhada
 - **endereco-do-originador** - Endereço original da mensagem externa utilizando codificação *URL encode* (ex: substituindo o '@' por '%40')
 
 O receptor recebe mensagens com o endereço no seguinte formato:
@@ -39,11 +39,11 @@ a) O bot principal recebe uma mensagem de um usuário do Messenger.
     "from": "1654804277843415@messenger.gw.msging.net",
     "to": "flow@msging.net/instance",
     "type": "text/plain",
-    "content": "Hi"
+    "content": "Olá, gostaria de ser atendido."
 }
 ```
 
-b) De acordo com suas regras internas, o bot principal decide encaminhar esta mensagem ao bot de atendimento. Para isso, ele troca o destinatário da mensagem como abaixo:
+b) De acordo com suas regras internas, o bot principal decide encaminhar esta mensagem ao bot de atendimento. Para isso, ele troca o destinatário da mensagem e realiza o envio.
 
 ```json
 {
@@ -51,6 +51,42 @@ b) De acordo com suas regras internas, o bot principal decide encaminhar esta me
     "from": "flow@msging.net/instance",
     "to": "operator@tunnel.msging.net/1654804277843415%40messenger.gw.msging.net",
     "type": "text/plain",
-    "content": "Hi"
+    "content": "Olá, gostaria de ser atendido."
+}
+```
+
+c) Internamente, o servidor cria um **id** para o tunel e encaminha a mensagem ao bot **operator**, que a recebe da seguinte forma:
+
+```json
+{
+    "id": "1",
+    "from": "ecb99cf5-fb5c-4376-8acd-4b478091de15@tunnel.msging.net",
+    "to": "operator@msging.net",    
+    "type": "text/plain",
+    "content": "Olá, gostaria de ser atendido."
+}
+```
+
+d) O bot operator gera uma resposta para a mensagem e a encaminha para o endereço de origem, **sem diferenciação de uma mensagem recebida diretamente de um canal** (o mesmo vale para notificações de entrega/leitura):
+
+```json
+{
+    "id": "2",
+    "from": "operator@msging.net/instance",
+    "to": "ecb99cf5-fb5c-4376-8acd-4b478091de15@tunnel.msging.net",    
+    "type": "text/plain",
+    "content": "Olá, meu nome é André. Como posso te ajudar?"
+}
+```
+
+e) O servidor, a partir do **id** do túnel, troca o endereço da mensagem de resposta e a encaminha para o bot **flow**:
+
+```json
+{
+    "id": "2",
+    "from": "operator@tunnel.msging.net/1654804277843415%40messenger.gw.msging.net",
+    "to": "flow@msging.net/instance",    
+    "type": "text/plain",
+    "content": "Olá, meu nome é André. Como posso te ajudar?"
 }
 ```
