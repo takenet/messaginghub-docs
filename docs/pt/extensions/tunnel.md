@@ -90,6 +90,16 @@ e) O servidor, a partir do **id** do túnel, troca o endereço da mensagem de re
     "content": "Olá, meu nome é André. Como posso te ajudar?"
 }
 ```
+f) O bot flow identifica a mensagem recebida de um **receptor**, descodifica o endereço original que está na **instância** e envia a mensagem ao destinatário final:
+```json
+{
+    "id": "2",
+    "from": "flow@msging.net/instance",
+    "to": "1654804277843415@messenger.gw.msging.net",    
+    "type": "text/plain",
+    "content": "Olá, meu nome é André. Como posso te ajudar?"
+}
+```
 
 2 - A extensão **túnel** também permite a consulta a informações do originador da mensagem no **diretório**, desde que suportado pelo canal de origem da mensagem. Para isso, basta utilizar a mesma mecânica definida nesta extensão:
 
