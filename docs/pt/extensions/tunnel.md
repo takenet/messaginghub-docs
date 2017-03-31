@@ -90,3 +90,34 @@ e) O servidor, a partir do **id** do túnel, troca o endereço da mensagem de re
     "content": "Olá, meu nome é André. Como posso te ajudar?"
 }
 ```
+
+2 - A extensão **túnel** também permite a consulta a informações do originador da mensagem no **diretório**, desde que suportado pelo canal de origem da mensagem. Para isso, basta utilizar a mesma mecânica definida nesta extensão:
+
+Enviando um comando para a consulta no diretório utilizando o **id** do túnel:
+
+```json
+{
+    "id": "3",
+    "from": "operator@msging.net/instance",
+    "to": "postmaster@tunnel.msging.net",    
+    "method":"get",
+    "uri": "lime://tunnel.msging.net/accounts/ecb99cf5-fb5c-4376-8acd-4b478091de15"
+}
+```
+
+O servidor identifica que a consulta é para um usuário do túnel e realiza a consulta **em nome do emissor** diretamente no **diretório do canal** e retorna a informação:
+
+```json
+{
+    "id": "3",
+    "from": "postmaster@tunnel.gw.msging.net",    
+    "to": "operator@msging.net/instance",
+    "method":"get",
+    "status": "success",
+    "type": "application/vnd.lime.account+json",
+    "resource": {
+        "fullName": "João da Silva",
+        "gender": "male"
+    }    
+}
+```
