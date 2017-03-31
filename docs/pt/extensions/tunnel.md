@@ -18,6 +18,13 @@ Onde:
 - **identifier-do-receptor** - O identificador do bot de destino
 - **endereco-do-originador** - Endereço original da mensagem externa utilizando codificação *URL encode* (ex: substituindo o '@' por '%40')
 
+O receptor recebe mensagens com o endereço no seguinte formato:
+
+```
+[id-do-tunnel]@tunnel.msging.net
+```
+Onde:
+- **id-do-tunnel** - Um identificador único do túnel, composto pela tríade **emissor**, **receptor** e **originador** (endereço original de quem enviou a mensagem).
 
 #### Exemplo
 
