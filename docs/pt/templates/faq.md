@@ -28,11 +28,10 @@ Para isso basta clicar no campo “Associe a uma pergunta”, selecionar a pergu
 Após vincular uma nova pergunta a uma resposta previamente cadastrada, será necessário realizar o processo de treinamento e publicação do chatbot novamente para que as alterações sejam atualizadas. 
 
 
+#### Menu inteligência artificial
 
+##### Configuração IBM Watson Natural Language Classifier
 
-MENU INTELIGÊNCIA ARTIFICIAL	
-
-Configuração IBM Watson Natural Language Classifier
 O Natural Language Classifier é um serviço que permite a compreensão da linguagem natural, utilizando aprendizagem de máquina, para responder de uma forma semelhante a um humano. A compreensão da linguagem natural é realizada através da interpretação de intenções a partir de textos e retornando uma classificação com níveis de confiança, permitindo que possa ser disparada alguma ação como por exemplo responder a uma pergunta. Para mais informações sobre o Natural Language Classifier clique aqui (https://www.ibm.com/watson/developercloud/nl-classifier.html)
 
 Para configurar é necessário criar uma conta no Bluemix (https://console.ng.bluemix.net/)
@@ -46,7 +45,7 @@ Após criar o serviço, é necessário obter as credenciais para configurar no B
 
 Das informações exibidas, copie o conteúdo de “username” e insira no campo “NOME DE USUÁRIO” no BLiP e copie o conteúdo de “password” e insira no campo “SENHA” no BLiP como demonstrado abaixo e clique em salvar.
 
-Configuração IBM Watson Conversation
+##### Configuração IBM Watson Conversation
 
 IBM Watson Conversation possui funcionalidades do Natural Language Classifier (NLC), do Dialog e algumas outras funcionalidades que permitem a compreensão da linguagem natural para responder de uma forma semelhante a um humano. O IBM Watson Conversation possui uma versão Free, porém existem algumas restrições como o limite de 1000 requisições por mês, até 3 classificadores (o BLiP necessita de 2 classificadores por chatbot) e até 25 intenções cadastradas. Para mais informações clique aqui (https://www.ibm.com/watson/developercloud/conversation.html)
 Para configurar é necessário criar uma conta no Bluemix (https://console.ng.bluemix.net/)
