@@ -18,7 +18,7 @@ Onde:
 - **identifier-do-receptor** - O identificador do bot que deve receber a mensagem encaminhada
 - **endereco-do-originador** - Endereço original da mensagem externa utilizando codificação *URL encode* (ex: substituindo o '@' por '%40')
 
-O receptor recebe mensagens com o endereço no seguinte formato:
+O receptor recebe mensagens, envia notificações e mensagens de resposta a um endereço no seguinte formato:
 
 ```
 [id-do-tunnel]@tunnel.msging.net
