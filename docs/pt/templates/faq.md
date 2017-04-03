@@ -2,6 +2,8 @@
 
 Para utilizar o modelo FAQ, é necessário inicialmente Configurar inteligência artificial. Você pode acessar através do link como demonstrado na imagem abaixo ou através do menu lateral chamado *Inteligência Artificial*
 
+<img src="faq1.png" />
+
 Após ter configurado a inteligência artificial, é necessário criar a base de conhecimento. Para isso você terá que cadastrar perguntas e respostas através do botão “NOVA RESPOSTA” como demonstrado na imagem abaixo.
 
 Será exibida uma tela onde será possível cadastrar as perguntas e a resposta correspondente. Você pode cadastrar mais de uma pergunta para a mesma resposta.
@@ -9,7 +11,7 @@ Será exibida uma tela onde será possível cadastrar as perguntas e a resposta 
 Após cadastrar um pergunta, o botão “TREINAR CHATBOT” será habilitado. Isso irá ocorrer sempre que uma resposta for criada, excluída ou editada.
 Observações: 
 1 - Caso esteja utilizando o Natural Language Classifier é necessário ter no mínimo 5 respostas cadastradas.
-2 - Caso esteja utilizando o Conversation, podem ser cadastradas no máximo 25 respostas.
+2 - Caso esteja utilizando o Conversation no modelo gratuito, podem ser cadastradas no máximo 25 respostas.
  
 Após finalizar o cadastro das respostas, clique em “TREINAR CHATBOT” e aguarde a finalização do treinamento.  
 
