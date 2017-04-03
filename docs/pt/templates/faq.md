@@ -14,7 +14,7 @@ Será exibida uma tela onde será possível cadastrar as perguntas e a resposta 
 
 <img src="faq4.png" />
 
-Após cadastrar um pergunta, o botão “TREINAR CHATBOT” será habilitado. Isso irá ocorrer sempre que uma resposta for criada, excluída ou editada.
+Após cadastrar uma pergunta, o botão “TREINAR CHATBOT” será habilitado. Isso irá ocorrer sempre que uma resposta for criada, excluída ou editada.
 Observações: 
 1 - Caso esteja utilizando o Natural Language Classifier é necessário ter no mínimo 5 respostas cadastradas.
 2 - Caso esteja utilizando o Conversation no modelo gratuito, podem ser cadastradas no máximo 25 respostas.
@@ -57,10 +57,10 @@ Após vincular uma nova pergunta a uma resposta previamente cadastrada, será ne
 
 ##### Configuração IBM Watson Natural Language Classifier
 
-O Natural Language Classifier é um serviço que permite a compreensão da linguagem natural, utilizando aprendizagem de máquina, para responder de uma forma semelhante a um humano. A compreensão da linguagem natural é realizada através da interpretação de intenções a partir de textos e retornando uma classificação com níveis de confiança, permitindo que possa ser disparada alguma ação como por exemplo responder a uma pergunta. Para mais informações sobre o Natural Language Classifier clique aqui (https://www.ibm.com/watson/developercloud/nl-classifier.html)
+O Natural Language Classifier é um serviço que permite a compreensão da linguagem natural, utilizando aprendizagem de máquina, para responder de uma forma semelhante a um humano. A compreensão da linguagem natural é realizada através da interpretação de intenções a partir de textos e retornando uma classificação com níveis de confiança, permitindo que possa ser disparada alguma ação como por exemplo responder a uma pergunta. Para mais informações sobre o Natural Language Classifier acesse:https://www.ibm.com/watson/developercloud/nl-classifier.html
 
-Para configurar é necessário criar uma conta no Bluemix (https://console.ng.bluemix.net/)
-Após a criação da conta é necessário criar um Serviço. Para isso acesse o Bluemix, e no menu lateral clique em “Serviços”, como demonstrado na imagem abaixo, e clique em “Criar serviço Watson”
+Para configurar é necessário criar uma conta no Bluemix (https://console.ng.bluemix.net/).
+Após a criação da conta é necessário criar um Serviço, para isso acesse o Bluemix e no menu lateral clique em “Serviços”, como demonstrado na imagem abaixo, e clique em “Criar serviço Watson”
 
 <img src="faq14.png" />
 
@@ -82,9 +82,9 @@ Das informações exibidas, copie o conteúdo de “username” e insira no camp
 
 ##### Configuração IBM Watson Conversation
 
-IBM Watson Conversation possui funcionalidades do Natural Language Classifier (NLC), do Dialog e algumas outras funcionalidades que permitem a compreensão da linguagem natural para responder de uma forma semelhante a um humano. O IBM Watson Conversation possui uma versão Free, porém existem algumas restrições como o limite de 1000 requisições por mês, até 3 classificadores (o BLiP necessita de 2 classificadores por chatbot) e até 25 intenções cadastradas. Para mais informações clique aqui (https://www.ibm.com/watson/developercloud/conversation.html)
-Para configurar é necessário criar uma conta no Bluemix (https://console.ng.bluemix.net/)
-Após a criação da conta é necessário criar um Serviço. Para isso acesse o Bluemix, e no menu lateral clique em “Serviços”, como demonstrado na imagem abaixo, e clique em “Criar serviço Watson”
+IBM Watson Conversation possui funcionalidades do Natural Language Classifier (NLC), do Dialog e algumas outras funcionalidades que permitem a compreensão da linguagem natural para responder de uma forma semelhante a um humano. O IBM Watson Conversation possui uma versão Free, porém existem algumas restrições como o limite de 1000 requisições por mês, até 3 classificadores (o BLiP necessita de 2 classificadores por chatbot) e até 25 intenções cadastradas. Para mais informações acesse: https://www.ibm.com/watson/developercloud/conversation.html
+
+Para configurar é necessário criar uma conta no Bluemix (https://console.ng.bluemix.net/). Após a criação da conta é necessário criar um Serviço, para isso acesse o Bluemix e no menu lateral clique em “Serviços”, como demonstrado na imagem abaixo, e clique em “Criar serviço Watson”
 
 <img src="faq19.png" />
  
