@@ -2,6 +2,8 @@
 
 Para utilizar o modelo FAQ, é necessário inicialmente Configurar inteligência artificial. Você pode acessar através do link como demonstrado na imagem abaixo ou através do menu lateral chamado *Inteligência Artificial*
 
+<img src="faq1.png" />
+
 Após ter configurado a inteligência artificial, é necessário criar a base de conhecimento. Para isso você terá que cadastrar perguntas e respostas através do botão “NOVA RESPOSTA” como demonstrado na imagem abaixo.
 
 Será exibida uma tela onde será possível cadastrar as perguntas e a resposta correspondente. Você pode cadastrar mais de uma pergunta para a mesma resposta.
