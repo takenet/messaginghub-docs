@@ -3,9 +3,9 @@
 |---------------------------------|--------------|-------------------------|------------------------|
 | postmaster@talkservice.msging.net | /analysis       | Análise de Sentença      | [TalkServiceExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/ArtificialIntelligence/TalkServiceExtension.cs) |
 
-A extensão **TalkService** permite que você crie um chatbot que entenda a entrada em linguagem natural e use um modelo treinado para responder aos clientes de uma forma que simula uma conversa entre humanos, é necessario configurar previamente no portal do BLiP a API de interpretação de linguagem natural (ex.: Watson Conversation, Watson Natural language Classifier, Luis).
+A extensão **TalkService** permite que você crie um chatbot que entenda mensagens recebidas em linguagem natural, utilizando um modelo treinado para responder aos clientes a partir de uma base de conhecimento. Com isto, seu chatbot poderá simular uma conversa entre humanos. Antes de consultar esta API, é necessario configurar previamente no portal do BLiP o provedor da solução de interpretação de linguagem natural (NLP) que será utilizada pelo chatbot (ex.: Watson Conversation, Watson Natural language Classifier, Luis).
 
-O TalkService abstrai a API de NLP permitindo que voce utilize a que melhor te atenda, os pedidos de análise de uma sentença retorna a intenção por trás do texto e retorna uma pontuação de confiança.
+O TalkService permite desenvolver o chatbot abstraindo-se do provedor de NLP, permitindo que você utilize a solução que melhor  atenda. O pedido de análise de uma sentença retorna a intenção por trás do texto, com uma pontuação de confiança definida pelo provedor do NLP.
 
 #### Exemplos
 
