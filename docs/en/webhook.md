@@ -1,14 +1,17 @@
 ### Webhook
 
-Um *chatbot* do tipo **Webhook** permite ao desenvolvedor realizar a integração através **endpoints HTTP** para troca de mensagens, notificações e comandos.
+**Webhook's** *chatbot* enable an integration via **HTTP endpoints** to exchange messages, notifications and commands.
 
-#### Envio de mensagens
+#### Sending messages
 
-Para enviar mensagens, a aplicação deverá fazer um `HTTP POST` na URL exibida nas configurações do chatbot. A requisição deve conter um cabeçalho de autorização (`Authorization`) com o tipo `Key`, conforme exibido nas configurações do chatbot.
+To send messages is necessary make a `HTTP POST` request to URL provided on portal (chatbot settings section). The request must contain a authorization header (`Authorization`) with `Key` type, as showed on chatbot settings.
 
-Os dados da mensagem devem ser enviados no corpo da requisição. A mensagem deve ser um *JSON* no formato determinado pelo protocolo LIME. Para mais detalhes, consulte [a documentação do protocolo](http://limeprotocol.org/#message).
+The message data must be send on request `body`. The message must be a *JSON* on LIME protocol format. For more details go to [protocol documentation](http://limeprotocol.org/#message).
 
-Suponha que exista um chatbot com o identificador **messaginghubapp**, veja como seria o envio completo, incluindo os cabeçalhos e a mensagem:
+### Example
+
+Imagine that exist a chatbot with **blipmessaginghubapp** identifier. To send a message from this bot to a BLiP user use:
+
 ```
 POST https://msging.net/messages HTTP/1.1
 Content-Type: application/json
@@ -19,37 +22,43 @@ Content-Length: 131
   "id": "123e4567-e89b-12d3-a456-426655440000",
   "to": "551100001111@0mn.io",
   "type": "text/plain",
-  "content": "Olá, como podemos te ajudar?"
+  "content": "Hello, how can I help you?"
 }
 ```
-Para mais informações sobre mensagens consulte a [documentação de **Mensagens**](.#/docs/concepts/messages) ou a [documentação do tipos de conteúdo suportados](.#/docs/content-types).
 
-##### Recebimento notificações
-Caso seja configurada a URL de notificações do chatbot, serão entregues nessa URL as notificações contendo os _status_ das mensagens. Observe que as notificações são enviadas pelo *clientes*, informando se receberam ou não uma mensagem enviada pelo chatbot.
+Note: For this sample `bWVzc2FnaW5naHViQHRha2VuZXQuY29tLmJyOjEyMzQ` is a valid `Key` for **blipmessaginghubapp** chatbot.
 
-Nesse caso também será realizado um `HTTP POST` com a informação no formato JSON, conforme formato definido pelo [protocolo LIME](http://limeprotocol.org/#notification). Veja um exemplo de uma notificação da mensagem anterior:
+For more information about messages, check the [**Messages** documentation page](.#/docs/concepts/messages) or the [supported content types specification](.#/docs/content-types).
+
+##### Receiving notification
+All notifications will be delivered on configured chatbot notification URL. Each notification contains the _status_ of messages. Observe that the notifications are sent by the *clients*, informing if received or not some message.
+
+A sample of notification is presented bellow. This notification will be deliverd as a `HTTP POST` request on the chatbot notification URL.
+
 ```
 {
   "id": "123e4567-e89b-12d3-a456-426655440000",
   "from": "551100001111@0mn.io/4ac58r6e3",
-  "to": "messaginghubapp@msging.net/7a8fr233x",
+  "to": "blipmessaginghubapp@msging.net/7a8fr233x",
   "event": "received"
 }
 ```
-Para mais informações e exemplos de notificações consulte a [documentação de **Notificações**](.#/docs/concepts/notifications)
+
+For more information, check the [**Notification** documentation page](.#/docs/concepts/notifications)
 
 ---
 
-#### Recebimento de mensagens
+#### Receiving messages
 
-A URL de mensagens configurada receberá um `HTTP POST` com a mensagem enviada por um cliente no formato JSON, também no formato definido pelo [protocolo LIME](http://limeprotocol.org/#message), conforme o exemplo abaixo:
+As the notifications, all messages will be delivered as a `HTTP POST` request on configured chatbot messages URL. The messages have a JSON format as defined on [LIME PROTOCOL](http://limeprotocol.org/#message). A sample of received message is presented bellow.
+
 ```
 {
   "id": "99cf454e-f25d-4ebd-831f-e48a1c612cd4",
   "from": "551100001111@0mn.io/4ac58r6e3",
-  "to": "messaginghubapp@msging.net",
+  "to": "blipmessaginghubapp@msging.net",
   "type": "text/plain",
-  "content": "Ajuda"
+  "content": "Help"
 }
 ```
 
@@ -98,14 +107,14 @@ Content-Length: 393
       "id":"ad19adf8-f5ec-4fff-8aeb-2e7ebe9f7a67",
       "to":"553100001111@0mn.io",
       "type":"text/plain",
-      "content":"Mensagem agendada"
+      "content":"Scheduled Message"
     },
     "when":"2016-07-25T17:50:00.000Z"
   }
 }
 ```
 
-A resposta do comando é entregue imediatamente na resposta HTTP, como abaixo:
+The command response is immediately delivered on HTTP response, as bellow:
 
 ```
 HTTP/1.1 200 OK
@@ -118,25 +127,25 @@ Content-Length: 131
 {  
   "id":"2",
   "from":"postmaster@scheduler.msging.net/#irismsging1",
-  "to":"messaginghubapp@msging.net",
+  "to":"blipmessaginghubapp@msging.net",
   "method":"set",
   "status":"success"
 }
 
 ```
-#### Códigos de retorno para envio
+#### Result codes for requests
 
-| Código              | Descrição                                                                               |
-|---------------------|-----------------------------------------------------------------------------------------|
-| 202 (Accepted)      | Envelope aceito pelo servidor                                                           |
-| 400 (Bad Request)   | Indica algum problema com o formato ou campos do envelope enviado                       |
-| 401 (Unauthorized)  | Indica algum problema ou falta do cabeçalho Authorization                               |
+| Code                | Description                                                                               |
+|---------------------|-----------------------------------------------------------------------------------------  |
+| 202 (Accepted)      | Envelope was accepted by the server                                                       |
+| 400 (Bad Request)   | Alert to some problem with format or fields of sent envelope.                             |
+| 401 (Unauthorized)  | Alert to some problem or *Authorization* header missing                                   |
 
 ---
 
-#### Configuração
+#### Required Settings
 
-| Nome                          | Descrição                                                                     |
+| Name                          | Description                                                                   |
 |-------------------------------|-------------------------------------------------------------------------------|
-| Url para receber mensagens    | Endereço onde o BLiP irá postar as mensagens                                  |
-| Url para receber notificações | Endereço onde o BLiP irá postar as notificações                               |
+| Url to receive messages       | Endpoint where BLiP will post the messages                                    |
+| Url to receive notification   | Endpoint where BLiP will post the notifications                               |

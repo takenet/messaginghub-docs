@@ -8,7 +8,7 @@ Para enviar mensagens, a aplicação deverá fazer um `HTTP POST` na URL exibida
 
 Os dados da mensagem devem ser enviados no corpo da requisição. A mensagem deve ser um *JSON* no formato determinado pelo protocolo LIME. Para mais detalhes, consulte [a documentação do protocolo](http://limeprotocol.org/#message).
 
-Suponha que exista um chatbot com o identificador **messaginghubapp**, veja como seria o envio completo, incluindo os cabeçalhos e a mensagem:
+Suponha que exista um chatbot com o identificador **blipmessaginghubapp**, veja como seria o envio completo, incluindo os cabeçalhos e a mensagem:
 ```
 POST https://msging.net/messages HTTP/1.1
 Content-Type: application/json
@@ -32,7 +32,7 @@ Nesse caso também será realizado um `HTTP POST` com a informação no formato 
 {
   "id": "123e4567-e89b-12d3-a456-426655440000",
   "from": "551100001111@0mn.io/4ac58r6e3",
-  "to": "messaginghubapp@msging.net/7a8fr233x",
+  "to": "blipmessaginghubapp@msging.net/7a8fr233x",
   "event": "received"
 }
 ```
@@ -47,7 +47,7 @@ A URL de mensagens configurada receberá um `HTTP POST` com a mensagem enviada p
 {
   "id": "99cf454e-f25d-4ebd-831f-e48a1c612cd4",
   "from": "551100001111@0mn.io/4ac58r6e3",
-  "to": "messaginghubapp@msging.net",
+  "to": "blipmessaginghubapp@msging.net",
   "type": "text/plain",
   "content": "Ajuda"
 }
@@ -118,7 +118,7 @@ Content-Length: 131
 {  
   "id":"2",
   "from":"postmaster@scheduler.msging.net/#irismsging1",
-  "to":"messaginghubapp@msging.net",
+  "to":"blipmessaginghubapp@msging.net",
   "method":"set",
   "status":"success"
 }
