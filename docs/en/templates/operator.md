@@ -1,15 +1,15 @@
-### Atendimento manual
+### Manual attendance
 
-O modelo **Atendimento Manual** consiste em um serviço que irá redirecionar as mensagens dos clientes para um atendente, que pode estar em canais como e-mail, Zendesk ou no aplicativo [BLiP Mensagens](https://play.google.com/store/apps/details?id=net.take.omni).
+**Manual Attendace** template is a service that redirect all messages received to an attendant. This attendant can use one of this applications to reply the messages: e-mail, Zendesk [BLiP Web](https://web.blip.ai) or using [BLiP Mensagens](https://play.google.com/store/apps/details?id=net.take.omni) android app.
 
-Na visão do Atendente, uma thread é criada para cada cliente e o atendimento é feito de forma individual.
+For the attendant is created a thread for each client and the attendance is individual.
 
-Na visão do cliente, a interação é realizada com o serviço de forma que ele não sabe quem está realizando o atendimento.
+For the client the conversation is only with the chatbot and he don't know who is the attendant.
 
-### Configuração
+### Settings
 
-| Nome                | Descrição                                                                               |
+| Name                | Description                                                                               |
 |---------------------|-----------------------------------------------------------------------------------------|
-| Telefone BLiP App   | Número de telefone do atendente. **Não será exibido para o cliente**                    |
-| Nome do atendente   | Nome completo do atendente. **Não será exibido para o cliente**                         |
-| Resposta automática | Texto que será enviado ao cliente quando ele  interagir pela primeira vez com o chatbot |
+| PhoneNumber BLiP App   | Número de telefone do atendente. **Will not be presented to the client**                    |
+| Attendant Name   | Nome completo do atendente. **Will not be presented to the client**                         |
+| Default response | Default response sent to the client during the first interaction with bot |
