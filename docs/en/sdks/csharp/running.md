@@ -1,5 +1,5 @@
-### Executando
+### Running
 
-O Messaging Hub oferece o utilitário `mhh.exe` que realiza o *host* de aplicações definidas em um arquivo `application.json`. Este arquivo permite a construção do cliente do Messaging Hub de forma declarativa. Este utilitário é instalado junto ao pacote `Takenet.MessagingHub.Client.Template`.
+**Blip Messaging Hub** has a tool `mhh.exe` to make easy *host* BLiP chatbots. This tool is installed with `Takenet.MessagingHub.Client.Template` package and use the `application.json` file to build all nedded infrastructure during chatbot execution. 
 
-Para testar sua aplicação no Visual Studio, defina o projeto *Class Library* criado como projeto de inicialização. Para isso, na janela **Solution Explorer**, clique com o botão direto no projeto e escolha a opção **Set as StartUp Project**. Depois disso, basta iniciá-la clicando em **Start** ou pressionando F5.
+Test your application on Visual Studio defining the *Class Library* project created as a StartUp Project. After this start the application clicking on **Start** or pressing F5.
