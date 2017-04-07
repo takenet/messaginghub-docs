@@ -1,3 +1,3 @@
-### Exemplos
+### Examples
 
-Os exemplos de uso da SDK C# podem ser encontrados dentro da pasta [samples](https://github.com/takenet/messaginghub-client-csharp/tree/master/src/Samples) no GitHub.
+Examples using the SDK C# can be found on [samples](https://github.com/takenet/messaginghub-client-csharp/tree/master/src/Samples) folder on GitHub.

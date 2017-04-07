@@ -62,13 +62,13 @@ As the notifications, all messages will be delivered as a `HTTP POST` request on
 }
 ```
 
-##### Envio de notificações
+##### Sending notifications
 
-Para que o histórico de mensagens seja exibido de forma correta, é importante que os chatbots enviem notificações de processamento das mensagens recebidas, para os clientes que as originaram. 
+In order to correctly show the message history is important that the chatbots send notifications of messages processed to originator clients.
 
-Para isso, é necessário enviar uma notificação com o evento `consumed`. E em caso de erros inesperados de processamento, deve ser enviada notificação com evento `failed`. A requisição também deve conter um cabeçalho de autorização (`Authorization`) com o tipo `Key`, conforme exibido nas configurações do chatbot.
+For each message processed is important send a notification with the `consumed` event. In case of problems the chatbot must send a notification with the `failed` event. The request must contain a authorization header (`Authorization`) with `Key` type, as showed on chatbot settings.
 
-Por exemplo, supondo que a mensagem recebida no exemplo anterior foi processada, o envio completo da notificação, incluindo os cabeçalhos e o corpo da requisição para a mensagem (cujo id é **99cf454e-f25d-4ebd-831f-e48a1c612cd4**) será:
+For instance, imagine that the received message from example above (whit id **99cf454e-f25d-4ebd-831f-e48a1c612cd4**) was processed with success. The code bellow show a complete notification request including the headers and the body request.
 ```
 POST https://msging.net/notifications HTTP/1.1
 Content-Type: application/json
@@ -84,11 +84,11 @@ Content-Length: 131
 
 ---
 
-#### Envio de comandos
+#### Sending commands
 
-O envio de comandos é útil para o uso das extensões da plataforma, como **agendamento** ou **armazenamento**. Estes devem ser enviados na URL `/commands`, se forma similar a mensagens e notificações:
+In order to use the BLiP's [extensions]() (like schedule and directory) is necessary send commands. To do this is necessary make a `HTTP POST` request on `/commands` URL:
 
-Por exemplo, enviando um comando para agendamento de uma mensagem:
+For instance, send a command to schedule some message:
 
 ```
 POST https://msging.net/commands HTTP/1.1

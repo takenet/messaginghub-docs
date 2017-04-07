@@ -1,8 +1,8 @@
-### Enviar
+### Send
 
-Para o envio de mensagens e notificações, deve-se utilizar uma instância de `IMessagingHubSender`, que é injetada automaticamente nos construtores dos `receivers` registrados no projeto, além da classe `Startup`.
+In order to send messages and notifications use an instance of `IMessagingHubSender`, wich is automaticaly injected on constructors of registered `receivers` defined on project and on `Startup` class.
 
-Abaixo um exemplo de como responder a uma mensagem recebida:
+The sample bellow show how to reply a received message:
 
 ```csharp
 public class PlainTextMessageReceiver : IMessageReceiver
@@ -24,9 +24,9 @@ public class PlainTextMessageReceiver : IMessageReceiver
 }
 ```
 
-O envio ocorre de forma assíncrona, sendo que atualizações de status da mensagem são entregues à aplicação através de **notificações**.
+The process of send message is asynchronous and the status of sent messages is delivered to application by **notifications**.
 
-Esta classe também permite o envio de **comandos** ao servidor, de maneira semelhante:
+`IMessagingHubSender` interface also enable send **commands** to the server, as the follow sample:
 
 ```csharp
 var command = new Command {
@@ -36,4 +36,4 @@ var command = new Command {
 
 var response = await _sender.SendCommandAsync(command);
 ```
-Neste caso, a resposta do comando é recebida de forma síncrona, na resposta da chamada do método `SendCommandAsync`.
+For this case, the command response is received on a synchronous way.
