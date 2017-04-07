@@ -1,10 +1,10 @@
-### Tipos de mensagem
+### Message Types
 
-O **BLiP Messaging Hub** define tipos de mensagem que são convertidos automaticamente para a melhor representação disponível em cada canal. Estes tipos são chamados **tipos canônicos**. Para mais detalhes, consulte a seção *Conceitos > Mensagens* desta documentação.
+**BLiP Messaging Hub** define message types (**cannonical types**) that are automatically parsed to the best available representation on each channel. For more details check the *Concepts > Messages* section of documentation.
 
-Confira o Chat Bot [Message Types](https://github.com/takenet/messaginghub-client-csharp/tree/master/src/Samples/MessageTypes) para ver como usar cada um dos tipos de mensagem  do Messaging Hub.
+For see how to use each **BLiP Messaging Hub** message type check the [Message Types](https://github.com/takenet/messaginghub-client-csharp/tree/master/src/Samples/MessageTypes) chatbot.
 
-### Mensagens de Texto Simples (PlainText)
+### Text Message (PlainText)
 
 Mensagens de texto simples são suportadas em todos os canais. No entanto, restrições podem se aplicar a alguns deles, como por exemplo o tamanho da mensagem.
 
