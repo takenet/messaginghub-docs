@@ -1,8 +1,8 @@
-### Receber
+### Receiving
 
-O recebimento de mensagens e notificações é feito através das interfaces de `IMessageReceiver` e `INotificationReceiver` respectivamente.
+The receipt of messages and notifications is done using the interaces `IMessageReceiver` and `INotificationReceiver` respectively.
 
-Um `IMessageReceiver` pode ser definido da seguinte forma:
+A `IMessageReceiver` can be defined as follow:
 
 ```csharp
 public class PlainTextMessageReceiver : IMessageReceiver
@@ -15,13 +15,13 @@ public class PlainTextMessageReceiver : IMessageReceiver
 }
 ```
 
-Alguns pontos importantes:
+Some important notes:
 
-- Antes de o método `ReceiveAsync` ser executado, uma notificação do tipo `Event.Received` é automaticamente enviada a quem lhe enviou a mensagem.
-- Após o método `ReceiveAsync` ser executado, caso nenhuma exceção tenha ocorrido, uma notificação do tipo `Event.Consumed` é automaticamente enviada a quem lhe enviou a mensagem.
-- Caso uma exceção tenha ocorrido no método `ReceiveAsync`, uma notificação do tipo `Event.Failed` é automaticamente enviada a quem lhe enviou a mensagem.
+- Before the `ReceiveAsync` method be executed, a notification of `Event.Received` type is automatically sent to originator of message.
+- After `ReceiveAsync` method be executed, if no one exception occur, a notification of type `Event.Consumed` is automatically sent to originator of message.
+- If some exception occur on `ReceiveAsync` method, a notificação of type `Event.Failed` is automatically sent to originator of message.
 
-Um `INotificationReceiver` pode ser definido da seguinte forma:
+A `INotificationReceiver` can be defined as follow:
 
 ```csharp
 public class ConsumedNotificationReceiver : INotificationReceiver
@@ -34,6 +34,6 @@ public class ConsumedNotificationReceiver : INotificationReceiver
 }
 ```
 
-As notificações são *fire-and-forget* e caso haja alguma falha durante a execução do método `ReceiveAsync`, esta será ignorada.
+The notifcations are *fire-and-forget* and if occur some exception on `ReceiveAsync`, this fail will be ignored.
 
-O registro das implementações destas interfaces deve ser feito no arquivo `application.json` do projeto. Para mais detalhes, consulte a seção **Configuração**.
+Note: Remember to register all implementations of `INotificationReceiver` and `IMessageReceiver` on `application.json` file. For more informations check the **Configuring** section.
