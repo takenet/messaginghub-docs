@@ -6,25 +6,25 @@ For see how to use each **BLiP Messaging Hub** message type check the [Message T
 
 ### Text Message (PlainText)
 
-Mensagens de texto simples são suportadas em todos os canais. No entanto, restrições podem se aplicar a alguns deles, como por exemplo o tamanho da mensagem.
+Simple text messages are supported for any channel. However, each channel can have restrictions as for sample the message length.
 
-*Exemplo:*
+*Example:*
 
-O exemplo abaixo mostra como responder a uma mensagem recebida com uma mensagem de texto simples.
+The sample follow show how to reply a received message with a simple text message.
 ```csharp
 public async Task ReceiveAsync(Message message, CancellationToken cancellationToken)
 {
-    var document = new PlainText {Text = "... Inspiração, e um pouco de café! E isso me basta!"};
+    var document = new PlainText {Text = "... Inspiration, and a cup of coffe! It's enough!"};
     await _sender.SendMessageAsync(document, message.From, cancellationToken);
 }
 ```
-*Restrições:*
+*Limitations:*
 
-- Facebook Messenger: Máximo de 320 caractéries. Caso seu Chat Bot envie mensagens maiores que este limite, e esteja utilizando este canal, sua mensagem não será enviada.
+- Facebook Messenger: Max size of 320 characters. If your chatbot send messages with more than 320 characters, on this channel, your message will not be delivered.
 
-### Links para Arquivos de Mídia e Páginas Web (MediaLink e WebLink)
+### Links to media files and web pages (MediaLink e WebLink)
 
-Para enviar arquivos de mídia, o documento enviado deve ser do tipo MediaLink, conforme abaixo:
+To send media links, the message sent must have a MediaLink document as follow:
 ```csharp
 public async Task ReceiveAsync(Message message, CancellationToken cancellationToken)
 {
@@ -32,7 +32,7 @@ public async Task ReceiveAsync(Message message, CancellationToken cancellationTo
 
     var document = new MediaLink
     {
-        Text = "Café, o que mais seria?",
+        Text = "Coffe, what else ?",
         Size = 6679,
         Type = MediaType.Parse("image/jpeg"),
         PreviewUri = imageUri,
@@ -41,7 +41,7 @@ public async Task ReceiveAsync(Message message, CancellationToken cancellationTo
     await _sender.SendMessageAsync(document, message.From, cancellationToken);
 }
 ```
-Já para enviar o link para uma página web, use o tipo WebLink:
+To send a web page link use the WebLink type:
 ```csharp
 public async Task ReceiveAsync(Message message, CancellationToken cancellationToken)
 {
@@ -52,7 +52,7 @@ public async Task ReceiveAsync(Message message, CancellationToken cancellationTo
 
     var document = new WebLink
     {
-        Text = "Café, a bebida sagrada!",
+        Text = "Coffe, the god's drink!",
         PreviewUri = previewUri,
         Uri = url
     };
@@ -60,33 +60,33 @@ public async Task ReceiveAsync(Message message, CancellationToken cancellationTo
     await _sender.SendMessageAsync(document, message.From, cancellationToken);
 }
 ```
-### Enviando listas de opções (Select)
+### Sending an options list (Select)
 
-Para enviar uma lista de opções para que o cliente escolha uma delas como resposta, utilize o tipo Select:
+Send an options list to give your client the choice between multiple answers using Select type:
 ```csharp
 public async Task ReceiveAsync(Message message, CancellationToken cancellationToken)
 {
     var document = new Select
     {
-        Text = "Escolha uma opção:",
+        Text = "Choice an option:",
         Options = new []
         {
             new SelectOption
             {
                 Order = 1,
-                Text = "Um texto inspirador!",
+                Text = "An inspire text!",
                 Value = new PlainText { Text = "1" }
             },
             new SelectOption
             {
                 Order = 2,
-                Text = "Uma imagem motivacional!",
+                Text = "A motivational image!",
                 Value = new PlainText { Text = "2" }
             },
             new SelectOption
             {
                 Order = 3,
-                Text = "Um link para algo interessante!",
+                Text = "An interesting link!",
                 Value = new PlainText { Text = "3" }
             }
         }
@@ -95,17 +95,17 @@ public async Task ReceiveAsync(Message message, CancellationToken cancellationTo
     await _sender.SendMessageAsync(document, message.From, cancellationToken);
 }
 ```
-**Observações:**
-- A propriedade Value é opcional, mas caso informada, seu valor será enviado como resposta quando a opção for escolhida.
-- Caso a propriedade Value não seja informada, ou a propriedade Order ou a propriedade Text deve estar presente. Se apenas uma delas estiver presente, este será o valor enviado como resposta. Caso contrário, o valor da propriedade Order será usado.
+**Note:**
+- `Value` field is optional, if informed your value will be sent to the chatbot when the user choice the option.
+- If `Value` field is not provided, will must provide one of the fields: `Order` or `Text`. The `Order` field will be used only if `Value` and `Text` is not provided.
 
-**Restrições:**
-- Facebook Messenger: Limite de 3 opções. Caso precise de mais opções e esteja usando este canal, envie multiplas mensagens, cada uma com no máximo 3 opções, caso contrário a mensagem não será enviada.
-- Tangram SMS: A propriedade valor será ignorada e o valor da propriedade Order deverá ser enviado como resposta indicando a opção selecionada.
+**Limitations:**
+- Facebook Messenger: Limite of 3 options, in other case your message will not be delivered. If is nedded to send more than 3 options is necessary send multiple messages.
+- Tangram SMS: The `Value` field will be ignored. Only the `Order` field will be sent if the option be selected.
 
-### Geolocalização (Location)
+### Geolocation (Location)
 
-Um Chat Bot pode enviar uma localização ao cliente ou o canal pode enviar ao Chat Bot a localização do cliente. Em ambos os casos, o tipo Location será usado:
+A chatbot can send and receive a location entity. For this cases use Location type:
 ```csharp
 public async Task ReceiveAsync(Message message, CancellationToken cancellationToken)
 {
@@ -119,16 +119,14 @@ public async Task ReceiveAsync(Message message, CancellationToken cancellationTo
     await _sender.SendMessageAsync(document, message.From, cancellationToken);
 }
 ```
-**Restrições:**
-- Este tipo não é suportado em nenhum dos canais no momento!
 
-### Processando Pagamentos (Invoice, InvoiceStatus e PaymentReceipt)
+### Processing Payments (Invoice, InvoiceStatus and PaymentReceipt)
 
-Para realizar um pagamento através do seu Chat Bot, é necessário envolver um canal de pagamento. Por enquanto, apenas o canal PagSeguro é suportado e para solicitar o pagamento, o Chat Bot deve enviar uma mensagem do tipo Invoice para o canal de pagamento informando o endereço no formato abaixo:
+In order to realize a payment on your chatbot is necessary use the payment channel. For now, only the PagSeguro channel is supported and to request a payment the chatbot must send a message of type Invoice to the payment channel informing the user address using the format bellow:
 ```csharp
 var toPagseguro = $"{Uri.EscapeDataString(message.From.ToIdentity().ToString())}@pagseguro.gw.msging.net"; // Ex: 5531988887777%400mn.io@pagseguro.gw.msging.net
 ```
-Abaixo um exemplo completo de envio de solicitação de pagamento:
+Check a complete example of payment request:
 ```csharp
 public async Task ReceiveAsync(Message message, CancellationToken cancellationToken)
 {
@@ -143,7 +141,7 @@ public async Task ReceiveAsync(Message message, CancellationToken cancellationTo
                 {
                     Currency = "BRL",
                     Unit = 1,
-                    Description = "Serviços de Teste de Tipos Canônicos",
+                    Description = "Some product",
                     Quantity = 1,
                     Total = 1
                 }
