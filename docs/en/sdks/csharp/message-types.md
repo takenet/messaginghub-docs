@@ -154,12 +154,11 @@ public async Task ReceiveAsync(Message message, CancellationToken cancellationTo
     await _sender.SendMessageAsync(document, toPagseguro, cancellationToken);
 }
 ```
-**Importante:**
-- Para que esta solicitação de pagamento seja processada, o canal de pagamento PagSeguro deve ser habilitado para a seu Chat Bot no portal do Messaging Hub.
+**Important:**
+- Before to send a payment request you must enable the PagSeguro payment channel for your chatbot on **BLiP Messaging Hub Portal**.
 
-Ao receber esta mensagem, o PagSeguro enviará ao cliente um link para realização do pagamento. Uma vez realizado ou cancelado o pagamento, uma mensagem do tipo InvoiceStatus será recebida pelo seu Chat Bot. Para isso, um *Receiver* para o MediaType `application/vnd.lime.invoice-status+json` deve ser registrado no arquivo `application.json` da seguinte forma:
+When PagSeguro payment channel receive a payment request it send a link to the client. If the client finalize or cancel the payment a message of InvoiceStatus type will be delivered to your chatbot. To receive this message your chatbot must have a *Receiver* for `application/vnd.lime.invoice-status+json` MediaType registered on `application.json`, as follow:
 
-Ao receber esta mensagem, o PagSeguro enviará ao cliente um link para realização do pagamento. Uma vez realizado ou cancelado o pagamento, uma mensagem do tipo InvoiceStatus será recebida pelo seu Chat Bot. Para isso, um Receiver para o MediaType application/vnd.lime.invoice-status+json, o qual deve ser registrado no arquivo application.json da seguinte forma:
 ```js
 "messageReceivers": [
 {
@@ -169,7 +168,7 @@ Ao receber esta mensagem, o PagSeguro enviará ao cliente um link para realizaç
     }
 }
 ```
-Tal receiver deve ser definido da seguinte forma:
+The InvoiceStatusReceiver must be defined as follow:
 ```csharp
 public class InvoiceStatusReceiver : IMessageReceiver
 {
@@ -186,10 +185,10 @@ public class InvoiceStatusReceiver : IMessageReceiver
         switch (invoiceStatus?.Status)
         {
             case InvoiceStatusStatus.Cancelled:
-                await _sender.SendMessageAsync("Tudo bem, não precisa pagar nada.", message.From, cancellationToken);
+                await _sender.SendMessageAsync("Ok, you don't need pay anything.", message.From, cancellationToken);
                 break;
             case InvoiceStatusStatus.Completed:
-                await _sender.SendMessageAsync("Obrigado pelo seu pagamento, mas como isso é apenas um teste, você pode pedir o ressarcimento do valor pago ao PagSeguro. Em todo caso, segue o seu recibo:", message.From, cancellationToken);
+                await _sender.SendMessageAsync("Thank you for your payment, this is only a test", message.From, cancellationToken);
                 var paymentReceipt = new PaymentReceipt
                 {
                     Currency = "BLR",
@@ -200,7 +199,7 @@ public class InvoiceStatusReceiver : IMessageReceiver
                             {
                                 Currency = "BRL",
                                 Unit = 1,
-                                Description = "Serviços de Teste de Tipos Canônicos",
+                                Description = "Some product",
                                 Quantity = 1,
                                 Total = 1
                             }
@@ -210,17 +209,18 @@ public class InvoiceStatusReceiver : IMessageReceiver
                 await _sender.SendMessageAsync(paymentReceipt, message.From, cancellationToken);
                 break;
             case InvoiceStatusStatus.Refunded:
-                await _sender.SendMessageAsync("Pronto. O valor que você me pagou já foi ressarcido pelo PagSeguro!", message.From, cancellationToken);
+                await _sender.SendMessageAsync("Ok, your payment was refunded by PagSeguro!", message.From, cancellationToken);
                 break;
         }
     }
 }
 ```
-Como pode ser visto no exemplo acima, seu Chat Bot deve estar preparado para reagir aos 3 statuses disponíveis como resposta ao seu pedido de pagamento, e deve enviar um recibo de pagamento (tipo PaymentReceipt) como resposta ao cliente.
 
-### Mensagens Compostas (DocumentCollection e DocumentContainer)
+As showed by the example above your chatbot must be prepared to process 3 differents states of a payment request (`InvoiceStatusStatus.Cancelled`, `InvoiceStatusStatus.Completed`, `InvoiceStatusStatus.Refunded`) and must reply a PaymentReceipt to the client when the payment was executed if success.
 
-Mensagens compostas podem ser enviadas utilizando os tipos DocumentCollection e DocumentContainer, conforme o exemplo a seguir:
+### Composed Messages (DocumentCollection e DocumentContainer)
+
+Composed messages can be sent using the document types DocumentCollection or DocumentContainer, as the following example:
 
 ```csharp
 public async Task ReceiveAsync(Message message, CancellationToken cancellationToken)
@@ -236,13 +236,13 @@ public async Task ReceiveAsync(Message message, CancellationToken cancellationTo
         {
             new DocumentContainer
             {
-                Value = new PlainText {Text = "... Inspiração, e um pouco de café! E isso me basta!"}
+                Value = new PlainText {Text = "An inspire text!"}
             },
             new DocumentContainer
             {
                 Value = new MediaLink
                 {
-                    Text = "Café, o que mais seria?",
+                    Text = "Coffe, what else ?",
                     Size = 6679,
                     Type = MediaType.Parse("image/jpeg"),
                     PreviewUri = imageUrl,
@@ -253,7 +253,7 @@ public async Task ReceiveAsync(Message message, CancellationToken cancellationTo
             {
                 Value = new WebLink
                 {
-                    Text = "Café, a bebida sagrada!",
+                    Text = "Coffe, the God's drink!",
                     PreviewUri = previewUrl,
                     Uri = url
                 }
