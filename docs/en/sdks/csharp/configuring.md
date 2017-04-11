@@ -50,26 +50,26 @@ Each **message receiver** can have the follow properties:
 
 | Property | Description                                                                        | Example                 |
 |-------------|----------------------------------------------------------------------------------|-------------------------|
-| type        | Nome do tipo .NET para recebimento de mensagens. O mesmo deve implementar a interface `IMessageReceiver`. Pode ser o nome simples do tipo (se estiver na mesma **assembly** do arquivo `application.json`) ou o nome qualificado com **assembly**. | PlainTextMessageReceiver |
-| mediaType   | Define um filtro de tipo de mensagens que o **receiver** pode processar. Apenas mensagens do tipo especificado serão entregues a instância criada. | text/plain |
-| content     | Define uma expressão regular para filtrar os conteúdos de mensagens que o **receiver** pode processar. Apenas mensagens que satisfaçam a expressão serão entregues a instância criada. | Olá mundo |
-| sender     | Define uma expressão regular para filtrar os originadores de mensagens que o **receiver** pode processar. Apenas mensagens que satisfaçam a expressão serão entregues a instância criada. | sender@domain.com |
-| destination     | Define uma expressão regular para filtrar os destinatários de mensagens que o **receiver** pode processar. Apenas mensagens que satisfaçam a expressão serão entregues a instância criada. | destination@domain.com |
-| settings    | Configurações gerais do receiver, no formato chave-valor. Este valor é injetado na instância criada. Para receber os valores, a implementação deve esperar uma instância do tipo `IDictionary<string, object>` no construtor. | { "mySetting": "xyzabcd" }   |
-| settingsType | Nome do tipo .NET que será usado para deserializar as configurações. Pode ser o nome simples do tipo (se estiver na mesma **assembly** do arquivo `application.json`) ou o nome qualificado com **assembly**.    | PlainTextMessageReceiverSettings     |
-| priority | Prioridade em relação aos outros receivers, valores menores tem mais prioridade. | 0 |
-| state | Estado necessário do originador para o recebimento de mensagem.  | default |
-| outState | Define um estado para o originador depois que a mensagem for processada | default |
+| type        | The name of .NET type to receive messages. This type must implements the `IMessageReceiver` interface. If the type is located on a different **assembly** of `application.json` file please provide a qualify name with **assembly**. | PlainTextMessageReceiver |
+| mediaType   | Define a filter of message types that the **receiver** can process. Only messages with this type will be delivered to the receiver. | text/plain |
+| content     | Define a regular expression to filter the messages contents that the **receiver** can process. Only messages that satisfy this expression will be delivered to the receiver. | Olá mundo |
+| sender     | Define a regular expression to filter the messages originators that the **receiver** can procces. Only messages that satisfy this expression will be delivered to the receiver. | sender@domain.com |
+| destination     | Define a regular expression to filter the messages originators that the **receiver** can procces. Only messages that satisfy this expression will be delivered to the receiver. | destination@domain.com |
+| settings    | General settings of receiver with key-value format. This value is injected on created types. To receive the values the constructor of the types must have a instance of `IDictionary<string, object>` type. | { "mySetting": "xyzabcd" }   |
+| settingsType | The name of .NET type that must be used to deserialize the settings. If the type is located on a different **assembly** of `application.json` file please provide a qualify name with **assembly**.    | PlainTextMessageReceiverSettings     |
+| priority | Priority about the other receivers, lower values has more priority. | 0 |
+| state | Required originator state to receive message.  | default |
+| outState | Define the new originator state after the message is processed. | default |
 
 Each **notification receiver** can have the follow properties:
 
 | Property | Description                                                                        | Example                 |
 |-------------|----------------------------------------------------------------------------------|-------------------------|
-| type        | Nome do tipo .NET para recebimento de notificações. O mesmo deve implementar a interface `INotificationReceiver`. Pode ser o nome simples do tipo (se estiver na mesma **assembly** do arquivo `application.json`) ou o nome qualificado com **assembly**. | NotificationReceiver |
-| settings    | Configurações gerais do receiver, no formato chave-valor. Este valor é  injetado na instância criada. Para receber os valores, a implementação deve esperar uma instância do tipo `IDictionary<string, object>` no construtor. | { "mySetting": "xyzabcd" }   |
-| eventType   | Define um filtro de tipo de eventos que o **receiver** pode processar. Apenas notificações do evento especificado serão entregues a instância criada. | received |
-| settingsType | Nome do tipo .NET que será usado para deserializar as configurações. Pode ser o nome simples do tipo (se estiver na mesma **assembly** do arquivo `application.json`) ou o nome qualificado com **assembly**.    | NotificationReceiverSettings     |
-| sender     | Define uma expressão regular para filtrar os originadores da notificação que o **receiver** pode processar. Apenas notificações que satisfaçam a expressão serão entregues a instância criada. | sender@domain.com |
-| destination     | Define uma expressão regular para filtrar os destinatários da notificação que o **receiver** pode processar. Apenas notificações que satisfaçam a expressão serão entregues a instância criada. | destination@domain.com |
-| state | Estado necessário do originador para o recebimento de mensagem.  | default |
-| outState | Define um estado para o originador depois que a mensagem for processada | default |
+| type        | The name of .NET type to receive messages. This type must implements the `INotificationReceiver` interface. If the type is located on a different **assembly** of `application.json` file please provide a qualify name with **assembly**. | NotificationReceiver |
+| settings    | General settings of receiver with key-value format. This value is injected on created types. To receive the values the constructor of the types must have a instance of `IDictionary<string, object>` type. | { "mySetting": "xyzabcd" }   |
+| eventType   | Define a filter of event types that the **receiver** will process. Only notifications for the specified event will be delivered to the receiver. | received |
+| settingsType | The name of .NET type that must be used to deserialize the settings. If the type is located on a different **assembly** of `application.json` file please provide a qualify name with **assembly**.    | NotificationReceiverSettings     |
+| sender     | Define a regular expression to filter the notifications originators that the **receiver** can procces. Only notifications that satisfy this expression will be delivered to the receiver. | sender@domain.com |
+| destination     | Define a regular expression to filter the notifications originators that the **receiver** can procces. Only notifications that satisfy this expression will be delivered to the receiver. | destination@domain.com |
+| state | Required originator state to receive notification.  | default |
+| outState | Define the new originator state after the notification is processed. | default |
