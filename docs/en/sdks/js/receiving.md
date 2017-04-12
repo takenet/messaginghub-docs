@@ -1,41 +1,40 @@
-### Receber
+### Receiving
 
-O recebimento pelo cliente se dá através do registro de `receivers` para mensagens e notificações. É possível definir filtros para cada `receiver` no momento do registro.
-
-Adicionando um receiver de mensagem para todas as mensagens:
+All messages sent to the chatbot are redirected to registered `receivers` of messages and notifications. You also can define filters to each `receiver`.
+The following example show how to add a simple message receiver:
 
 ```javascript
 client.addMessageReceiver(true, function(message) {
-  // Processe a mensagem recebida
+  // Process received message
 });
 
 ```
-Adicionando um receiver de notificação para o evento `received`:
+The next sample show how to add notification receiver with filter to `received` event type:
 
 ```javascript
 client.addNotificationReceiver("received", function(notification) {
-  // Processe a notificação recebida
+  // Process received notifications
 });
 
 ```
 
-É possível ainda informar uma função para o filtro das mensagens e notificações:
+It's also possible use a custom function as receiver filter:
 
-Adicionando um receiver de mensagem com um filtro de originador:
+Example of message receiver with filter of originator:
 
 ```javascript
 client.addMessageReceiver(function(message) { message.from === "553199990000@0mn.io" }, function(message) {
-  // Processe a mensagem recebida
+  // Process received message
 });
 
-// Utilizando uma expressão lambda
+// Using expression lambda
 client.addNotificationReceiver(() => true, function(message) {
-  // Processe a notificação recebida
+  // Process received notifications
 });
 
 ```
 
-Os métodos de registro dos receivers retornam um `handler` que pode ser utilizado para remoção do registro:
+Each registration of receivers return a `handler` that can be used to cancell the registration:
 
 ```javascript
 var removeJsonReceiver = client.addMessageReceiver("application/json", handleJson);
