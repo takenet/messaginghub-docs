@@ -28,7 +28,7 @@ public class PlainTextMessageReceiver : IMessageReceiver
     }
 }
 ```
-**Note:** Is **required** register an additional `MessageReceiver` to the `application.json` file. This receiver is responsible to redirect automatically any message came from attendant to the final user.
+**Note:** It's **required** register an additional `MessageReceiver` to the `application.json` file. This receiver is responsible to redirect automatically any message came from attendant to the final user.
 
 Check this on below example:
 
@@ -46,4 +46,4 @@ Check this on below example:
 }
 ```
 
-**Note:** Is necessary define the **attendantIdentity** key inside of `settings` property of `MessageReceiver` with the defined attendant cell phone.
+**Note:** It's necessary define the **attendantIdentity** key inside of `settings` property of `MessageReceiver` with the defined attendant cell phone.

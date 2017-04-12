@@ -1,14 +1,14 @@
-### Instalação
+### Installing
 
 #### Node.js
 
-Se você estiver usando `node.js` (ou `webpack`), é necessário instalar o pacote `messaginghub-client` que disponibiliza o cliente do MessagingHub e algum transporte (conexão) pelo `npm`.
+If you are using `node.js` (or `webpack`), it's necessary install `messaginghub-client` package (via npm) to access the BLiP MessagingHub server.
 
     npm install --save messaginghub-client
 
 #### Browser
 
-Caso esteja construindo uma aplicação web (no browser) e esteja utilizando Javascript "puro", é possível instalar pacote pelo `npm` e incluir o *script* com a tag `<script>`. Para utilizar o pacote  `messaginghub-client` desta forma, é necessário que seja também seja instalado e referenciado o pacote `lime-js`, além do pacote do transporte `lime-transport-websocket`:
+If you are using a web application (on browser) with "pure" Javascript is possible install the package via `npm` using the `<script>` tag. For this case beyond `messaginghub-client` package it's necessary install others dependences as the `lime-js` and `lime-transport-websocket` packages:
 
 ```html
 <script src="./node_modules/lime-js/dist/lime.js" type="text/javascript"></script>
@@ -16,7 +16,7 @@ Caso esteja construindo uma aplicação web (no browser) e esteja utilizando Jav
 <script src="./node_modules/messaginghub-client/dist/messaginghub-client.js" type="text/javascript"></script>
 ```
 
-Você também pode utilizar as distribuições disponibilizadas pelo [unpkg](https://unpkg.com), caso não esteja utilizando o `npm` para desenvolvimento:
+You can also use [unpkg](https://unpkg.com) to get the packages if you are not using `npm` on development:
 ```html
 <script src="https://unpkg.com/lime-js" type="text/javascript"></script>
 <script src="https://unpkg.com/lime-transport-websocket" type="text/javascript"></script>
