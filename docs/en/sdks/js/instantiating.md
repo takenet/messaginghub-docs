@@ -1,48 +1,48 @@
-### Instanciando o cliente
+### Instantiating the client
 
-Você precisará de um identificador e uma chave de acesso para sua aplicação, para realizar a conexão com o servidor do BLiP. Para obtê-los:
-- Acesse o [Painel BLiP](https://portal.blip.ai) e faça seu login
-- Na aba `Chatbots` clique em `Criar chatbot`
-- Escolha a opção `SDK` e na próxima etapa preencha as informações solicitadas
-- Pronto, seu chatbot foi criado e o identificador e chave de acesso serão exibidos.
+You will need an `identifier` and a `access key` to connect a chatbot to **BLiP Messaging Hub**. To get thems:
+- Go to [Painel BLiP](http://portal.blip.ai/) and login.
+- Click in `Chatbots` and then click in `Create chatbot`.
+- Choice `SDK` template option
+- Ok, `identifier` and `access key` will be displayed
 
-Para instanciar o cliente, utilize a classe `ClientBuilder`, informando o `identificador` e `chave de acesso` obtidos:
+In order to instantiating the client use `ClientBuilder` class informing the `identifier` and `access key`:
 
 ```javascript
 
-// Cria uma instância do cliente, informando o identifier e accessKey do seu chatbot 
+// Create a client instance passing the identifier and accessKey of your chatbot 
 var client = new ClientBuilder()
     .withIdentifier(identifier)
     .withAccessKey(accessKey)
     .withTransportFactory(() => new WebSocketTransport())
     .build();
 
-// Registra um receiver para mensagens do tipo 'text/plain'
+// Register a receiver for messages of 'text/plain' type
 client.addMessageReceiver('text/plain', function(message) {
-  // TODO: Processe a mensagem recebida
+  // TODO: Proccess the received message
 });
 
 // Registra um receiver para qualquer notificação
 client.addNotificationReceiver(true, function(notification) {
-  // TODO: Processe a notificação recebida
+  // TODO: Proccess the received notification
 });
 
-// Conecta com o servidor de forma assíncrona. 
-// A conexão ocorre via websocket, na porta 8081.
-client.connect() // O retorno deste método é uma 'promise'.
+// Connect with server asynchronously
+// Connection will occurr via websocket on 8081 port.
+client.connect() // This method return a 'promise'.
     .then(function(session) { 
-        // Conexão bem sucedida. A partir deste momento, é possível enviar e receber envelopes do servidor. */ 
+        // Connection success. Now is possible send and receive envelopes from server. */ 
         })  
-    .catch(function(err) { /* Falha de conexão. */ }); 
+    .catch(function(err) { /* Connection failed. */ }); 
 
 ```
 
-Cada instância de `client` representa uma conexão com o servidor, por isso deve ser reutilizada. Para fechar a conexão:
+Each `client` instance represent a server connection and can be reused. To close a connection use:
 
 ```javascript
 
 client.close()
-    .then(function() { /* Desconectado com sucesso */ })  
-    .catch(function(err) { /* Falha ao fechar a conexão */ }); 
+    .then(function() { /* Disconnection success */ })  
+    .catch(function(err) { /* Disconnection failed */ }); 
 
 ```

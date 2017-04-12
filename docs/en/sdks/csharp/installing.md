@@ -12,7 +12,7 @@ Go to Package Manager Console and install a BLiP chatbot template package using:
 This package install all nedded dependences and create a `application.json` file that define all application settings.
 
 You will need an `identifier` and a `access key` to connect a chatbot to **BLiP Messaging Hub**. To get thems:
-- Go to [Painel BLiP](http://portal.blip.ai/).
+- Go to [Painel BLiP](http://portal.blip.ai/) and login.
 - Click in `Chatbots` and then click in `Create chatbot`.
 - Choice `SDK` template option
 - Ok, `identifier` and `access key` will be displayed
