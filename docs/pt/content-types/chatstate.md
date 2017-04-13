@@ -16,7 +16,7 @@ Permite o envio e recebimento de informação sobre o estado atual da conversa. 
 De forma geral não há necessidade de receber notificações de entrega de mensagens com este conteúdo, portanto é recomendado omitir o  Id nestas mensagens.
 Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/content-types.html#chatstate).
 
-####Exemplo
+#### Exemplo
 Enviando estado *digitando* para usuário do Telegram:
 ```json
 {
