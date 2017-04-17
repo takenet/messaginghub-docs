@@ -32,9 +32,9 @@ Sending status *typing* to Telegram user:
 #### Channel mapping
 
 | Channel              | Type      | Supported states      | 
-|--------------------|-----------|-------------------------|
-| BLiP App           | Chat State | All |
-| Messenger          | [Sender Actions](https://developers.facebook.com/docs/messenger-platform/send-api-reference/sender-actions) | *composing* and *paused* (sending only) |
+|----------------------|-----------|-------------------------|
+| BLiP Chat            | Chat State | All |
+| Messenger            | [Sender Actions](https://developers.facebook.com/docs/messenger-platform/send-api-reference/sender-actions) | *composing* and *paused* (sending only) |
 | SMS                | - | None |
 | Skype              | - | None |
 | Telegram           | [SendChatAction](https://core.telegram.org/bots/api#sendchataction) | *composing* (sending only) |
