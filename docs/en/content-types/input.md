@@ -45,11 +45,11 @@ Allows send structured information request to the user, where is possible to def
 
 For more details, check the [LIME protocol](http://limeprotocol.org/content-types.html#input) specification.
 
-#### Mapping on Channels
+#### Channel mapping
 
 | Channel              | Type                         | 
 |--------------------|--------------------------------|
-| BLiP Chat          | Input (for Location type only) |
+| BLiP Chat          | Uer input (for Location type only) |
 | Messenger          | [Location](https://developers.facebook.com/docs/messenger-platform/send-api-reference/quick-replies) |
 | SMS                | Text                   |
 | Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|
