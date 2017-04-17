@@ -20,7 +20,7 @@ Sending a message to a Messenger recipient:
 
 For more details, check the especification of [LIME protocol](http://limeprotocol.org/content-types.html#text).
 
-#### Mapping on channels
+#### Channel mapping
 
 | Channel              | Type                    | 
 |----------------------|-------------------------|
