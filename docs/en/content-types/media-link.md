@@ -1,4 +1,4 @@
-### Media Link
+### Media link
 | MIME type                            | C#                                   |
 |--------------------------------------|--------------------------------------|
 | application/vnd.lime.media-link+json | [Lime.Messaging.Contents.MediaLink](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Messaging/Contents/MediaLink.cs) |
