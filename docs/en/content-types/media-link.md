@@ -43,7 +43,7 @@ Allows sending and receiving links for multimedia contents. The link can be any 
 
 For more details, check the [LIME protocol](http://limeprotocol.org/content-types.html#media-link) specification.
 
-### Mapping on Channels
+#### Channel mapping
 
 | Channel              | Type                    | 
 |--------------------|-------------------------|
