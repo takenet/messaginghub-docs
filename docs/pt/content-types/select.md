@@ -20,7 +20,6 @@ Menu com opções numeradas
         "text":"Escolha uma opção",
         "options":[
             {
-                "order":1,
                 "text":"Primeira opção"
             },
             {
@@ -55,7 +54,7 @@ Ao selecionar a primeira opção:
     "from": "1042221589186385@messenger.gw.msging.net",
     "to": "blipcontact@msging.net",
     "type": "text/plain",
-    "content": "1"
+    "content": "Primeira opção"
 }
 ```
 Ao selecionar a segunda opção:
