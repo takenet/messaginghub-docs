@@ -1,4 +1,4 @@
-### Payment Receipt
+### Payment receipt
 | MIME type                            | C#                                   |
 |--------------------------------------|--------------------------------------|
 | application/vnd.lime.payment-receipt+json | [Lime.Messaging.Contents.PaymentReceipt](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Messaging/Contents/PaymentReceipt.cs) |
@@ -6,7 +6,7 @@
 Allows send a payment receipt to a customer
 
 #### Example
-Sending a payment receipt to a Facebook Messenger user:
+Sending a payment receipt to a Messenger user:
 
 ```json
 {
@@ -33,11 +33,11 @@ Sending a payment receipt to a Facebook Messenger user:
 }
 ```
 
-#### Mapping on Channels
+#### Channel mapping
 
 | Channel              | Type                    |  
 |--------------------|-------------------------|
-| BLiP App           | Payment Receipt         |
+| BLiP Chat          | Not supported yet       |
 | Messenger          | [Receipt template](https://developers.facebook.com/docs/messenger-platform/send-api-reference/receipt-template)|
 | SMS                | Text         |
 | Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|
