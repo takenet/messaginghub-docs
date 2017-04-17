@@ -88,7 +88,7 @@ The return message *type* will always be the same of the chosen option. When a v
 
 | Channel              | Type                    | 
 |--------------------|-------------------------|
-| BLiP Chat           |  |
+| BLiP Chat           | Select  |
 | Messenger          | [Button template](https://developers.facebook.com/docs/messenger-platform/send-api-reference/button-template) (on default scope) e [Quick replies](https://developers.facebook.com/docs/messenger-platform/send-api-reference/quick-replies) (on *immediate* scope)|
 | SMS                | Text                  |
 | Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|
