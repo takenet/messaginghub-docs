@@ -3,7 +3,7 @@
 |-------------------------------------------|-------------------------------------------|
 | application/vnd.lime.document-select+json | [Lime.Messaging.Contents.DocumentSelect](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Messaging/Contents/DocumentSelect.cs) |
 
-Allows sending an options menu to customers, the header and options can be, besides **text**, other types of content such as **media link** or **web link**. For each option, it is possible to define a document that is delivered to the contact when the customer performs a choice (depending on the channel support).
+Allows sending an options menu to customers where the header and options can be of any content type such as **media link** or **web link** and not only **text** - like in the *Select* type. For each option, it is possible to define a document that is delivered to the contact when the customer performs a choice (depending on the channel support).
 
 #### Examples
 
@@ -18,7 +18,7 @@ Allows sending an options menu to customers, the header and options can be, besi
             "type": "application/vnd.lime.media-link+json",
             "value": {
                 "title": "Welcome to mad hatter",
-                "text": "Here we have the best hats to your head.",
+                "text": "Here we have the best hats for your head.",
                 "type": "image/jpeg",
                 "uri": "http://petersapparel.parseapp.com/img/item100-thumb.png"
             }
@@ -28,7 +28,7 @@ Allows sending an options menu to customers, the header and options can be, besi
                 "label": {
                     "type": "application/vnd.lime.web-link+json",
                     "value": {
-                        "text": "Go to site",
+                        "text": "Go to our site",
                         "uri": "https://petersapparel.parseapp.com/view_item?item_id=100"
                     }
                 }
@@ -81,11 +81,11 @@ Allows sending an options menu to customers, the header and options can be, besi
 
 For more details, check the [LIME protocol](http://limeprotocol.org/content-types.html#document-select) specification.
 
-#### Mapping on Channels
+#### Channel mapping
 
-| Channel              | Type                    | 
+| Channel            | Type                    | 
 |--------------------|-------------------------|
-| BLiP App           | Menu (Note: The properties 'label' and 'header' can assign just the PlainText content. The property 'value' of each one of 'options' can assign any type of Document, with exception of DocumentContainer)     |
+| BLiP Chat          | Document select         |
 | Messenger          | [Generic template](https://developers.facebook.com/docs/messenger-platform/send-api-reference/generic-template)|
 | SMS                | Text                   |
 | Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|
