@@ -3,9 +3,9 @@
 |--------------------------------------|------------------------------------|
 | application/vnd.lime.collection+json | [Lime.Protocol.DocumentCollection](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Protocol/DocumentCollection.cs)|
 
-Allows sending **multiple contents** of the same type in only one message. Some channels support this type of aggregation with special layouts (for example, in Facebook Messenger a **multimedia menu** collection is displayed as in a carousel). In other channels, multiple messages are sent.
+Allows sending **multiple contents** of the same type in a single message. Some channels support this type of aggregation with special layouts (for example, in Facebook Messenger a **multimedia menu** collection is displayed as a *carousel*). In other channels, multiple messages are sent.
 
-**Note:** It is possible to send different types contents, utilizing one collection of **container** type.
+**Note:** It is possible to send different content types using a collection of the **container** type.
 
 #### Examples
 
@@ -164,11 +164,11 @@ Allows sending **multiple contents** of the same type in only one message. Some 
 
 For more details, check the [LIME protocol](http://limeprotocol.org/content-types.html#collection) specification.
 
-#### Mapping on Channels
+#### Channel mapping
 
 | Channel              | Type                    | 
-|--------------------|-------------------------|
-| BLiP App           | Does not support   |
+|--------------------|---------------------------|
+| BLiP Chat           | Collection               |
 | Messenger          | Multiple messages / [Generic template](https://developers.facebook.com/docs/messenger-platform/send-api-reference/generic-template) (if is a **multimedia menu** collection)|
 | SMS                | Text (multiple lines) |
 | Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1) (multiple lines)|
