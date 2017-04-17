@@ -29,7 +29,7 @@ Sending status *typing* to Telegram user:
 }
 ```
 
-### Mapping on Channels
+#### Channel mapping
 
 | Channel              | Type      | Supported states      | 
 |--------------------|-----------|-------------------------|
