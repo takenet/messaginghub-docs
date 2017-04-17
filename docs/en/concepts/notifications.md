@@ -13,7 +13,7 @@ Each notification has:
   * **received**: The recipient has received the message.
   * **consumed**: The recipient has read the message.
   * **failed**: The message has failed. In this case, the property **reason** must be present. 
-- **reason** – The reason why the message has failed. It contains the following properties:
+- **reason** – In case of `failed` events, represents the reason of the message failure. It contains the following properties:
   * **code** – Failure numeric code. This value is mandatory.
   * **description** – Failure description message.
 
