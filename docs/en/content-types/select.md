@@ -3,9 +3,9 @@
 |-------------------------------------------|-------------------------------------------|
 | application/vnd.lime.select+json | [Lime.Messaging.Contents.Select](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Messaging/Contents/Select.cs) |
 
-Allows sending an option menu to customers to make a choice. The header and the options are kind of type, it is possible to define a document that may be delivered to the chatbot when the customer makes a choice (depending on the channel support). The options can be optionally numbered.
+Allows sending an text menu to customers to make a choice. It is possible to define a document that may be delivered to the chatbot when the customer selects an option - depending on the channel support. The options can also be optionally numbered.
 
-Some channels support the options scope limitation, which determines for how much time they are valid for the user selection. For example, in some cases, the sent options can only be selected by the customer at that time and may disappear after the choice. In this case, the scope is **immediate**. In others, the options are valid for the selection at any time, and the scope is **persistent**.
+Some channels support the options scope limitation, which determines for how much time they are valid for the user selection. For example, in some cases, the sent options can only be selected by the customer at that time and must disappear after the choice. In this case, the scope is **immediate**. In others, the options are valid for the selection at any time, and the scope is **persistent**.
 
 For more details, check the [LIME protocol](http://limeprotocol.org/content-types.html#select) specification.
 
@@ -42,9 +42,9 @@ Menu with numbered options
 ```
 When the user selects one option, a message returns according to the rule:
 
-- If the option contains the field 'value' it will be returned.
-- In the opposite case, the 'order' filed value will be returned if it is fulfilled.
-- If none of the mentioned values is fulfilled, field 'text' will be returned.
+- If the option contains the field 'value' should be returned.
+- If not, the 'order' filed value should be returned, if present.
+- If not, field 'text' should be returned.
 
 Return example of the above mentioned menu:
 
@@ -84,11 +84,11 @@ Least, when selecting the third option:
 
 The return message *type* will always be the same of the chosen option. When a value for the field *value* is not defined, the type will be `text/plain`.
 
-#### Mapping on Channels
+#### Channels mapping
 
 | Channel              | Type                    | 
 |--------------------|-------------------------|
-| BLiP App           | Menu (Note: The property 'value' of each one of 'options' can assing pode any type of Document, with exception of DocumentContainer)     |
+| BLiP Chat           |  |
 | Messenger          | [Button template](https://developers.facebook.com/docs/messenger-platform/send-api-reference/button-template) (on default scope) e [Quick replies](https://developers.facebook.com/docs/messenger-platform/send-api-reference/quick-replies) (on *immediate* scope)|
 | SMS                | Text                  |
 | Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|
