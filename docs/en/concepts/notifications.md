@@ -15,7 +15,7 @@ Each notification has:
   * **failed**: The message has failed. In this case, the property **reason** must be present. 
 - **reason**: The reason why message has failed. 
 
-Check the JSON representation of a receipt notification at the recipient:
+See bellow the JSON representation of a receipt notification from the destination:
 
 ```json
 
@@ -28,7 +28,7 @@ Check the JSON representation of a receipt notification at the recipient:
 
 ```
 
-And of a failure at the server:
+And a notification of a failure in the server:
 
 ```json
 
