@@ -1,4 +1,4 @@
-### Multimedia Menu
+### Multimedia menu
 | MIME type                                 | C#                                        |
 |-------------------------------------------|-------------------------------------------|
 | application/vnd.lime.document-select+json | [Lime.Messaging.Contents.DocumentSelect](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Messaging/Contents/DocumentSelect.cs) |
