@@ -20,7 +20,6 @@ Menu with numbered options
         "text":"Choice an option",
         "options":[
             {
-                "order":1,
                 "text":"First option"
             },
             {
@@ -55,7 +54,7 @@ When selecting the first option:
     "from": "1042221589186385@messenger.gw.msging.net",
     "to": "blipcontact@msging.net",
     "type": "text/plain",
-    "content": "1"
+    "content": "First option"
 }
 ```
 When selecting the second option:
@@ -84,7 +83,7 @@ Least, when selecting the third option:
 
 The return message *type* will always be the same of the chosen option. When a value for the field *value* is not defined, the type will be `text/plain`.
 
-#### Channels mapping
+#### Channel mapping
 
 | Channel              | Type                    | 
 |--------------------|-------------------------|
