@@ -24,7 +24,7 @@ Sending a message to a Messenger recipient:
 
 In some channels is possible to define how the webpage will be diplayed (on the same window, openning a new window or occuping part of device window) through the `target` property. For more details, check the [LIME protocol](http://limeprotocol.org/content-types.html#web-link) specification.
 
-#### Mapping on Channels
+#### Channel mapping
 
 | Channel            | Type                    | 
 |--------------------|-------------------------|
