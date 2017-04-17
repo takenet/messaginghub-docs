@@ -50,4 +50,4 @@ Response on success:
   "to": "contact@msging.net/default"
 }
 ```
-For more details, check the specification of the **delegation** resource on [protocolo LIME](http://limeprotocol.org/resources.html#delegation).
+For more details, check the **delegation** resource on [LIME protocol](http://limeprotocol.org/resources.html#delegation) specification.
