@@ -26,7 +26,7 @@ In some channels is possible to define how the webpage will be diplayed (on the 
 
 #### Mapping on Channels
 
-| Channel              | Type                    | 
+| Channel            | Type                    | 
 |--------------------|-------------------------|
 | BLiP Chat          | Web Link                |
 | Messenger          | [Generic template](https://developers.facebook.com/docs/messenger-platform/send-api-reference/generic-template) or [Button](https://developers.facebook.com/docs/messenger-platform/send-api-reference/buttons) (if used with the [Multimedia Menu](https://blip.ai/portal/#/docs/content-types/document-select)). |
@@ -35,14 +35,14 @@ In some channels is possible to define how the webpage will be diplayed (on the 
 | Telegram           | [Message](https://core.telegram.org/bots/api#message)|
 
 
-In some channels, it is possible to use special [URI schemes](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) for the links creation with specific behaviors;
+It is also possible in some channels to use special [URI schemes](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) to create links with specific behaviors as bellow:
 
 | Channel     | URI Scheme | Description                                                           | Example              |
 |-----------|------------|---------------------------------------------------------------------|----------------------|
 | Messenger | `tel`      | Defines a link for the telephone call to the specific number. Mapped to a [Call button](https://developers.facebook.com/docs/messenger-platform/send-api-reference/call-button). | `tel:+5531999990000` |
 | Messenger | `share`    | Defines a link to share current message. Mapped to a [Share button](https://developers.facebook.com/docs/messenger-platform/send-api-reference/share-button).  | `share:`             |
 
-- On Messenger, these **URI schemes** are valid only if utilized together with a multimedia [Multimedia Menu](https://blip.ai/portal/#/docs/content-types/document-select).
-- To enable the use of [Messenger extensions](https://developers.facebook.com/docs/messenger-platform/messenger-extension) on link webpage, you must add on URL *query string* the `messengerExtensions` parameter with value `true`. For above sample, the `uri` value would be as follows: `http://limeprotocol.org/content-types.html#web-link?messengerExtensions=true`
+- On Messenger, these **URI schemes** are valid only if used within a [Multimedia Menu](https://blip.ai/portal/#/docs/content-types/document-select).
+- To enable the use of [Messenger extensions](https://developers.facebook.com/docs/messenger-platform/messenger-extension) on link webpage, you must add to the URL *query string* a `messengerExtensions` parameter with value `true`. For the example above, the `uri` value would be: `http://limeprotocol.org/content-types.html#web-link?messengerExtensions=true`
 
 
