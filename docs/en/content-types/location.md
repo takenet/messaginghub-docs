@@ -24,7 +24,7 @@ Sending a location with latitude, longitude and altitude:
 
 For more details, check the [LIME protocol](http://limeprotocol.org/content-types.html#location) specification.
 
-#### Mapping on Channels
+#### Channel mapping
 
 | Channel              | Type                    |  
 |--------------------|-------------------------|
