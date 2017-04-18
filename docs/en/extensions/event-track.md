@@ -1,14 +1,12 @@
-### Análise de eventos
-| Endereço              | URI base     | Permissões requeridas   | C#                 |
-|-----------------------|--------------|-------------------------|--------------------|
-| postmaster@msging.net (endereço padrão, não é necessário informar) | /event-track | Nenhuma | [EventTrackExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/EventTrack/EventTrackExtension.cs) |
+### Event analysis
+| Address               | Base URI     |  C#                 |
+|-----------------------|--------------|---------------------|
+| postmaster@msging.net (default address - not required) | /event-track | [EventTrackExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/EventTrack/EventTrackExtension.cs) |
 
-A extensão **análise de eventos** permite o chatbot registrar eventos no **BLiP Messaging Hub** permitindo assim extrair relatórios. 
+The **event analysis** extension allows the registration of chatbot's events for creation of analytics reports in the portal. The events are agregated by category, action and day.
 
-Caso seja registrado o mesmo evento/ação uma segunda vez no mesmo dia será somado um ao valor atual do contador.
-
-#### Exemplos
-1 - Registrando um evento:
+#### Exemples
+1 - Registering an event:
 ```json
 {  
   "id": "9494447a-2581-4597-be6a-a5dff33af156",
@@ -16,12 +14,12 @@ Caso seja registrado o mesmo evento/ação uma segunda vez no mesmo dia será so
   "type": "application/vnd.iris.eventTrack+json",
   "uri": "/event-track",
   "resource": {  
-    "category": "Boleto",
-    "action": "Vencido"
+    "category": "Bill",
+    "action": "Paid"
   }
 }
 ```
-Resposta em caso de sucesso:
+Response on success:
 ```json
 {
   "method": "set",
@@ -33,7 +31,7 @@ Resposta em caso de sucesso:
 ```
 
 
-2 - Recuperando lista de eventos:
+2 - Retrieving stored events:
 ```json
 {  
   "id": "1",
@@ -41,7 +39,7 @@ Resposta em caso de sucesso:
   "uri": "/event-track"
 }
 ```
-Resposta em caso de sucesso:
+Response on success:
 ```json
 {
   "method": "get",
@@ -59,14 +57,14 @@ Resposta em caso de sucesso:
 ```
 
 
-3 - Recuperando contadores do evento:
+3 - Retrieving event counters:
 
-Possíveis filtros via *querystring*:
+Available *querystring* filters:
 
-| QueryString        | Observação                                |
+| QueryString        | Description                               |
 |--------------------|-------------------------------------------| 
 | take               | Quantidade de items retornados            |
-| filterDate         | Buscar eventos anteriores a essa data     |
+| filterDate         | Get events from dates res a essa data     |
 ```json
 {  
   "id": "57aa0ac2-158c-4012-9f18-b8eedaede85c",
