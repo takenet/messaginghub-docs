@@ -3,12 +3,12 @@
 |-----------------------|--------------|-----------------|
 | postmaster@msging.net (default address - not required) | /buckets | [BucketExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Bucket/BucketExtension.cs) |
 
-The **bucket** extension allows the storage of documents in the server on a private chatbot's container. This extensions is useful to store information about the clients that have interacted with the chatbot, like preferences and navigation state.
+The **bucket** extension allows the storage of documents in the server on a isolated chatbot's container. This extensions is useful to store information about the clients that have interacted with the chatbot, like preferences and navigation state.
 
 Each document have an **identifier** which is provided during the write operation and this identifier should be used for retrieving the value later. It is possible to set an optional **expiration date** for the document. Both the identifier and the expiration date are specified in the **URI** of the command which is sent to the extension.
 
 #### Exemples
-1 - Armazenando um documento JSON genérico com o identificador **xyz1234**:
+1 - Storing an generic JSON document with the **xyz1234** identifier:
 ```json
 {  
   "id": "1",
@@ -24,7 +24,7 @@ Each document have an **identifier** which is provided during the write operatio
   }
 }
 ```
-Resposta em caso de sucesso:
+Response on success:
 ```json
 {
   "id": "1",
@@ -35,7 +35,7 @@ Resposta em caso de sucesso:
 }
 ```
 
-2 - Armazenando um documento do tipo customizado **application/x-my-type+json** com o identificador **abcd9876** e expiração de 30000 ms (30 segundos):
+2 - Storing an custom document with type **application/x-my-type+json** and **abcd9876** identifier, setting the expiration to 30000 milisseconds (or 30 seconds):
 ```json
 {  
   "id": "2",
@@ -48,7 +48,7 @@ Resposta em caso de sucesso:
   }
 }
 ```
-Resposta em caso de sucesso:
+Response on success:
 ```json
 {
   "id": "2",
@@ -59,7 +59,7 @@ Resposta em caso de sucesso:
 }
 ```
 
-3 - Obtendo um documento existente com o identificador **xyz1234**:
+3 - Retrieving an existing document with **xyz1234** identifier:
 ```json
 {  
   "id": "3",
@@ -67,7 +67,7 @@ Resposta em caso de sucesso:
   "uri": "/buckets/xyz1234"
 }
 ```
-Resposta em caso de sucesso:
+Response on success:
 ```json
 {
   "id": "3",
