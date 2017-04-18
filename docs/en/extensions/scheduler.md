@@ -27,7 +27,7 @@ The **scheduler** extensions allows the chatbot to schedule messages to be sent 
 }
 ```
 
-Resposta em caso de sucesso:
+Response on success:
 
 ```json
 { 
@@ -39,7 +39,7 @@ Resposta em caso de sucesso:
 }
 ```
 
-2 - Consultando um agendamento já realizado (supondo que foi utilizado o exemplo anterior):
+2 - Getting an existing scheduled message:
 
 ```json
 {  
@@ -50,7 +50,7 @@ Resposta em caso de sucesso:
 }
 ```
 
-Resposta em caso de sucesso:
+Response on success:
 
 ```json
 {
@@ -74,7 +74,4 @@ Resposta em caso de sucesso:
   }
 }
 ```
-Os `status` possíveis são `scheduled`, `executed` e `canceled`. 
-
-#### Delegação
-Esta extensão já possui permissões de envio em nome dos chatbots, portanto não é necessário a realização de delegação.
+The possible `status` values are `scheduled`, `executed` and `canceled`. 
