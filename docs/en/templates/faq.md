@@ -1,5 +1,7 @@
 ### FAQ
 
+> This article was automatically translated and may have some errors. If you find any problem, please help us improving it following the link in the end of this page.
+
 To use the FAQ template, you must first configure Artificial Intelligence. You can access through the link as shown in the image below or through the side menu called *Artificial Intelligence*
 
 <img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/pt/templates/faq1.png" />
