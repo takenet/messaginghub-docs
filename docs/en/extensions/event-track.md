@@ -14,8 +14,8 @@ The **event analysis** extension allows the registration of chatbot's events for
   "type": "application/vnd.iris.eventTrack+json",
   "uri": "/event-track",
   "resource": {  
-    "category": "Bill",
-    "action": "Paid"
+    "category": "billing",
+    "action": "payment"
   }
 }
 ```
@@ -48,10 +48,10 @@ Response on success:
   "from": "postmaster@msging.net/#irismsging1",
   "to": "contact@msging.net/default",
   "resource": [{
-      "category": "Boleto"
+      "category": "billing"
   },
   {
-      "category": "Cartão"
+      "category": "account"
   }]
 }
 ```
@@ -63,17 +63,18 @@ Available *querystring* filters:
 
 | QueryString        | Description                               |
 |--------------------|-------------------------------------------| 
-| take               | Quantidade de items retornados            |
-| filterDate         | Get events from dates res a essa data     |
+| filterDate         | Limit date for retrieving the items       |
+| take               | Limit of total of items to be returned    |
+
 ```json
 {  
   "id": "57aa0ac2-158c-4012-9f18-b8eedaede85c",
   "method": "get",
-  "uri": "/event-track/boleto"
+  "uri": "/event-track/billing"
 }
 ```
 
-Resposta em caso de sucesso:
+Response on success:
 ```json
 {
   "method": "get",
@@ -82,14 +83,14 @@ Resposta em caso de sucesso:
   "from": "postmaster@msging.net/#irismsging1",
   "to": "contact@msging.net/default",
   "resource": [{
-      "category": "Boleto",
-      "action": "Vencido",
+      "category": "billing",
+      "action": "payment",
       "storageDate": "2016-01-01",
       "count": 10
   },
   {
-      "category": "Boleto",
-      "action": "Vencido",
+      "category": "billing",
+      "action": "payment",
       "storageDate": "2016-01-02",
       "count": 20
   }]
