@@ -1,15 +1,16 @@
-### Inteligência artificial
-| Endereço                        | URI base     | Permissões requeridas   | C#                     |
-|---------------------------------|--------------|-------------------------|------------------------|
-| postmaster@talkservice.msging.net | /analysis       | Análise de Sentença      | [TalkServiceExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/ArtificialIntelligence/TalkServiceExtension.cs) |
+### Artificial Intelligence
+| Endereço                          | URI base    | C#                     |
+|-----------------------------------|-------------|------------------------|
+| postmaster@talkservice.msging.net | /analysis   | [TalkServiceExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/ArtificialIntelligence/TalkServiceExtension.cs) |
 
-A extensão **TalkService** permite que você crie um chatbot que entenda mensagens recebidas em linguagem natural, utilizando um modelo treinado para responder aos clientes a partir de uma base de conhecimento. Com isto, seu chatbot poderá simular uma conversa entre humanos. Antes de consultar esta API, é necessario configurar previamente no portal do BLiP o provedor da solução de interpretação de linguagem natural (NLP) que será utilizada pelo chatbot (ex.: Watson Conversation, Watson Natural language Classifier, Luis).
+The **Artificial Intelligence** extension (also known as **TalkService**) enables the implementation of chatbots with the capability for processing natural language messages using an IA model. The extension processes the input and returns the **intention** behind the text, with a confidence score, defined by the IA Provider. The input must be provided encoded in the request command URI.
 
-O TalkService permite desenvolver o chatbot abstraindo-se do provedor de NLP, permitindo que você utilize a solução que melhor  atenda. O pedido de análise de uma sentença retorna a intenção por trás do texto, com uma pontuação de confiança definida pelo provedor do NLP.
+This extension abstracts the IA provider, allowing the selection of the most appropriate solution for each case. Before using the extension, the IA provider (Watson Conversation, Watson Natural language Classifier, etc.) should be configured in the portal for the chatbot. 
 
-#### Exemplos
 
-1 - Análise de uma sentença:
+#### Examples
+
+1 - Sentence analysis:
 ```json
 {  
   "id": "1",
@@ -18,7 +19,7 @@ O TalkService permite desenvolver o chatbot abstraindo-se do provedor de NLP, pe
   "uri": "/analysis?sentence=Ol%C3%A1%20chatbot%20inteligente",
 }
 ```
-Resposta em caso de sucesso:
+Response on success:
 ```json
 {
   "id": "1",
@@ -33,7 +34,7 @@ Resposta em caso de sucesso:
         "classifier": "Greeting",
         "confidence": 0.81459628343582153,
         "uncertain": false,
-        "answer": "Olá amigo, eu sou um chatbot inteligente que entende linguagem natural.",
+        "answer": "Hello my friend, I'm a a smart chatbot that understands natural language.",
         "guessname": [
             "ByeBye",
             "WhatsUrName"
@@ -43,8 +44,8 @@ Resposta em caso de sucesso:
             "0,40"
         ],
         "guessanswer": [
-            "Foi um prazer conversar com vc, adeus!",
-            "Meu nome é TalkService =)"
+            "It was nice talk to you, goodbye!",
+            "My name is TalkService =)"
         ],
         "diagnostic": "",
         "status": "Succeeded"
