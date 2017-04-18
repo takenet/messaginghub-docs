@@ -3,7 +3,7 @@
 |-----------------------------------|-------------|------------------------|
 | postmaster@talkservice.msging.net | /analysis   | [TalkServiceExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/ArtificialIntelligence/TalkServiceExtension.cs) |
 
-The **Artificial Intelligence** extension (also known as **TalkService**) enables the implementation of chatbots with the capability for processing natural language messages using an IA model. The extension processes the input and returns the **intention** behind the text, with a confidence score, defined by the IA Provider. The input must be provided encoded in the request command URI.
+The **Artificial Intelligence** extension (also known as **TalkService**) enables the implementation of chatbots with the capability of processing natural language messages using an IA model. The extension processes the input and returns the **intention** behind the text, with a confidence score, defined by the IA Provider. The input must be provided encoded in the request command URI.
 
 This extension abstracts the IA provider, allowing the selection of the most appropriate solution for each case. Before using the extension, the IA provider (Watson Conversation, Watson Natural language Classifier, etc.) should be configured in the portal for the chatbot. 
 
