@@ -4,51 +4,51 @@ To use the FAQ template, you must first configure Artificial Intelligence. You c
 
 <img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/pt/templates/faq1.png" />
 
-<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/en/templates/faq2.png" />
+<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/pt/templates/faq2.png" />
 
 Once you have configured artificial intelligence, you need to create the knowledge base. For this you will have to register questions and answers through the "NEW ANSWER" button as shown in the image below.
 
-<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/en/templates/faq3.png" />
+<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/pt/templates/faq3.png" />
 
 You will be presented with a screen where you can register the questions and the corresponding answer. You can enter more than one question for the same answer.
 
-<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/en/templates/faq4.png" />
+<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/pt/templates/faq4.png" />
 
 After registering a question, the "TRAIN CHATBOT" button will be enabled. This will occur whenever a response is created, deleted, or edited.
 Comments:
 1 - If you are using the Natural Language Classifier you must have at least 5 answers registered.
 2 - If you are using Conversation in the free template, a maximum of 25 responses can be registered.
  
- <img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/en/templates/faq5.png" />
+ <img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/pt/templates/faq5.png" />
  
 After completing the answers, click on "TRAIN CHATBOT" and wait for the training to finish.
 
-<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/en/templates/faq6.png" />
+<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/pt/templates/faq6.png" />
 
 The "TRAIN CHATBOT" button will be disabled and once the training is finished the PUBLISH button will be enabled.
  
- <img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/en/templates/faq7.png" />
+ <img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/pt/templates/faq7.png" />
  
 Click the "PUBLISH" button.
 
-<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/en/templates/faq8.png" />
+<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/pt/templates/faq8.png" />
 
 To check the results, it is necessary to publish your chatbot in any of the available channels through the Publications menu.
 
-<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/en/templates/faq9.png" />
+<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/pt/templates/faq9.png" />
 
 After sending messages through channels, you can check the amount of questions answered and unanswered, in addition to the amount of intentions that were used. These graphs can be found in the Data Analysis menu as shown in the figure below.
-<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/en/templates/faq10.png" />
+<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/pt/templates/faq10.png" />
 
 During the conversation, the scenario where the client sends a question that is not registered may occur. These questions can be checked in the Settings > Unidentified Questions menu. In this screen you have the possibility to link the question to a previously registered answer.
 
-<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/en/templates/faq11.png" />
+<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/pt/templates/faq11.png" />
 
 To do this simply click on the "Associate a question" field, select the desired question and click on the "Confirm"
 
-<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/en/templates/faq12.png" />
+<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/pt/templates/faq12.png" />
 
-<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/en/templates/faq13.png" />
+<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/pt/templates/faq13.png" />
  
 After linking a new question to a previously recorded response, you will need to perform the chatbot training and posting process again for the changes to be updated.
 
@@ -62,23 +62,23 @@ The Natural Language Classifier is a service that allows the understanding of na
 To set up you need to create an account on Bluemix (https://console.ng.bluemix.net/).
 After the creation of the account is necessary to create a Service, for this access the Bluemix and in the lateral menu click on "Services", as demonstrated in the image below, and click on "Create Watson service"
 
-<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/en/templates/faq14.png" />
+<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/pt/templates/faq14.png" />
 
 Select the "Watson" option as shown below
 
-<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/en/templates/faq15.png" />
+<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/pt/templates/faq15.png" />
 
 Search for Natural Language Classifier, select the Natural Language Classifier option and create your service
 
-<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/en/templates/faq16.png" />
+<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/pt/templates/faq16.png" />
 
 After creating the service, you must obtain the credentials to configure in BLiP. To do so, click on the "Service credentials" menu and then on "View credentials" as shown below.
 
-<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/en/templates/faq17.png" />
+<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/pt/templates/faq17.png" />
 
 From the information displayed, copy the contents of "username" and enter in the "USER NAME" field in the BLiP and copy the content of "password" and enter in the "PASSWORD" field in the BLiP as demonstrated below and click save.
 
-<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/en/templates/faq18.png" />
+<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/pt/templates/faq18.png" />
 
 ##### IBM Watson Conversation Configuration
 
@@ -86,22 +86,22 @@ IBM Watson Conversation features Dialog Natural Language Classifier (NLC) featur
 
 To set up you need to create an account on Bluemix (https://console.ng.bluemix.net/). After the creation of the account is necessary to create a Service, for this access the Bluemix and in the lateral menu click on "Services", as demonstrated in the image below, and click on "Create Watson service"
 
-<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/en/templates/faq19.png" />
+<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/pt/templates/faq19.png" />
  
 Select the "Watson" option as shown below
 
-<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/en/templates/faq20.png" />
+<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/pt/templates/faq20.png" />
 
 Search for Conversation, select Conversation and create your service
 
-<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/en/templates/faq21.png" />
+<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/pt/templates/faq21.png" />
 
 After creating the service, you must obtain the credentials to configure in BLiP. To do so, click on the "Service credentials" menu and then on "View credentials" as shown below.
 
-<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/en/templates/faq22.png" />
+<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/pt/templates/faq22.png" />
 
 From the information displayed, copy the contents of "username" and enter in the "USER NAME" field in the BLiP and copy the content of "password" and enter in the "PASSWORD" field in the BLiP as demonstrated below and click save.
 
-<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/en/templates/faq23.png" />
+<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/pt/templates/faq23.png" />
 
 After performing the Artificial Intelligence configuration, you can go back to the Settings> Knowledge Base menu and register the FAQ questions and answers.
