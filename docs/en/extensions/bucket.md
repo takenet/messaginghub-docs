@@ -1,13 +1,13 @@
-### Armazenamento
-| Endereço              | URI base     | Permissões requeridas   | C#              |
-|-----------------------|--------------|-------------------------|------------------
-| postmaster@msging.net (endereço padrão, não é necessário informar) | /buckets | Nenhuma | [BucketExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Bucket/BucketExtension.cs) |
+### Bucket
+| Endereço              | URI base     | C#              |
+|-----------------------|--------------|-----------------|
+| postmaster@msging.net (default address - not required) | /buckets | [BucketExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Bucket/BucketExtension.cs) |
 
-A extensão **armazenamento** permite o armazenamento de documentos JSON no servidor em um espaço isolado de cada chatbot. Esta extensão é útil armazenar informações de clientes que interagiram com o chatbot, como configurações e estado de navegação.
+The **bucket** extension allows the storage of documents in the server on a private chatbot's container. This extensions is useful to store information about the clients that have interacted with the chatbot, like preferences and navigation state.
 
-Para cada documento existe um identificador definido no momento da criação que deve ser utilizada para acesso posterior. É possível definir uma data de expiração opcional para o documento. Tanto o identificador quanto a expiração devem ser definidos na **URI** do comando.
+Each document have an **identifier** which is provided during the write operation and this identifier should be used for retrieving the value later. It is possible to set an optional **expiration date** for the document. Both the identifier and the expiration date are specified in the **URI** of the command which is sent to the extension.
 
-#### Exemplos
+#### Exemples
 1 - Armazenando um documento JSON genérico com o identificador **xyz1234**:
 ```json
 {  
