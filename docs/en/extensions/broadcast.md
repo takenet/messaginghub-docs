@@ -1,7 +1,7 @@
 ### Broadcast
-| Address                         | Base URI     | Required permissions    | C#                     |
-|---------------------------------|--------------|-------------------------|------------------------|
-| postmaster@broadcast.msging.net | /lists       | Send Messages           | [BroadcastExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Broadcast/BroadcastExtension.cs) |
+| Address                         | Base URI     | C#                     |
+|---------------------------------|--------------|------------------------|
+| postmaster@broadcast.msging.net | /lists       | [BroadcastExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Broadcast/BroadcastExtension.cs) |
 
 The **broadcast** extension allows creation and management of distribution lists and their members for sending messages to multiple destinations simultaneously. 
 
@@ -119,9 +119,6 @@ Notifications sent by list members to the distribution list and forwarded to the
   "event": "received"
 }
 ```
-
-#### Delegation
-This extension already has send permissions on behalf of chatbotos, so it is not necessary to perform delegation.
 
 #### Availability
 
