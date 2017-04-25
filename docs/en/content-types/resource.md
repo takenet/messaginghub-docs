@@ -3,10 +3,10 @@
 |--------------------------------------|
 | application/vnd.iris.resource+json   |
 
-Permite o envio de mensagens onde o conteúdo é um **recurso** armazenado no servidor. O recurso deve ser armazenado através da [extensão **recursos**](https://portal.blip.ai/#/docs/extensions/resource). O servidor realiza automaticamente a substituição do conteúdo, caso o **identificador** fornecido seja válido para o chatbot que originou a mensagem.
+Allows sending a message where the content is a **resource** stored in the server. The resource should be stored thought the [**resources** extension](https://portal.blip.ai/#/docs/extensions/resource). The server automatically replaces the content with the stored resource, in the case the resource **identifier** exists for the caller chatbot.
 
-#### Exemplos
-Enviando uma mensagem do recurso com identificador **welcome-message**.
+#### Examples
+Sending a resource message with the **welcome-message** identifier:
 ```json
 {
     "id": "1",
@@ -17,18 +17,18 @@ Enviando uma mensagem do recurso com identificador **welcome-message**.
     }
 }
 ```
-Caso exista um recurso com este identificador, o servidor realiza a substituição do conteúdo da mensagem e encaminha para o desntinatário. Suponhando que o recurso com o identificador **welcome-message** seja do tipo `text/plain` com valor `Seja bem vindo a nosso serviço`, a mensagem final ficaria da seguinte forma:
+In case there is a resource with this identifier, the server replaces the content and forward to the destination. Imagining that the resource with **welcome-message** identifier is a `text/plain` document with value `Welcome to our service`, the final message would be like this:
 
 ```json
 {
     "id": "1",
     "to": "1042221589186385@messenger.gw.msging.net",
     "type": "text/plain",
-    "content": "Seja bem vindo a nosso serviço"
+    "content": "Welcome to our service"
 }
 ```
 
-### Mapeamento nos canais
+### Channel mapping
 
-O tipo de conteúdo é suportado em todos os canais.
+This content type is supported on all channels.
 
