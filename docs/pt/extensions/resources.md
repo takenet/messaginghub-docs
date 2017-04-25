@@ -3,9 +3,9 @@
 |-----------------------|--------------|-----------------------------|------------------
 | postmaster@msging.net (endereço padrão, não é necessário informar) | /resources | Nenhuma | [ResourceExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Resource/ResourceExtension.cs) |
 
-A extensão **recursos** permite o armazenamento de documentos no servidor em um espaço isolado de cada chatbot, de forma semelhante à extensão **armazenamento**. A diferença principal é que estes documentos podem ser mapeados como **conteúdo de mensagens** enviadas aos clientes da plataforma, através do **identificador** de cada recurso. Isso significa que o desenvolvedor do chatbot pode optar em **armazenar o conteúdo de suas mensagens no servidor**, ao invés de manter no lado da aplicação. 
+A extensão **recursos** permite o armazenamento de documentos no servidor em um espaço isolado de cada chatbot, de forma semelhante à extensão **armazenamento**. A diferença principal é que estes documentos podem ser mapeados como **conteúdo de mensagens** enviadas aos destinatários do chatbot, através do **identificador** de cada recurso. Isso significa que o desenvolvedor do chatbot pode optar em **armazenar o conteúdo de suas mensagens no servidor**, ao invés de manter no lado da aplicação. 
 
-Para realizar o envio de uma mensagem de recurso, o desenvolvedor deve utilizar o tipo de conteúdo **Recurso**. Para mais informações, 
+Para realizar o envio de uma mensagem de recurso, o desenvolvedor deve utilizar o [tipo de conteúdo **recurso**](https://portal.blip.ai/#/docs/content-types/resource).
 
 O portal **BLiP** oferece uma interface para gerenciamento destes recursos, o que auxilia em caso de edições destes conteúdos, dispensando a necessidade de atualizar o código no lado da aplicação em caso de mudanças no conteúdo das mensagens do chatbot.
 
