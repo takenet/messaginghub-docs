@@ -1,16 +1,16 @@
 ### Resources
-| Endereço              | URI base     | Permissões requeridas       | C#              |
-|-----------------------|--------------|-----------------------------|------------------
-| postmaster@msging.net (endereço padrão, não é necessário informar) | /resources | Nenhuma | [ResourceExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Resource/ResourceExtension.cs) |
+| Endereço              | Base URI     | C#              |
+|-----------------------|--------------|------------------
+| postmaster@msging.net (default address - not required) | /resources | [ResourceExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Resource/ResourceExtension.cs) |
 
-A extensão **recursos** permite o armazenamento de documentos no servidor em um espaço isolado de cada chatbot, de forma semelhante à extensão **armazenamento**. A diferença principal é que estes documentos podem ser mapeados como **conteúdo de mensagens** enviadas aos clientes da plataforma, através do **identificador** de cada recurso. Isso significa que o desenvolvedor do chatbot pode optar em **armazenar o conteúdo de suas mensagens no servidor**, ao invés de manter no lado da aplicação. 
+The **resources** extension allows the storage of documents in the server in an isolated space for each chatbot, similar to the **storage** extension. The main difference is that these documents can be mapped as **contents** for messages sent to the chatbot destinations, thought the resource **identifier**. This means that the chatbot developer can choose to **store the content of his messages in the server** instead of keeping they on the chatbot side.
 
-Para realizar o envio de uma mensagem de recurso, o desenvolvedor deve utilizar o tipo de conteúdo **Recurso**. Para mais informações, 
+In order to send a resource message, the developer must use the [**resource** content type](https://portal.blip.ai/#/docs/content-types/resource).
 
-O portal **BLiP** oferece uma interface para gerenciamento destes recursos, o que auxilia em caso de edições destes conteúdos, dispensando a necessidade de atualizar o código no lado da aplicação em caso de mudanças no conteúdo das mensagens do chatbot.
+The **BLiP** portal offers an resource management interface which helps in the case of editing these content, avoiding the need to update the code on the application side in case of changes in chatbot content.
 
-#### Exemplos
-1 - Armazenando um recurso do tipo **link de mídia** com o identificador **xyz1234**:
+#### Examples
+1 - Storing a resource of type **media link** with the identifier **xyz1234**:
 ```json
 {  
   "id": "1",
@@ -18,8 +18,8 @@ O portal **BLiP** oferece uma interface para gerenciamento destes recursos, o qu
   "uri": "/resources/xyz1234",
   "type": "application/vnd.lime.media-link+json",
   "resource": {
-    "title": "Gato",
-    "text": "Segue uma imagem de um gato",
+    "title": "Cat",
+    "text": "Here is a cat image for you!",
     "type": "image/jpeg",
     "uri": "http://2.bp.blogspot.com/-pATX0YgNSFs/VP-82AQKcuI/AAAAAAAALSU/Vet9e7Qsjjw/s1600/Cat-hd-wallpapers.jpg",
     "size": 227791,
@@ -28,7 +28,7 @@ O portal **BLiP** oferece uma interface para gerenciamento destes recursos, o qu
   }
 }
 ```
-Resposta em caso de sucesso:
+Response on success:
 ```json
 {
   "id": "1",
@@ -39,20 +39,17 @@ Resposta em caso de sucesso:
 }
 ```
 
-2 - Armazenando um documento do tipo customizado **application/x-my-type+json** com o identificador **abcd9876** e expiração de 30000 ms (30 segundos):
+2 - Storing a resource of type **text/plain** with the identifier **help-message**:
 ```json
 {  
   "id": "2",
   "method": "set",
-  "uri": "/resources/abcd9876?expiration=30000",
-  "type": "application/x-my-type+json",
-  "resource": {  
-    "myTypeKey1": "value1",
-    "myTypeKey2": 2
-  }
+  "uri": "/resources/help-message",
+  "type": "text/plain",
+  "resource": "To use our services, please send a text message."
 }
 ```
-Resposta em caso de sucesso:
+Response on success:
 ```json
 {
   "id": "2",
