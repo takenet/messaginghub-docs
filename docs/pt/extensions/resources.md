@@ -10,12 +10,12 @@ Para realizar o envio de uma mensagem de recurso, o desenvolvedor deve utilizar 
 O portal **BLiP** oferece uma interface para gerenciamento destes recursos, o que auxilia em caso de edições destes conteúdos, dispensando a necessidade de atualizar o código no lado da aplicação em caso de mudanças no conteúdo das mensagens do chatbot.
 
 #### Exemplos
-1 - Armazenando um recurso do tipo **link de mídia** com o identificador **xyz1234**:
+1 - Armazenando um recurso do tipo **link de mídia** com o identificador **welcome-message**:
 ```json
 {  
   "id": "1",
   "method": "set",
-  "uri": "/resources/xyz1234",
+  "uri": "/resources/welcome-message",
   "type": "application/vnd.lime.media-link+json",
   "resource": {
     "title": "Gato",
@@ -39,17 +39,14 @@ Resposta em caso de sucesso:
 }
 ```
 
-2 - Armazenando um documento do tipo customizado **application/x-my-type+json** com o identificador **abcd9876** e expiração de 30000 ms (30 segundos):
+2 - Armazenando um recurso do tipo **text/plain** com o identificador **help-message**:
 ```json
 {  
   "id": "2",
   "method": "set",
-  "uri": "/resources/abcd9876?expiration=30000",
-  "type": "application/x-my-type+json",
-  "resource": {  
-    "myTypeKey1": "value1",
-    "myTypeKey2": 2
-  }
+  "uri": "/resources/help-message",
+  "type": "text/plain",
+  "resource": "Para utilizar nosso serviços, envie uma mensagem de texto."
 }
 ```
 Resposta em caso de sucesso:
