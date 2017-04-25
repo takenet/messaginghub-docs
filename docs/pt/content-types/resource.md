@@ -17,7 +17,7 @@ Enviando uma mensagem do recurso com identificador **welcome-message**.
     }
 }
 ```
-Caso exista um recurso com este identificador, o servidor realiza a substituição do conteúdo da mensagem e encaminha para o desntinatário. Suponhando que o recurso com o identificador seja do tipo `text/plain` com valor `Seja bem vindo a nosso serviço`, a mensagem final ficaria da seguinte forma:
+Caso exista um recurso com este identificador, o servidor realiza a substituição do conteúdo da mensagem e encaminha para o desntinatário. Suponhando que o recurso com o identificador **welcome-message** seja do tipo `text/plain` com valor `Seja bem vindo a nosso serviço`, a mensagem final ficaria da seguinte forma:
 
 ```json
 {
