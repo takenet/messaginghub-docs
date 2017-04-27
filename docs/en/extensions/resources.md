@@ -3,14 +3,14 @@
 |-----------------------|--------------|------------------
 | postmaster@msging.net (default address - not required) | /resources | [ResourceExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Resource/ResourceExtension.cs) |
 
-The **resources** extension allows the storage of documents in the server in an isolated space for each chatbot, similar to the **storage** extension. The main difference is that these documents can be mapped as **contents** for messages sent to the chatbot destinations, thought the resource **identifier**. This means that the chatbot developer can choose to **store the content of his messages in the server** instead of keeping they on the chatbot side.
+The **resources** extension allows the storage of documents in the server in an isolated space for each chatbot, similar to the **storage** extension. The main difference is that these documents can be mapped as **contents** for messages sent to the chatbot destinations, thought the resource **key**. This means that the chatbot developer can choose to **store the content of his messages in the server** instead of keeping they on the chatbot side.
 
 In order to send a resource message, the developer must use the [**resource** content type](https://portal.blip.ai/#/docs/content-types/resource).
 
 The **BLiP** portal offers an resource management interface which helps in the case of editing these content, avoiding the need to update the code on the application side in case of changes in chatbot content.
 
 #### Examples
-1 - Storing a resource of type **media link** with the identifier **xyz1234**:
+1 - Storing a resource of type **media link** with the key **xyz1234**:
 ```json
 {  
   "id": "1",
@@ -39,7 +39,7 @@ Response on success:
 }
 ```
 
-2 - Storing a resource of type **text/plain** with the identifier **help-message**:
+2 - Storing a resource of type **text/plain** with the key **help-message**:
 ```json
 {  
   "id": "2",
