@@ -5,7 +5,7 @@
 
 Permite o envio de um menu de opções aos clientes, podendo o cabeçalho e as opções serem, além de **texto**, outros tipos de conteúdo como **link de mídia** ou **link web**. Para cada opção, é possível definir um documento que é entregue ao chatbot quando o cliente realiza uma escolha (depende de suporte do canal).
 
-####Exemplo
+#### Exemplo
 1 - Menu com imagem no cabeçalho e um link e texto como opções:
 ```json
 {
