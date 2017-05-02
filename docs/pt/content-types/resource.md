@@ -17,7 +17,7 @@ Enviando uma mensagem do recurso com a chave **welcome-message**.
     }
 }
 ```
-Caso exista um recurso com esta chave, o servidor realiza a substituição do conteúdo da mensagem e encaminha para o desntinatário. Supondo que o recurso com a chave **welcome-message** seja do tipo `text/plain` com valor `Seja bem vindo a nosso serviço`, a mensagem final ficaria da seguinte forma:
+Caso exista um recurso com esta chave, o servidor realiza a substituição do conteúdo da mensagem e encaminha para o destinatário. Supondo que o recurso com a chave **welcome-message** seja do tipo `text/plain` com valor `Seja bem vindo a nosso serviço`, a mensagem final ficaria da seguinte forma:
 
 ```json
 {
