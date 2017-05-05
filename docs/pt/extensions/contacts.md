@@ -16,7 +16,7 @@ Para informações sobre todos os campos suportados, consulte a documentação d
   "uri": "/contacts",
   "type": "application/vnd.lime.contact+json",
   "resource": {
-    "identity": "joao@messenger.gw.msging.net",
+    "identity": "11121023102013021@messenger.gw.msging.net",
     "name": "João da Silva",
     "gender":"male",
     "extras": {
@@ -42,7 +42,7 @@ Resposta em caso de sucesso:
 {  
   "id": "2",
   "method": "get",
-  "uri": "/contacts/joao@messenger.gw.msging.net"
+  "uri": "/contacts/11121023102013021@messenger.gw.msging.net"
 }
 ```
 Resposta em caso de sucesso:
@@ -55,7 +55,7 @@ Resposta em caso de sucesso:
   "status": "success",
   "type": "application/vnd.lime.contact+json",
   "resource": {
-    "identity": "joao@messenger.gw.msging.net",
+    "identity": "11121023102013021@messenger.gw.msging.net",
     "name": "João da Silva",
     "gender":"male",
     "extras": {
@@ -87,8 +87,8 @@ Resposta em caso de sucesso:
     "itemType":"application/vnd.lime.contact+json",
     "total":10,
     "items": [
-      {"identity": "joao@messenger.gw.msging.net","name": "João da Silva","gender":"male","extras":{"plan":"Gold","code":"1111"}},
-      {"identity": "jose@telegram.gw.msging.net","name": "Zezim do Telegram","email":"ze@gmail.com"},
+      {"identity": "11121023102013021@messenger.gw.msging.net","name": "João da Silva","gender":"male","extras":{"plan":"Gold","code":"1111"}},
+      {"identity": "213121@telegram.gw.msging.net","name": "Zezim do Telegram","email":"ze@gmail.com"},
       {"identity": "5511999990000@take.io","name": "Maria"}
     ]    
   }  
@@ -105,7 +105,7 @@ Os campos da agenda de contatos podem ser utilizados para substituir variáveis 
 ```json
 {  
   "id": "1",
-  "to": "joao@messenger.gw.msging.net",
+  "to": "11121023102013021@messenger.gw.msging.net",
   "type": "text/plain",
   "value": "Olá, ${contact.name}, seja bem vindo ao plano ${contact.extras.plan}!",
   "metadata": {
