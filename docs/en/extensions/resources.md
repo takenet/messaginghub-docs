@@ -63,3 +63,24 @@ Response on success:
   "status": "success"
 }
 ```
+
+3 - Storing a resource of type **text/plain** with a replacement variable:
+```json
+{  
+  "id": "3",
+  "method": "set",
+  "uri": "/resources/welcome-message",
+  "type": "text/plain",
+  "resource": "Welcome to our service, ${contact.name}!"
+}
+```
+Response on success:
+```json
+{
+  "id": "3",
+  "from": "postmaster@msging.net/#irismsging1",
+  "to": "contact@msging.net/default",
+  "method": "set",
+  "status": "success"
+}
+```
