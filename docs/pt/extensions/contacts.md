@@ -107,7 +107,7 @@ Os campos da agenda de contatos podem ser utilizados para substituir variáveis 
   "id": "1",
   "to": "11121023102013021@messenger.gw.msging.net",
   "type": "text/plain",
-  "value": "Olá, ${contact.name}, seja bem vindo ao plano ${contact.extras.plan}!",
+  "content": "Olá, ${contact.name}, seja bem vindo ao plano ${contact.extras.plan}!",
   "metadata": {
     "#message.replaceVariables": "true"
   }
@@ -120,7 +120,7 @@ Neste exemplo, a mensagem final que será entregue ao cliente será:
   "id": "1",
   "to": "11121023102013021@messenger.gw.msging.net",
   "type": "text/plain",
-  "value": "Olá, João da Silva, seja bem vindo ao plano Gold!",
+  "content": "Olá, João da Silva, seja bem vindo ao plano Gold!",
   "metadata": {
     "#message.replaceVariables": "true"
   }
