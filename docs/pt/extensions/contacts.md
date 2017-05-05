@@ -118,7 +118,7 @@ Neste exemplo, a mensagem final que será entregue ao cliente será:
 ```json
 {  
   "id": "1",
-  "to": "joao@messenger.gw.msging.net",
+  "to": "11121023102013021@messenger.gw.msging.net",
   "type": "text/plain",
   "value": "Olá, João da Silva, seja bem vindo ao plano Gold!",
   "metadata": {
