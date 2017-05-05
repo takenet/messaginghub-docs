@@ -5,7 +5,7 @@
 
 The **contacts** extension allows the management of the chatbot's roster, which can be used to store data of the chatbot clients. It is possible to save information like name, address, gender and other generic information, using the `extras` property.
 
-For more information about all the supported fields, please refer to the [Lime protocol](http://limeprotocol.org/resources.html#contact) documentation.
+For more information about the supported fields, please refer to the [Lime protocol](http://limeprotocol.org/resources.html#contact) documentation.
 
 #### Examples
 1 - Adding a Messenger contact:
