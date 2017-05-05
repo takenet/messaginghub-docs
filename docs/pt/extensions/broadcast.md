@@ -9,13 +9,15 @@ Cada lista de distribuição possui um endereço único no formato `nome-da-list
 
 As notificações são encaminhadas ao chatbot quando recebidas pela extensão.
 
-É possível utilizar variavéis de substituição de contatos nas mensagens enviadas. Para maiores informações, consulte a documentação da [extensão **Contatos**](https://portal.blip.ai/#/docs/extensions/contacts).
-
 #### Listas padrão
 
 O BLiP automaticamente cria uma lista de distribuição com todos os endereços que já entraram em contato com seu chatbot. O endereço da mesma é `[identifier]+senders@broadcast.msging.net`, sendo `identifier` o identificador do seu chatbot, que é utilizado junto com a chave de acesso para autenticação. 
 
 Por exemplo, para um chatbot com identifier `mychatbot`, o endereço desta lista seria `mychatbot+senders@broadcast.msging.net`.
+
+#### Variáveis de substituição
+
+É possível utilizar variavéis de substituição de contatos nas mensagens enviadas. Para maiores informações, consulte a documentação da [extensão **Contatos**](https://portal.blip.ai/#/docs/extensions/contacts).
 
 #### Exemplos
 
