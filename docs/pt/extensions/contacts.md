@@ -84,7 +84,7 @@ Resposta em caso de sucesso:
   "status": "success",
   "type": "application/vnd.lime.collection+json",
   "resource": {
-    "itemType:"application/vnd.lime.contact+json",
+    "itemType":"application/vnd.lime.contact+json",
     "total":10,
     "items": [
       {"identity": "joao@messenger.gw.msging.net","name": "João da Silva","gender":"male","extras":{"plan":"Gold","code":"1111"}},
