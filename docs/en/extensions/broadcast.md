@@ -96,6 +96,16 @@ Response on success:
   "content": "Hello participants of this list!"
 }
 ```
+
+5 - Sending a message with a replacement variable:
+```json
+{  
+  "id": "5",
+  "to": "news@broadcast.msging.net",
+  "type": "text/plain",
+  "content": "Hello ${contact.name}, come to check out our prices!"
+}
+
 Notifications sent by extension **distribution list**:
 ```json
 {
