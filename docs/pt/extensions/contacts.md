@@ -113,3 +113,16 @@ Os campos da agenda de contatos podem ser utilizados para substituir variáveis 
   }
 }
 ```
+
+Neste exemplo, a mensagem final que será entregue ao cliente será:
+```json
+{  
+  "id": "1",
+  "to": "joao@messenger.gw.msging.net",
+  "type": "text/plain",
+  "value": "Olá, João da Silva, seja bem vindo ao plano Gold!",
+  "metadata": {
+    "#message.replaceVariables": "true"
+  }
+}
+```
