@@ -9,6 +9,8 @@ Para realizar o envio de uma mensagem de recurso, o desenvolvedor deve utilizar 
 
 O portal **BLiP** oferece uma interface para gerenciamento destes recursos, o que auxilia em caso de edições destes conteúdos, dispensando a necessidade de atualizar o código no lado da aplicação em caso de mudanças no conteúdo das mensagens do chatbot.
 
+#### Variáveis de substituição
+
 É possível utilizar variavéis de substituição de contatos nos recursos criados. Para maiores informações, consulte a documentação da [extensão **Contatos**](https://portal.blip.ai/#/docs/extensions/contacts).
 
 #### Exemplos
@@ -55,6 +57,27 @@ Resposta em caso de sucesso:
 ```json
 {
   "id": "2",
+  "from": "postmaster@msging.net/#irismsging1",
+  "to": "contact@msging.net/default",
+  "method": "set",
+  "status": "success"
+}
+```
+
+3 - Armazenando um recurso do tipo **text/plain** com uma variável de substituição:
+```json
+{  
+  "id": "3",
+  "method": "set",
+  "uri": "/resources/help-message",
+  "type": "text/plain",
+  "resource": "Bem vindo ao nosso serviço, ${contact.name}!"
+}
+```
+Resposta em caso de sucesso:
+```json
+{
+  "id": "3",
   "from": "postmaster@msging.net/#irismsging1",
   "to": "contact@msging.net/default",
   "method": "set",
