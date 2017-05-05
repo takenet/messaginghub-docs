@@ -71,7 +71,7 @@ Resposta em caso de sucesso:
 {  
   "id": "3",
   "method": "get",
-  "uri": "/contacts?$skip=0&take=3"
+  "uri": "/contacts?$skip=0&$take=3"
 }
 ```
 Resposta em caso de sucesso:
