@@ -15,6 +15,10 @@ BLiP automatically creates a distribution list with all clients that have alread
 
 For example, for a chatbot with identifier `mychatbot`, this list address would be `mychatbot+senders@broadcast.msging.net`.
 
+#### Replacement variables
+
+It is possible to use contact replacement variables in the sent messages. For more information, please check the documentation of the [**Contacts** extension](https://portal.blip.ai/#/docs/extensions/contacts).
+
 #### Examples
 
 1 - Creating a distribution list:
