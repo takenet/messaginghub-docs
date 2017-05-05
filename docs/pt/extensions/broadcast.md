@@ -94,6 +94,16 @@ Resposta em caso de sucesso:
   "content": "Olá participantes desta lista!"
 }
 ```
+
+5 - Enviando uma mensagem com uma variável de substituição:
+```json
+{  
+  "id": "5",
+  "to": "noticias@broadcast.msging.net",
+  "type": "text/plain",
+  "content": "Olá ${contact.name}, venha conferir nossas promoções!"
+}
+
 Notificações enviadas pela extensão **lista de distribuição**:
 ```json
 {
