@@ -1,4 +1,3 @@
-
 ### Contatos
 | Endereço              | URI base     | Permissões requeridas   | C#              |
 |-----------------------|--------------|-------------------------|-----------------|
@@ -18,7 +17,12 @@ Para informações sobre todos os campos suportados, consulte a documentação d
   "type": "application/vnd.lime.contact+json",
   "resource": {
     "identity": "joao@messenger.gw.msging.net",
-    "name": "João da Silva"
+    "name": "João da Silva",
+    "gender":"male",
+    "extras": {
+      "plan":"Gold",
+      "code":"1111"      
+    }
   }
 }
 ```
@@ -33,6 +37,63 @@ Resposta em caso de sucesso:
 }
 ```
 
+2 - Consultando um contato:
+```json
+{  
+  "id": "2",
+  "method": "get",
+  "uri": "/contacts/joao@messenger.gw.msging.net"
+}
+```
+Resposta em caso de sucesso:
+```json
+{
+  "id": "2",
+  "from": "postmaster@msging.net/#irismsging1",
+  "to": "contact@msging.net/default",
+  "method": "get",
+  "status": "success",
+  "type": "application/vnd.lime.contact+json",
+  "resource": {
+    "identity": "joao@messenger.gw.msging.net",
+    "name": "João da Silva",
+    "gender":"male",
+    "extras": {
+      "plan":"Gold",
+      "code":"1111"      
+    }
+  }  
+}
+```
+
+3 - Buscando 3 contatos da agenda de maneira paginada:
+```json
+{  
+  "id": "3",
+  "method": "get",
+  "uri": "/contacts?$skip=0&take=3"
+}
+```
+Resposta em caso de sucesso:
+```json
+{
+  "id": "3",
+  "from": "postmaster@msging.net/#irismsging1",
+  "to": "contact@msging.net/default",
+  "method": "get",
+  "status": "success",
+  "type": "application/vnd.lime.collection+json",
+  "resource": {
+    "itemType:"application/vnd.lime.contact+json",
+    "total":10,
+    "items": [
+      {"identity": "joao@messenger.gw.msging.net","name": "João da Silva","gender":"male","extras":{"plan":"Gold","code":"1111"}},
+      {"identity": "jose@telegram.gw.msging.net","name": "Zezim do Telegram","email":"ze@gmail.com"},
+      {"identity": "5511999990000@take.io","name": "Maria"}
+    ]    
+  }  
+}
+```
 
 #### Substituição de variáveis das mensagems
 
