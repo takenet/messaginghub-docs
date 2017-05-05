@@ -9,7 +9,7 @@ In order to send a resource message, the developer must use the [**resource** co
 
 The **BLiP** portal offers an resource management interface which helps in the case of editing these content, avoiding the need to update the code on the application side in case of changes in chatbot content.
 
-## Replacement variables
+#### Replacement variables
 
 It is possible to use contact replacement variables in the created resources. For more information, please check the documentation of the [**Contacts** extension](https://portal.blip.ai/#/docs/extensions/contacts).
 
