@@ -3,7 +3,7 @@
 |-----------------------|--------------|-----------------|
 | postmaster@msging.net (default address - not required)) | /contacts | [ContactExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Contacts/ContactExtension.cs) |
 
-The **contacts** extension allows the management of the chatbot's roster, which can be used to store data of the chatbot clients. It is possible to save information like name, address, gender and generic information, using the `extras` property.
+The **contacts** extension allows the management of the chatbot's roster, which can be used to store data of the chatbot clients. It is possible to save information like name, address, gender and other generic information, using the `extras` property.
 
 For more information about all the supported fields, please refer to the [protocolo Lime](http://limeprotocol.org/resources.html#contact) documentation.
 
