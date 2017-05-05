@@ -133,6 +133,7 @@ Notificações enviadas pelos membros da lista à lista de distribuição e enca
   "type": "text/plain",
   "content": "Olá ${contact.name}, venha conferir nossas promoções!"
 }
+```
 
 #### Disponibilidade
 
