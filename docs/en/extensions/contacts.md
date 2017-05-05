@@ -1,7 +1,7 @@
 ### Contacts
 | Address               | Base URI     | C#              |
 |-----------------------|--------------|-----------------|
-| postmaster@msging.net (default address - not required)) | /contacts | Nenhuma | [ContactExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Contacts/ContactExtension.cs) |
+| postmaster@msging.net (default address - not required)) | /contacts | [ContactExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Contacts/ContactExtension.cs) |
 
 The **contacts** extension allows the management of the chatbot's roster, which can be used to store data of the chatbot clients. It is possible to save information like name, address, gender and generic information, using the `extras` property.
 
