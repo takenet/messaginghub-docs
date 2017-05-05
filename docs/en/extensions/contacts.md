@@ -98,32 +98,29 @@ Response on success:
 
 #### Message variable replacement
 
-The contacts fields can be used to replace variables on messages sent by the chatbot. To active the replacement in a message, the `metadata` key `#message.replaceVariables` should be present with the value `true` and the message text should have variables in the  `${contact.<propertyName>}` format, where `<propertyName>` is the contact property for replacement.
+The contacts fields can be used to replace variables on messages sent by the chatbot. To active the replacement in a message, the `metadata` key `#message.replaceVariables` should be present with the value `true` and the message text should have variables in the  `${contact.<propertyName>}` format, where `<propertyName>` is the contact property for replacement. It is possible to use all fields from the contact, including the keys in the `extras` property. In this case, is only required to use the `${contact.extras.<extraPropertyName>}` convention, where `<extraPropertyName>` is the value for replacement. valor para substituição.
 
-Os campos da agenda de contatos podem ser utilizados para substituir variáveis de mensagens enviadas pelo chatbot. Para ativar a substituição, é necessário informar no campo `metadata` da mensagem a chave `#message.replaceVariables` com valor `true` e incluir no texto da mensagem as variáveis no formato `${contact.<propertyName>}`, onde `<propertyName>` é a propriedade do contato para substituição. É possível a substituição de todos os campos do contato, inclusive de chaves na propriedade `extras`. Neste caso, basta utilizar a convenção `${contact.extras.<extraPropertyName>}`, sendo `<extraPropertyName>` o valor para substituição.
+#### Examples
 
-#### Exemplos
-
-1 - Enviando uma mensagem incluindo o nome do contato:
+1 - Sending a message including the contact name:
 ```json
 {  
   "id": "1",
   "to": "11121023102013021@messenger.gw.msging.net",
   "type": "text/plain",
-  "value": "Olá, ${contact.name}, seja bem vindo ao plano ${contact.extras.plan}!",
+  "value": "Hello ${contact.name}, welcome to the ${contact.extras.plan} plan!",
   "metadata": {
     "#message.replaceVariables": "true"
   }
 }
 ```
-
-Neste exemplo, a mensagem final que será entregue ao cliente será:
+In this example, the final message which will be sent to the customer is:
 ```json
 {  
   "id": "1",
   "to": "11121023102013021@messenger.gw.msging.net",
   "type": "text/plain",
-  "value": "Olá, João da Silva, seja bem vindo ao plano Gold!",
+  "value": "Hello John Deer, welcome to the Gold plan!",
   "metadata": {
     "#message.replaceVariables": "true"
   }
