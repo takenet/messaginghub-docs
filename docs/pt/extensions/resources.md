@@ -9,7 +9,7 @@ Para realizar o envio de uma mensagem de recurso, o desenvolvedor deve utilizar 
 
 O portal **BLiP** oferece uma interface para gerenciamento destes recursos, o que auxilia em caso de edições destes conteúdos, dispensando a necessidade de atualizar o código no lado da aplicação em caso de mudanças no conteúdo das mensagens do chatbot.
 
-É possível utilizar variavéis de substituição de contatos nos recursos criados. Para maiores informações, consulte a documentação da extensão [**Contatos**](https://portal.blip.ai/#/docs/extensions/contacts).
+É possível utilizar variavéis de substituição de contatos nos recursos criados. Para maiores informações, consulte a documentação da [extensão **Contatos**](https://portal.blip.ai/#/docs/extensions/contacts).
 
 #### Exemplos
 1 - Armazenando um recurso do tipo **link de mídia** com a chave **welcome-message**:
