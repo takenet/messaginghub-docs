@@ -1,5 +1,5 @@
 ### Bucket
-| Endereço              | URI base     | C#              |
+| Address               | Base URI     | C#              |
 |-----------------------|--------------|-----------------|
 | postmaster@msging.net (default address - not required) | /buckets | [BucketExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Bucket/BucketExtension.cs) |
 
