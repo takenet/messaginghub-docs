@@ -17,7 +17,7 @@ For more information about the supported fields, please refer to the [Lime proto
   "type": "application/vnd.lime.contact+json",
   "resource": {
     "identity": "11121023102013021@messenger.gw.msging.net",
-    "name": "John Deer",
+    "name": "John Doe",
     "gender":"male",
     "extras": {
       "plan":"Gold",
@@ -57,7 +57,7 @@ Response on success:
   "type": "application/vnd.lime.contact+json",
   "resource": {
     "identity": "11121023102013021@messenger.gw.msging.net",
-    "name": "John Deer",
+    "name": "John Doe",
     "gender":"male",
     "extras": {
       "plan":"Gold",
@@ -88,7 +88,7 @@ Response on success:
     "itemType":"application/vnd.lime.contact+json",
     "total":10,
     "items": [
-      {"identity": "11121023102013021@messenger.gw.msging.net","name": "John Deer","gender":"male","extras":{"plan":"Gold","code":"1111"}},
+      {"identity": "11121023102013021@messenger.gw.msging.net","name": "John Doe","gender":"male","extras":{"plan":"Gold","code":"1111"}},
       {"identity": "213121@telegram.gw.msging.net","name": "Joseph from Telegram","email":"ze@gmail.com"},
       {"identity": "5511999990000@take.io","name": "Mary"}
     ]    
@@ -120,7 +120,7 @@ In this example, the final message which will be sent to the customer is:
   "id": "1",
   "to": "11121023102013021@messenger.gw.msging.net",
   "type": "text/plain",
-  "value": "Hello John Deer, welcome to the Gold plan!",
+  "value": "Hello John Doe, welcome to the Gold plan!",
   "metadata": {
     "#message.replaceVariables": "true"
   }
