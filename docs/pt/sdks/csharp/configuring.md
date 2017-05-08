@@ -60,6 +60,15 @@ Cada **message receiver** pode possuir as seguintes propriedades:
 | priority | Prioridade em relação aos outros receivers, valores menores tem mais prioridade. | 0 |
 | state | Estado necessário do originador para o recebimento de mensagem.  | default |
 | outState | Define um estado para o originador depois que a mensagem for processada | default |
+| response | **Definição de Documento** de resposta que deve ser enviado ao originador. Ao informar esta propriedade, o valor de `type` pode ser ignorado. | *Veja abaixo* |
+
+Uma **definição de documento** possui as seguintes propriedades:
+| Propriedade  | Descrição                                                                        | Exemplo                 |
+|--------------|----------------------------------------------------------------------------------|-------------------------|
+| mediaType    | Tipo MIME do documento para retorno ao cliente. Pode ser um tipo plano (texto) ou com sufixo `json`. | text/plain            |
+| plainContent | Texto do documento de resposta no caso de `mediaType` ser do tipo plano. Esta propriedade é exclusiva com a `jsonContent`. | Olá, tudo bem? |
+| jsonContent  | JSON documento de resposta no caso de `mediaType` ser do tipo JSON. Esta propriedade é exclusiva com a `plainContent`. | `{"uri":"https://server.com/logo.jpg","type":"image/jpeg","text":"Olá, seja bem vindo"}` |
+| resourceKey  | Chave do recurso para resposta, definido através da extensão **recursos** ou da aba **recursos** do portal. Se este valor for fornecido, o valor de `mediaType` e de `plainContent` ou `jsonContent` são ignorados | welcome-message |
 
 Cada **notification receiver** pode possuir as seguintes propriedades:
 
