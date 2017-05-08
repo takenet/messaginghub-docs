@@ -63,6 +63,7 @@ Cada **message receiver** pode possuir as seguintes propriedades:
 | response | **Definição de Documento** de resposta que deve ser enviado ao originador. Ao informar esta propriedade, o valor de `type` pode ser ignorado. | *Veja abaixo* |
 
 Uma **definição de documento** possui as seguintes propriedades:
+
 | Propriedade  | Descrição                                                                        | Exemplo                 |
 |--------------|----------------------------------------------------------------------------------|-------------------------|
 | mediaType    | Tipo MIME do documento para retorno ao cliente. Pode ser um tipo plano (texto) ou com sufixo `json`. | text/plain            |
