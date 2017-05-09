@@ -6,7 +6,9 @@
 A extensão **análise de eventos** permite o chatbot registrar eventos no **BLiP Messaging Hub** permitindo assim extrair relatórios. Os relatórios podem ser gerados através do [portal](https://portal.blip.ai), na opção *Painel* -> *Análise de dados*.
 
 Cada evento informado deve possuir as seguintes propriedades:
+
 | Propriedade  | Descrição                                                          | Exemplo |
+|--------------|--------------------------------------------------------------------|---------|
 | **category** | Categoria para agregação de eventos relacionados.                  | Boleto  |
 | **action**   | Ação relacionada ao evento. A contagem é feita a partir das ações. | Pago    |
 | **extras**   | Informações extras opcionais para armazenamento junto ao evento.   | {"customerId": "41231", "paymentId": "ca82jda"} |
