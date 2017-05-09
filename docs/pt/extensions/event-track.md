@@ -3,9 +3,15 @@
 |-----------------------|--------------|-------------------------|--------------------|
 | postmaster@msging.net (endereço padrão, não é necessário informar) | /event-track | Nenhuma | [EventTrackExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/EventTrack/EventTrackExtension.cs) |
 
-A extensão **análise de eventos** permite o chatbot registrar eventos no **BLiP Messaging Hub** permitindo assim extrair relatórios. 
+A extensão **análise de eventos** permite o chatbot registrar eventos no **BLiP Messaging Hub** permitindo assim extrair relatórios. Os relatórios podem ser gerados através do [portal](https://portal.blip.ai), na opção *Painel* -> *Análise de dados*.
 
-Caso seja registrado o mesmo evento/ação uma segunda vez no mesmo dia será somado um ao valor atual do contador.
+Cada evento informado deve possuir as seguintes propriedades:
+| Propriedade  | Descrição                                                          | Exemplo |
+| **category** | Categoria para agregação de eventos relacionados.                  | Boleto  |
+| **action**   | Ação relacionada ao evento. A contagem é feita a partir das ações. | Pago    |
+| **extras**   | Informações extras opcionais para armazenamento junto ao evento.   | {"customerId": "41231", "paymentId": "ca82jda"} |
+
+Caso seja registrado uma mesma categoria/ação uma segunda vez no mesmo dia será somado um ao valor atual do contador.
 
 #### Exemplos
 1 - Registrando um evento:
@@ -17,7 +23,10 @@ Caso seja registrado o mesmo evento/ação uma segunda vez no mesmo dia será so
   "uri": "/event-track",
   "resource": {  
     "category": "Boleto",
-    "action": "Vencido"
+    "action": "Vencido",
+    "extras": {
+      "expiration": "2017-05-09"
+    }
   }
 }
 ```
