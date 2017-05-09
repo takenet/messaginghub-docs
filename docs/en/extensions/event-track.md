@@ -3,7 +3,16 @@
 |-----------------------|--------------|---------------------|
 | postmaster@msging.net (default address - not required) | /event-track | [EventTrackExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/EventTrack/EventTrackExtension.cs) |
 
-The **event analysis** extension allows the registration of chatbot's events for creation of analytics reports in the portal. The events are agregated by category, action and day.
+The **event analysis** extension allows the registration of chatbot's events for creation of analytics reports in the portal. The events are agregated by category, action and day. The reports can be generated thought the [portal](https://portal.blip.ai), in the *Panel* -> *Data analysis* option.
+
+To register an event, the chatbot must provide the following properties:
+
+| Property     | Description                                                        | Example |
+|--------------|--------------------------------------------------------------------|---------|
+| **category** | Category to aggregate the related events.                          | billing |
+| **action**   | The action associated to the event. The event counting is made using the actions.  | payment |
+| **extras**   | Optional extra informations to be stored within the event.         | {"customerId": "41231", "paymentId": "ca82jda"} |
+
 
 #### Exemples
 1 - Registering an event:
@@ -61,16 +70,17 @@ Response on success:
 
 Available *querystring* filters:
 
-| QueryString        | Description                               |
-|--------------------|-------------------------------------------| 
-| filterDate         | Limit date for retrieving the items       |
-| take               | Limit of total of items to be returned    |
+| QueryString  | Description                               |
+|--------------|-------------------------------------------|
+| $take        | Limit of total of items to be returned    |
+| startDate    | Initial date to seach for events          |
+| endDate      | Limit date to retrieve the events         |
 
 ```json
 {  
   "id": "57aa0ac2-158c-4012-9f18-b8eedaede85c",
   "method": "get",
-  "uri": "/event-track/billing"
+  "uri": "/event-track/billing?startDate=2016-01-01&$take=10"
 }
 ```
 
@@ -93,6 +103,55 @@ Response on success:
       "action": "payment",
       "storageDate": "2016-01-02",
       "count": 20
+  }]
+}
+```
+
+4 - Retrieving the event details for a category and action:
+
+Available *querystring* filters:
+
+| QueryString  | Description                               |
+|--------------|-------------------------------------------| 
+| $skip        | Number of items to be skipped for paging  |
+| $take        | Limit of total of items to be returned    |
+| startDate    | Initial date to seach for events          |
+| endDate      | Limit date to retrieve the events         |
+
+
+```json
+{  
+  "id": "57aa0ac2-158c-4012-9f18-b8eedaede85c",
+  "method": "get",
+  "uri": "/event-track/billing/payment?startDate=2016-01-01&$take=10"
+}
+```
+
+Response on success:
+```json
+{
+  "method": "get",
+  "status": "success",
+  "id": "57aa0ac2-158c-4012-9f18-b8eedaede85c",
+  "from": "postmaster@msging.net/#irismsging1",
+  "to": "contact@msging.net/default",
+  "resource": [{
+      "category": "billing",
+      "action": "payment",
+      "storageDate": "2016-01-01T12:30:00.000Z",
+      "extras": {
+        "expiration": "2015-12-30",
+        "customerId": "199213"
+      }      
+  },
+  {
+      "category": "billing",
+      "action": "payment",
+      "storageDate": "2016-01-02T09:15:00.000Z",
+      "extras": {
+        "expiration": "2016-01-01",
+        "customerId": "4123123"
+      }  
   }]
 }
 ```
