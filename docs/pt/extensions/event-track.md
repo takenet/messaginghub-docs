@@ -74,15 +74,17 @@ Resposta em caso de sucesso:
 
 Possíveis filtros via *querystring*:
 
-| QueryString        | Observação                                |
-|--------------------|-------------------------------------------| 
-| take               | Quantidade de items retornados            |
-| filterDate         | Buscar eventos anteriores a essa data     |
+| QueryString  | Observação                          |
+|--------------|-------------------------------------| 
+| $take        | Limite de itens a serem retornados  |
+| startDate    | Buscar eventos a partir desta data  |
+| endDate      | Buscar eventos até esta data        |
+
 ```json
 {  
   "id": "57aa0ac2-158c-4012-9f18-b8eedaede85c",
   "method": "get",
-  "uri": "/event-track/boleto"
+  "uri": "/event-track/boleto?startDate=2017-05-01T00:00:00&$take=10"
 }
 ```
 
