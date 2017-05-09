@@ -27,7 +27,8 @@ Caso seja registrado uma mesma categoria/ação uma segunda vez no mesmo dia ser
     "category": "Boleto",
     "action": "Vencido",
     "extras": {
-      "expiration": "2017-05-09"
+      "expiration": "2015-12-30",
+      "customerId": "199213"
     }
   }
 }
@@ -69,8 +70,7 @@ Resposta em caso de sucesso:
 }
 ```
 
-
-3 - Recuperando contadores do evento:
+3 - Obtendo os contadores do evento:
 
 Possíveis filtros via *querystring*:
 
@@ -84,7 +84,7 @@ Possíveis filtros via *querystring*:
 {  
   "id": "57aa0ac2-158c-4012-9f18-b8eedaede85c",
   "method": "get",
-  "uri": "/event-track/boleto?startDate=2017-05-01T00:00:00&$take=10"
+  "uri": "/event-track/Boleto?startDate=2016-01-01&$take=10"
 }
 ```
 
@@ -110,3 +110,52 @@ Resposta em caso de sucesso:
   }]
 }
 ```
+
+4 - Obtendo os detalhes dos eventos para uma categoria e ação:
+
+Possíveis filtros via *querystring*:
+
+| QueryString  | Observação                                       |
+|--------------|--------------------------------------------------| 
+| $skip        | Número de itens a serem ignorados para paginação |
+| $take        | Limite de itens a serem retornados               |
+| startDate    | Buscar eventos a partir desta data               |
+| endDate      | Buscar eventos até esta data                     |
+
+```json
+{  
+  "id": "57aa0ac2-158c-4012-9f18-b8eedaede85c",
+  "method": "get",
+  "uri": "/event-track/Boleto/Vencido?startDate=2016-01-01&$take=10"
+}
+```
+
+Resposta em caso de sucesso:
+```json
+{
+  "method": "get",
+  "status": "success",
+  "id": "57aa0ac2-158c-4012-9f18-b8eedaede85c",
+  "from": "postmaster@msging.net/#irismsging1",
+  "to": "contact@msging.net/default",
+  "resource": [{
+      "category": "Boleto",
+      "action": "Vencido",
+      "storageDate": "2016-01-01T12:30:00.000Z",
+      "extras": {
+        "expiration": "2015-12-30",
+        "customerId": "199213"
+      }      
+  },
+  {
+      "category": "Boleto",
+      "action": "Vencido",
+      "storageDate": "2016-01-02T09:15:00.000Z",
+      "extras": {
+        "expiration": "2016-01-01",
+        "customerId": "4123123"
+      }  
+  }]
+}
+```
+
