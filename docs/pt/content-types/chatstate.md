@@ -33,7 +33,7 @@ Enviando estado *digitando* para usuário do Telegram:
 | Canal              | Tipo      | Estados suportados      | 
 |--------------------|-----------|-------------------------|
 | BLiP App           | Estado da Conversa | Todos |
-| Messenger          | [Sender Actions](https://developers.facebook.com/docs/messenger-platform/send-api-reference/sender-actions) | *composing* e *paused* (somente envio) |
+| Messenger          | [Sender Actions](https://developers.facebook.com/docs/messenger-platform/send-api-reference/sender-actions) | *composing* e *paused* (somente envio) e *starting* (via [Referral](https://developers.facebook.com/docs/messenger-platform/webhook-reference/referral) em uma conversa existente |
 | SMS                | - | Nenhum |
 | Skype              | - | Nenhum |
 | Telegram           | [SendChatAction](https://core.telegram.org/bots/api#sendchataction) | *composing* (somente envio) |
