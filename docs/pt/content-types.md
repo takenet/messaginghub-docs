@@ -22,6 +22,20 @@ Um exemplo de uma mensagem recebida do Messenger:
       "messenger.seq": "19062"
   }    
 }
-
 ```
 As propriedades `messenger.mdi` e `messenger.seq` são especificas do Messenger, mas são entregues junto as mensagens recebidas. No Messenger especificamente, poderão ser entregues diversos metadados diferentes, sendo um dos mais importantes o `messenger.ref` que é o referral gerado quando um cliente clica em um link `m.me/bot-name?ref=value` do seu chatbot ou quando ele escaneia um [código](https://developers.facebook.com/docs/messenger-platform/messenger-code) para o bot. 
+
+```json
+{ 
+  "id": "2dc05467-4b23-1bc2-8673-664dca202ee2",
+  "from": "128271320123982@messenger.gw.msging.net",
+  "to": "mybot@msging.net",
+  "type": "text/plain",
+  "content": "Começar",
+  "metadata": {
+      "messenger.ref": "website",
+      "messenger.source": "SHORTLINK",
+      "messenger.type": "OPEN_THREAD"
+  }    
+}
+```
