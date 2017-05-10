@@ -3,7 +3,7 @@
 |-----------------------|--------------|-----------------|
 | postmaster@msging.net (default address - not required)) | /contacts | [ContactExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Contacts/ContactExtension.cs) |
 
-The **contacts** extension allows the management of the chatbot's roster, which can be used to store data of the chatbot clients. It is possible to save information like name, address, gender and other generic information, using the `extras` property. It is also possible to use the contacts fields as variables of the messages sent by the chatbot. This property only allows `string` values and it is not allowed complex objects.
+The **contacts** extension allows the management of the chatbot's roster, which can be used to store data of the chatbot clients. It is possible to save information like name, address, gender and other generic information, using the `extras` property. It is also possible to use the contacts fields as variables of the messages sent by the chatbot. This property only allows `string` values and does not allows complex objects.
 
 For more information about the supported fields, please refer to the [Lime protocol](http://limeprotocol.org/resources.html#contact) documentation.
 
@@ -98,7 +98,7 @@ Response on success:
 
 #### Message variable replacement
 
-The contacts fields can be used to replace variables on messages sent by the chatbot. To active the replacement in a message, the `metadata` key `#message.replaceVariables` should be present with the value `true` and the message text should have variables in the  `${contact.<propertyName>}` format, where `<propertyName>` is the contact property for replacement. It is possible to use all fields from the contact, including the keys in the `extras` property. In this case, is only required to use the `${contact.extras.<extraPropertyName>}` convention, where `<extraPropertyName>` is the value for replacement. 
+The contacts fields can be used to replace variables on messages sent by the chatbot. To active the replacement in a message, the `metadata` key `#message.replaceVariables` should be present with the value `true` and the message text should have variables in the  `${contact.<propertyName>}` format, where `<propertyName>` is the contact property for replacement. It is possible to use all fields from the contact, including the keys in the `extras` property. In this case, is only required to use the `${contact.extras.<extraPropertyName>}` convention, where `<extraPropertyName>` is the value for replacement. If the value is not available, it is only removed from the message.
 
 #### Examples
 
