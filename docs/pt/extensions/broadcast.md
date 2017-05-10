@@ -17,7 +17,8 @@ Por exemplo, para um chatbot com identifier `mychatbot`, o endereço desta lista
 
 #### Variáveis de substituição
 
-É possível utilizar variavéis de substituição de contatos nas mensagens enviadas. Para maiores informações, consulte a documentação da [extensão **Contatos**](https://portal.blip.ai/#/docs/extensions/contacts).
+É possível utilizar variavéis de substituição de contatos nas mensagens enviadas. Neste caso, informe as variáveis no texto normalmente mas não envie o campo `#message.replaceVariables` no `metadata` da mensagem. Este campo é inserido pela própria extensão posteriormente no momento do envio.
+Para maiores informações, consulte a documentação da [extensão **Contatos**](https://portal.blip.ai/#/docs/extensions/contacts).
 
 #### Exemplos
 
