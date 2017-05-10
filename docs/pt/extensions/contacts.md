@@ -95,7 +95,7 @@ Resposta em caso de sucesso:
 }
 ```
 
-#### Substituição de variáveis das mensagems
+#### Substituição de variáveis das mensagens
 
 Os campos da agenda de contatos podem ser utilizados para substituir variáveis de mensagens enviadas pelo chatbot. Para ativar a substituição em uma mensagem, é necessário informar no campo `metadata` da mensagem a chave `#message.replaceVariables` com valor `true` e incluir no texto da mensagem as variáveis no formato `${contact.<propertyName>}`, onde `<propertyName>` é a propriedade do contato para substituição. É possível a substituição de todos os campos do contato, inclusive de chaves na propriedade `extras`. Neste caso, basta utilizar a convenção `${contact.extras.<extraPropertyName>}`, sendo `<extraPropertyName>` o valor para substituição.
 
