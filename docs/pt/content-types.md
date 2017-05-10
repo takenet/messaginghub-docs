@@ -6,7 +6,7 @@ Além disso, é possível enviar **conteúdos nativos** para alguns canais - com
 
 #### Metadados
 
-As mesagens recebidas de alguns canais possuem **metadados** específicos de informações exclusivas provenientes do canal. Estas informações são incluídas na propriedade `metadata` das mensagens do BLiP.
+As mensagens recebidas de alguns canais possuem **metadados** específicos de informações exclusivas provenientes do canal. Estas informações são incluídas na propriedade `metadata` das mensagens do BLiP.
 
 Um exemplo de uma mensagem recebida do Messenger:
 
