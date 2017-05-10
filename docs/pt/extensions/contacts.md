@@ -3,7 +3,9 @@
 |-----------------------|--------------|-------------------------|-----------------|
 | postmaster@msging.net (endereço padrão, não é necessário informar) | /contacts | Nenhuma | [ContactExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Contacts/ContactExtension.cs) |
 
-A extensão **contatos** permite o gerenciamento da agenda de contatos do chatbot, que pode ser utilizada para armazenamento dos dados dos clientes do bot. É possível salvar informações como nome, endereço, sexo além de informações genéricas, dentro da propriedade `extras`. Também é possível utilizar os campos dos contatos como variáveis em mensagens de texto enviadas pelo chatbot.
+A extensão **contatos** permite o gerenciamento da agenda de contatos do chatbot, que pode ser utilizada para armazenamento dos dados dos clientes do bot. É possível salvar informações como nome, endereço, sexo além de informações genéricas, dentro da propriedade `extras`. Esta propriedade aceita somente valores do tipo `string`, não sendo permitidos objetos complexos.
+
+Também é possível utilizar os campos dos contatos como variáveis em mensagens de texto enviadas pelo chatbot.
 
 Para informações sobre todos os campos suportados, consulte a documentação do [protocolo Lime](http://limeprotocol.org/resources.html#contact). 
 
