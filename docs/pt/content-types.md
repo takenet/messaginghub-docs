@@ -11,17 +11,16 @@ As mesagens recebidas de alguns canais possuem **metadados** específicos de inf
 Um exemplo de uma mensagem recebida do Messenger:
 
 ```json
-{
-  {
-    "id": "9dc08447-8b23-4bc2-8673-664dca202ee2",
-    "from": "128271320123982@messenger.gw.msging.net",
-    "to": "mybot@msging.net",
-    "type": "text/plain",
-    "content": "Oi",
-    "metadata": {
-        "messenger.mdi": "mid.$cAAAu_n30PEFiJQdYSlb8785KMO5E",
-        "messenger.seq": "19062"
-    }    
+{ 
+  "id": "9dc08447-8b23-4bc2-8673-664dca202ee2",
+  "from": "128271320123982@messenger.gw.msging.net",
+  "to": "mybot@msging.net",
+  "type": "text/plain",
+  "content": "Oi",
+  "metadata": {
+      "messenger.mdi": "mid.$cAAAu_n30PEFiJQdYSlb8785KMO5E",
+      "messenger.seq": "19062"
+  }    
 }
 
 ```
