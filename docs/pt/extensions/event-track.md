@@ -55,18 +55,22 @@ Resposta em caso de sucesso:
 ```
 Resposta em caso de sucesso:
 ```json
-{
-  "method": "get",
-  "status": "success",
+{  
   "id": "1",
   "from": "postmaster@msging.net/#irismsging1",
   "to": "contact@msging.net/default",
-  "resource": [{
-      "category": "Boleto"
-  },
-  {
-      "category": "Cartão"
-  }]
+  "method": "get",
+  "status": "success",
+  "type": "application/vnd.lime.collection+json",
+  "resource": {
+    "itemType": "application/vnd.iris.eventTrack+json",
+    "items": [{
+        "category": "Boleto"
+    },
+    {
+        "category": "Cartão"
+    }]
+  }
 }
 ```
 
@@ -91,23 +95,27 @@ Possíveis filtros via *querystring*:
 Resposta em caso de sucesso:
 ```json
 {
-  "method": "get",
-  "status": "success",
   "id": "57aa0ac2-158c-4012-9f18-b8eedaede85c",
   "from": "postmaster@msging.net/#irismsging1",
   "to": "contact@msging.net/default",
-  "resource": [{
-      "category": "Boleto",
-      "action": "Vencido",
-      "storageDate": "2016-01-01",
-      "count": 10
-  },
-  {
-      "category": "Boleto",
-      "action": "Vencido",
-      "storageDate": "2016-01-02",
-      "count": 20
-  }]
+  "method": "get",
+  "status": "success",  
+  "type": "application/vnd.lime.collection+json",
+  "resource": {
+    "itemType": "application/vnd.iris.eventTrack+json",
+    "items": [{
+        "category": "Boleto",
+        "action": "Vencido",
+        "storageDate": "2016-01-01",
+        "count": 10
+    },
+    {
+        "category": "Boleto",
+        "action": "Vencido",
+        "storageDate": "2016-01-02",
+        "count": 20
+    }]
+  }
 }
 ```
 
@@ -138,24 +146,28 @@ Resposta em caso de sucesso:
   "id": "57aa0ac2-158c-4012-9f18-b8eedaede85c",
   "from": "postmaster@msging.net/#irismsging1",
   "to": "contact@msging.net/default",
-  "resource": [{
-      "category": "Boleto",
-      "action": "Vencido",
-      "storageDate": "2016-01-01T12:30:00.000Z",
-      "extras": {
-        "expiration": "2015-12-30",
-        "customerId": "199213"
-      }      
-  },
-  {
-      "category": "Boleto",
-      "action": "Vencido",
-      "storageDate": "2016-01-02T09:15:00.000Z",
-      "extras": {
-        "expiration": "2016-01-01",
-        "customerId": "4123123"
-      }  
-  }]
+  "type": "application/vnd.lime.collection+json",
+  "resource": {
+    "itemType": "application/vnd.iris.eventTrack+json",
+    "items": [{
+        "category": "Boleto",
+        "action": "Vencido",
+        "storageDate": "2016-01-01T12:30:00.000Z",
+        "extras": {
+          "expiration": "2015-12-30",
+          "customerId": "199213"
+        }      
+    },
+    {
+        "category": "Boleto",
+        "action": "Vencido",
+        "storageDate": "2016-01-02T09:15:00.000Z",
+        "extras": {
+          "expiration": "2016-01-01",
+          "customerId": "4123123"
+        }  
+    }]
+  }
 }
 ```
 
