@@ -40,28 +40,32 @@ Response on success:
 ```
 
 
-2 - Retrieving stored events:
+2 - Retrieving stored event categories:
 ```json
 {  
-  "id": "1",
+  "id": "2",
   "method": "get",
   "uri": "/event-track"
 }
 ```
 Response on success:
 ```json
-{
-  "method": "get",
-  "status": "success",
-  "id": "1",
+{  
+  "id": "2",
   "from": "postmaster@msging.net/#irismsging1",
   "to": "contact@msging.net/default",
-  "resource": [{
-      "category": "billing"
-  },
-  {
-      "category": "account"
-  }]
+  "method": "get",
+  "status": "success",
+  "type": "application/vnd.lime.collection+json",
+  "resource": {
+    "itemType": "application/vnd.iris.eventTrack+json",
+    "items": [{
+        "category": "billing"
+    },
+    {
+        "category": "account"
+    }]
+  }
 }
 ```
 
@@ -78,7 +82,7 @@ Available *querystring* filters:
 
 ```json
 {  
-  "id": "57aa0ac2-158c-4012-9f18-b8eedaede85c",
+  "id": "3",
   "method": "get",
   "uri": "/event-track/billing?startDate=2016-01-01&$take=10"
 }
@@ -87,23 +91,27 @@ Available *querystring* filters:
 Response on success:
 ```json
 {
-  "method": "get",
-  "status": "success",
-  "id": "57aa0ac2-158c-4012-9f18-b8eedaede85c",
+  "id": "3",
   "from": "postmaster@msging.net/#irismsging1",
   "to": "contact@msging.net/default",
-  "resource": [{
-      "category": "billing",
-      "action": "payment",
-      "storageDate": "2016-01-01",
-      "count": 10
-  },
-  {
-      "category": "billing",
-      "action": "payment",
-      "storageDate": "2016-01-02",
-      "count": 20
-  }]
+  "method": "get",
+  "status": "success",  
+  "type": "application/vnd.lime.collection+json",
+  "resource": {
+    "itemType": "application/vnd.iris.eventTrack+json",
+    "items": [{
+        "category": "billing",
+        "action": "payment",
+        "storageDate": "2016-01-01",
+        "count": 10
+    },
+    {
+        "category": "billing",
+        "action": "payment",
+        "storageDate": "2016-01-02",
+        "count": 20
+    }]
+  }
 }
 ```
 
@@ -121,7 +129,7 @@ Available *querystring* filters:
 
 ```json
 {  
-  "id": "57aa0ac2-158c-4012-9f18-b8eedaede85c",
+  "id": "4",
   "method": "get",
   "uri": "/event-track/billing/payment?startDate=2016-01-01&$take=10"
 }
@@ -130,28 +138,32 @@ Available *querystring* filters:
 Response on success:
 ```json
 {
-  "method": "get",
-  "status": "success",
-  "id": "57aa0ac2-158c-4012-9f18-b8eedaede85c",
+  "id": "4",
   "from": "postmaster@msging.net/#irismsging1",
   "to": "contact@msging.net/default",
-  "resource": [{
-      "category": "billing",
-      "action": "payment",
-      "storageDate": "2016-01-01T12:30:00.000Z",
-      "extras": {
-        "expiration": "2015-12-30",
-        "customerId": "199213"
-      }      
-  },
-  {
-      "category": "billing",
-      "action": "payment",
-      "storageDate": "2016-01-02T09:15:00.000Z",
-      "extras": {
-        "expiration": "2016-01-01",
-        "customerId": "4123123"
-      }  
-  }]
+  "method": "get",
+  "status": "success",
+  "type": "application/vnd.lime.collection+json",
+  "resource": {
+    "itemType": "application/vnd.iris.eventTrack+json",
+    "items": [{
+        "category": "billing",
+        "action": "payment",
+        "storageDate": "2016-01-01T12:30:00.000Z",
+        "extras": {
+          "expiration": "2015-12-30",
+          "customerId": "199213"
+        }      
+    },
+    {
+        "category": "billing",
+        "action": "payment",
+        "storageDate": "2016-01-02T09:15:00.000Z",
+        "extras": {
+          "expiration": "2016-01-01",
+          "customerId": "4123123"
+        }  
+    }]
+  }
 }
 ```
