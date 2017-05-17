@@ -1,6 +1,6 @@
-### BLiP
+### BLiP Chat
 | FQDN                     | Tipo de identificador       | 
 |--------------------------|-----------------------------|
-| @0mn.io                  | MSISDN                      |
+| @0mn.io                  | Valor interno                     |
 
-O canal **BLiP** é o canal oficial do **BLiP Messaging Hub**, oferecido através do aplicativo [**BLiP Mensagens**](https://play.google.com/store/apps/details?id=net.take.omni&hl=pt_BR).
+O canal **BLiP Chat** é o canal oficial do **BLiP**, disponibilizando o seu chatbot embarcado em seu [**site**](https://github.com/takenet/blip-sdk-web) ou aplicativos [**Android**](https://github.com/takenet/blip-sdk-android) ou [**iOS**](https://github.com/takenet/blip-sdk-ios).

@@ -1,6 +1,7 @@
-### BLiP
-| FQDN                     | Identifier type       | 
+### BLiP Chat
+| FQDN                     | Identifier type             | 
 |--------------------------|-----------------------------|
-| @0mn.io                  | MSISDN                      |
+| @0mn.io                  | Internal Blip Chat value    |
 
-**BLiP** channel is the official **BLiP Messaging Hub**, offered through [**BLiP Mensagens app**](https://play.google.com/store/apps/details?id=net.take.omni&hl=pt_BR), BLiP SDK Web and BLiP SDK Mobile (android and iOS).
+**BLiP Chat** is the official channel of **BLiP**, providing your chatbot embedded in your [**website**](https://github.com/takenet/blip-sdk-web) or [**Android**](https://github.com/takenet/blip-sdk-android) or [**iOS**](https://github.com/takenet/blip-sdk-ios) apps.
+
