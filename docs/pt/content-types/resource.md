@@ -3,7 +3,7 @@
 |--------------------------------------|
 | application/vnd.iris.resource+json   |
 
-Permite o envio de mensagens onde o conteúdo é um **recurso** armazenado no servidor. O recurso deve ser armazenado através da [extensão **recursos**](https://portal.blip.ai/#/docs/extensions/resource). O servidor realiza automaticamente a substituição do conteúdo, caso a **chave** fornecida exista para o chatbot que originou a mensagem.
+Permite o envio de mensagens onde o conteúdo é um **recurso** armazenado no servidor. O recurso deve ser armazenado através da [extensão **recursos**](https://portal.blip.ai/#/docs/extensions/resource) ou através do portal, no menu **Recursos** do chatbot. O servidor realiza automaticamente a substituição do conteúdo, caso a **chave** fornecida exista para o chatbot que originou a mensagem.
 
 #### Exemplos
 Enviando uma mensagem do recurso com a chave **welcome-message**.
