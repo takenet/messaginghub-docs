@@ -1,7 +1,7 @@
 ### Redirecionamento
-| MIME type                          | 
-|------------------------------------|
-| application/vnd.lime.redirect+json |
+| MIME type                          |  C#                                 |
+|------------------------------------|-------------------------------------|
+| application/vnd.lime.redirect+json | [Lime.Messaging.Contents.Redirect](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Messaging/Contents/Redirect.cs) |
 
 Realiza o redirecionamento de uma conversa em particular do seu chatbot para um novo endereço. Na prática, torna possível o **transbordo** de uma conversa entre chatbots diferentes, que pode ser de qualquer modelo (FAQ, Atendimento Manual) ou SDKs / Webhook.
 
