@@ -3,7 +3,7 @@
 |------------------------------------|
 | application/vnd.lime.redirect+json |
 
-Realiza o redirecionamento de uma conversa em particular para um novo endereço. Na prática, torna possível o **transbordo** de uma conversa entre chatbots diferentes, que podem ser de qualquer modelo (FAQ, Atendimento Manual) ou SDKs / Webhook.
+Realiza o redirecionamento de uma conversa em particular do seu chatbot para um novo endereço. Na prática, torna possível o **transbordo** de uma conversa entre chatbots diferentes, que pode ser de qualquer modelo (FAQ, Atendimento Manual) ou SDKs / Webhook.
 
 No momento, o redirecionamento é suportado apenas em chatbots configurados como serviços no [**modelo master**](https://portal.blip.ai/#/docs/templates/master). Este pode ser feito utilizando o endereço do chatbot (identificador) ou o nome do serviço definido nas configurações do modelo master.
 
