@@ -3,7 +3,7 @@
 |------------------------------------|-------------------------------------|
 | application/vnd.lime.redirect+json | [Lime.Messaging.Contents.Redirect](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Messaging/Contents/Redirect.cs) |
 
-Realiza o redirecionamento de uma conversa em particular do seu chatbot para um novo endereço. Na prática, torna possível o **transbordo** de uma conversa entre chatbots diferentes, que pode ser de qualquer modelo (FAQ, Atendimento Manual) ou SDKs / Webhook.
+Realiza o redirecionamento de uma conversa em particular do chatbot para um novo endereço. Na prática, torna possível o **transbordo** de uma conversa entre chatbots diferentes, que pode ser de qualquer modelo (FAQ, Atendimento Manual) ou SDKs / Webhook.
 
 No momento, o redirecionamento é suportado apenas em chatbots configurados como serviços no [**modelo master**](https://portal.blip.ai/#/docs/templates/master). Este pode ser feito utilizando o endereço do chatbot (identificador) ou o nome do serviço definido nas configurações do modelo master no portal.
 
@@ -21,13 +21,13 @@ No momento, o redirecionamento é suportado apenas em chatbots configurados como
     }
 }
 ```
-A partir deste momento, as mensagens enviadas pelo cliente `54f1dd2e-42d2-43f2-9100-68fbbabb9c83@tunnel.msging.net` serão encaminhadas para o chatbot configurado como serviço *atendimento* na aba configurações do modelo master.
+A partir deste momento, as mensagens enviadas pelo cliente serão encaminhadas para o chatbot configurado como serviço *atendimento* na aba configurações do modelo master. Observação: O identificador do cliente **não é o mesmo** no outro bot.
 
 2 - Redirecionando para o chatbot com identificador *mysdkbot*, passando um documento como contexto da conversa.
 ```json
 {
     "id": "2",
-    "to": "54f1dd2e-42d2-43f2-9100-68fbbabb9c83@tunnel.msging.net",
+    "to": "2bdcd8d0-9e69-484f-a88a-d5a529708864@tunnel.msging.net",
     "type": "application/vnd.iris.redirect+json",
     "content": {
         "address": "mysdkbot@msging.net",
