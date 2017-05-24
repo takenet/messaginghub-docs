@@ -15,35 +15,35 @@ To create a tunnel between two *chatbots*, the **sender** needs to send a messag
 [receiver-identifier]@tunnel.msging.net/[originator-address]
 ```
 Where:
-- **receiver-identifier** - The identifier of the  O identificador do bot que deve receber a mensagem encaminhada
-- **originator-address** - Endereço original da mensagem externa utilizando codificação *URL encode* (ex: substituindo o '@' por '%40')
+- **receiver-identifier** - The identifier of the bot that should receive the forwarded message
+- **originator-address** - Original address of the external message, with URL encoding (replacing the '@' for '%40', for instance)
 
-O receptor recebe mensagens, envia notificações e mensagens de resposta a um endereço no seguinte formato:
+The receiver receive messages, send notifications and response messages to a adress in the following format:
 
 ```
-[id-do-tunnel]@tunnel.msging.net
+[tunnel-id]@tunnel.msging.net
 ```
-Onde:
-- **id-do-tunnel** - Um identificador único do túnel, composto pela tríade **emissor**, **receptor** e **originador** (endereço original de quem enviou a mensagem).
+Where:
+- **tunnel-id** - Unique tunnel id, which represents the **sender**, **receiver** and **originator** (original address of who sent the message) addresses.
 
-#### Exemplo
+#### Examples
 
-1 - Imagine um cenário onde existam dois bots: **flow** e **operator**, sendo o primeiro responsável por apresentar uma navegação automática e o segundo receber o transbordo de um eventual atendimento manual. Somente o bot **flow** está publicado no *Messenger* e este, em determinado ponto do seu fluxo, precisa encaminhar as mensagens ao bot **operator** que faz o controle do atendimento manual.
+1 - Imagine a scenario where there are two bots: **flow** and **operator**, where the first responsible for presenting an automatic navigation and the second receiving the handover of an eventual manual attendance. Only the **flow** bot is published in *Messenger* and it needs, at a certain point in its flow, to forward the messages to the **operator** bot that controls the manual attendance.
 
-O caminho completo de uma mensagem deste o canal externo até o bot de atendimento é o seguinte:
+The complete path of a message from this external channel to the service bot is:
 
-a) O bot principal recebe uma mensagem de um usuário do Messenger.
+a) The main bot receives a message from a Messenger user.
 ```json
 {
     "id": "1",
     "from": "1654804277843415@messenger.gw.msging.net",
     "to": "flow@msging.net/instance",
     "type": "text/plain",
-    "content": "Olá, gostaria de ser atendido."
+    "content": "Hello, I would like to talk to an attendant."
 }
 ```
 
-b) De acordo com suas regras internas, o bot principal decide encaminhar esta mensagem ao bot de atendimento. Para isso, ele troca o destinatário da mensagem e realiza o envio.
+b) According to its internal rules, the flow bot decides to forward this message to the operator bot. To do this, it changes the recipient of the message and sends it as bellow:
 
 ```json
 {
@@ -51,11 +51,11 @@ b) De acordo com suas regras internas, o bot principal decide encaminhar esta me
     "from": "flow@msging.net/instance",
     "to": "operator@tunnel.msging.net/1654804277843415%40messenger.gw.msging.net",
     "type": "text/plain",
-    "content": "Olá, gostaria de ser atendido."
+    "content": "Hello, I would like to talk to an attendant."
 }
 ```
 
-c) Internamente, o servidor cria um **id** para o tunel e encaminha a mensagem ao bot **operator**, que a recebe da seguinte forma:
+c) Internally, the server creates an **id** for the tunnel and forwards the message to the **operator** bot, which receives it as follows:
 
 ```json
 {
@@ -63,11 +63,11 @@ c) Internamente, o servidor cria um **id** para o tunel e encaminha a mensagem a
     "from": "ecb99cf5-fb5c-4376-8acd-4b478091de15@tunnel.msging.net",
     "to": "operator@msging.net",    
     "type": "text/plain",
-    "content": "Olá, gostaria de ser atendido."
+    "content": "Hello, I would like to talk to an attendant."
 }
 ```
 
-d) O bot operator gera uma resposta para a mensagem e a encaminha para o endereço de origem, **sem diferenciação de uma mensagem recebida diretamente de um canal** (o mesmo vale para notificações de entrega/leitura):
+d) The operator bot generates a reply to the message and forwards it to the source address, **without differentiating a message received directly from a channel** (the same goes for received/consumed notifications):
 
 ```json
 {
@@ -75,11 +75,11 @@ d) O bot operator gera uma resposta para a mensagem e a encaminha para o endere�
     "from": "operator@msging.net/instance",
     "to": "ecb99cf5-fb5c-4376-8acd-4b478091de15@tunnel.msging.net",    
     "type": "text/plain",
-    "content": "Olá, meu nome é André. Como posso te ajudar?"
+    "content": "Hi, my name is Andre. How may I help you?"
 }
 ```
 
-e) O servidor, a partir do **id** do túnel, troca o endereço da mensagem de resposta e a encaminha para o bot **flow**:
+e) The server uses the tunnel **id** to change the address of the response message and forwards it to the **flow** bot:
 
 ```json
 {
@@ -87,23 +87,25 @@ e) O servidor, a partir do **id** do túnel, troca o endereço da mensagem de re
     "from": "operator@tunnel.msging.net/1654804277843415%40messenger.gw.msging.net",
     "to": "flow@msging.net/instance",    
     "type": "text/plain",
-    "content": "Olá, meu nome é André. Como posso te ajudar?"
+    "content": "Hi, my name is Andre. How may I help you?"
 }
 ```
-f) O bot flow identifica a mensagem recebida de um **receptor**, descodifica o endereço original que está na **instância** e envia a mensagem ao destinatário final:
+
+f) The bot flow identifies the message received from a **receiver**, decodes the original address that is in **instance** and sends the message to the final recipient:
+
 ```json
 {
     "id": "2",
     "from": "flow@msging.net/instance",
     "to": "1654804277843415@messenger.gw.msging.net",    
     "type": "text/plain",
-    "content": "Olá, meu nome é André. Como posso te ajudar?"
+    "content": "Hi, my name is Andre. How may I help you?"
 }
 ```
 
-2 - A extensão **túnel** também permite a consulta a informações do originador da mensagem no **diretório**, desde que as informações estejam armazenadas na agenda de contatos do bot **emissor**. Para isso, basta utilizar a mesma mecânica definida nesta extensão:
+2 - The **tunnel** extension also allows querying information from the message originator in the **directory**, as long as the information is stored in the contact roster of the **sender** bot. To use this feature, the bot just need to send a common directory request:
 
-Enviando um comando para a consulta no diretório utilizando o **id** do túnel:
+Sending a command to the query in the directory using the the tunnel **id**:
 
 ```json
 {
@@ -114,8 +116,7 @@ Enviando um comando para a consulta no diretório utilizando o **id** do túnel:
     "uri": "lime://tunnel.msging.net/accounts/ecb99cf5-fb5c-4376-8acd-4b478091de15"
 }
 ```
-
-O servidor identifica que a consulta é para um usuário do túnel e realiza a consulta **em nome do emissor** diretamente em sua agenda de contatos e retorna a informação:
+The server identifies that the query is for a tunnel user and performs the query **on behalf of the sender** directly in its contacts roster and returns the information:
 
 ```json
 {
@@ -126,9 +127,9 @@ O servidor identifica que a consulta é para um usuário do túnel e realiza a c
     "status": "success",
     "type": "application/vnd.lime.account+json",
     "resource": {
-        "fullName": "João da Silva",
+        "fullName": "John Deere",
         "gender": "male"
     }    
 }
 ```
-Para maiores informações sobre a agenda de contatos, consulte a [documentação desta extensão](https://portal.blip.ai/#/docs/extensions/contacts).
+For more information about the contacts extension, please refer to the [extension documentation](https://portal.blip.ai/#/docs/extensions/contacts).
