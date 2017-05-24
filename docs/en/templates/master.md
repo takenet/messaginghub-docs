@@ -1,0 +1,9 @@
+### Master
+
+The **Master** template allows **multiple chatbots to be encapsulated in a single bot**, where only one of them is active for each client in a given time. Each sub-bot is registered as a **service** - for example, *navigation* or *attendance* - and the currently active chatbot is able to perform the handover to another service. In this case, **only the master chatbot needs to be published on the external channels**, and the service bots (or *children's bots*) only talk to the master. Despite this, there are no restrictions on separate publications of service bots.
+
+This template makes easier to build **hybrid** chatbots, which is something very useful to provide a quality service to the clients of a chatbot. For example, an SDK-type chatbot that uses structured navigation may decide at any given moment that the current customer should talk with a human operator.
+
+The **handover rules are the responsibility of the active chatbot**, but the most common case is if chatbot is not understanding the client's input, or even the client has requested to talk to an attendant. At this point, the active chatbot should send a message with the type of content [**redirect**](https://portal.blip.ai/#/docs/content-types/redirect) informing in address the name of the service that should take control of the conversation from this moment on. In the case of chatbots of the **manual service** template, the transition is performed through the [**BLiP Web**] (https://web.blip.ai) with the **end service** button.
+
+The communication between the master and the service bots is done using the [tunnel extension](https://portal.blip.ai/#/docs/extensions/tunnel). For this reason, the service bots do not respond directly to the client address, but to a tunnel address (`<tunnel-id> @ tunnel.msging.net`), but they are granted permission to query **resources** of the master bot, such as *contacts* and *threads*.
