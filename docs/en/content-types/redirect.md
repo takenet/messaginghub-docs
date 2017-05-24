@@ -22,7 +22,7 @@ It is possible to define a document that represents the **context** of the conve
     }
 }
 ```
-From this moment, the messages sent by the client will be forwarded to the chatbot configured as a service * service * in the master model settings tab. Note: The customer identifier is **not the same** for the other bot.
+From this moment, the messages sent by the client will be forwarded to the chatbot configured as a service *attendance* in the master model settings tab. Note: The customer identifier is **not the same** for the other bot.
 
 2 - Redirecting to the chatbot with identifier *mysdkbot , passing a document as the context of the conversation.
 
