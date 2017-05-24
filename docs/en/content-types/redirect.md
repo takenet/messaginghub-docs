@@ -5,7 +5,7 @@
 
 Allows the redirection of a particular chatbot conversation to a new address. In practice, makes possible the **handover** of a conversation between different chatbots, which can be of any template (FAQ, Human Operator) or SDK / Webhooks.
 
-Currently, redirection is only supported on chatbots configured as services in [**master template**] (https://portal.blip.ai/#/docs/templates/master). This can be done using the chatbot (identifier) address or the service name defined in the master model settings in the portal.
+Currently, redirection is only supported on chatbots configured as services in [**master template**](https://portal.blip.ai/#/docs/templates/master). This can be done using the chatbot (identifier) address or the service name defined in the master model settings in the portal.
 
 It is possible to define a document that represents the **context** of the conversation and that will be received by the chatbot to which the conversation was directed. The context is useful for defining a specific flow in the destination chatbot, for example.
 
