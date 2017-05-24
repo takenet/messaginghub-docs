@@ -7,6 +7,8 @@ A extensão **túnel** permite o encaminhamento e troca de mensagens e notifica�
 
 Este recurso é útil para o **isolamento de diferentes partes da navegação em bots independentes** com apenas uma publicação no canal. Por exemplo, imagine que você queira ter, em uma mesma página do Facebook, um chatbot que tenha uma navegação parte automática (respostas estáticas), parte peguntas e respostas e parte atendendimento feito por um atendente. Você precisaria então de um bot **principal** (SDK/Webhook) que agirá como um *switcher* e três **sub-bots** - o primeiro com template do tipo SDK/Webhook, o segundo FAQ e o último Atendimento Manual. Estes três últimos **não seriam publicados diretamente nos canais**, mas apenas receberiam as mensagens do bot principal, este sim - publicado no Facebook e em outros canais. O bot principal seria o **emissor** e os demais os **receptores** do túnel.
 
+*Observação: O portal BLiP oferece o modelo **master** que utiliza a extensão túnel e funciona como um switcher para os sub-bots, não sendo necessário a implementação para a maior parte dos casos.*
+
 Para criar um tunel entre dois *chatbots*, basta o **emissor** enviar uma mensagem para um endereço utilizando a seguinte regra:
 
 ```
@@ -24,7 +26,7 @@ O receptor recebe mensagens, envia notificações e mensagens de resposta a um e
 Onde:
 - **id-do-tunnel** - Um identificador único do túnel, composto pela tríade **emissor**, **receptor** e **originador** (endereço original de quem enviou a mensagem).
 
-#### Exemplo
+#### Exemplos
 
 1 - Imagine um cenário onde existam dois bots: **flow** e **operator**, sendo o primeiro responsável por apresentar uma navegação automática e o segundo receber o transbordo de um eventual atendimento manual. Somente o bot **flow** está publicado no *Messenger* e este, em determinado ponto do seu fluxo, precisa encaminhar as mensagens ao bot **operator** que faz o controle do atendimento manual.
 
@@ -89,6 +91,7 @@ e) O servidor, a partir do **id** do túnel, troca o endereço da mensagem de re
 }
 ```
 f) O bot flow identifica a mensagem recebida de um **receptor**, descodifica o endereço original que está na **instância** e envia a mensagem ao destinatário final:
+
 ```json
 {
     "id": "2",
