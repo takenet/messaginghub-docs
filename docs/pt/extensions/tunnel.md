@@ -7,7 +7,7 @@ A extensão **túnel** permite o encaminhamento e troca de mensagens e notifica�
 
 Este recurso é útil para o **isolamento de diferentes partes da navegação em bots independentes** com apenas uma publicação no canal. Por exemplo, imagine que você queira ter, em uma mesma página do Facebook, um chatbot que tenha uma navegação parte automática (respostas estáticas), parte peguntas e respostas e parte atendendimento feito por um atendente. Você precisaria então de um bot **principal** (SDK/Webhook) que agirá como um *switcher* e três **sub-bots** - o primeiro com template do tipo SDK/Webhook, o segundo FAQ e o último Atendimento Manual. Estes três últimos **não seriam publicados diretamente nos canais**, mas apenas receberiam as mensagens do bot principal, este sim - publicado no Facebook e em outros canais. O bot principal seria o **emissor** e os demais os **receptores** do túnel.
 
-*Observação: O portal BLiP oferece o [modelo [**master**](https://portal.blip.ai/#/docs/templates/master) que utiliza a extensão túnel e funciona como um switcher para os sub-bots, não sendo necessário a implementação para a maior parte dos casos.*
+*Observação: O portal BLiP oferece o [modelo **master**](https://portal.blip.ai/#/docs/templates/master) que utiliza a extensão túnel e funciona como um switcher para os sub-bots, não sendo necessário a implementação para a maior parte dos casos.*
 
 Para criar um tunel entre dois *chatbots*, basta o **emissor** enviar uma mensagem para um endereço utilizando a seguinte regra:
 
