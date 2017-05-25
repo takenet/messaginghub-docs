@@ -7,7 +7,7 @@ The **tunnel** extension allows routing and exchange of messages and notificatio
 
 This feature is useful for **isolating different parts of navigation in independent bots** with only one published on the channel. For example, imagine that you want to have a chatbot on a same Facebook page that has an automatic navigation (static answers), part questions and answers and part attendance made by an human operator. You would then need a bot **main** (SDK / Webhook) that will act as a *switcher* and three **sub-bots** - the first of the SDK/Webhook template, the second FAQ and the last human operator. These last three **would not be published directly on the channel**, but would only receive messages from the main bot, this one - published on Facebook and other channels. The main bot would be the **sender** and the other **receivers** of the tunnel.
 
-*Note: The BLiP portal offers the **master** template that uses the tunnel extension and acts as a switcher for the sub-bots, so the implementation is not necessary in most cases.*
+*Note: The BLiP portal offers the [**master** template](https://portal.blip.ai/#/docs/templates/master) that uses the tunnel extension and acts as a switcher for the sub-bots, so the implementation is not necessary in most cases.*
 
 To create a tunnel between two *chatbots*, the **sender** needs to send a message to a address using the following convention:
 
