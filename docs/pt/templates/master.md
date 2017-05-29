@@ -7,3 +7,9 @@ Este modelo facilita a realização do atendimento de **forma híbrida**, que é
 O proprietário deve sempre definir um chatbot como **principal**, de forma que a primeira mensagem de cada usuário deve ser entregue ao mesmo. O mais comum é que este seja do tipo **SDK/Webhook**, já que a tendência é que os atendimentos começem de maneira automatizada e, se necessário, sejam transferidos para um atendente manual ou FAQ. As **regras de transição são de responsabilidade do chatbot ativo no momento**, mas o caso mais comum é quando um chatbot automatizado não esteja compreendendo as entradas do cliente, ou mesmo o cliente tenha solicitado o atendimento. Neste momento, o chatbot ativo deve enviar uma mensagem com o tipo de conteúdo [**redirecionamento**](https://portal.blip.ai/#/docs/content-types/redirect) informando em `address` o nome do serviço que deverá assumir o controle da conversa a partir deste momento. No caso de chatbots do modelo **atendimento manual**, a transição é realizada através do [**BLiP Web**](https://web.blip.ai), no botão **finalizar atendimento**.
 
 A comunicação entre o master e os bots de serviço é feita utilizando a [extensão túnel](https://portal.blip.ai/#/docs/extensions/tunnel). Por este motivo, os bots de serviço não respondem diretamente ao endereço do cliente, mas sim ao endereço do túnel (`<id-do-tunel>@tunnel.msging.net`), mas estes recebem permissão de realizar consultas nos **recursos** do bot master, como *contatos* e *conversas*.
+
+#### Criando um chatbot master
+
+Para criar um novo chatbot master, no [portal BLiP](https://portal.blip.ai) vá em **Chatbots** -> **Criar chatbot** e escolha a opção de modelo **master**:
+
+<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/pt/templates/master1.png" />
