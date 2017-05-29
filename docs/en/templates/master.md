@@ -18,6 +18,6 @@ After that, you need to configure the service sub-bots. To do this, under **Sett
 
 <img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/en/templates/master2.png" />
 
-In this way, the chatbots that the user has access to choose are listed. Enter the name of the service that each bot offers (ex: attendance, automated) and choose one as main, by checking the option **It is my main chatbot**.
+In this way, the chatbots that the user has access to choose are listed. Enter the name of the service that each bot offers (ex: attendance, automated) and choose one as main, by checking the option **It's my default chatbot**.
 
 <img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/en/templates/master3.png" />
