@@ -15,7 +15,7 @@ No momento, o redirecionamento é suportado apenas em chatbots configurados como
 {
     "id": "1",
     "to": "54f1dd2e-42d2-43f2-9100-68fbbabb9c83@tunnel.msging.net",
-    "type": "application/vnd.iris.redirect+json",
+    "type": "application/vnd.lime.redirect+json",
     "content": {
         "address": "atendimento"
     }
@@ -28,7 +28,7 @@ A partir deste momento, as mensagens enviadas pelo cliente serão encaminhadas p
 {
     "id": "2",
     "to": "2bdcd8d0-9e69-484f-a88a-d5a529708864@tunnel.msging.net",
-    "type": "application/vnd.iris.redirect+json",
+    "type": "application/vnd.lime.redirect+json",
     "content": {
         "address": "mysdkbot@msging.net",
         "context": {
