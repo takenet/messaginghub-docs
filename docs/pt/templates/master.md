@@ -10,6 +10,14 @@ A comunicação entre o master e os bots de serviço é feita utilizando a [exte
 
 #### Criando um chatbot master
 
-Para criar um novo chatbot master, no [portal BLiP](https://portal.blip.ai) vá em **Chatbots** -> **Criar chatbot** e escolha a opção de modelo **master**:
+Para criar um novo chatbot master, no [portal BLiP](https://portal.blip.ai) vá em **Chatbots** -> **Criar chatbot** e escolha a opção de modelo pré-definido **master**:
 
 <img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/pt/templates/master1.png" />
+
+Depois disso, é necessário configurar os sub-bots de serviço. Para isso, em  **Configurações** -> **Master** clique no botão **Adicionar serviço**:
+
+<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/pt/templates/master2.png" />
+
+Desta forma, são listados os chatbots que o usuário tem acesso para escolha. Informe o nome do serviço que cada bot oferece (ex: atendimento, automatizado) e escolha um como principal, marcando a opção **É meu chatbot principal**.
+
+<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/pt/templates/master3.png" />
