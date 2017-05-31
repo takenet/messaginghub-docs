@@ -5,7 +5,7 @@
 
 Realiza o redirecionamento de uma conversa em particular do chatbot para um novo endereço. Na prática, torna possível o **transbordo** de uma conversa entre chatbots diferentes, que pode ser de qualquer modelo (FAQ, Atendimento Manual) ou SDKs / Webhook.
 
-No momento, o redirecionamento é suportado apenas em chatbots configurados como serviços no [**modelo master**](https://portal.blip.ai/#/docs/templates/master). Este pode ser feito utilizando o endereço do chatbot (identificador) ou o nome do serviço definido nas configurações do modelo master no portal. Para redirecionar para o **serviço padrão**, basta omitir a propriedade `address`.
+No momento, o redirecionamento é suportado apenas em chatbots configurados como serviços no [**modelo master**](https://portal.blip.ai/#/docs/templates/master). Este pode ser feito utilizando o endereço do chatbot (identificador) ou o nome do serviço definido nas configurações do modelo master no portal. Para redirecionar para o **serviço principal**, basta omitir a propriedade `address`.
 
 É possível informar um documento que representa o **contexto** da conversa e que será recebido pelo chatbot para qual a conversa foi direcionada. O contexto é útil para definição de um fluxo específico no chatbot de destino, por exemplo.
 
