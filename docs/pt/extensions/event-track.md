@@ -11,6 +11,7 @@ Cada evento informado deve possuir as seguintes propriedades:
 |--------------|--------------------------------------------------------------------|---------|
 | **category** | Categoria para agregação de eventos relacionados.                  | Boleto  |
 | **action**   | Ação relacionada ao evento. A contagem é feita a partir das ações. | Pago    |
+| **identity** | Contact opcional associado ao evento. Se o contato é do grupo 'testers' o evento será ignorado. | 123456@messenger.gw.msging.net |
 | **extras**   | Informações extras opcionais para armazenamento junto ao evento.   | {"customerId": "41231", "paymentId": "ca82jda"} |
 
 Caso seja registrado uma mesma categoria/ação uma segunda vez no mesmo dia será somado um ao valor atual do contador.
@@ -44,11 +45,35 @@ Resposta em caso de sucesso:
 }
 ```
 
-
-2 - Recuperando lista de eventos:
+2 - Registrando um evento passando identity:
 ```json
 {  
-  "id": "2",
+  "id": "9494447a-2581-4597-be6a-a5dff33af156",
+  "method": "set",
+  "type": "application/vnd.iris.eventTrack+json",
+  "uri": "/event-track",
+  "resource": {  
+    "category": "Boleto",
+    "action": "Vencido",
+    "identity": "123456@messenger.gw.msging.net",
+  }
+}
+```
+Resposta em caso de sucesso:
+```json
+{
+  "method": "set",
+  "status": "success",
+  "id": "9494447a-2581-4597-be6a-a5dff33af156",
+  "from": "postmaster@msging.net/#irismsging1",
+  "to": "contact@msging.net/default"
+}
+```
+
+3 - Recuperando lista de eventos:
+```json
+{  
+  "id": "3",
   "method": "get",
   "uri": "/event-track"
 }
@@ -56,7 +81,7 @@ Resposta em caso de sucesso:
 Resposta em caso de sucesso:
 ```json
 {  
-  "id": "2",
+  "id": "3",
   "from": "postmaster@msging.net/#irismsging1",
   "to": "contact@msging.net/default",
   "method": "get",
@@ -74,7 +99,7 @@ Resposta em caso de sucesso:
 }
 ```
 
-3 - Obtendo os contadores do evento:
+4 - Obtendo os contadores do evento:
 
 Possíveis filtros via *querystring*:
 
@@ -86,7 +111,7 @@ Possíveis filtros via *querystring*:
 
 ```json
 {  
-  "id": "3",
+  "id": "4",
   "method": "get",
   "uri": "/event-track/Boleto?startDate=2016-01-01&$take=10"
 }
@@ -95,7 +120,7 @@ Possíveis filtros via *querystring*:
 Resposta em caso de sucesso:
 ```json
 {
-  "id": "3",
+  "id": "4",
   "from": "postmaster@msging.net/#irismsging1",
   "to": "contact@msging.net/default",
   "method": "get",
@@ -119,7 +144,7 @@ Resposta em caso de sucesso:
 }
 ```
 
-4 - Obtendo os detalhes dos eventos para uma categoria e ação:
+5 - Obtendo os detalhes dos eventos para uma categoria e ação:
 
 Possíveis filtros via *querystring*:
 
@@ -132,7 +157,7 @@ Possíveis filtros via *querystring*:
 
 ```json
 {  
-  "id": "4",
+  "id": "5",
   "method": "get",
   "uri": "/event-track/Boleto/Vencido?startDate=2016-01-01&$take=10"
 }
@@ -141,7 +166,7 @@ Possíveis filtros via *querystring*:
 Resposta em caso de sucesso:
 ```json
 {
-  "id": "4",
+  "id": "5",
   "from": "postmaster@msging.net/#irismsging1",
   "to": "contact@msging.net/default",
   "method": "get",
