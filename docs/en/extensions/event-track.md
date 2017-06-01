@@ -11,6 +11,7 @@ To register an event, the chatbot must provide the following properties:
 |--------------|--------------------------------------------------------------------|---------|
 | **category** | Category to aggregate the related events.                          | billing |
 | **action**   | The action associated to the event. The event counting is made using the actions.  | payment |
+| **identity** | Optional contact associated to the event. If contact is a 'testers' group member the event will be ignored.  | 123456@messenger.gw.msging.net |
 | **extras**   | Optional extra informations to be stored within the event.         | {"customerId": "41231", "paymentId": "ca82jda"} |
 
 
@@ -38,12 +39,35 @@ Response on success:
   "to": "contact@msging.net/default"
 }
 ```
-
-
-2 - Retrieving stored event categories:
+2 - Registering an event passing identity:
 ```json
 {  
-  "id": "2",
+  "id": "9494447a-2581-4597-be6a-a5dff33af156",
+  "method": "set",
+  "type": "application/vnd.iris.eventTrack+json",
+  "uri": "/event-track",
+  "resource": {  
+    "category": "billing",
+    "action": "payment",
+    "identity": "123456@messenger.gw.msging.net",
+  }
+}
+```
+Response on success:
+```json
+{
+  "method": "set",
+  "status": "success",
+  "id": "9494447a-2581-4597-be6a-a5dff33af156",
+  "from": "postmaster@msging.net/#irismsging1",
+  "to": "contact@msging.net/default"
+}
+```
+
+3 - Retrieving stored event categories:
+```json
+{  
+  "id": "3",
   "method": "get",
   "uri": "/event-track"
 }
@@ -51,7 +75,7 @@ Response on success:
 Response on success:
 ```json
 {  
-  "id": "2",
+  "id": "3",
   "from": "postmaster@msging.net/#irismsging1",
   "to": "contact@msging.net/default",
   "method": "get",
@@ -70,7 +94,7 @@ Response on success:
 ```
 
 
-3 - Retrieving event counters:
+4 - Retrieving event counters:
 
 Available *querystring* filters:
 
@@ -82,7 +106,7 @@ Available *querystring* filters:
 
 ```json
 {  
-  "id": "3",
+  "id": "4",
   "method": "get",
   "uri": "/event-track/billing?startDate=2016-01-01&$take=10"
 }
@@ -91,7 +115,7 @@ Available *querystring* filters:
 Response on success:
 ```json
 {
-  "id": "3",
+  "id": "4",
   "from": "postmaster@msging.net/#irismsging1",
   "to": "contact@msging.net/default",
   "method": "get",
@@ -115,7 +139,7 @@ Response on success:
 }
 ```
 
-4 - Retrieving the event details for a category and action:
+5 - Retrieving the event details for a category and action:
 
 Available *querystring* filters:
 
@@ -129,7 +153,7 @@ Available *querystring* filters:
 
 ```json
 {  
-  "id": "4",
+  "id": "5",
   "method": "get",
   "uri": "/event-track/billing/payment?startDate=2016-01-01&$take=10"
 }
@@ -138,7 +162,7 @@ Available *querystring* filters:
 Response on success:
 ```json
 {
-  "id": "4",
+  "id": "5",
   "from": "postmaster@msging.net/#irismsging1",
   "to": "contact@msging.net/default",
   "method": "get",
