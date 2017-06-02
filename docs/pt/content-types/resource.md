@@ -28,6 +28,36 @@ Caso exista um recurso com esta chave, o servidor realiza a substituição do co
 }
 ```
 
+É possível informar também variáveis de substuição para o recurso, através da propriedade `variables`. Neste caso, as variáveis presentes no recurso no formato `${variableName}` são substituidas pelos valores informados.
+
+Por exemplo, se o recurso na chave `welcome-message` um recurso do tipo `text/plain` com valor `Seja bem vindo a nosso serviço, ${name}"`, para o seguinte envio:
+
+```json
+{
+    "id": "1",
+    "to": "1042221589186385@messenger.gw.msging.net",
+    "type": "application/vnd.iris.resource+json",
+    "content": {
+        "key": "welcome-message",
+        "variables": {
+            "name": "João da Silva"
+        }
+    }
+}
+```
+
+A mensagem final ficaria da seguinte forma:
+
+```json
+{
+    "id": "1",
+    "to": "1042221589186385@messenger.gw.msging.net",
+    "type": "text/plain",
+    "content": "Seja bem vindo a nosso serviço, João da Silva!"
+}
+```
+
+
 ### Mapeamento nos canais
 
 O tipo de conteúdo é suportado em todos os canais.
