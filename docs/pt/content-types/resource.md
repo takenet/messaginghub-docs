@@ -30,7 +30,7 @@ Caso exista um recurso com esta chave, o servidor realiza a substituição do co
 }
 ```
 
-É possível informar também variáveis de substuição para o recurso, através da propriedade `variables`. Neste caso, as variáveis presentes no recurso no formato `${variableName}` são substituidas pelos valores informados.
+É possível informar variáveis de substuição para o recurso, através da propriedade `variables`. Neste caso, as variáveis presentes no recurso no formato `${variableName}` são substituidas pelos valores informados.
 
 Por exemplo, imagine que o recurso na chave `welcome-message` possua o valor `Seja bem vindo a nosso serviço, ${name}"`. Caso seja efetuado o seguinte envio:
 
