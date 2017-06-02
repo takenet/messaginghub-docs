@@ -11,7 +11,7 @@ Cada evento informado deve possuir as seguintes propriedades:
 |--------------|--------------------------------------------------------------------|---------|
 | **category** | Categoria para agregação de eventos relacionados.                  | Boleto  |
 | **action**   | Ação relacionada ao evento. A contagem é feita a partir das ações. | Pago    |
-| **identity** | Contact opcional associado ao evento. Se o contato é do grupo 'testers' o evento será ignorado. | 123456@messenger.gw.msging.net |
+| **identity** | Contato opcional associado ao evento. Se o contato é do grupo 'testers' o evento será ignorado. | 123456@messenger.gw.msging.net |
 | **extras**   | Informações extras opcionais para armazenamento junto ao evento.   | {"customerId": "41231", "paymentId": "ca82jda"} |
 
 Caso seja registrado uma mesma categoria/ação uma segunda vez no mesmo dia será somado um ao valor atual do contador.
