@@ -3,7 +3,7 @@
 |--------------------------------------|
 | application/vnd.iris.resource+json   |
 
-Allows sending a message where the content is a **resource** stored in the server. The resource should be stored thought the [**resources** extension](https://portal.blip.ai/#/docs/extensions/resource). The server automatically replaces the content with the stored resource, in the case the resource **key** exists for the caller chatbot.
+Allows sending a message where the content is a **resource** stored in the server. The resource should be stored thought the [**resources** extension](https://portal.blip.ai/#/docs/extensions/resources). The server automatically replaces the content with the stored resource, in the case the resource **key** exists for the caller chatbot.
 
 The resource may contains variables which can be replaced by values specified in the sending time, through the `variables` property.
 
