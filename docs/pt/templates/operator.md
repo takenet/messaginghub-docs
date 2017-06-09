@@ -1,6 +1,6 @@
 ### Atendimento manual
 
-O modelo **Atendimento Manual** consiste em um serviço que irá redirecionar as mensagens dos clientes para um atendente, que pode estar em canais como e-mail, Zendesk ou no BLiP Web [BLiP Web](https://web.blip.ai).
+O modelo **Atendimento Manual** consiste em um serviço que irá redirecionar as mensagens dos clientes para um atendente, que pode estar em canais como e-mail, Zendesk ou no [BLiP Web](https://web.blip.ai).
 
 Na visão do Atendente, uma thread é criada para cada cliente e o atendimento é feito de forma individual.
 
