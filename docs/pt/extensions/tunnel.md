@@ -121,7 +121,7 @@ O servidor identifica que a consulta é para um usuário do túnel e realiza a c
 ```json
 {
     "id": "3",
-    "from": "postmaster@tunnel.gw.msging.net",    
+    "from": "postmaster@tunnel.msging.net",    
     "to": "operator@msging.net/instance",
     "method":"get",
     "status": "success",
