@@ -121,7 +121,7 @@ The server identifies that the query is for a tunnel user and performs the query
 ```json
 {
     "id": "3",
-    "from": "postmaster@tunnel.gw.msging.net",    
+    "from": "postmaster@tunnel.msging.net",    
     "to": "operator@msging.net/instance",
     "method":"get",
     "status": "success",
