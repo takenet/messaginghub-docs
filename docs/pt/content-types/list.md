@@ -8,55 +8,45 @@ Permite o envio de uma lista de documentos diferentes uma única mensagem. É po
 #### Exemplos
 1 - Enviando uma lista com cabeçalho de **links da web** para um usuário do Messenger:
 ```json
-{  
-  "id":"1",
-  "to":"123129898129832@msging.gw.msging.net",
-  "type":"application/vnd.lime.list+json",
-  "content":{  
-    "header":{  
-      "type":"application/vnd.lime.web-link+json",
-      "value":{  
-        "title":"Classic T-Shirt Collection",
-        "text":"See all our colors",
-        "previewUri":"https://peterssendreceiveapp.ngrok.io/img/collection.png",
-        "uri":"https://peterssendreceiveapp.ngrok.io/shop_collection?messengerExtensions=true",
-        "target":"selfTall"
-      }
-    },
-    "items":[  
-      {  
-        "type":"application/vnd.lime.web-link+json",
-        "value":{  
-          "title":"Classic White T-Shirt",
-          "text":"100% Cotton, 200% Comfortable",
-          "previewUri":"https://peterssendreceiveapp.ngrok.io/img/white-t-shirt.png",
-          "uri":"https://peterssendreceiveapp.ngrok.io/view?item=100&messengerExtensions=true",
-          "target":"selfTall"
-        }
-      },
-      {  
-        "type":"application/vnd.lime.web-link+json",
-        "value":{  
-          "title":"Classic Blue T-Shirt",
-          "text":"100% Cotton, 200% Comfortable",
-          "previewUri":"https://peterssendreceiveapp.ngrok.io/img/blue-t-shirt.png",
-          "uri":"https://peterssendreceiveapp.ngrok.io/view?item=101&messengerExtensions=true",
-          "target":"selfTall"
-        }
-      },
-      {  
-        "type":"application/vnd.lime.web-link+json",
-        "value":{  
-          "title":"Classic Black T-Shirt",
-          "text":"100% Cotton, 200% Comfortable",
-          "previewUri":"https://peterssendreceiveapp.ngrok.io/img/black-t-shirt.png",
-          "uri":"https://peterssendreceiveapp.ngrok.io/view?item=102&messengerExtensions=true",
-          "target":"selfTall"
-        }
-      }
-    ]
-  }
-}
+ {
+     "id": "1",
+     "to": "123129898129832@msging.gw.msging.net",
+     "type":"application/vnd.lime.list+json",
+     "content":{
+         "header":{
+             "type":"application/vnd.lime.web-link+json",
+             "value":{
+                 "title":"Bots powered by BLiP",
+                 "text":"See some bots powered by BLiP",
+                 "previewUri":"https://blip.ai/wp-content/themes/blipai/assets/img-pack/brand_36dp.png",
+                 "uri":"https://blip.ai",
+                 "target":"selfTall"
+             }
+         },
+         "items":[
+             {
+                 "type":"application/vnd.lime.web-link+json",
+                 "value":{
+                     "title":"Santander",
+                     "text":"Bot oficial do Santander Brasil",
+                     "previewUri":"http://www.rgconsultoriaempresarial.com.br/site/wp-content/uploads/2014/07/SANTANDER.png",
+                     "uri":"https://santander.com.br",
+                     "target":"selfTall"
+                 }
+             },
+             {
+                 "type":"application/vnd.lime.web-link+json",
+                 "value":{
+                     "title":"Localiza",
+                     "text":"Bot oficial da Localiza",
+                     "previewUri":"https://pbs.twimg.com/profile_images/491237647478571008/r12mcMNR.png",
+                     "uri":"https://www.localiza.com/",
+                     "target":"selfTall"
+                 }
+             }
+         ]
+     }
+ };
 ```
 
 ### Mapeamento nos canais

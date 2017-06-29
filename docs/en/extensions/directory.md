@@ -3,9 +3,11 @@
 |------------------------------|---------------|-------------------------|
 | `postmaster@<FQDN do canal>` | `lime://<FQDN of the channel>/accounts/<Client identifier>` | [DirectoryExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Directory/DirectoryExtension.cs) |
 
-The **directory** extension allows quering information about the customers, like name, photo and other personal information. The query command should be sent directory to the client's channel `postmaster`, using an special **URI**.
+The **directory** extension allows quering information about the customers, like name, photo and other personal information. The query command should be sent directly to the client's channel `postmaster`, using an special **URI**.
 
-In case the information is available, an [Account](http://limeprotocol.org/resources.html#account) document is returned. The availability and the detail level of the informations depents of the channel and the application should handle the differences appropriately.
+If the information is available, an [Account](http://limeprotocol.org/resources.html#account) document is returned. The availability and the detail level of the informations depents of the channel and the application should handle the differences appropriately.
+
+The result of directory queries are automatically stored in the **chatbot's roster**, except when there's already an entry with the same identifier in the contacts. For more information about the roster, please refer to the [extension documentation](https://portal.blip.ai/#/docs/extensions/contacts).
 
 #### Examples
 

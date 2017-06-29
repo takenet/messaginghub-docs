@@ -9,9 +9,11 @@ The current supported profile properties are:
 
 | Name             | Identifier        | Document type     | Supported channels  |
 |------------------|-------------------|-------------------|---------------------|
+| Start button     | `get-started`     | Text              | Messenger           |
 | Greeting message | `greeting`        | Text              | Messenger           |
 | Persistent menu  | `persistent-menu` | Multimedia menu   | Messenger           |
-| Start button     | `get-started`     | Text              | Messenger           |
+
+Note: In Messenger, the value of `get-started` must be defined before the value of `persistent-menu`.
 
 #### Examples
 1 - Setting the greeting message:

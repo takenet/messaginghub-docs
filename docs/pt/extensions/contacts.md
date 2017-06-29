@@ -3,7 +3,7 @@
 |-----------------------|--------------|-------------------------|-----------------|
 | postmaster@msging.net (endereço padrão, não é necessário informar) | /contacts | Nenhuma | [ContactExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Contacts/ContactExtension.cs) |
 
-A extensão **contatos** permite o gerenciamento da agenda de contatos do chatbot, que pode ser utilizada para armazenamento dos dados dos clientes do bot. É possível salvar informações como nome, endereço, sexo além de informações genéricas, dentro da propriedade `extras`. Esta propriedade aceita somente valores do tipo `string`, não sendo permitidos objetos complexos.
+A extensão **contatos** permite o gerenciamento da agenda de contatos do chatbot, que pode ser utilizada para armazenamento dos dados dos clientes do bot. É possível salvar informações como nome, endereço, sexo além de informações genéricas, dentro da propriedade `extras`. Esta propriedade aceita somente valores do tipo `string`, não sendo permitidos objetos complexos. Você também pode definir a propriedade `group` para organização dos contatos. Eventos nos quais a propriedade `identity` é de um groupo especial chamado 'testers'  serão ignorados no painel de eventos do BLiP.
 
 Também é possível utilizar os campos dos contatos como variáveis em mensagens de texto enviadas pelo chatbot.
 
@@ -21,6 +21,7 @@ Para informações sobre todos os campos suportados, consulte a documentação d
     "identity": "11121023102013021@messenger.gw.msging.net",
     "name": "João da Silva",
     "gender":"male",
+    "group":"amigos",
     "extras": {
       "plan":"Gold",
       "code":"1111"      
@@ -60,6 +61,7 @@ Resposta em caso de sucesso:
     "identity": "11121023102013021@messenger.gw.msging.net",
     "name": "João da Silva",
     "gender":"male",
+    "group":"amigos",
     "extras": {
       "plan":"Gold",
       "code":"1111"      
@@ -89,7 +91,7 @@ Resposta em caso de sucesso:
     "itemType":"application/vnd.lime.contact+json",
     "total":10,
     "items": [
-      {"identity": "11121023102013021@messenger.gw.msging.net","name": "João da Silva","gender":"male","extras":{"plan":"Gold","code":"1111"}},
+      {"identity": "11121023102013021@messenger.gw.msging.net","name": "João da Silva","gender":"male", "group":"amigos","extras":{"plan":"Gold","code":"1111"}},
       {"identity": "213121@telegram.gw.msging.net","name": "Zezim do Telegram","email":"ze@gmail.com"},
       {"identity": "5511999990000@take.io","name": "Maria"}
     ]    

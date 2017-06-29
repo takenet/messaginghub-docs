@@ -11,8 +11,10 @@ As propriedades suportadas atualmente são:
 | Nome             | Identificador     | Tipo de documento | Canais suportados   |
 |------------------|-------------------|-------------------|---------------------|
 | Mensagem inicial | `greeting`        | Texto             | Messenger           |
-| Menu persistente | `persistent-menu` | Menu multimídia   | Messenger           |
 | Botão começar    | `get-started`     | Texto             | Messenger           |
+| Menu persistente | `persistent-menu` | Menu multimídia   | Messenger           |
+
+Observação: No Messenger, o valor do `get-started` tem que ser definido antes do `persistent-menu`.
 
 #### Exemplos
 1 - Definindo a mensagem inicial:

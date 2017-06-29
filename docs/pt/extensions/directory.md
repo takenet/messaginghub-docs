@@ -7,6 +7,8 @@ A extensão **diretório** permite consultar informações dos clientes conectad
 
 Caso a informação esteja disponível, é retornado um documento do tipo [Account](http://limeprotocol.org/resources.html#account), sendo que as informações disponíveis podem variar por canal e cliente. Por este motivo, a aplicação deve tratar de maneira adequada estas exceções.
 
+O resultado das consultas no diretório que foram realizadas com sucesso são armazenadas automaticamente na **agenda de contatos** do chatbot, exceto quando já existe um contato com o mesmo identificador do cliente. Para maiores informações sobre a agenda de contatos, consulte a [documentação desta extensão](https://portal.blip.ai/#/docs/extensions/contacts).
+
 #### Exemplos
 
 1 - Obtendo informações do cliente `1042221589186385@messenger.gw.msging.net` no **Messenger**
