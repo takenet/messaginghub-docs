@@ -31,7 +31,7 @@ Below is an example of the `application.json` file created in a new project:
   "schemaVersion": 2
 }
 ```
-> To obtain an `identifier` and` accessKey`, go to the portal http://omni.messaginghub.io and register your chatbot using the Chat Bot SDK option
+> To obtain an `identifier` and` accessKey`, go to the portal https://portal.blip.ai and register your chatbot using the Chat Bot SDK option
 
 In this case, there is only a **message** registered message, with a `text / plain` type content filter being processed by the` PlainTextMessageReceiver` class that must exist in the project.
 
