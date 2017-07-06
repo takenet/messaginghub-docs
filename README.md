@@ -4,11 +4,11 @@ This repository hosts the documentation for the [BLiP Messaging Hub](https://bli
 
 ## Getting Started
 
-To get started with the Messaging Hub, see the [Getting Started](https://blip.ai/portal/#/docs/home) page.
+To get started with the Messaging Hub, see the [Getting Started](https://portal.blip.ai/#/docs/home) page.
 
 ## Documentation 
 
-The full documentation can be found at [https://blip.ai/portal/#/docs/home](https://blip.ai/portal/#/docs/home).
+The full documentation can be found at [https://portal.blip.ai/#/docs/home](https://portal.blip.ai/#/docs/home).
 
 ## License
 
