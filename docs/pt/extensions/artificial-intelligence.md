@@ -1,55 +1,76 @@
 ### Inteligência artificial
-| Endereço                        | URI base     | Permissões requeridas   | C#                     |
-|---------------------------------|--------------|-------------------------|------------------------|
-| postmaster@talkservice.msging.net | /analysis       | Análise de Sentença      | [TalkServiceExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/ArtificialIntelligence/TalkServiceExtension.cs) |
+| Endereço                        | URIs base     | C#                     |
+|---------------------------------|---------------|------------------------|
+| postmaster@ai.msging.net        | `/intentions`, `/entities` e `/analysis`   | [ArtificialIntelligenceExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/ArtificialIntelligence/ArtificialIntelligenceExtension.cs) |
 
-**Extensão disponível apenas para usuários que possuem permissão especial. Para utilizá-la entre em contato com a equipe BLiP**
+A extensão **Inteligência Artificial** permite a criação, treinamento e publicação de modelos de inteligência artificial nos provedores associados ao chatbot, além de realizar a análise de sentenças para identificação de intenções e entidades.
 
-A extensão **Inteligência Artificial** permite que você crie um chatbot que entenda mensagens recebidas em linguagem natural, utilizando um modelo treinado para responder aos clientes a partir de uma base de conhecimento. Com isto, seu chatbot poderá simular uma conversa entre humanos. Antes de consultar esta API, é necessario configurar previamente no portal do BLiP o provedor da solução de interpretação de linguagem natural (NLP - *Natural Language Processing*) que será utilizada pelo chatbot (ex.: Watson Conversation, Watson Natural language Classifier, Luis).
+É possível incluir no modelo **documentos de resposta** que podem ser enviados pelo bot quando reconhecida uma intenção. Além disso, a extensão pode ser utilizada para aprimoramento do modelo através da associação de perguntas às intenções.
 
-Assim é possível desenvolver o chatbot abstraindo-se o provedor de NLP, permitindo que o desenvolvedor utilize a solução que melhor o atenda. O pedido de análise de uma sentença retorna a intenção por trás do texto, com uma pontuação de confiança definida pelo provedor de NLP.
+O treinamento do modelo é realizado simultâneamente em todos os provedores de AI associados ao chatbot. Neste momento, é armazenado um *snapshot* do mesmo que pode ser recuperado posteriormente para comparação da sua efetividade com outras versões. Para utilizar um modelo treinado, é necessária a publicação do mesmo.
 
 #### Exemplos
 
-1 - Análise de uma sentença:
+1 - Criando uma intenção
 ```json
 {  
   "id": "1",
-  "to": "postmaster@talkservice.msging.net",
-  "method": "get",
-  "uri": "/analysis?sentence=Ol%C3%A1%20chatbot%20inteligente",
+  "to": "postmaster@ai.msging.net",
+  "method": "set",
+  "uri": "/intentions",
+  "type": "application/vnd.iris.ai.intention+json",
+  "resource": {
+      "name": "Pedir pizza"
+  }  
 }
 ```
 Resposta em caso de sucesso:
 ```json
 {
   "id": "1",
-  "from": "postmaster@talkservice.msging.net/#irismsging1",
+  "from": "postmaster@ai.msging.net/#irismsging1",
+  "to": "contact@msging.net/default",
+  "method": "set",
+  "status": "success",
+  "type": "application/vnd.iris.ai.intention+json",
+  "resource": {
+      "id": "55c00a71-7005-448d-b5e4-62fbb4ebb763",
+      "name": "Pedir pizza"
+  }  
+}
+```
+
+2 - Recuperando as primeiras 10 intenções
+```json
+{  
+  "id": "2",
+  "to": "postmaster@ai.msging.net",
+  "method": "get",
+  "uri": "/intentions?$skip=0&$take=10"
+}
+```
+Resposta em caso de sucesso:
+```json
+{
+  "id": "2",
+  "from": "postmaster@ai.msging.net/#irismsging1",
   "to": "contact@msging.net/default",
   "method": "get",
   "status": "success",
-  "type" : "application/vnd.talkservice.analysis+json",
+  "type": "application/vnd.lime.collection+json",
   "resource": {
-        "identifier": "fc092222-46d3-492a-84f7-bda27b949fea",
-        "sentence": "Olá chatbot inteligente",
-        "classifier": "Greeting",
-        "confidence": 0.81459628343582153,
-        "uncertain": false,
-        "answer": "Olá amigo, eu sou um chatbot inteligente que entende linguagem natural.",
-        "guessname": [
-            "ByeBye",
-            "WhatsUrName"
-        ],
-        "guessconfidence": [
-            "0,47",
-            "0,40"
-        ],
-        "guessanswer": [
-            "Foi um prazer conversar com vc, adeus!",
-            "Meu nome é TalkService =)"
-        ],
-        "diagnostic": "",
-        "status": "Succeeded"
-    }
+      "total": 2,
+      "itemType": "application/vnd.iris.ai.intention+json",
+      "items": [
+        {
+          "id": "55c00a71-7005-448d-b5e4-62fbb4ebb763",
+          "name": "Pedir pizza"
+        },
+        {
+          "id": "dca16c56-b74e-4aec-b153-f9efa2795319",
+          "name": "Escolher sabor"
+        }
+      ]
+  }
 }
 ```
