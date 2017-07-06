@@ -3,9 +3,11 @@
 |---------------------------------|--------------|-------------------------|------------------------|
 | postmaster@talkservice.msging.net | /analysis       | Análise de Sentença      | [TalkServiceExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/ArtificialIntelligence/TalkServiceExtension.cs) |
 
-A extensão **TalkService** permite que você crie um chatbot que entenda mensagens recebidas em linguagem natural, utilizando um modelo treinado para responder aos clientes a partir de uma base de conhecimento. Com isto, seu chatbot poderá simular uma conversa entre humanos. Antes de consultar esta API, é necessario configurar previamente no portal do BLiP o provedor da solução de interpretação de linguagem natural (NLP) que será utilizada pelo chatbot (ex.: Watson Conversation, Watson Natural language Classifier, Luis).
+**Extensão disponível apenas para usuários que possuem permissão especial. Para utilizá-la entre em contato com a equipe BLiP**
 
-O TalkService permite desenvolver o chatbot abstraindo-se do provedor de NLP, permitindo que você utilize a solução que melhor  atenda. O pedido de análise de uma sentença retorna a intenção por trás do texto, com uma pontuação de confiança definida pelo provedor do NLP.
+A extensão **Inteligência Artificial** permite que você crie um chatbot que entenda mensagens recebidas em linguagem natural, utilizando um modelo treinado para responder aos clientes a partir de uma base de conhecimento. Com isto, seu chatbot poderá simular uma conversa entre humanos. Antes de consultar esta API, é necessario configurar previamente no portal do BLiP o provedor da solução de interpretação de linguagem natural (NLP - *Natural Language Processing*) que será utilizada pelo chatbot (ex.: Watson Conversation, Watson Natural language Classifier, Luis).
+
+Assim é possível desenvolver o chatbot abstraindo-se o provedor de NLP, permitindo que o desenvolvedor utilize a solução que melhor o atenda. O pedido de análise de uma sentença retorna a intenção por trás do texto, com uma pontuação de confiança definida pelo provedor de NLP.
 
 #### Exemplos
 

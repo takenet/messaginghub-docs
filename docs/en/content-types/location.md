@@ -24,11 +24,11 @@ Sending a location with latitude, longitude and altitude:
 
 For more details, check the [LIME protocol](http://limeprotocol.org/content-types.html#location) specification.
 
-#### Mapping on Channels
+#### Channel mapping
 
 | Channel              | Type                    |  
 |--------------------|-------------------------|
-| BLiP App           | Location             |
+| BLiP Chat          | Location             |
 | Messenger          | [Generic template](https://developers.facebook.com/docs/messenger-platform/send-api-reference/generic-template)|
 | SMS                | Text with link          |
 | Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|

@@ -34,7 +34,7 @@ Em alguns canais, é possível definir como a página deve ser exibida - por exe
 | Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|
 | Telegram           | [Message](https://core.telegram.org/bots/api#message)|
 
-Em alguns canais, é possível utilizar [URI schemes](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) especiais para a criação de links com comportamentos específicos. 
+É também possível em alguns canais utilizar [URI schemes](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) especiais para a criação de links com comportamentos específicos, como abaixo:
 
 | Canal     | URI Scheme | Descrição                                                           | Exemplo              |
 |-----------|------------|---------------------------------------------------------------------|----------------------|

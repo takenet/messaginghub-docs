@@ -1,12 +1,12 @@
-### Sensitive Information
+### Sensitive information
 
 | MIME type                            | C#                                 |
 |--------------------------------------|------------------------------------|
 | application/vnd.lime.sensitive+json  | [Lime.Messaging.Contents.SensitiveContainer](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Messaging/Contents/SensitiveContainer.cs) |
 
-This type wrapper a message content in order to signal that informations is confidential or sensitive. Thus, the server will handle the message in a different way and will not storing anything. The wrapped content can be of any available BLiP type.
+Wraps a message content in order to signal that the information is confidential or sensitive. In this case, the server will not store the message content in any moment. The wrapped content can be of any available BLiP type.
 
-**Important Note**: Any external channel (e.g. *Messenger*, *Telegram*) **can storage your sensitive informations**. Pay attention on particular security police of each channel.
+**Important note**: This is restricted to the BLiP servers and the external channels (Messenger, Telegram, etc.) still **can store your information** in some way. Pay attention on particular security polices of each channel.
 
 #### Examples
 1 - Sending a password using text content for a Messenger user:
@@ -32,7 +32,7 @@ This type wrapper a message content in order to signal that informations is conf
   "content": {
     "type": "application/vnd.lime.web-link+json",
     "value": {
-      "text": "Follow the link to finish your account",
+      "text": "Please follow this link for the checkout",
       "uri": "https://mystore.com/checkout?ID=A8DJS1JFV98AJKS9"
     }
   }

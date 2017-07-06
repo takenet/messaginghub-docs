@@ -59,11 +59,11 @@ Allows send a list of different documents on a single message. Is also possible 
 }
 ```
 
-#### Mapping on Channels
+#### Channel support
 
 | Channel              | Type                    | 
-|--------------------|-------------------------|
-| BLiP App           | Does not support           |
+|--------------------|---------------------------|
+| BLiP Chat          | Not supported yet         |
 | Messenger          | [List template](https://developers.facebook.com/docs/messenger-platform/send-api-reference/list-template)|
 | SMS                | Text                   |
 | Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|

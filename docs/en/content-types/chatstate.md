@@ -29,12 +29,12 @@ Sending status *typing* to Telegram user:
 }
 ```
 
-### Mapping on Channels
+#### Channel mapping
 
 | Channel              | Type      | Supported states      | 
-|--------------------|-----------|-------------------------|
-| BLiP App           | Chat State | All |
-| Messenger          | [Sender Actions](https://developers.facebook.com/docs/messenger-platform/send-api-reference/sender-actions) | *composing* and *paused* (sending only) |
+|----------------------|-----------|-------------------------|
+| BLiP Chat            | Chat State | All |
+| Messenger            | [Sender Actions](https://developers.facebook.com/docs/messenger-platform/send-api-reference/sender-actions) and [Referral](https://developers.facebook.com/docs/messenger-platform/webhook-reference/referral) | *composing* and *paused* (sending only)  and *starting* (referral of an existing thread)|
 | SMS                | - | None |
 | Skype              | - | None |
 | Telegram           | [SendChatAction](https://core.telegram.org/bots/api#sendchataction) | *composing* (sending only) |

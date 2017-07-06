@@ -1,15 +1,17 @@
-### Diretório
-| Endereço                        | URI base     | Permissões requeridas   | C#                     |
-|---------------------------------|--------------|-------------------------|------------------------|
-| `postmaster@<FQDN do canal>` | `lime://<FQDN do canal>/accounts/<Identificador do cliente>`       | Nenhuma      | [DirectoryExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Directory/DirectoryExtension.cs) |
+### Directory
+| Address                      | Base URI      |  C#                     |
+|------------------------------|---------------|-------------------------|
+| `postmaster@<FQDN do canal>` | `lime://<FQDN of the channel>/accounts/<Client identifier>` | [DirectoryExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Directory/DirectoryExtension.cs) |
 
-A extensão **diretório** permite consultar informações dos clientes conectados aos canais, como nome e outras informações pessoais. O comando deve ser enviado diretamente ao `postmaster` do canal, utilizando uma **URI** especial. 
+The **directory** extension allows quering information about the customers, like name, photo and other personal information. The query command should be sent directly to the client's channel `postmaster`, using an special **URI**.
 
-Caso a informação esteja disponível, é retornado um documento do tipo [Account](http://limeprotocol.org/resources.html#account), sendo que as informações disponíveis podem variar por canal e cliente. Por este motivo, a aplicação deve tratar de maneira adequada estas exceções.
+If the information is available, an [Account](http://limeprotocol.org/resources.html#account) document is returned. The availability and the detail level of the informations depents of the channel and the application should handle the differences appropriately.
 
-#### Exemplos
+The result of directory queries are automatically stored in the **chatbot's roster**, except when there's already an entry with the same identifier in the contacts. For more information about the roster, please refer to the [extension documentation](https://portal.blip.ai/#/docs/extensions/contacts).
 
-1 - Obtendo informações do cliente `1042221589186385@messenger.gw.msging.net` no **Messenger**
+#### Examples
+
+1 - Getting information about the client `1042221589186385@messenger.gw.msging.net` on **Messenger**:
 ```json
 {  
   "id": "1",
@@ -18,7 +20,7 @@ Caso a informação esteja disponível, é retornado um documento do tipo [Accou
   "uri": "lime://messenger.gw.msging.net/accounts/1042221589186385"
 }
 ```
-Resposta em caso de sucesso:
+Response on success:
 ```json
 {
   "id": "1",
@@ -37,7 +39,7 @@ Resposta em caso de sucesso:
 }
 ```
 
-2 - Obtendo informações do cliente `255600202@telegram.gw.msging.net` no **Telegram**
+2 - Getting information about the client `255600202@telegram.gw.msging.net` on **Telegram**:
 ```json
 {  
   "id": "2",
@@ -46,7 +48,7 @@ Resposta em caso de sucesso:
   "uri": "lime://telegram.gw.msging.net/accounts/255600202"
 }
 ```
-Resposta em caso de sucesso:
+Response on success:
 ```json
 {
   "id": "2",
@@ -61,27 +63,3 @@ Resposta em caso de sucesso:
 }
 ```
 
-3 - Obtendo informações do cliente `553199991111@0mn.io` no **Blip App**
-```json
-{  
-  "id": "3",
-  "to": "postmaster@0mn.io",
-  "method": "get",
-  "uri": "lime://0mn.io/accounts/553199991111"
-}
-```
-Resposta em caso de sucesso:
-```json
-{
-  "id": "3",
-  "from": "postmaster@0mn.io/#irisomni2",
-  "to": "contact@msging.net/default",
-  "method": "get",
-  "status": "success",
-  "type": "application/vnd.lime.account+json",
-  "resource": {
-    "fullName": "Jeremias José do Nascimento",
-    "photoUri": "http://images.uncyc.org/pt/1/10/Jeremiasbar.jpg"
-  }
-}
-```

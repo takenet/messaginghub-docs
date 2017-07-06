@@ -1,14 +1,12 @@
-### Delegação
+### Delegation
 | Endereço              | URI base     | Permissões requeridas   | C#                 |
 |-----------------------|--------------|-------------------------|--------------------|
-| postmaster@msging.net (endereço padrão, não é necessário informar) | /delegations | Nenhuma | [DelegationExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Delegation/DelegationExtension.cs) |
+| postmaster@msging.net (default address - not required) | /delegations | None | [DelegationExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Delegation/DelegationExtension.cs) |
 
-A extensão **delegação** permite o chatbot dar permissões a outras identidades do **BLiP Messaging Hub** - como outros chatbots - para realizar ações em seu nome, particularmente o envio de mensagens. O uso da **delegação** pode ser requerido por algumas extensões. 
+The **delegation** extension allows the chatbot to give permissions to other **BLiP** identities - like another chatbots - to execute action *on its behalf* like sending messages. The delegation can be required by some extensions. It is required to be execute only once for each delegated identity.
 
-É necessário efetuar a delegação apenas uma vez para cada identidade.
-
-#### Exemplos
-1 - Dando permissões de envio de mensagens à identidade **postmaster@broadcast.msging.net**:
+#### Examples
+1 - Giving permissions to send messages to the identity **postmaster@broadcast.msging.net**:
 ```json
 {  
   "id": "1",
@@ -23,7 +21,7 @@ A extensão **delegação** permite o chatbot dar permissões a outras identidad
   }
 }
 ```
-Resposta em caso de sucesso:
+Response on success:
 ```json
 {
   "method": "set",
@@ -34,7 +32,7 @@ Resposta em caso de sucesso:
 }
 ```
 
-2 - Revogando as mesmas permissões:
+2 - Revoking the same permissions:
 ```json
 {  
   "id": "2",
@@ -42,7 +40,7 @@ Resposta em caso de sucesso:
   "uri": "/delegations/postmaster@broadcast.msging.net?envelopeTypes=message"
 }
 ```
-Resposta em caso de sucesso:
+Response on success:
 ```json
 {
   "method": "delete",
@@ -52,5 +50,4 @@ Resposta em caso de sucesso:
   "to": "contact@msging.net/default"
 }
 ```
-
-Para mais detalhes, consulte a especificação do recurso **delegation** no [protocolo LIME](http://limeprotocol.org/resources.html#delegation).
+For more details, check the **delegation** resource on [LIME protocol](http://limeprotocol.org/resources.html#delegation) specification.

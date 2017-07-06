@@ -16,7 +16,7 @@ Permite o envio e recebimento de informação sobre o estado atual da conversa. 
 De forma geral não há necessidade de receber notificações de entrega de mensagens com este conteúdo, portanto é recomendado omitir o  Id nestas mensagens.
 Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/content-types.html#chatstate).
 
-####Exemplo
+#### Exemplo
 Enviando estado *digitando* para usuário do Telegram:
 ```json
 {
@@ -33,7 +33,7 @@ Enviando estado *digitando* para usuário do Telegram:
 | Canal              | Tipo      | Estados suportados      | 
 |--------------------|-----------|-------------------------|
 | BLiP App           | Estado da Conversa | Todos |
-| Messenger          | [Sender Actions](https://developers.facebook.com/docs/messenger-platform/send-api-reference/sender-actions) | *composing* e *paused* (somente envio) |
+| Messenger          | [Sender Actions](https://developers.facebook.com/docs/messenger-platform/send-api-reference/sender-actions) e [Referral](https://developers.facebook.com/docs/messenger-platform/webhook-reference/referral) | *composing* e *paused* (somente envio) e *starting* (referral de uma conversa existente) |
 | SMS                | - | Nenhum |
 | Skype              | - | Nenhum |
 | Telegram           | [SendChatAction](https://core.telegram.org/bots/api#sendchataction) | *composing* (somente envio) |

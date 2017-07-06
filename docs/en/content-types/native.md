@@ -151,7 +151,7 @@ Note that for a **multi channel** chatbot the responsability of send the correct
 }
 ```
 
-### Mapping on Channels
+#### Channel mapping
 
 | Channel              | Type                    | 
 |--------------------|-------------------------|

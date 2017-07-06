@@ -1,14 +1,22 @@
-### Análise de eventos
-| Endereço              | URI base     | Permissões requeridas   | C#                 |
-|-----------------------|--------------|-------------------------|--------------------|
-| postmaster@msging.net (endereço padrão, não é necessário informar) | /event-track | Nenhuma | [EventTrackExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/EventTrack/EventTrackExtension.cs) |
+### Event analysis
+| Address               | Base URI     |  C#                 |
+|-----------------------|--------------|---------------------|
+| postmaster@msging.net (default address - not required) | /event-track | [EventTrackExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/EventTrack/EventTrackExtension.cs) |
 
-A extensão **análise de eventos** permite o chatbot registrar eventos no **BLiP Messaging Hub** permitindo assim extrair relatórios. 
+The **event analysis** extension allows the registration of chatbot's events for creation of analytics reports in the portal. The events are agregated by category, action and day. The reports can be generated thought the [portal](https://portal.blip.ai), in the *Panel* -> *Data analysis* option.
 
-Caso seja registrado o mesmo evento/ação uma segunda vez no mesmo dia será somado um ao valor atual do contador.
+To register an event, the chatbot must provide the following properties:
 
-#### Exemplos
-1 - Registrando um evento:
+| Property     | Description                                                        | Example |
+|--------------|--------------------------------------------------------------------|---------|
+| **category** | Category to aggregate the related events.                          | billing |
+| **action**   | The action associated to the event. The event counting is made using the actions.  | payment |
+| **identity** | Optional contact associated to the event. If contact is a 'testers' group member the event will be ignored.  | 123456@messenger.gw.msging.net |
+| **extras**   | Optional extra informations to be stored within the event.         | {"customerId": "41231", "paymentId": "ca82jda"} |
+
+
+#### Exemples
+1 - Registering an event:
 ```json
 {  
   "id": "9494447a-2581-4597-be6a-a5dff33af156",
@@ -16,12 +24,36 @@ Caso seja registrado o mesmo evento/ação uma segunda vez no mesmo dia será so
   "type": "application/vnd.iris.eventTrack+json",
   "uri": "/event-track",
   "resource": {  
-    "category": "Boleto",
-    "action": "Vencido"
+    "category": "billing",
+    "action": "payment"
   }
 }
 ```
-Resposta em caso de sucesso:
+Response on success:
+```json
+{
+  "method": "set",
+  "status": "success",
+  "id": "9494447a-2581-4597-be6a-a5dff33af156",
+  "from": "postmaster@msging.net/#irismsging1",
+  "to": "contact@msging.net/default"
+}
+```
+2 - Registering an event passing identity:
+```json
+{  
+  "id": "9494447a-2581-4597-be6a-a5dff33af156",
+  "method": "set",
+  "type": "application/vnd.iris.eventTrack+json",
+  "uri": "/event-track",
+  "resource": {  
+    "category": "billing",
+    "action": "payment",
+    "identity": "123456@messenger.gw.msging.net",
+  }
+}
+```
+Response on success:
 ```json
 {
   "method": "set",
@@ -32,68 +64,130 @@ Resposta em caso de sucesso:
 }
 ```
 
-
-2 - Recuperando lista de eventos:
+3 - Retrieving stored event categories:
 ```json
 {  
-  "id": "1",
+  "id": "3",
   "method": "get",
   "uri": "/event-track"
 }
 ```
-Resposta em caso de sucesso:
-```json
-{
-  "method": "get",
-  "status": "success",
-  "id": "1",
-  "from": "postmaster@msging.net/#irismsging1",
-  "to": "contact@msging.net/default",
-  "resource": [{
-      "category": "Boleto"
-  },
-  {
-      "category": "Cartão"
-  }]
-}
-```
-
-
-3 - Recuperando contadores do evento:
-
-Possíveis filtros via *querystring*:
-
-| QueryString        | Observação                                |
-|--------------------|-------------------------------------------| 
-| take               | Quantidade de items retornados            |
-| filterDate         | Buscar eventos anteriores a essa data     |
+Response on success:
 ```json
 {  
-  "id": "57aa0ac2-158c-4012-9f18-b8eedaede85c",
+  "id": "3",
+  "from": "postmaster@msging.net/#irismsging1",
+  "to": "contact@msging.net/default",
   "method": "get",
-  "uri": "/event-track/boleto"
+  "status": "success",
+  "type": "application/vnd.lime.collection+json",
+  "resource": {
+    "itemType": "application/vnd.iris.eventTrack+json",
+    "items": [{
+        "category": "billing"
+    },
+    {
+        "category": "account"
+    }]
+  }
 }
 ```
 
-Resposta em caso de sucesso:
+
+4 - Retrieving event counters:
+
+Available *querystring* filters:
+
+| QueryString  | Description                               |
+|--------------|-------------------------------------------|
+| $take        | Limit of total of items to be returned    |
+| startDate    | Initial date to seach for events          |
+| endDate      | Limit date to retrieve the events         |
+
+```json
+{  
+  "id": "4",
+  "method": "get",
+  "uri": "/event-track/billing?startDate=2016-01-01&$take=10"
+}
+```
+
+Response on success:
 ```json
 {
-  "method": "get",
-  "status": "success",
-  "id": "57aa0ac2-158c-4012-9f18-b8eedaede85c",
+  "id": "4",
   "from": "postmaster@msging.net/#irismsging1",
   "to": "contact@msging.net/default",
-  "resource": [{
-      "category": "Boleto",
-      "action": "Vencido",
-      "storageDate": "2016-01-01",
-      "count": 10
-  },
-  {
-      "category": "Boleto",
-      "action": "Vencido",
-      "storageDate": "2016-01-02",
-      "count": 20
-  }]
+  "method": "get",
+  "status": "success",  
+  "type": "application/vnd.lime.collection+json",
+  "resource": {
+    "itemType": "application/vnd.iris.eventTrack+json",
+    "items": [{
+        "category": "billing",
+        "action": "payment",
+        "storageDate": "2016-01-01",
+        "count": 10
+    },
+    {
+        "category": "billing",
+        "action": "payment",
+        "storageDate": "2016-01-02",
+        "count": 20
+    }]
+  }
+}
+```
+
+5 - Retrieving the event details for a category and action:
+
+Available *querystring* filters:
+
+| QueryString  | Description                               |
+|--------------|-------------------------------------------| 
+| $skip        | Number of items to be skipped for paging  |
+| $take        | Limit of total of items to be returned    |
+| startDate    | Initial date to seach for events          |
+| endDate      | Limit date to retrieve the events         |
+
+
+```json
+{  
+  "id": "5",
+  "method": "get",
+  "uri": "/event-track/billing/payment?startDate=2016-01-01&$take=10"
+}
+```
+
+Response on success:
+```json
+{
+  "id": "5",
+  "from": "postmaster@msging.net/#irismsging1",
+  "to": "contact@msging.net/default",
+  "method": "get",
+  "status": "success",
+  "type": "application/vnd.lime.collection+json",
+  "resource": {
+    "itemType": "application/vnd.iris.eventTrack+json",
+    "items": [{
+        "category": "billing",
+        "action": "payment",
+        "storageDate": "2016-01-01T12:30:00.000Z",
+        "extras": {
+          "expiration": "2015-12-30",
+          "customerId": "199213"
+        }      
+    },
+    {
+        "category": "billing",
+        "action": "payment",
+        "storageDate": "2016-01-02T09:15:00.000Z",
+        "extras": {
+          "expiration": "2016-01-01",
+          "customerId": "4123123"
+        }  
+    }]
+  }
 }
 ```

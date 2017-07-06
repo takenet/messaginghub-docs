@@ -9,7 +9,7 @@ Alguns canais suportam a limitação do escopo das opções, que determina por q
 
 Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/content-types.html#select).
 
-####Exemplo
+#### Exemplo
 Menu com opções numeradas
 ```json
 {
@@ -20,7 +20,6 @@ Menu com opções numeradas
         "text":"Escolha uma opção",
         "options":[
             {
-                "order":1,
                 "text":"Primeira opção"
             },
             {
@@ -55,7 +54,7 @@ Ao selecionar a primeira opção:
     "from": "1042221589186385@messenger.gw.msging.net",
     "to": "blipcontact@msging.net",
     "type": "text/plain",
-    "content": "1"
+    "content": "Primeira opção"
 }
 ```
 Ao selecionar a segunda opção:
@@ -88,7 +87,7 @@ O tipo('type') da mensagem de retorno será sempre o mesmo da opção escolhida.
 
 | Canal              | Tipo                    | 
 |--------------------|-------------------------|
-| BLiP App           | Menu (Obs.: O campo 'value' de cada um dos 'options' pode assumir qualquer tipo de Documento, exceto DocumentContainer)     |
+| BLiP Chat           | Select                 |
 | Messenger          | [Button template](https://developers.facebook.com/docs/messenger-platform/send-api-reference/button-template) (no escopo padrão) e [Quick replies](https://developers.facebook.com/docs/messenger-platform/send-api-reference/quick-replies) (no escopo *immediate*)|
 | SMS                | Texto                   |
 | Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|

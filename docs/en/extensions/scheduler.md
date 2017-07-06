@@ -1,14 +1,12 @@
-### Agendamento
-| Endereço                        | URI base     | Permissões requeridas   | C#               |
-|---------------------------------|--------------|-------------------------|------------------|
-| postmaster@scheduler.msging.net | /schedules   | Envio de mensagens  | [SchedulerExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Scheduler/SchedulerExtension.cs) |
+### Scheduler
+| Address                         | Base URI     | C#               |
+|---------------------------------|--------------|------------------|
+| postmaster@scheduler.msging.net | /schedules   | [SchedulerExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Scheduler/SchedulerExtension.cs) |
 
-A extensão **agendamento** permite o agendamento do envio de mensagens em nome dos chatbots para uma data e horário específico. Qualquer tipo de mensagem pode ser agendada, inclusive mensagens de **envio em massa** (para uma lista de distribuição). O horário do agendamento deve ser realizado no fuso GMT 0.
+The **scheduler** extensions allows the chatbot to schedule messages to be sent in specific date and time on its behalf. Any type of message to any destination can be scheduled, including **broadcast** messages (to a distribution list). The scheduling time must be done in the GMT timezone. Any received notification from a scheduled message is forwarded to the chatbot.
 
-As notificações são encaminhadas ao chatbot quando recebidas pela extensão.
-
-#### Exemplos
-1 - Agendando uma nova mensagem para o dia 25/07/2016 às 17:50h (GMT 0):
+#### Examples
+1 - Scheduling a message to the 2016-07-25 17:50 GMT 0 date:
 
 ```json
 {  
@@ -22,14 +20,14 @@ As notificações são encaminhadas ao chatbot quando recebidas pela extensão.
       "id": "ad19adf8-f5ec-4fff-8aeb-2e7ebe9f7a67",
       "to": "destination@msging.net",
       "type": "text/plain",
-      "content": "Teste agendamento"
+      "content": "Scheduling test"
     },
     "when": "2016-07-25T17:50:00.000Z"
   }
 }
 ```
 
-Resposta em caso de sucesso:
+Response on success:
 
 ```json
 { 
@@ -41,7 +39,7 @@ Resposta em caso de sucesso:
 }
 ```
 
-2 - Consultando um agendamento já realizado (supondo que foi utilizado o exemplo anterior):
+2 - Getting an existing scheduled message:
 
 ```json
 {  
@@ -52,7 +50,7 @@ Resposta em caso de sucesso:
 }
 ```
 
-Resposta em caso de sucesso:
+Response on success:
 
 ```json
 {
@@ -76,7 +74,4 @@ Resposta em caso de sucesso:
   }
 }
 ```
-Os `status` possíveis são `scheduled`, `executed` e `canceled`. 
-
-#### Delegação
-Esta extensão já possui permissões de envio em nome dos chatbots, portanto não é necessário a realização de delegação.
+The possible `status` values are `scheduled`, `executed` and `canceled`. 

@@ -1,9 +1,9 @@
-### Envio em massa
-| Address                         | Base URI     | Required permissions    | C#                     |
-|---------------------------------|--------------|-------------------------|------------------------|
-| postmaster@broadcast.msging.net | /lists       | Send Messages           | [BroadcastExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Broadcast/BroadcastExtension.cs) |
+### Broadcast
+| Address                         | Base URI     | C#                     |
+|---------------------------------|--------------|------------------------|
+| postmaster@broadcast.msging.net | /lists       | [BroadcastExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Broadcast/BroadcastExtension.cs) |
 
-The extension ** broadcast ** allows creation and management of distribution lists and their members for sending broadcast. Thus, a chatbot that needs to send the same message for more than one recipient can create a list with address of recipients and perform the braodcast only once, to the address list.
+The **broadcast** extension allows creation and management of distribution lists and their members for sending messages to multiple destinations simultaneously. 
 
 Each distribution list has a unique address in the format `list-name@broadcast.msging.net` in addition to the members, who are the recipients of messages sent to this list. Only the chatbot that created a remote list has permissions to send messages to it.
 
@@ -11,9 +11,13 @@ Notifications are forwarded to the chatbot when received by the extension.
 
 #### Default lists
 
-BLiP automatically creates a distribution list with all addresses that have already contacted your chatbot. Its address is `[identifier] + senders @ broadcast.msging.net`, being `identifier` the identifier of your chatbot, which is used with the access key for authentication.
+BLiP automatically creates a distribution list with all clients that have already contacted your chatbot. Its address is `[identifier]+senders@broadcast.msging.net` where `identifier` is the identifier of your chatbot, which is used with the access key for authentication.
 
 For example, for a chatbot with identifier `mychatbot`, this list address would be `mychatbot+senders@broadcast.msging.net`.
+
+#### Replacement variables
+
+It is possible to use contact replacement variables in the sent messages. For more information, please check the documentation of the [**Contacts** extension](https://portal.blip.ai/#/docs/extensions/contacts).
 
 #### Examples
 
@@ -119,9 +123,15 @@ Notifications sent by list members to the distribution list and forwarded to the
   "event": "received"
 }
 ```
-
-#### Delegation
-This extension already has send permissions on behalf of chatbotos, so it is not necessary to perform delegation.
+5 - Sending a message with a replacement variable:
+```json
+{  
+  "id": "5",
+  "to": "news@broadcast.msging.net",
+  "type": "text/plain",
+  "content": "Hello ${contact.name}, come to check out our prices!"
+}
+```
 
 #### Availability
 

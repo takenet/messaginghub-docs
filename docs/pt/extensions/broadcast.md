@@ -15,6 +15,11 @@ O BLiP automaticamente cria uma lista de distribuição com todos os endereços 
 
 Por exemplo, para um chatbot com identifier `mychatbot`, o endereço desta lista seria `mychatbot+senders@broadcast.msging.net`.
 
+#### Variáveis de substituição
+
+É possível utilizar variavéis de substituição de contatos nas mensagens enviadas. Neste caso, informe as variáveis no texto normalmente mas não envie o campo `#message.replaceVariables` no `metadata` da mensagem. Este campo é inserido pela própria extensão posteriormente no momento do envio.
+Para maiores informações, consulte a documentação da [extensão **Contatos**](https://portal.blip.ai/#/docs/extensions/contacts).
+
 #### Exemplos
 
 1 - Criando uma nova lista de distribuição:
@@ -92,6 +97,7 @@ Resposta em caso de sucesso:
   "content": "Olá participantes desta lista!"
 }
 ```
+
 Notificações enviadas pela extensão **lista de distribuição**:
 ```json
 {
@@ -120,8 +126,15 @@ Notificações enviadas pelos membros da lista à lista de distribuição e enca
 }
 ```
 
-#### Delegação
-Esta extensão já possui permissões de envio em nome dos chatbotos, portanto não é necessário a realização de delegação.
+5 - Enviando uma mensagem com uma variável de substituição:
+```json
+{  
+  "id": "5",
+  "to": "noticias@broadcast.msging.net",
+  "type": "text/plain",
+  "content": "Olá ${contact.name}, venha conferir nossas promoções!"
+}
+```
 
 #### Disponibilidade
 

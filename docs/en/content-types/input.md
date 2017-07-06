@@ -3,11 +3,7 @@
 |--------------------------------------|--------------------------------------|
 | application/vnd.lime.input+json      | [Lime.Messaging.Contents.Input](https://github.com/takenet/lime-csharp/blob/master/src/Lime.Messaging/Contents/Input.cs) |
 
-Allows send a structured user information request where is possible define validations rules.
-
-This document is useful to build questions forms or to get specific informations, like cell phone, images, locations, or some identity number.
-
-The execution of validation rules depends of channel support.
+Allows send structured information request to the user, where is possible to define validations rules. This is useful to build questions forms or get specific user information like name, phone number or typed information like an image or location. The execution of validation rules depends of channel support.
 
 #### Examples
 1 - Requesting user name:
@@ -49,11 +45,11 @@ The execution of validation rules depends of channel support.
 
 For more details, check the [LIME protocol](http://limeprotocol.org/content-types.html#input) specification.
 
-#### Mapping on Channels
+#### Channel mapping
 
-| Channel              | Type                    | 
-|--------------------|-------------------------|
-| BLiP App           | Text                   |
+| Channel              | Type                         | 
+|--------------------|--------------------------------|
+| BLiP Chat          | Uer input (for Location type only) |
 | Messenger          | [Location](https://developers.facebook.com/docs/messenger-platform/send-api-reference/quick-replies) |
 | SMS                | Text                   |
 | Skype              | [Activity](https://docs.botframework.com/en-us/skype/chat/#sending-messages-1)|

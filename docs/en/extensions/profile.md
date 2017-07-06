@@ -1,31 +1,32 @@
+### Chatbot profile
+| Address               | Base URI     |  C#              |
+|-----------------------|--------------|------------------|
+| postmaster@msging.net (default address - not required) | /profile | [ProfileExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Profile/ProfileExtension.cs) |
 
-### Perfil do chatbot
-| Endereço              | URI base     | Permissões requeridas   | C#              |
-|-----------------------|--------------|-------------------------|-----------------|
-| postmaster@msging.net (endereço padrão, não é necessário informar) | /profile | Nenhuma | [ProfileExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Profile/ProfileExtension.cs) |
+The **profile** extension allows the configuration of chatbot profile properties, which can reflect to the clients in the published channel - if supported. Each property is a document of a type supported by the platform.
 
-A extensão **perfil** permite a configuração de propriedades de perfil do chatbot, que podem refletir para o usuários nos canais publicados, dependendo do suporte. Cada propriedade é um **documento** de um tipo de conteúdo suportado pela plataforma.
+The current supported profile properties are:
 
-As propriedades suportadas atualmente são:
-
-| Nome             | Identificador     | Tipo de documento | Canais suportados   |
+| Name             | Identifier        | Document type     | Supported channels  |
 |------------------|-------------------|-------------------|---------------------|
-| Mensagem inicial | `greeting`        | Texto             | Messenger           |
-| Menu persistente | `persistent-menu` | Menu multimídia   | Messenger           |
-| Botão começar    | `get-started`     | Texto             | Messenger           |
+| Start button     | `get-started`     | Text              | Messenger           |
+| Greeting message | `greeting`        | Text              | Messenger           |
+| Persistent menu  | `persistent-menu` | Multimedia menu   | Messenger           |
 
-#### Exemplos
-1 - Definindo a mensagem inicial:
+Note: In Messenger, the value of `get-started` must be defined before the value of `persistent-menu`.
+
+#### Examples
+1 - Setting the greeting message:
 ```json
 {  
   "id": "1",
   "method": "set",
   "uri": "/profile/greeting",
   "type": "text/plain",
-  "resource": "Olá, seja bem vindo a nosso serviço!"
+  "resource": "Hello and welcome to our service!"
 }
 ```
-Resposta em caso de sucesso:
+Response on success:
 ```json
 {
   "id": "1",
@@ -36,7 +37,7 @@ Resposta em caso de sucesso:
 }
 ```
 
-2 - Definindo um menu persistente com três opções:
+2 - Setting a persistent menu with three options:
 ```json
 {  
   "id": "2",
@@ -48,26 +49,26 @@ Resposta em caso de sucesso:
       {
         "label":{
           "type":"text/plain",
-          "value":"Opção 1"
+          "value":"Option 1"
         }
       },
       {
         "label":{
           "type":"text/plain",
-          "value":"Opção 2"
+          "value":"Option 2"
         }
       },
       {
         "label":{
           "type":"text/plain",
-          "value":"Opção 3"
+          "value":"Option 3"
         }
       }
     ]
   }
 }
 ```
-Resposta em caso de sucesso:
+Response on success:
 ```json
 {
   "id": "2",
@@ -79,7 +80,7 @@ Resposta em caso de sucesso:
 ```
 
 
-3 - Definindo um menu persistente complexo, com submenus e links web:
+3 - Setting a complex persistent menu, with submenus and web links:
 ```json
 {  
   "id": "3",
@@ -94,20 +95,20 @@ Resposta em caso de sucesso:
             "value":{
               "header":{
                 "type":"text/plain",
-                "value":"Opção 1"
+                "value":"Option 1"
               },
               "options":[
                 {
                   "label":{
                     "type":"text/plain",
-                    "value":"Opção 1.1"
+                    "value":"Option 1.1"
                   }
                 },
                 {
                   "label":{
                     "type":"application/vnd.lime.web-link+json",
                   "value":{
-                    "text":"Opção 1.2",
+                    "text":"Option 1.2",
                     "uri":"https://address.com/option1.2"
                   }
                 }
@@ -118,25 +119,25 @@ Resposta em caso de sucesso:
                   "value":{
                     "header":{
                       "type":"text/plain",
-                      "value":"Opção 1.3"
+                      "value":"Option 1.3"
                     },
                     "options":[
                       {
                         "label":{
                           "type":"text/plain",
-                          "value":"Opção 1.3.1"
+                          "value":"Option 1.3.1"
                         }
                       },
                       {
                         "label":{
                           "type":"text/plain",
-                          "value":"Opção 1.3.2"
+                          "value":"Option 1.3.2"
                         }
                       },
                       {
                         "label":{
                           "type":"text/plain",
-                          "value":"Opção 1.3.3"
+                          "value":"Option 1.3.3"
                         }
                       }
                     ]
@@ -150,14 +151,14 @@ Resposta em caso de sucesso:
       {
         "label":{
           "type":"text/plain",
-          "value":"Opção 2"
+          "value":"Option 2"
         }
       },
       {
         "label":{
           "type":"application/vnd.lime.web-link+json",
           "value":{
-            "text":"Opção 3",
+            "text":"Option 3",
             "uri":"https://address.com/option1.3"
           }
         }
@@ -166,7 +167,7 @@ Resposta em caso de sucesso:
   }
 }
 ```
-Resposta em caso de sucesso:
+Response on success:
 ```json
 {
   "id": "3",
@@ -176,17 +177,17 @@ Resposta em caso de sucesso:
   "status": "success"
 }
 ```
-4 - Definindo o valor do botão começar:
+4 - Setting the start button:
 ```json
 {  
   "id": "4",
   "method": "set",
   "uri": "/profile/get-started",
   "type": "text/plain",
-  "resource": "Início"
+  "resource": "Start now"
 }
 ```
-Resposta em caso de sucesso:
+Response on success:
 ```json
 {
   "id": "4",
@@ -197,7 +198,7 @@ Resposta em caso de sucesso:
 }
 ```
 
-5 - Consultando a mensagem inicial definida:
+5 - Getting the current greeting message:
 ```json
 {  
   "id": "5",
@@ -205,7 +206,7 @@ Resposta em caso de sucesso:
   "uri": "/profile/greeting"  
 }
 ```
-Resposta em caso de sucesso:
+Response on success:
 ```json
 {
   "id": "5",
@@ -214,7 +215,7 @@ Resposta em caso de sucesso:
   "method": "get",
   "status": "success",
   "type": "text/plain",
-  "resource": "Olá, seja bem vindo a nosso serviço!"
+  "resource": "Hello and welcome to our service!"
 }
 ```
 

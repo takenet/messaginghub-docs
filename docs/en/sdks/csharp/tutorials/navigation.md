@@ -1,16 +1,18 @@
-### Tutorial: Navegação
+### Tutorial: Navigation
 
-Neste tutorial, será demonstrado uma forma de construir um chatbot que responde automaticamente comandos de texto enviados pelos usuários.
+> *This article was automatically translated and may have some errors. If you find any problem, please help us improving it following the link in the end of this page.*
 
-O primeiro passo é, no Visual Studio, criar um novo projeto do tipo *Class Library* e instalar o pacote do SDK via **NuGet**, através do comando:
+In this tutorial, we will demonstrate a way to build a chatbot that automatically responds to text commands sent by users.
+
+The first step is not Visual Studio, create a new project of type *Class Library* and install the SDK package via **NuGet**, through the command:
 
     Install-Package Takenet.MessagingHub.Client.Template
   
-Desta forma, é adicionado ao projeto entre outras dependências, o arquivo `application.json`, onde ficam registrados os *receivers* de mensagens e notificações. Os **receivers** são as entidades responsáveis por processar as mensagens e notificações recebidas realizando ações específicas (invocando APIs, salvando informações no banco de dados, etc.) e, se necessário, enviar uma resposta ao usuário.
+In this way, the `application.json` file is added to the project, among other dependencies, where the *receivers* of messages and notifications are registered. **receivers** are the entities responsible for processing messages and notifications received by performing specific actions (invoking APIs, saving information in the database, etc.) and, if necessary, sending a response to the user.
 
-Um detalhe importante e bastante útil é que é possível registrar *receivers* definindo **filtros** de mensagens e notificações que o mesmo deve processar. Os filtros podem combinar várias propriedades, como o originador e conteúdo das mensagens, por exemplo. Além disso, são **expressões regulares** que permitem uma maior flexibilidade em sua definição.
+An important and very useful detail is that you can register * receivers * by defining **filters** of messages and notifications that it must process. Filters can combine various properties, such as the originator and message content, for example. In addition, they are **regular expressions** that allow for greater flexibility in their definition.
 
-Abaixo um exemplo do arquivo `application.json` criado em um novo projeto:
+Below is an example of the `application.json` file created in a new project:
 
 ```json
 {
@@ -29,16 +31,16 @@ Abaixo um exemplo do arquivo `application.json` criado em um novo projeto:
   "schemaVersion": 2
 }
 ```
-> Para obter um `identifier` e `accessKey`, acesse o portal http://omni.messaginghub.io e registre seu chatbot, utilizando a opção Chat Bot SDK
+> To obtain an `identifier` and` accessKey`, go to the portal https://portal.blip.ai and register your chatbot using the Chat Bot SDK option
 
-Neste caso, existe apenas um **receiver** de mensagem registrado, com um filtro do tipo de conteúdo `text/plain` sendo que seu processamento é feito pela classe `PlainTextMessageReceiver` que deve existir no projeto.
+In this case, there is only a **message** registered message, with a `text / plain` type content filter being processed by the` PlainTextMessageReceiver` class that must exist in the project.
 
-Imagine que nosso chatbot deva responder a comando com o texto `ajuda` com uma mensagem estática de auxílio ao usuário. Desta forma, precisamos:
-- Registrar um novo receiver de mensagem
-- Incluir um filtro de tipo *texto* e conteúdo *ajuda*
-- Retornar a mensagem de ajuda ao originador
+Imagine that our chatbot should respond to the command with the `help` text with a static message of assistance to the user. In this way, we need:
+- Register a new message receiver
+- Include a filter of type *text* and content *help*
+- Return the help message to the originator
 
-Para facilitar, o SDK inclui alguns *receivers* para ações comuns, como mensagens estáticas, não sendo necessário neste primeiro caso de uso implementar o *receiver* para envio da mensagem de resposta. Para isso, basta utilizar a propriedade `response` e incluir a mensagem de resposta ao cliente. Neste caso, a sessão `messageReceivers` ficaria da seguinte forma:
+For ease of use, the SDK includes some *receivers* for common actions, such as static messages, and it is not necessary in this first use case to implement the *receiver* to send the response message. To do this, simply use the `response` property and include the response message to the client. In this case, the `messageReceivers` session would look like this:
 
 ```json
   "messageReceivers": [
@@ -52,7 +54,7 @@ Para facilitar, o SDK inclui alguns *receivers* para ações comuns, como mensag
     }
   ]
 ```
-Desta forma, se o cliente enviar a palavra `ajuda`, ele receberá uma mensagem do tipo `text/plain` com conteúdo `Olá, seja bem-vindo ao serviço de ajuda do Messaging Hub.`. Se quisermos incluir outras palavras para a ativação do comando, basta alterar a propriedade `content` e incluir outras palavras na expressão regular de filtro, como a seguir:
+In this way, if the client sends the word `help`, it will receive a message of type `text/plain` with content `Hello, welcome to the help service of the Messaging Hub.`. If we want to include other words for the activation of the command, simply change the `content` property and include other words in the regular filter expression, as follows:
 
 ```json
   "messageReceivers": [
@@ -66,7 +68,7 @@ Desta forma, se o cliente enviar a palavra `ajuda`, ele receberá uma mensagem d
     }
   ]
 ```
-Podemos retornar, ao invés de um texto simples, uma tipo de mensagem complexa como um **Select**, que mostra um menu de opções ao usuário. Para isso, basta utilizarmos a propriedade `jsonContent` ao invés de `plainContent`, como abaixo:
+We can return, instead of a plain text, a complex message type such as a ** Select **, which shows a menu of options to the user. To do this, simply use the `jsonContent` property instead of` plainContent`, as below:
 
 ```json
   "messageReceivers": [
@@ -102,7 +104,7 @@ Podemos retornar, ao invés de um texto simples, uma tipo de mensagem complexa c
     }
   ]
 ```
-Para cada uma das opções do `Select`, devemos incluir um *receiver* para a palavra defina em `value`, que é o valor esperado como resposta do cliente. Mas é importante também suportar o envio do número e o texto da opção, já que em canais não estruturados (como SMS) não há garantia que o cliente responderá com a opção esperada. Um receiver para a primeira opção (`texto`) seria:
+For each of the `Select` options, we must include a *receiver* for the word set to` value`, which is the value expected as the customer's response. But it is also important to support sending the number and the text of the option, since in unstructured channels (such as SMS) there is no guarantee that the customer will respond with the expected option. A receiver for the first option (`text`) would be:
 
 ```json
     {
@@ -114,7 +116,7 @@ Para cada uma das opções do `Select`, devemos incluir um *receiver* para a pal
       }
     }
 ```    
-Neste caso, retornarmos uma mensagem simples mas suportando diversos comandos diferentes para ativar o receiver. Para a segunda opção, temos:
+In this case, we return a simple message but supporting several different commands to activate the receiver. For the second option, we have:
 
 ```json
     {
@@ -125,13 +127,13 @@ Neste caso, retornarmos uma mensagem simples mas suportando diversos comandos di
         "jsonContent": {
           "type": "image/jpeg",
           "uri": "http://static.boredpanda.com/blog/wp-content/uploads/2015/09/Instagrams-most-famous-cat-Nala165604f5fc88e5f.jpg",
-          "text": "Miau!"
+          "text": "Meaww!"
         }
       }
     }
 ```    
 
-Aqui retornamos um tipo complexo `MediaLink` com uma imagem. A terceira opção (`data`) inclui um conteúdo dinâmico e por este motivo, não podemos utilizar a propriedade `response`. Portanto, devemos criar uma classe para processar o texto e responder ao usuário, como a seguir:
+Here we return a complex `MediaLink` type with an image. The third option (`data`) includes dynamic content and for this reason, we can not use the` response` property. Therefore, we must create a class to process the text and respond to the user, as follows:
 
 ```csharp
     public class DateMessageReceiver : IMessageReceiver
@@ -162,7 +164,7 @@ Aqui retornamos um tipo complexo `MediaLink` com uma imagem. A terceira opção 
     }
 ```
 
-Nossa classe recebe pelo construtor suas **configurações** que incluem o modelo do texto de resposta e de cultura, que são definidas no registro do *receiver* no arquivo `application.json`. É sempre uma boa idéia utilizar a propriedade `settings` para definir valores estáticos, o que permite modificações no comportamento do seu chatbot sem a necessidade de recompilar o código. O registro do mesmo ficaria da seguinte forma:
+Our class receives by the constructor its **configurations** which include the response and culture text template, which are defined in the * receiver * record in the `application.json` file. It is always a good idea to use the `settings` property to set static values, which allows you to modify the behavior of your chatbot without the need to recompile the code. The record would look like this:
 
 ```json
     {
@@ -171,20 +173,19 @@ Nossa classe recebe pelo construtor suas **configurações** que incluem o model
       "type": "DateMessageReceiver",
       "settings": {
         "culture": "pt-BR",
-        "message": "A data atual é {0}."
+        "message": "The current date is {0}."
       }
     }
 ```
-Por fim, imagine que seu chatbot deve retornar uma mensagem de erro estática no caso do cliente enviar algum comando desconhecido. Para isso, é necessário registrar um *receiver* sem filtros mas com **prioridade** menor que os demais *receivers* existentes. Por padrão, os *receivers* são registrados com a prioridade mais alta (**zero**) e basta incluir um *receiver* com prioridade menor para que receba as mensagens não tratadas pelos outros para responder o usuário. Ficaria da seguinte forma:
+Finally, imagine that your chatbot should return a static error message in case the client sends some unknown command. For this, it is necessary to register a * receiver * without filters but with **priority** lower than the other *receivers* existing. By default, *receivers* are registered with the highest priority (**zero**) and simply include a *receiver* with a lower priority so that it receives messages not handled by others to respond to the user. It would look like this:
 
 ```json
     {
       "priority": "100",
       "response": {
         "mediaType": "text/plain",
-        "plainContent": "Ops, não entendi o que você quis dizer. Envie a palavra AJUDA caso precise."
+        "plainContent": "Ops, I didn't understand what you mean. Send the text HELP if you need."
       }
     }
 ```    
-
-O código completo deste tuturial pode ser encontrado no [Github](https://github.com/takenet/messaginghub-client-csharp/tree/master/src/Samples/Navigation).
+The complete code for this tuturial can be found at [Github](https://github.com/takenet/messaginghub-client-csharp/tree/master/src/Samples/Navigation).
