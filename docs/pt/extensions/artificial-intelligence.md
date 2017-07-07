@@ -7,13 +7,11 @@ A extensão **Inteligência Artificial** permite a criação, treinamento e publ
 
 É possível associar **documentos de resposta** ao modelo que devem ser enviados quando reconhecida uma intenção. Além disso, a extensão pode ser utilizada para aprimoramento do modelo através da associação de perguntas às intenções.
 
-O treinamento do modelo é realizado simultâneamente em todos os provedores de AI associados ao chatbot. Neste momento, é armazenado um *snapshot* do modelo que pode ser recuperado posteriormente para comparação da sua efetividade com outras versões. Para utilizar um modelo treinado, é necessária a publicação do mesmo.
+O treinamento do modelo é realizado simultâneamente em todos os provedores de IA associados ao chatbot. Neste momento, é armazenado um *snapshot* do modelo que pode ser recuperado posteriormente para comparação da sua efetividade com outras versões. Para utilizar um modelo treinado, é necessária a publicação do mesmo.
 
 Toda a manipulação do modelo pode ser feita através do portal do BLiP, podendo esta extensão ser utilizada apenas para realizar a **análise de sentenças** dos usuários do chabot. 
 
 #### Recursos
-
-Abaixo alguns dos recursos disponíveis na extensão:
 
 | URI                               | Método   | Descrição                                  |
 |-----------------------------------|----------|--------------------------------------------|
@@ -21,7 +19,7 @@ Abaixo alguns dos recursos disponíveis na extensão:
 | `/intentions`                     | `get`    | Pesquisa em todas as intenções associadas ao chatbot. É possível paginar através dos parâmetros opcionais `$skip` e `$take`. |
 | `/intentions/{id}`                | `get`    | Recupera uma intenção pelo `id`.           |
 | `/entities`                       | `set`    | Cria uma nova entidade. O `id` da entidade é retornado na resposta do comando. |
-| `/entities`                       | `get`    | Pesquisa em todas as intenções associadas ao chatbot. É possível paginar através dos parâmetros opcionais `$skip` e `$take`. |
+| `/entities`                       | `get`    | Pesquisa em todas as entidades associadas ao chatbot. É possível paginar através dos parâmetros opcionais `$skip` e `$take`. |
 | `/entities/{id}`                  | `get`    | Recupera uma entidade pelo `id`.           |
 | `/intentions/{id}/questions`      | `set`    | Cria perguntas associadas à intenção `id`. |
 | `/intentions/{id}/questions`      | `get`    | Pesquisa em todas as perguntas associadas à intenção `id`. É possível paginar através dos parâmetros opcionais `$skip` e `$take`. |
@@ -31,19 +29,19 @@ Abaixo alguns dos recursos disponíveis na extensão:
 | `/intentions/{id}/answers/{aid}`  | `delete` | Remove uma resposta com id `aid`.          |
 | `/models`                         | `set`    | Realiza o treinamento ou publicação de um modelo. A ação depende do tipo do recurso enviado (veja na tabela abaixo). |
 | `/models`                         | `get`    | Pesquisa em todos os modelos treinados e/ou publicados. |
-| `/analysis`                       | `set`    | Realiza a análise de uma sentença do usuário |
+| `/analysis`                       | `set`    | Realiza a análise de uma sentença do usuário através de um modelo publicado. |
 
 Os tipos dos recursos são:
 
-| Nome           | MIME Type                                       | Descrição                                   |
-|----------------|-------------------------------------------------|---------------------------------------------|
-| Intenção       | `application/vnd.iris.ai.intention+json`        | Intenção de um modelo de IA. |
-| Entidade       | `application/vnd.iris.ai.entity+json`           | Entidade de um modelo de IA, com seus sinônimos. |
-| Pergunta       | `application/vnd.iris.ai.question+json`         | Pergunta de um usuário que é associada a uma intenção. |
-| Resposta       | `application/vnd.iris.ai.answer+json`           | Resposta que pode ser enviada no caso de identificada uma intenção do usuário. |
-| Treinamento    | `application/vnd.iris.ai.model-training+json`   | Solicitação de treimento de modelo. |
-| Publicação     | `application/vnd.iris.ai.model-publishing+json` | Solicitação de publicação de um modelo. |
-| Pedido de análise | `application/vnd.iris.ai.analysis-request+json` | Solicitação de análise de sentença. |
+| Nome           | MIME Type                                             | Descrição                                   |
+|----------------|-------------------------------------------------------|---------------------------------------------|
+| Intenção       | `application/vnd.iris.ai.intention+json`              | Intenção expressada através de uma sentença. |
+| Entidade       | `application/vnd.iris.ai.entity+json`                 | Entidade identificada em uma intenção, com seus sinônimos. |
+| Pergunta       | `application/vnd.iris.ai.question+json`               | Pergunta de um usuário associada a uma intenção para treinamento do modelo. |
+| Resposta       | `application/vnd.iris.ai.answer+json`                 | Resposta que pode ser enviada no caso de identificada uma intenção. |
+| Treinamento    | `application/vnd.iris.ai.model-training+json`         | Solicitação de treinamento de modelo. |
+| Publicação     | `application/vnd.iris.ai.model-publishing+json`       | Solicitação de publicação de um modelo. |
+| Pedido de análise | `application/vnd.iris.ai.analysis-request+json`    | Solicitação de análise de sentença. |
 | Resposta de análise | `application/vnd.iris.ai.analysis-response+json` | Resultado de análise de uma sentença. |
 
 
@@ -124,7 +122,7 @@ Resposta em caso de sucesso:
 }
 ```
 
-3 - Recuperando as primeiras 10 intenções
+3 - Recuperando as primeiras 10 intenções:
 ```json
 {  
   "id": "3",
@@ -233,7 +231,6 @@ Resposta em caso de sucesso:
   "uri": "/models",
   "type": "application/vnd.iris.ai.model-training+json",
   "resource": {  
-
   }  
 }
 ```
@@ -289,7 +286,7 @@ Resposta em caso de sucesso:
 }
 ```
 
-8 - Analisando uma sentença no modelo publicado:
+8 - Analisando uma sentença no modelo padrão (definido no portal):
 ```json
 {  
   "id": "8",
@@ -306,6 +303,47 @@ Resposta em caso de sucesso:
 ```json
 {
   "id": "8",
+  "from": "postmaster@ai.msging.net/#irismsging1",
+  "to": "contact@msging.net/default",
+  "method": "set",
+  "status": "success",
+  "type": "application/vnd.iris.ai.analysis-response+json",
+  "resource": {
+    "text":"Quero uma pizza marguerita",
+    "intentions":[
+      {
+        "name":"Pedir pizza",
+        "score": 0.95
+      }
+    ],
+    "entities":[
+      {
+        "name":"Sabor",
+        "value": "Marguerita"
+      }
+    ]
+  }
+}
+```
+
+9 - Analisando uma sentença em um modelo específico:
+```json
+{  
+  "id": "9",
+  "to": "postmaster@ai.msging.net",
+  "method": "set",
+  "uri": "/analysis",
+  "type": "application/vnd.iris.ai.analysis-request+json",
+  "uri": {
+    "text":"Quero uma pizza marguerita",
+    "modelId":"fa0aa23b-5c62-4b90-9c13-986148c0d171"
+  }
+}
+```
+Resposta em caso de sucesso:
+```json
+{
+  "id": "9",
   "from": "postmaster@ai.msging.net/#irismsging1",
   "to": "contact@msging.net/default",
   "method": "set",
