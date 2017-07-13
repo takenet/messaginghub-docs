@@ -103,7 +103,8 @@ Resposta em caso de sucesso:
   "uri": "/intentions",
   "type": "application/vnd.iris.ai.intention+json",
   "resource": {
-      "name": "Pedir pizza"
+      "name": "PedirPizza",
+      "displayName": "Pedir pizza"
   }  
 }
 ```
