@@ -202,7 +202,7 @@ Resposta em caso de sucesso:
   "id": "5",
   "to": "postmaster@ai.msging.net",
   "method": "set",
-  "uri": "/intentions/pedir_pizza /answers",
+  "uri": "/intentions/pedir_pizza/answers",
   "type": "application/vnd.lime.collection+json",
   "resource": {
     "itemType": "application/vnd.iris.ai.answer+json",
