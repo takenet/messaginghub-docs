@@ -25,11 +25,13 @@ Toda a manipulação do modelo pode ser feita através do portal do BLiP, podend
 | `/intentions/{id}/questions`      | `get`    | Pesquisa em todas as perguntas associadas à intenção `id`. É possível paginar através dos parâmetros opcionais `$skip` e `$take`. |
 | `/intentions/{id}/questions/{qid}`| `delete` | Remove uma pergunta com id `qid`.          |
 | `/intentions/{id}/answers`        | `set`    | Cria respostas associadas à intenção `id`. |
-| `/intentions/{id}/answers`      | `get`      | Pesquisa em todas as respostas associadas à intenção `id`. É possível paginar através dos parâmetros opcionais `$skip` e `$take`. |
+| `/intentions/{id}/answers`        | `get`      | Pesquisa em todas as respostas associadas à intenção `id`. É possível paginar através dos parâmetros opcionais `$skip` e `$take`. |
 | `/intentions/{id}/answers/{aid}`  | `delete` | Remove uma resposta com id `aid`.          |
 | `/models`                         | `set`    | Realiza o treinamento ou publicação de um modelo. A ação depende do tipo do recurso enviado (veja na tabela abaixo). |
 | `/models`                         | `get`    | Pesquisa em todos os modelos treinados e/ou publicados. |
 | `/analysis`                       | `set`    | Realiza a análise de uma sentença do usuário através de um modelo publicado. |
+| `/analysis`                       | `get`    | Recupera o histórico de análises realizadas. É possível paginar através dos parâmetros opcionais `$skip` e `$take` e filtrar através de `$filter` utilizando a sintaxe [OData](http://www.odata.org/documentation/odata-version-2-0/uri-conventions/#FilterSystemQueryOption). |
+| `/analysis/{id}/feedback`         | `set`    | Permite fornecer um feedback a uma análise realizada e sugerir uma intenção a mesma para aprimoramento do modelo. |
 
 Os tipos dos recursos são:
 
@@ -43,6 +45,8 @@ Os tipos dos recursos são:
 | Publicação     | `application/vnd.iris.ai.model-publishing+json`       | Solicitação de publicação de um modelo. |
 | Pedido de análise | `application/vnd.iris.ai.analysis-request+json`    | Solicitação de análise de sentença. |
 | Resposta de análise | `application/vnd.iris.ai.analysis-response+json` | Resultado de análise de uma sentença. |
+| Modelo de análise   | `application/vnd.iris.ai.analysis+json`          | Informações históricas de uma análise realizada . |
+| Feedback de análise | `application/vnd.iris.ai.analysis-feedback+json` | Informações de feedback de uma análise realizada. |
 
 
 #### Exemplos
@@ -390,3 +394,49 @@ Resposta em caso de sucesso:
   }
 }
 ```
+
+11 - Listando o histórico das 10 últimas análises realizadas sem feedback:
+```json
+{  
+  "id": "11",
+  "to": "postmaster@ai.msging.net",
+  "method": "get",
+  "uri": "/analysis?$take=10&$filter=feedback%20eq%20none"
+}
+```
+Resposta em caso de sucesso:
+```json
+{
+  "id": "11",
+  "from": "postmaster@ai.msging.net/#irismsging1",
+  "to": "contact@msging.net/default",
+  "method": "get",
+  "status": "success",
+  "type": "application/vnd.lime.collection+json",
+  "resource": {
+    "itemType":"vnd.iris.ai.analysis+json",
+    "items":[
+      {
+        "id": "7363369c-8c99-4293-883f-aaabac7dd822",
+        "requestDateTime": "2017-07-13T12:28:14.040Z",
+        "text": "quero uma pizza marguerita",
+        "intention": "pedir_pizza",
+        "score": 1.0,
+        "intentions": [
+          {
+            "name": "pedir_pizza",
+            "score": 1.0
+          }
+        ],
+        "entities": [
+          {
+            "name": "Sabor",
+            "value": "Marguerita"
+          }
+        ],
+      }
+    ]
+  }
+}
+```
+
