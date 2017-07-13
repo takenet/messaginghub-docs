@@ -414,7 +414,7 @@ Resposta em caso de sucesso:
   "status": "success",
   "type": "application/vnd.lime.collection+json",
   "resource": {
-    "itemType":"vnd.iris.ai.analysis+json",
+    "itemType":"application/vnd.iris.ai.analysis+json",
     "items":[
       {
         "id": "7363369c-8c99-4293-883f-aaabac7dd822",
