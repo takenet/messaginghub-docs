@@ -286,10 +286,34 @@ Resposta em caso de sucesso:
 }
 ```
 
-8 - Analisando uma sentença no modelo padrão (definido no portal):
+8 - Publicando um modelo treinado:
 ```json
 {  
   "id": "8",
+  "to": "postmaster@ai.msging.net",
+  "method": "set",
+  "uri": "/models",
+  "type": "application/vnd.iris.ai.model-publishing+json",
+  "resource": {  
+    "id":"d3190b46-c723-4831-b9e8-fe43c1816f80"
+  }  
+}
+```
+Resposta em caso de sucesso:
+```json
+{
+  "id": "8",
+  "from": "postmaster@ai.msging.net/#irismsging1",
+  "to": "contact@msging.net/default",
+  "method": "set",
+  "status": "success"
+}
+```
+
+9 - Analisando uma sentença no último modelo publicado do provedor padrão (definido no portal):
+```json
+{  
+  "id": "9",
   "to": "postmaster@ai.msging.net",
   "method": "set",
   "uri": "/analysis",
@@ -302,7 +326,7 @@ Resposta em caso de sucesso:
 Resposta em caso de sucesso:
 ```json
 {
-  "id": "8",
+  "id": "9",
   "from": "postmaster@ai.msging.net/#irismsging1",
   "to": "contact@msging.net/default",
   "method": "set",
@@ -326,10 +350,10 @@ Resposta em caso de sucesso:
 }
 ```
 
-9 - Analisando uma sentença em um modelo específico:
+10 - Analisando uma sentença em um modelo publicado específico:
 ```json
 {  
-  "id": "9",
+  "id": "10",
   "to": "postmaster@ai.msging.net",
   "method": "set",
   "uri": "/analysis",
@@ -343,7 +367,7 @@ Resposta em caso de sucesso:
 Resposta em caso de sucesso:
 ```json
 {
-  "id": "9",
+  "id": "10",
   "from": "postmaster@ai.msging.net/#irismsging1",
   "to": "contact@msging.net/default",
   "method": "set",
