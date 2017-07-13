@@ -25,7 +25,7 @@ Toda a manipulação do modelo pode ser feita através do portal do BLiP, podend
 | `/intentions/{id}/questions`      | `get`    | Pesquisa em todas as perguntas associadas à intenção `id`. É possível paginar através dos parâmetros opcionais `$skip` e `$take`. |
 | `/intentions/{id}/questions/{qid}`| `delete` | Remove uma pergunta com id `qid`.          |
 | `/intentions/{id}/answers`        | `set`    | Cria respostas associadas à intenção `id`. |
-| `/intentions/{id}/answers`        | `get`      | Pesquisa em todas as respostas associadas à intenção `id`. É possível paginar através dos parâmetros opcionais `$skip` e `$take`. |
+| `/intentions/{id}/answers`        | `get`    | Pesquisa em todas as respostas associadas à intenção `id`. É possível paginar através dos parâmetros opcionais `$skip` e `$take`. |
 | `/intentions/{id}/answers/{aid}`  | `delete` | Remove uma resposta com id `aid`.          |
 | `/models`                         | `set`    | Realiza o treinamento ou publicação de um modelo. A ação depende do tipo do recurso enviado (veja na tabela abaixo). |
 | `/models`                         | `get`    | Pesquisa em todos os modelos treinados e/ou publicados. |
@@ -35,18 +35,18 @@ Toda a manipulação do modelo pode ser feita através do portal do BLiP, podend
 
 Os tipos dos recursos são:
 
-| Nome           | MIME Type                                             | Descrição                                   |
-|----------------|-------------------------------------------------------|---------------------------------------------|
-| Intenção       | `application/vnd.iris.ai.intention+json`              | Intenção expressada através de uma sentença. |
-| Entidade       | `application/vnd.iris.ai.entity+json`                 | Entidade identificada em uma intenção, com seus sinônimos. |
-| Pergunta       | `application/vnd.iris.ai.question+json`               | Pergunta de um usuário associada a uma intenção para treinamento do modelo. |
-| Resposta       | `application/vnd.iris.ai.answer+json`                 | Resposta que pode ser enviada no caso de identificada uma intenção. |
-| Treinamento    | `application/vnd.iris.ai.model-training+json`         | Solicitação de treinamento de modelo. |
-| Publicação     | `application/vnd.iris.ai.model-publishing+json`       | Solicitação de publicação de um modelo. |
-| Pedido de análise | `application/vnd.iris.ai.analysis-request+json`    | Solicitação de análise de sentença. |
-| Resposta de análise | `application/vnd.iris.ai.analysis-response+json` | Resultado de análise de uma sentença. |
-| Modelo de análise   | `application/vnd.iris.ai.analysis+json`          | Informações históricas de uma análise realizada . |
-| Feedback de análise | `application/vnd.iris.ai.analysis-feedback+json` | Informações de feedback de uma análise realizada. |
+| Nome                | MIME Type                                             | Descrição                                   |
+|---------------------|-------------------------------------------------------|---------------------------------------------|
+| Intenção            | `application/vnd.iris.ai.intention+json`              | Intenção expressada através de uma sentença. |
+| Entidade            | `application/vnd.iris.ai.entity+json`                 | Entidade identificada em uma intenção, com seus sinônimos. |
+| Pergunta            | `application/vnd.iris.ai.question+json`               | Pergunta de um usuário associada a uma intenção para treinamento do modelo. |
+| Resposta            | `application/vnd.iris.ai.answer+json`                 | Resposta que pode ser enviada no caso de identificada uma intenção. |
+| Treinamento         | `application/vnd.iris.ai.model-training+json`         | Solicitação de treinamento de modelo. |
+| Publicação          | `application/vnd.iris.ai.model-publishing+json`       | Solicitação de publicação de um modelo. |
+| Pedido de análise   | `application/vnd.iris.ai.analysis-request+json`       | Solicitação de análise de sentença. |
+| Resposta de análise | `application/vnd.iris.ai.analysis-response+json`      | Resultado de análise de uma sentença. |
+| Análise             | `application/vnd.iris.ai.analysis+json`               | Informações históricas de uma análise realizada . |
+| Feedback de análise | `application/vnd.iris.ai.analysis-feedback+json`      | Informações de feedback de uma análise realizada. |
 
 
 #### Exemplos
@@ -340,6 +340,7 @@ Resposta em caso de sucesso:
     "text":"Quero uma pizza marguerita",
     "intentions":[
       {
+        "id":"pedir_pizza",
         "name":"Pedir pizza",
         "score": 0.95
       }
@@ -381,6 +382,7 @@ Resposta em caso de sucesso:
     "text":"Quero uma pizza marguerita",
     "intentions":[
       {
+        "id":"pedir_pizza",
         "name":"Pedir pizza",
         "score": 0.95
       }
@@ -465,7 +467,6 @@ Resposta em caso de sucesso:
 }
 ```
 
-
 13 - Enviando feedback de rejeitado para uma análise realizada, informando a intenção correta:
 ```json
 {  
@@ -476,7 +477,7 @@ Resposta em caso de sucesso:
   "type":"application/vnd.iris.ai.analysis-feedback+json",
   "resource":{
     "feedback":"rejected",
-    "intentionId":"pedir_pizza"
+    "intentionId":"outra_intencao"
   }  
 }
 ```
