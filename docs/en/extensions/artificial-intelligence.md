@@ -25,11 +25,13 @@ All manipulation of the model can be done through the portal of the BLiP, and th
 | `/intentions/{id}/questions`      | `get`    | Search in all questions that are associated to the intention `id`. It is possible to paginate the request using `$skip` and `$take` arguments. |
 | `/intentions/{id}/questions/{qid}`| `delete` | Removes the question with id `qid`.          |
 | `/intentions/{id}/answers`        | `set`    | Create answers associated to the intention `id`. |
-| `/intentions/{id}/answers`      | `get`      | Search in all answers that are associated to the intention `id`. It is possible to paginate the request using `$skip` and `$take` arguments. |
+| `/intentions/{id}/answers`        | `get`    | Search in all answers that are associated to the intention `id`. It is possible to paginate the request using `$skip` and `$take` arguments. |
 | `/intentions/{id}/answers/{aid}`  | `delete` | Removes the answer with id `aid`.          |
 | `/models`                         | `set`    | Executes the training or publishing of the model. The action depends of the type of the resource (see the table below). |
 | `/models`                         | `get`    | Search in all trained and/or published models. |
 | `/analysis`                       | `set`    | Analyzes an user sentence using a published model. |
+| `/analysis`                       | `get`    | Retrieves the history of performed analysis. It is possible to paginate the request using using `$skip` and `$take` arguments and filter with `$filter`, using the [OData syntax](http://www.odata.org/documentation/odata-version-2-0/uri-conventions/#FilterSystemQueryOption). |
+| `/analysis/{id}/feedback`         | `set`    | Allows provide a feedback to a performed analysis and suggest an intention to improve the model. |
 
 The resource types are:
 
@@ -42,8 +44,9 @@ The resource types are:
 | Training          | `application/vnd.iris.ai.model-training+json`   | Model training request. |
 | Publishing        | `application/vnd.iris.ai.model-publishing+json` | Model publishing request, to make it available for use. |
 | Analisys request  | `application/vnd.iris.ai.analysis-request+json` | Sentence analysis request. |
-| Analisys response | `application/vnd.iris.ai.analysis-response+json` | Sentence analysis response with the identified intentions and entities. |
-
+| Analisys response | `application/vnd.iris.ai.analysis-response+json`| Sentence analysis response with the identified intentions and entities. |
+| Analisys          | `application/vnd.iris.ai.analysis+json`         | History information about a performed analysis.  |
+| Analisys feedback | `application/vnd.iris.ai.analysis-feedback+json`| Feedback information about a performed analysis. |
 
 #### Examples
 
