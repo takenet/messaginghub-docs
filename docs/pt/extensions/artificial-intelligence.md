@@ -318,7 +318,7 @@ Resposta em caso de sucesso:
   "method": "set",
   "uri": "/analysis",
   "type": "application/vnd.iris.ai.analysis-request+json",
-  "uri": {
+  "resource": {
     "text":"Quero uma pizza marguerita"
   }
 }
@@ -358,7 +358,7 @@ Resposta em caso de sucesso:
   "method": "set",
   "uri": "/analysis",
   "type": "application/vnd.iris.ai.analysis-request+json",
-  "uri": {
+  "resource": {
     "text":"Quero uma pizza marguerita",
     "modelId":"fa0aa23b-5c62-4b90-9c13-986148c0d171"
   }
