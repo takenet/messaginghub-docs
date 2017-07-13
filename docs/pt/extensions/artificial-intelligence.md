@@ -149,11 +149,11 @@ Resposta em caso de sucesso:
       "itemType": "application/vnd.iris.ai.intention+json",
       "items": [
         {
-          "id": "55c00a71-7005-448d-b5e4-62fbb4ebb763",
+          "id": "pedir_pizza",
           "name": "Pedir pizza"
         },
         {
-          "id": "dca16c56-b74e-4aec-b153-f9efa2795319",
+          "id": "escolher_sabor",
           "name": "Escolher sabor"
         }
       ]
@@ -167,7 +167,7 @@ Resposta em caso de sucesso:
   "id": "4",
   "to": "postmaster@ai.msging.net",
   "method": "set",
-  "uri": "/intentions/55c00a71-7005-448d-b5e4-62fbb4ebb763/questions",
+  "uri": "/intentions/pedir_pizza/questions",
   "type": "application/vnd.lime.collection+json",
   "resource": {
     "itemType": "application/vnd.iris.ai.question+json",
@@ -202,7 +202,7 @@ Resposta em caso de sucesso:
   "id": "5",
   "to": "postmaster@ai.msging.net",
   "method": "set",
-  "uri": "/intentions/55c00a71-7005-448d-b5e4-62fbb4ebb763/answers",
+  "uri": "/intentions/pedir_pizza /answers",
   "type": "application/vnd.lime.collection+json",
   "resource": {
     "itemType": "application/vnd.iris.ai.answer+json",
@@ -420,11 +420,12 @@ Resposta em caso de sucesso:
         "id": "7363369c-8c99-4293-883f-aaabac7dd822",
         "requestDateTime": "2017-07-13T12:28:14.040Z",
         "text": "quero uma pizza marguerita",
-        "intention": "pedir_pizza",
+        "intention": "Pedir pizza",
         "score": 1.0,
         "intentions": [
           {
-            "name": "pedir_pizza",
+            "id": "pedir_pizza",
+            "name": "Pedir pizza",
             "score": 1.0
           }
         ],
@@ -440,3 +441,52 @@ Resposta em caso de sucesso:
 }
 ```
 
+12 - Enviando feedback de sucesso para uma análise realizada:
+```json
+{  
+  "id":"12",
+  "to":"postmaster@ai.msging.net",
+  "method":"set",
+  "uri":"/analysis/7363369c-8c99-4293-883f-aaabac7dd822/analysis",
+  "type":"application/vnd.iris.ai.analysis-feedback+json",
+  "resource":{
+    "feedback":"approved"
+  }  
+}
+```
+Resposta em caso de sucesso:
+```json
+{
+  "id": "12",
+  "from": "postmaster@ai.msging.net/#irismsging1",
+  "to": "contact@msging.net/default",
+  "method": "set",
+  "status": "success"  
+}
+```
+
+
+13 - Enviando feedback de rejeitado para uma análise realizada, informando a intenção correta:
+```json
+{  
+  "id":"13",
+  "to":"postmaster@ai.msging.net",
+  "method":"set",
+  "uri":"/analysis/7363369c-8c99-4293-883f-aaabac7dd822/analysis",
+  "type":"application/vnd.iris.ai.analysis-feedback+json",
+  "resource":{
+    "feedback":"rejected",
+    "intentionId":"pedir_pizza"
+  }  
+}
+```
+Resposta em caso de sucesso:
+```json
+{
+  "id": "13",
+  "from": "postmaster@ai.msging.net/#irismsging1",
+  "to": "contact@msging.net/default",
+  "method": "set",
+  "status": "success"  
+}
+```
