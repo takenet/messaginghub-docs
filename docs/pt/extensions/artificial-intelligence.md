@@ -347,6 +347,7 @@ Resposta em caso de sucesso:
     ],
     "entities":[
       {
+        "id":"sabor",
         "name":"Sabor",
         "value": "Marguerita"
       }
@@ -389,6 +390,7 @@ Resposta em caso de sucesso:
     ],
     "entities":[
       {
+        "id":"sabor",
         "name":"Sabor",
         "value": "Marguerita"
       }
@@ -433,6 +435,7 @@ Resposta em caso de sucesso:
         ],
         "entities": [
           {
+            "id": "sabor",
             "name": "Sabor",
             "value": "Marguerita"
           }
