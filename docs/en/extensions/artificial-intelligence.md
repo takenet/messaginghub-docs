@@ -346,6 +346,7 @@ Response on success:
     ],
     "entities":[
       {
+        "id":"flavor",
         "name":"Flavor",
         "value":"Pepperoni"
       }
@@ -388,6 +389,7 @@ Response on success:
     ],
     "entities":[
       {
+        "id":"flavor",
         "name":"Flavor",
         "value":"Pepperoni"
       }
@@ -432,6 +434,7 @@ Response on success:
         ],
         "entities": [
           {
+            "id":"flavor",
             "name":"Flavor",
             "value":"Pepperoni"
           }
