@@ -93,7 +93,7 @@ Resposta em caso de sucesso:
   "status": "success",
   "type": "application/vnd.iris.ai.entity+json",
   "resource": {
-      "id": "838e14f5-0ca1-42a3-924e-962ff1b363e6"
+      "id": "sabor"
   }
 }
 ```
@@ -121,7 +121,7 @@ Resposta em caso de sucesso:
   "status": "success",
   "type": "application/vnd.iris.ai.intention+json",
   "resource": {
-      "id": "55c00a71-7005-448d-b5e4-62fbb4ebb763"
+      "id": "pedir_pizza"
   }  
 }
 ```
