@@ -1,3 +1,13 @@
 ### FAQ
 
 O modelo FAQ (*Frequently Asked Questions* ou Perguntas frequentes) permite a criação de um chatbot simples que consegue responder perguntas feitas pelos clientes através de um modelo de **inteligência artificial**. 
+
+#### Criando um chatbot FAQ
+
+Para utilizar o FAQ, primeiramente é necessário criar um novo chatbot com este modelo. Para isso, vá até a [listagem de chatbots](http://portal.blip.ai/#/application) e escolha a opção **Criar chatbot** e escolha a opção **FAQ**.
+
+<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/pt/templates/faq1.png" />
+
+Depois disso, é necessário configurar a sensibilidade do chatbot em relação as perguntas recebidas, definindo o valor mínimo de *score* (relação de aderência entre a pergunta e uma intenção) para uma intenção encontrada pelo provedor de IA. Na prática, isso significa que quanto menor este valor, **mais o chatbot tentará utilizar uma intenção cadastrada no seu modelo para responder as perguntas**, mesmo que as mesmas não sejam totalmente relacionadas a pergunta realizada. E quanto maior este valor, as perguntas diferentes poderão receber a resposta associada a intenção padrão (ex: *"Não entendi o que você quis dizer"*).
+
+<img width="600px" src="https://github.com/takenet/messaginghub-docs/raw/master/docs/pt/templates/faq2.png" />
