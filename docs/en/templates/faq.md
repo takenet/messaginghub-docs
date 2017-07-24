@@ -14,4 +14,4 @@ After that, it is required to configure the chatbot sensitivity in relation to t
 
 Scroll the bar to set the wanted value and press **Save**.
 
-From there, you need to define and train the artificial intelligence model to begin receiving customer responses. See this [BLiP blog post] (https://translate.google.com.br/translate?sl=pt&tl=en&js=y&prev=_t&hl=pt-BR&ie=UTF-8&u=http%3A%2F%2Fblog.blip.ai%2F2017%2F07%2F20%2Fnovidades-plataforma.html&edit-text=&act=url) to learn more about setting up your model. Finally, just publish the chatbot on the preference channel to start receiving messages from your customers.
+From there, you need to define and train the artificial intelligence model to begin receiving customer responses. See this [BLiP blog post](https://translate.google.com.br/translate?sl=pt&tl=en&js=y&prev=_t&hl=pt-BR&ie=UTF-8&u=http%3A%2F%2Fblog.blip.ai%2F2017%2F07%2F20%2Fnovidades-plataforma.html&edit-text=&act=url) to learn more about setting up your model. Finally, just publish the chatbot on the preference channel to start receiving messages from your customers.
