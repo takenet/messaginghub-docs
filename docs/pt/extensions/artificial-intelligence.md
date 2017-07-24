@@ -476,7 +476,7 @@ Resposta em caso de sucesso:
   "id":"13",
   "to":"postmaster@ai.msging.net",
   "method":"set",
-  "uri":"/analysis/7363369c-8c99-4293-883f-aaabac7dd822/analysis",
+  "uri":"/analysis/7363369c-8c99-4293-883f-aaabac7dd822/feedback",
   "type":"application/vnd.iris.ai.analysis-feedback+json",
   "resource":{
     "feedback":"rejected",
