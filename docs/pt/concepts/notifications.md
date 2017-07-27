@@ -38,6 +38,9 @@ E uma falha no servidor:
   "reason": {
     "code": 42,
     "description": "Destination not found"
+  },
+  "metadata": {
+    "#message.to": "551199991111@0mn.io/182310923192"
   }
 }
 
