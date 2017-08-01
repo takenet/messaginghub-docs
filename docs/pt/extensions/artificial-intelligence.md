@@ -25,24 +25,28 @@ Toda a manipulação do modelo pode ser feita através do portal do BLiP, podend
 | `/intentions/{id}/questions`      | `get`    | Pesquisa em todas as perguntas associadas à intenção `id`. É possível paginar através dos parâmetros opcionais `$skip` e `$take`. |
 | `/intentions/{id}/questions/{qid}`| `delete` | Remove uma pergunta com id `qid`.          |
 | `/intentions/{id}/answers`        | `set`    | Cria respostas associadas à intenção `id`. |
-| `/intentions/{id}/answers`      | `get`      | Pesquisa em todas as respostas associadas à intenção `id`. É possível paginar através dos parâmetros opcionais `$skip` e `$take`. |
+| `/intentions/{id}/answers`        | `get`    | Pesquisa em todas as respostas associadas à intenção `id`. É possível paginar através dos parâmetros opcionais `$skip` e `$take`. |
 | `/intentions/{id}/answers/{aid}`  | `delete` | Remove uma resposta com id `aid`.          |
 | `/models`                         | `set`    | Realiza o treinamento ou publicação de um modelo. A ação depende do tipo do recurso enviado (veja na tabela abaixo). |
 | `/models`                         | `get`    | Pesquisa em todos os modelos treinados e/ou publicados. |
 | `/analysis`                       | `set`    | Realiza a análise de uma sentença do usuário através de um modelo publicado. |
+| `/analysis`                       | `get`    | Recupera o histórico de análises realizadas. É possível paginar através dos parâmetros opcionais `$skip` e `$take` e filtrar através de `$filter` utilizando a sintaxe [OData](http://www.odata.org/documentation/odata-version-2-0/uri-conventions/#FilterSystemQueryOption). |
+| `/analysis/{id}/feedback`         | `set`    | Permite fornecer um feedback a uma análise realizada e sugerir uma intenção a mesma para aprimoramento do modelo. |
 
 Os tipos dos recursos são:
 
-| Nome           | MIME Type                                             | Descrição                                   |
-|----------------|-------------------------------------------------------|---------------------------------------------|
-| Intenção       | `application/vnd.iris.ai.intention+json`              | Intenção expressada através de uma sentença. |
-| Entidade       | `application/vnd.iris.ai.entity+json`                 | Entidade identificada em uma intenção, com seus sinônimos. |
-| Pergunta       | `application/vnd.iris.ai.question+json`               | Pergunta de um usuário associada a uma intenção para treinamento do modelo. |
-| Resposta       | `application/vnd.iris.ai.answer+json`                 | Resposta que pode ser enviada no caso de identificada uma intenção. |
-| Treinamento    | `application/vnd.iris.ai.model-training+json`         | Solicitação de treinamento de modelo. |
-| Publicação     | `application/vnd.iris.ai.model-publishing+json`       | Solicitação de publicação de um modelo. |
-| Pedido de análise | `application/vnd.iris.ai.analysis-request+json`    | Solicitação de análise de sentença. |
-| Resposta de análise | `application/vnd.iris.ai.analysis-response+json` | Resultado de análise de uma sentença. |
+| Nome                | MIME Type                                             | Descrição                                   |
+|---------------------|-------------------------------------------------------|---------------------------------------------|
+| Intenção            | `application/vnd.iris.ai.intention+json`              | Intenção expressada através de uma sentença. |
+| Entidade            | `application/vnd.iris.ai.entity+json`                 | Entidade identificada em uma intenção, com seus sinônimos. |
+| Pergunta            | `application/vnd.iris.ai.question+json`               | Pergunta de um usuário associada a uma intenção para treinamento do modelo. |
+| Resposta            | `application/vnd.iris.ai.answer+json`                 | Resposta que pode ser enviada no caso de identificada uma intenção. |
+| Treinamento         | `application/vnd.iris.ai.model-training+json`         | Solicitação de treinamento de modelo. |
+| Publicação          | `application/vnd.iris.ai.model-publishing+json`       | Solicitação de publicação de um modelo. |
+| Pedido de análise   | `application/vnd.iris.ai.analysis-request+json`       | Solicitação de análise de sentença. |
+| Resposta de análise | `application/vnd.iris.ai.analysis-response+json`      | Resultado de análise de uma sentença. |
+| Análise             | `application/vnd.iris.ai.analysis+json`               | Informações históricas de uma análise realizada . |
+| Feedback de análise | `application/vnd.iris.ai.analysis-feedback+json`      | Informações de feedback de uma análise realizada. |
 
 
 #### Exemplos
@@ -89,7 +93,7 @@ Resposta em caso de sucesso:
   "status": "success",
   "type": "application/vnd.iris.ai.entity+json",
   "resource": {
-      "id": "838e14f5-0ca1-42a3-924e-962ff1b363e6"
+      "id": "sabor"
   }
 }
 ```
@@ -117,7 +121,7 @@ Resposta em caso de sucesso:
   "status": "success",
   "type": "application/vnd.iris.ai.intention+json",
   "resource": {
-      "id": "55c00a71-7005-448d-b5e4-62fbb4ebb763"
+      "id": "pedir_pizza"
   }  
 }
 ```
@@ -145,11 +149,11 @@ Resposta em caso de sucesso:
       "itemType": "application/vnd.iris.ai.intention+json",
       "items": [
         {
-          "id": "55c00a71-7005-448d-b5e4-62fbb4ebb763",
+          "id": "pedir_pizza",
           "name": "Pedir pizza"
         },
         {
-          "id": "dca16c56-b74e-4aec-b153-f9efa2795319",
+          "id": "escolher_sabor",
           "name": "Escolher sabor"
         }
       ]
@@ -163,7 +167,7 @@ Resposta em caso de sucesso:
   "id": "4",
   "to": "postmaster@ai.msging.net",
   "method": "set",
-  "uri": "/intentions/55c00a71-7005-448d-b5e4-62fbb4ebb763/questions",
+  "uri": "/intentions/pedir_pizza/questions",
   "type": "application/vnd.lime.collection+json",
   "resource": {
     "itemType": "application/vnd.iris.ai.question+json",
@@ -198,7 +202,7 @@ Resposta em caso de sucesso:
   "id": "5",
   "to": "postmaster@ai.msging.net",
   "method": "set",
-  "uri": "/intentions/55c00a71-7005-448d-b5e4-62fbb4ebb763/answers",
+  "uri": "/intentions/pedir_pizza/answers",
   "type": "application/vnd.lime.collection+json",
   "resource": {
     "itemType": "application/vnd.iris.ai.answer+json",
@@ -286,17 +290,17 @@ Resposta em caso de sucesso:
 }
 ```
 
-8 - Analisando uma sentença no modelo padrão (definido no portal):
+8 - Publicando um modelo treinado:
 ```json
 {  
   "id": "8",
   "to": "postmaster@ai.msging.net",
   "method": "set",
-  "uri": "/analysis",
-  "type": "application/vnd.iris.ai.analysis-request+json",
-  "uri": {
-    "text":"Quero uma pizza marguerita"
-  }
+  "uri": "/models",
+  "type": "application/vnd.iris.ai.model-publishing+json",
+  "resource": {  
+    "id":"d3190b46-c723-4831-b9e8-fe43c1816f80"
+  }  
 }
 ```
 Resposta em caso de sucesso:
@@ -306,18 +310,44 @@ Resposta em caso de sucesso:
   "from": "postmaster@ai.msging.net/#irismsging1",
   "to": "contact@msging.net/default",
   "method": "set",
+  "status": "success"
+}
+```
+
+9 - Analisando uma sentença no último modelo publicado do provedor padrão (definido no portal):
+```json
+{  
+  "id": "9",
+  "to": "postmaster@ai.msging.net",
+  "method": "set",
+  "uri": "/analysis",
+  "type": "application/vnd.iris.ai.analysis-request+json",
+  "resource": {
+    "text":"Quero uma pizza marguerita"
+  }
+}
+```
+Resposta em caso de sucesso:
+```json
+{
+  "id": "9",
+  "from": "postmaster@ai.msging.net/#irismsging1",
+  "to": "contact@msging.net/default",
+  "method": "set",
   "status": "success",
   "type": "application/vnd.iris.ai.analysis-response+json",
   "resource": {
     "text":"Quero uma pizza marguerita",
     "intentions":[
       {
+        "id":"pedir_pizza",
         "name":"Pedir pizza",
         "score": 0.95
       }
     ],
     "entities":[
       {
+        "id":"sabor",
         "name":"Sabor",
         "value": "Marguerita"
       }
@@ -326,15 +356,15 @@ Resposta em caso de sucesso:
 }
 ```
 
-9 - Analisando uma sentença em um modelo específico:
+10 - Analisando uma sentença em um modelo publicado específico:
 ```json
 {  
-  "id": "9",
+  "id": "10",
   "to": "postmaster@ai.msging.net",
   "method": "set",
   "uri": "/analysis",
   "type": "application/vnd.iris.ai.analysis-request+json",
-  "uri": {
+  "resource": {
     "text":"Quero uma pizza marguerita",
     "modelId":"fa0aa23b-5c62-4b90-9c13-986148c0d171"
   }
@@ -343,7 +373,7 @@ Resposta em caso de sucesso:
 Resposta em caso de sucesso:
 ```json
 {
-  "id": "9",
+  "id": "10",
   "from": "postmaster@ai.msging.net/#irismsging1",
   "to": "contact@msging.net/default",
   "method": "set",
@@ -353,16 +383,114 @@ Resposta em caso de sucesso:
     "text":"Quero uma pizza marguerita",
     "intentions":[
       {
+        "id":"pedir_pizza",
         "name":"Pedir pizza",
         "score": 0.95
       }
     ],
     "entities":[
       {
+        "id":"sabor",
         "name":"Sabor",
         "value": "Marguerita"
       }
     ]
   }
+}
+```
+
+11 - Listando o histórico das 10 últimas análises realizadas sem feedback:
+```json
+{  
+  "id": "11",
+  "to": "postmaster@ai.msging.net",
+  "method": "get",
+  "uri": "/analysis?$take=10&$filter=feedback%20eq%20none"
+}
+```
+Resposta em caso de sucesso:
+```json
+{
+  "id": "11",
+  "from": "postmaster@ai.msging.net/#irismsging1",
+  "to": "contact@msging.net/default",
+  "method": "get",
+  "status": "success",
+  "type": "application/vnd.lime.collection+json",
+  "resource": {
+    "itemType":"application/vnd.iris.ai.analysis+json",
+    "items":[
+      {
+        "id": "7363369c-8c99-4293-883f-aaabac7dd822",
+        "requestDateTime": "2017-07-13T12:28:14.040Z",
+        "text": "quero uma pizza marguerita",
+        "intention": "Pedir pizza",
+        "score": 1.0,
+        "intentions": [
+          {
+            "id": "pedir_pizza",
+            "name": "Pedir pizza",
+            "score": 1.0
+          }
+        ],
+        "entities": [
+          {
+            "id": "sabor",
+            "name": "Sabor",
+            "value": "Marguerita"
+          }
+        ],
+      }
+    ]
+  }
+}
+```
+
+12 - Enviando feedback de sucesso para uma análise realizada:
+```json
+{  
+  "id":"12",
+  "to":"postmaster@ai.msging.net",
+  "method":"set",
+  "uri":"/analysis/7363369c-8c99-4293-883f-aaabac7dd822/feedback",
+  "type":"application/vnd.iris.ai.analysis-feedback+json",
+  "resource":{
+    "feedback":"approved"
+  }  
+}
+```
+Resposta em caso de sucesso:
+```json
+{
+  "id": "12",
+  "from": "postmaster@ai.msging.net/#irismsging1",
+  "to": "contact@msging.net/default",
+  "method": "set",
+  "status": "success"  
+}
+```
+
+13 - Enviando feedback de rejeitado para uma análise realizada, informando a intenção correta:
+```json
+{  
+  "id":"13",
+  "to":"postmaster@ai.msging.net",
+  "method":"set",
+  "uri":"/analysis/7363369c-8c99-4293-883f-aaabac7dd822/feedback",
+  "type":"application/vnd.iris.ai.analysis-feedback+json",
+  "resource":{
+    "feedback":"rejected",
+    "intentionId":"outra_intencao"
+  }  
+}
+```
+Resposta em caso de sucesso:
+```json
+{
+  "id": "13",
+  "from": "postmaster@ai.msging.net/#irismsging1",
+  "to": "contact@msging.net/default",
+  "method": "set",
+  "status": "success"  
 }
 ```
