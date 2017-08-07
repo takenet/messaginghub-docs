@@ -2,7 +2,7 @@
 
 > **Prerequisitos:**
 
-- *Visual Studio 2015 Update 1*, ou superior.
+- *Visual Studio 2017*, ou superior.
 - *.NET Framework 4.6.1*.
 
 No Visual Studio, crie um projeto do tipo *Class library*.
