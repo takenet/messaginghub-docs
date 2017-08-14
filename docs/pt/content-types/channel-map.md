@@ -23,6 +23,7 @@ O BLiP oferece acesso aos recursos ricos em um conjunto amplo de canais de mensa
 | Conteúdo Nativo         | <img src="channels/oval.png" title="Não Suportado"/> | <img src="channels/check.png" title="Disponível"/> | <img src="channels/oval.png" title="Não Suportado"/> | <img src="channels/oval.png" title="Não Suportado"/> | <img src="channels/oval.png" title="Não Suportado"/> | <img src="channels/oval.png" title="Não Suportado"/> |
 
 Sem as imagens:
+
 | Tipos de Conteudo       | Blip Channel | Messenger | Telegram | SMS  | Skype | Email |
 | ----------------------- | :----------: | :-------: | :------: | :--: | :---: | :---: |
 | Texto                   | Sim          | Sim       | Sim      | Sim  | Sim   | Sim   |
