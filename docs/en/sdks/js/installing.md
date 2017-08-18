@@ -4,7 +4,7 @@
 
 If you are using `node.js` (or `webpack`), it's necessary install `messaginghub-client` package (via npm) to access the BLiP MessagingHub server.
 
-    npm install --save messaginghub-client
+    npm install --save messaginghub-client lime-transport-websocket
 
 #### Browser
 
