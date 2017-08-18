@@ -9,17 +9,21 @@ Você precisará de um identificador e uma chave de acesso para sua aplicação,
 Para instanciar o cliente, utilize a classe `ClientBuilder`, informando o `identificador` e `chave de acesso` obtidos:
 
 ```javascript
+// Importa as dependências
+let MessagingHub = require('messaginghub-client');
+let WebSocketTransport = require('lime-transport-websocket');
 
 // Cria uma instância do cliente, informando o identifier e accessKey do seu chatbot 
-var client = new ClientBuilder()
-    .withIdentifier(identifier)
-    .withAccessKey(accessKey)
+let client = new MessagingHub.ClientBuilder()
+    .withIdentifier({Identifier})
+    .withAccessKey({AccessKey})
     .withTransportFactory(() => new WebSocketTransport())
     .build();
 
 // Registra um receiver para mensagens do tipo 'text/plain'
-client.addMessageReceiver('text/plain', function(message) {
-  // TODO: Processe a mensagem recebida
+client.addMessageReceiver(true, function (message) {
+    // TODO: Processe a mensagem recebida
+    console.log(message);
 });
 
 // Registra um receiver para qualquer notificação
@@ -28,12 +32,16 @@ client.addNotificationReceiver(true, function(notification) {
 });
 
 // Conecta com o servidor de forma assíncrona. 
-// A conexão ocorre via websocket, na porta 8081.
-client.connect() // O retorno deste método é uma 'promise'.
-    .then(function(session) { 
+// A conexão ocorre via websocket, na porta 443.
+client.connect()  // O retorno deste método é uma 'promise'.
+    .then(function (session) {
         // Conexão bem sucedida. A partir deste momento, é possível enviar e receber envelopes do servidor. */ 
-        })  
-    .catch(function(err) { /* Falha de conexão. */ }); 
+        console.log('Connectado');
+    })
+    .catch(function (err) {
+        // Falha na conexão
+        console.log(err);
+    });
 
 ```
 
