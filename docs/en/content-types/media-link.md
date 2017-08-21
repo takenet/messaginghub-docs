@@ -7,6 +7,8 @@ Allows sending and receiving links for multimedia contents. The link can be any 
 
 > Note: The metadata support varies per channel, it may be ignored if not supported.
 
+Some channel allows the definition of the display *aspect ratio* for some media types. For instance, in *Messenger*, you should set the `1:1` value for the `aspectRatio` property to send squared images.
+
 #### Examples
 1 - Sending the link of an image including title, descriptive text and metadata:
 
@@ -20,6 +22,7 @@ Allows sending and receiving links for multimedia contents. The link can be any 
         "text": "Here is a cat image for you!",
         "type": "image/jpeg",
         "uri": "http://2.bp.blogspot.com/-pATX0YgNSFs/VP-82AQKcuI/AAAAAAAALSU/Vet9e7Qsjjw/s1600/Cat-hd-wallpapers.jpg",
+        "aspectRatio": "1:1",
         "size": 227791,
         "previewUri": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS8qkelB28RstsNxLi7gbrwCLsBVmobPjb5IrwKJSuqSnGX4IzX",
         "previewType": "image/jpeg"
