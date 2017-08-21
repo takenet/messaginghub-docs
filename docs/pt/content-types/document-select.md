@@ -19,7 +19,8 @@ Permite o envio de um menu de opções aos clientes, podendo o cabeçalho e as o
                 "title": "Seja bem-vindo ao Chapeleiro Maluco",
                 "text": "Aqui temos o melhor chapéu para sua cabeça.",
                 "type": "image/jpeg",
-                "uri": "http://petersapparel.parseapp.com/img/item100-thumb.png"
+                "uri": "http://petersapparel.parseapp.com/img/item100-thumb.png",
+                "aspectRatio": "1:1"
             }
         },
         "options": [
