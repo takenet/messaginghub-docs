@@ -15,9 +15,19 @@ Abaixo estão mapeados alguns componentes do SDK antigo com os respectivos no no
 
 **Interfaces**:
 
-| Antigo                                                      | Novo                                                |
-|-------------------------------------------------------------|-----------------------------------------------------|
-| `Takenet.MessagingHub.Client.Sender.IMessagingHubSender`    | `Take.Blip.Client.ISender`                          |
-| `Takenet.MessagingHub.Client.Listener.IMessageReceiver`     | `Take.Blip.Client.IMessageReceiver`                 |
+| Antigo                                                       | Novo                                                |
+|--------------------------------------------------------------|-----------------------------------------------------|
+| `Takenet.MessagingHub.Client.Sender.IMessagingHubSender`     | `Take.Blip.Client.ISender`                          |
+| `Takenet.MessagingHub.Client.Listener.IMessageReceiver`      | `Take.Blip.Client.IMessageReceiver`                 |
+| `Takenet.MessagingHub.Client.Listener.INotificationReceiver` | `Take.Blip.Client.INotificationReceiver`            |
+| `Takenet.MessagingHub.Client.Listener.ICommandReceiver`      | `Take.Blip.Client.ICommandReceiver`                 |
+| `Takenet.MessagingHub.Client.Extensions.*`                   | `Take.Blip.Client.Extensions.*`                     |
 
-> Nota: Na maior parte dos métodos da nova versão, é obrigatório informar um `cancellationToken` para garantir o cancelamento correto das operações assíncronas e evitar o congelamento do processo.
+**Métodos**:
+
+| Antigo                                                  | Novo                                                                      |
+|---------------------------------------------------------|---------------------------------------------------------------------------|
+| `IMessagingHubSender.SendCommandAsync(Command)`         | `Take.Blip.Client.ISender.ProcessCommandAsync(Command, CancellationToken)`|
+| `IMessagingHubSender.SendCommandResponseAsync(Command)` | `Take.Blip.Client.ISender.SendCommandAsync(Command, CancellationToken)`   |
+
+Observação: Na maior parte dos métodos da nova versão, é obrigatório informar um `cancellationToken` para garantir o cancelamento correto das operações assíncronas e evitar o congelamento do processo.
