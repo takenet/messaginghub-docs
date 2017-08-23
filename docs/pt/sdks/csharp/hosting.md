@@ -43,3 +43,14 @@ Para remover o serviço, utilize o comando abaixo:
 dotnet MeuBot.dll --uninstall --service-name NomeDoServico
 ```
 
+#### Hospedando no Linux
+
+Em breve.
+
+#### Hospedando no Docker
+
+Em breve.
+
+#### Hospedando como aplicação web
+
+Em breve.
