@@ -11,19 +11,19 @@ Para realizar a migração de um chatbot que utiliza a versão antiga do SDK (ba
 
 Não é possível reutilizar os projetos antigos pois os mesmos se baseiam na versão antiga do `.csproj` do .NET, que é incompatível com projetos .NET Standard / .NET Core utilizados no novo SDK do BLiP.
 
-Abaixo estão mapeados alguns componentes do SDK antigo com os respectivos no novo SDK:
-
-**Interfaces**:
+#### Mapeamento de tipos
 
 | Antigo                                                       | Novo                                                |
 |--------------------------------------------------------------|-----------------------------------------------------|
+| `Takenet.MessagingHub.Client.IMessagingHubClient`            | `Take.Blip.Client.IBlipClient`                      |
+| `Takenet.MessagingHub.Client.Sender.IMessagingHubSender`     | `Take.Blip.Client.ISender`                          |
 | `Takenet.MessagingHub.Client.Sender.IMessagingHubSender`     | `Take.Blip.Client.ISender`                          |
 | `Takenet.MessagingHub.Client.Listener.IMessageReceiver`      | `Take.Blip.Client.IMessageReceiver`                 |
 | `Takenet.MessagingHub.Client.Listener.INotificationReceiver` | `Take.Blip.Client.INotificationReceiver`            |
 | `Takenet.MessagingHub.Client.Listener.ICommandReceiver`      | `Take.Blip.Client.ICommandReceiver`                 |
 | `Takenet.MessagingHub.Client.Extensions.*`                   | `Take.Blip.Client.Extensions.*`                     |
 
-**Métodos**:
+#### Mapeamento de métodos
 
 | Antigo                                                  | Novo                                                                      |
 |---------------------------------------------------------|---------------------------------------------------------------------------|
@@ -31,3 +31,11 @@ Abaixo estão mapeados alguns componentes do SDK antigo com os respectivos no no
 | `IMessagingHubSender.SendCommandResponseAsync(Command)` | `Take.Blip.Client.ISender.SendCommandAsync(Command, CancellationToken)`   |
 
 Observação: Na maior parte dos métodos da nova versão, é obrigatório informar um `cancellationToken` para garantir o cancelamento correto das operações assíncronas e evitar o congelamento do processo.
+
+#### Executando
+
+No template do SDK antigo, o projeto era baseado em uma *Class library*, sendo hosteado pelo utilitário `mhh.exe`, que não existe mais na nova versão. Isso é pelo fato do novo SDK ser multiplataforma e o executável `mhh.exe` ser exclusivo para Windows. No novo template, o chatbot é criado como um `console application`. Apesar disso, é possível instalá-lo como serviço Windows, de forma semelhante ao SDK antigo. Veja mais detalhes na seção **Hospedagem** desta documentação.
+
+Mas caso deseje que seu chatbot seja ainda um *Class library* por qualquer motivo, utilize o template `blip-class-library` ao criar o projeto. Para executar o chatbot neste caso, será necessário um projeto host. O mesmo pode ser criado através do template `blip-console-host`.
+
+
