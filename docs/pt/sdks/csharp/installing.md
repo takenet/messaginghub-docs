@@ -12,7 +12,7 @@ dotnet --version
 
 O resultado deve ser `2.0.0` ou uma versão mais recente.
 
-#### Instalando o template de projeto
+#### Utilizando o template de projeto
 
 O BLiP utiliza templates do `dotnet` para acelerar a criação dos projetos. Para utilizar os templates é necessário, antes de tudo, instalar os templates do BLiP em sua máquina. Utilize o seguinte comando para isso:
 
@@ -59,3 +59,47 @@ E para executar:
 dotnet run
 ```
 
+#### Utilizando programaticamente
+
+Você pode optar em não utilizar o template do BLiP e programaticamente criar e configurar seu chatbot, utilizando o cliente apenas para recebimento e envio de mensagens, notificações e comandos. Neste caso, basta instalar o [pacote](https://www.nuget.org/packages/Take.Blip.Client) do cliente, utilizando o seguinte comando:
+
+```
+dotnet add package Take.Blip.Client
+```
+
+Para construir uma instância do cliente, utilize a classe `BlipClientBuilder`, informando as configurações do seu chatbot nos métodos desta classe e por fim, chamando o método `Build()` para receber uma instância de `IBlipClient`, que representa a conexão com a plataforma.
+
+```csharp
+// Constroi um novo cliente com o identifier e access key
+var client = new BlipClientBuilder()
+    .UsingAccessKey("mybot", "V01WNEJtVDBvRVRod1Bycm11Umw=")
+    .Build();
+
+// Inicializa o cliente, registrando handlers para recebimento dos envelopes
+await client.StartAsync(
+    m =>
+    {
+        Console.WriteLine("Message '{0}' received from '{1}': {2}", m.Id, m.From, m.Content);
+        return TaskUtil.TrueCompletedTask;
+    },
+    n =>
+    {
+        Console.WriteLine("Notification '{0}' received from '{1}': {2}", n.Id, n.From, n.Event);
+        return TaskUtil.TrueCompletedTask;
+    },
+    c =>
+    {
+        Console.WriteLine("Command '{0}' received from '{1}': {2} {3}", c.Id, c.From, c.Method, c.Uri);
+        return TaskUtil.TrueCompletedTask;
+    },
+    cancellationToken);
+
+Console.WriteLine("Client started. Press enter to stop.");
+Console.ReadLine();
+
+// Finaliza a conexão
+await client.StopAsync(cancellationToken);
+
+Console.WriteLine("Client stopped. Press enter to exit.");
+Console.ReadLine();
+```
