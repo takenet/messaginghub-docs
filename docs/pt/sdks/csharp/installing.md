@@ -22,8 +22,8 @@ dotnet new -i Take.Blip.Client.Templates::*
 
 A partir daí, é possível criar projetos utilizando os templates do BLiP. Os templates suportados são:
 
-- `blip-console` - Executa a aplicação como um `console application`
-- `blip-web` - Executa a aplicação como um `ASP.NET Core application` (experimental)
+- `blip-console` - Executa a aplicação como um `console application`. 
+- `blip-web` - Executa a aplicação como um `ASP.NET Core application` (experimental). Para utilizar este template, seu chatbot precisa de ser do tipo **Webhook**.
 
 O próximo passo é criar o diretório para seu chatbot e criar um novo projeto a partir do template:
 
