@@ -65,10 +65,10 @@ Para executar a partir do código-fonte:
 dotnet run
 ```
 
-Se quiser executar a partir dos binários (disponíveis no diretório `./bin/Release`, por exemplo), execute:
+E se quiser executar a partir dos binários compilados, execute:
 
 ```
-dotnet MeuBot.dll
+dotnet ./bin/Release/MeuBot.dll
 ```
 
 #### Utilizando programaticamente
