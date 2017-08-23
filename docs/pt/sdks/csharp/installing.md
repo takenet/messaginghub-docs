@@ -14,16 +14,20 @@ O resultado deve ser `2.0.0` ou uma versão mais recente.
 
 #### Utilizando o template de projeto
 
-O BLiP utiliza templates do `dotnet` para acelerar a criação dos projetos. Para utilizar os templates é necessário, antes de tudo, instalar os templates do BLiP em sua máquina. Utilize o seguinte comando para isso:
+O BLiP utiliza [templates do `dotnet`](https://github.com/dotnet/templating) para acelerar a criação dos projetos. Para utilizar os templates é necessário, antes de tudo, instalar os templates do BLiP em sua máquina. Utilize o seguinte comando para isso:
 
 ```
 dotnet new -i Take.Blip.Client.Templates::*
 ```
 
-A partir daí, é possível criar projetos utilizando os templates do BLiP. Os templates suportados são:
+A instalação dos templates do BLiP precisa ser feita *apenas uma vez*, mas pode ser repetido caso queira atualizar os templates instalados para versões mais novas. A partir daí, é possível criar projetos utilizando os templates. 
 
-- `blip-console` - Executa a aplicação como um `console application`. 
-- `blip-web` - Executa a aplicação como um `ASP.NET Core application` (experimental). Para utilizar este template, seu chatbot precisa de ser do tipo **Webhook**.
+Os templates disponíveis atualmente são:
+
+- `blip-console` - Cria o chatbot como um *Console Application*. É o template que **deve ser utilizado para a maioria dos casos**.
+- `blip-web` - Cria o chatbot como um *ASP.NET Core application* (experimental). Para utilizar este template, seu chatbot precisa de ser do tipo **Webhook**.
+- `blip-class-library` - Cria um projeto de chatbot como um *Class Library*, que não pode ser executado diretamente. Pode ser útil caso seu chatbot precise ter mais de um host simultâneamente (ex: *console* e *web*).
+- `blip-console-host` - Cria um projeto do do tipo *Console Application* apenas para hospedar projetos do tipo *Class library*.
 
 O próximo passo é criar o diretório para seu chatbot e criar um novo projeto a partir do template:
 
