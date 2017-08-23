@@ -2,9 +2,11 @@
 
 Neste tutorial, será demonstrado uma forma de construir um chatbot que responde automaticamente comandos de texto enviados pelos usuários.
 
-O primeiro passo é, no Visual Studio, criar um novo projeto do tipo *Class Library* e instalar o pacote do SDK via **NuGet**, através do comando:
+O primeiro passo é, na linha de comando, criar um novo projeto utilizando o template `blip-console`, através do comando:
 
-    Install-Package Takenet.MessagingHub.Client.Template
+```
+dotnet new blip-console
+```
   
 Desta forma, é adicionado ao projeto entre outras dependências, o arquivo `application.json`, onde ficam registrados os *receivers* de mensagens e notificações. Os **receivers** são as entidades responsáveis por processar as mensagens e notificações recebidas realizando ações específicas (invocando APIs, salvando informações no banco de dados, etc.) e, se necessário, enviar uma resposta ao usuário.
 
@@ -136,11 +138,11 @@ Aqui retornamos um tipo complexo `MediaLink` com uma imagem. A terceira opção 
 ```csharp
     public class DateMessageReceiver : IMessageReceiver
     {
-        private readonly IMessagingHubSender _sender;
+        private readonly ISender _sender;
         private readonly CultureInfo _cultureInfo;
         private readonly string _messageTemplate;
 
-        public DateMessageReceiver(IMessagingHubSender sender, IDictionary<string, object> settings)
+        public DateMessageReceiver(ISender sender, IDictionary<string, object> settings)
         {
             _sender = sender;
             if (settings.ContainsKey("culture"))
@@ -155,7 +157,7 @@ Aqui retornamos um tipo complexo `MediaLink` com uma imagem. A terceira opção 
             _messageTemplate = (string)settings["message"];
         }
 
-        public Task ReceiveAsync(Message envelope, CancellationToken cancellationToken = new CancellationToken())
+        public Task ReceiveAsync(Message envelope, CancellationToken cancellationToken)
         {
             return _sender.SendMessageAsync(string.Format(_messageTemplate, DateTime.Now.ToString("g", _cultureInfo)), envelope.From, cancellationToken);
         }
@@ -187,4 +189,4 @@ Por fim, imagine que seu chatbot deve retornar uma mensagem de erro estática no
     }
 ```    
 
-O código completo deste tuturial pode ser encontrado no [Github](https://github.com/takenet/messaginghub-client-csharp/tree/master/src/Samples/Navigation).
+O código completo deste tuturial pode ser encontrado no [Github](https://github.com/takenet/blip-sdk-csharp/tree/master/src/Samples/Navigation).
