@@ -14,9 +14,9 @@ O resultado deve ser `2.0.0` ou uma versão mais recente.
 
 #### Utilizando o template de projeto
 
-O BLiP utiliza [templates do `dotnet`](https://github.com/dotnet/templating) para acelerar a criação dos projetos. Os templates servem para criar a estrutura básica de projetos, incluindo pacotes e arquivos necessários para utilização da aplicação. Por exemplo, o comando `dotnet new mvc` cria um projeto utilizando o template `mvc` que já vem pré-instalado no SDK e serve para criar aplicações *ASP.NET Core MVC*. Se quiser ver quais templates estão instalado no seu computador, execute o comando `dotnet new --list`.
+O BLiP utiliza [templates do `dotnet`](https://github.com/dotnet/templating) para acelerar a criação dos projetos. Os templates servem para criar a estrutura básica de projetos, incluindo pacotes e arquivos necessários para utilização da aplicação. Por exemplo, o comando `dotnet new mvc` cria um projeto utilizando o template `mvc` que já vem pré-instalado no SDK do .NET Core e serve para criar aplicações *ASP.NET Core MVC*. Se quiser ver quais templates estão instalado no seu computador, execute o comando `dotnet new --list`.
 
-Para utilizar os templates do BLiP é necessário, antes de tudo, **instalá-los em seu computador**. Para isso, execute o seguinte comando no interpretador de linha de comandos do seu sistema operacional (Powershell, cmd, bash, terminal, etc.):
+Para utilizar os templates do BLiP é necessário, antes de tudo, **instalá-los em seu computador**. Para isso, execute o seguinte comando no interpretador de linha de comandos do seu sistema operacional (`Powershell`, `cmd`, `bash`, `terminal`, etc.):
 
 ```
 dotnet new -i Take.Blip.Client.Templates::*
