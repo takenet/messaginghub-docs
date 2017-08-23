@@ -1,6 +1,6 @@
 ### Instalação
 
-O SDK C# do BLiP permite a construção de chatbots escaláveis de maneira simples e ágil. O seu código está [aberto no Github](https://github.com/takenet/blip-sdk-csharp) e utiliza como base o .NET Core 2.0, que suporta diversas plataformas, como **Windows**, **Linux** e **Mac**. 
+O SDK C# do BLiP permite a construção de chatbots escaláveis de maneira simples e ágil. O seu código está [aberto no Github](https://github.com/takenet/blip-sdk-csharp) e utiliza como base o **.NET Core**, que suporta diversas plataformas, como **Windows**, **Linux** e **Mac**. 
 
 A versão requerida do SDK do .NET Core é a 2.0 ou superior, que está disponível para instalação [aqui](https://dot.net/core).
 
@@ -33,9 +33,11 @@ cd MeuBot
 dotnet new blip-console
 ```
 
-Desta forma, é criado um projeto `MeuBot.csproj` e todos os arquivos necessários para o funcionamento da sua aplicação. Utilize seu editor favorito para continuar o desenvolvimento.
+Desta forma, é criado um projeto `MeuBot.csproj` e todos os arquivos necessários para o funcionamento da sua aplicação. Os editores sugeridos para trabalhar com o SDK do BLiP são:
 
-> É recomendado utilizar o Visual Studio 2017.3 (Windows) ou Visual Studio Code (Windows, Mac, Linux)
+- Visual Studio 2017 (Atualização 3) - Baixe a versão Community (gratuita) [aqui](https://www.visualstudio.com/vs/community/). Suporta Windows.
+- Visual Studio Code - Editor de código *open-source*, disponível para Windows, Linux e Mac. Baixe [aqui](https://code.visualstudio.com/). É recomendado instalar a extensão C#.
+- Visual Studo for Mac - Editor completo para Mac. Baixe gratis [aqui](https://www.visualstudio.com/vs/visual-studio-mac/).
 
 Na pasta do projeto, é criado o arquivo `application.json` que define todas as configurações da sua aplicação.
 
@@ -46,3 +48,17 @@ Você precisará de um identificador e uma chave de acesso para poder se conecta
 - Pronto, seu chatbot foi criado e o identificador e chave de acesso serão exibidos.
 
 O identificador e a chave de acesso devem ser definidos no arquivo `application.json` do seu projeto.
+
+Para compilar o projeto, execute os seguintes comandos no diretório da aplicação:
+
+```
+dotnet restore
+dotnet build
+```
+
+E para executar:
+
+```
+dotnet run
+```
+
