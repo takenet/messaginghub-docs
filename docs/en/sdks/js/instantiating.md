@@ -22,7 +22,7 @@ client.addMessageReceiver('text/plain', function(message) {
   // TODO: Proccess the received message
 });
 
-// Registra um receiver para qualquer notificação
+// Register a receiver to any notification
 client.addNotificationReceiver(true, function(notification) {
   // TODO: Proccess the received notification
 });
