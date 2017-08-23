@@ -35,9 +35,9 @@ dotnet new blip-console
 
 Desta forma, é criado um projeto `MeuBot.csproj` e todos os arquivos necessários para o funcionamento da sua aplicação. Os editores sugeridos para trabalhar com o SDK do BLiP são:
 
-- Visual Studio 2017 (Atualização 3) - Baixe a versão Community (gratuita) [aqui](https://www.visualstudio.com/vs/community/). Suporta Windows.
-- Visual Studio Code - Editor de código *open-source*, disponível para Windows, Linux e Mac. Baixe [aqui](https://code.visualstudio.com/). É recomendado instalar a extensão C#.
-- Visual Studo for Mac - Editor completo para Mac. Baixe gratis [aqui](https://www.visualstudio.com/vs/visual-studio-mac/).
+- **Visual Studio 2017** (Atualização 3) - IDE para Windows. Baixe a versão Community (gratuita) [aqui](https://www.visualstudio.com/vs/community/).
+- **Visual Studio Code** - Editor de código *open-source*, disponível para Windows, Linux e Mac. Baixe [aqui](https://code.visualstudio.com/). É recomendado instalar a extensão C#.
+- **Visual Studio for Mac** - IDE para Mac. Baixe gratis [aqui](https://www.visualstudio.com/vs/visual-studio-mac/).
 
 Na pasta do projeto, é criado o arquivo `application.json` que define todas as configurações da sua aplicação.
 
