@@ -1,8 +1,8 @@
 ### Instalação
 
-O SDK C# do BLiP permite a construção de chatbots escaláveis de maneira simples e ágil. Seu código está [aberto no Github](https://github.com/takenet/blip-sdk-csharp) e utiliza como base o .NET Core 2.0, que suporta diversas plataformas, como **Windows**, **Linux** e **Mac**. 
+O SDK C# do BLiP permite a construção de chatbots escaláveis de maneira simples e ágil. O seu código está [aberto no Github](https://github.com/takenet/blip-sdk-csharp) e utiliza como base o .NET Core 2.0, que suporta diversas plataformas, como **Windows**, **Linux** e **Mac**. 
 
-A versão requerida do SDK do .NET Core é a 2.0 ou superior, que está disponível [aqui](https://dot.net/core).
+A versão requerida do SDK do .NET Core é a 2.0 ou superior, que está disponível para instalação [aqui](https://dot.net/core).
 
 Para verificar a versão do .NET Core instalada, execute o seguinte comando no shell do sistema operacional:
 
@@ -14,7 +14,7 @@ O resultado deve ser `2.0.0` ou uma versão mais recente.
 
 #### Instalando o template de projeto
 
-O utilitário `dotnet` permite a criação de projetos baseados em templates. É necessário, antes de tudo, instalar os templates do BLiP em sua máquina. Utilize o seguinte comando para isso:
+O BLiP utiliza templates do `dotnet` para acelerar a criação dos projetos. Para utilizar os templates é necessário, antes de tudo, instalar os templates do BLiP em sua máquina. Utilize o seguinte comando para isso:
 
 ```
 dotnet new -i Take.Blip.Client.Templates::*
