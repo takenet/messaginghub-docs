@@ -59,10 +59,16 @@ Para compilar o projeto, execute os seguinte comando no diretório da aplicaçã
 dotnet build
 ```
 
-E para executar:
+Para executar a partir do código-fonte:
 
 ```
 dotnet run
+```
+
+Se quiser executar a partir dos binários (disponíveis no diretório `./bin/Release`, por exemplo), execute:
+
+```
+dotnet MeuBot.dll
 ```
 
 #### Utilizando programaticamente
