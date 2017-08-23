@@ -24,7 +24,7 @@ dotnet new -i Take.Blip.Client.Templates::*
 
 A instalação dos templates do BLiP precisa ser feita *apenas uma vez*, mas pode ser repetido caso queira atualizá-lo para versões mais novas. A partir daí, é possível criar projetos utilizando os templates. 
 
-Os templates do BLi disponíveis atualmente são:
+Os templates do BLiP disponíveis atualmente são:
 
 - `blip-console` - Cria o chatbot como um *Console Application*. É o template que **deve ser utilizado para a maioria dos casos**.
 - `blip-web` - Cria o chatbot como um *ASP.NET Core application* (experimental). Para utilizar este template, seu chatbot precisa de ser do tipo **Webhook**.
