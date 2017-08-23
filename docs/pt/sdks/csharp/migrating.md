@@ -16,7 +16,6 @@ Não é possível reutilizar os projetos antigos pois os mesmos se baseiam na ve
 | Antigo                                                       | Novo                                       |
 |--------------------------------------------------------------|--------------------------------------------|
 | `Takenet.MessagingHub.Client.Sender.IMessagingHubSender`     | `Take.Blip.Client.ISender`                 |
-| `Takenet.MessagingHub.Client.Sender.IMessagingHubSender`     | `Take.Blip.Client.ISender`                 |
 | `Takenet.MessagingHub.Client.Listener.IMessageReceiver`      | `Take.Blip.Client.IMessageReceiver`        |
 | `Takenet.MessagingHub.Client.Listener.INotificationReceiver` | `Take.Blip.Client.INotificationReceiver`   |
 | `Takenet.MessagingHub.Client.Listener.ICommandReceiver`      | `Take.Blip.Client.ICommandReceiver`        |
