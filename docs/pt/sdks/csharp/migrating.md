@@ -32,7 +32,7 @@ Não é possível reutilizar os projetos antigos pois os mesmos se baseiam na ve
 | `IMessagingHubSender.SendCommandAsync(Command)`         | `Take.Blip.Client.ISender.ProcessCommandAsync(Command, CancellationToken)`|
 | `IMessagingHubSender.SendCommandResponseAsync(Command)` | `Take.Blip.Client.ISender.SendCommandAsync(Command, CancellationToken)`   |
 
-Observação: Na maior parte dos métodos da nova versão, é obrigatório informar um `cancellationToken` para garantir o cancelamento correto das operações assíncronas e evitar o congelamento do processo.
+Observação: Na maior parte dos métodos da nova versão, é obrigatório informar um `cancellationToken` para garantir o cancelamento correto das operações assíncronas e evitar o congelamento do processo. Neste caso, passe sempre o `cancellationToken` recebido nos *receivers*.
 
 #### Executando
 
