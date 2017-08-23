@@ -13,15 +13,18 @@ Não é possível reutilizar os projetos antigos pois os mesmos se baseiam na ve
 
 #### Mapeamento de tipos
 
-| Antigo                                                       | Novo                                                |
-|--------------------------------------------------------------|-----------------------------------------------------|
-| `Takenet.MessagingHub.Client.IMessagingHubClient`            | `Take.Blip.Client.IBlipClient`                      |
-| `Takenet.MessagingHub.Client.Sender.IMessagingHubSender`     | `Take.Blip.Client.ISender`                          |
-| `Takenet.MessagingHub.Client.Sender.IMessagingHubSender`     | `Take.Blip.Client.ISender`                          |
-| `Takenet.MessagingHub.Client.Listener.IMessageReceiver`      | `Take.Blip.Client.IMessageReceiver`                 |
-| `Takenet.MessagingHub.Client.Listener.INotificationReceiver` | `Take.Blip.Client.INotificationReceiver`            |
-| `Takenet.MessagingHub.Client.Listener.ICommandReceiver`      | `Take.Blip.Client.ICommandReceiver`                 |
-| `Takenet.MessagingHub.Client.Extensions.*`                   | `Take.Blip.Client.Extensions.*`                     |
+| Antigo                                                       | Novo                                       |
+|--------------------------------------------------------------|--------------------------------------------|
+| `Takenet.MessagingHub.Client.Sender.IMessagingHubSender`     | `Take.Blip.Client.ISender`                 |
+| `Takenet.MessagingHub.Client.Sender.IMessagingHubSender`     | `Take.Blip.Client.ISender`                 |
+| `Takenet.MessagingHub.Client.Listener.IMessageReceiver`      | `Take.Blip.Client.IMessageReceiver`        |
+| `Takenet.MessagingHub.Client.Listener.INotificationReceiver` | `Take.Blip.Client.INotificationReceiver`   |
+| `Takenet.MessagingHub.Client.Listener.ICommandReceiver`      | `Take.Blip.Client.ICommandReceiver`        |
+| `Takenet.MessagingHub.Client.IMessagingHubClient`            | `Take.Blip.Client.IBlipClient`             |
+| `Takenet.MessagingHub.Client.MessagingHubClientBuilder`      | `Take.Blip.Client.BlipClientBuilder`       |
+| `Takenet.MessagingHub.Client.Extensions.*`                   | `Take.Blip.Client.Extensions.*`            |
+| `Takenet.MessagingHub.Client.Listener.*`                     | `Take.Blip.Client.Receivers.*`             |
+| `Takenet.MessagingHub.Client.Host.*`                         | `Take.Blip.Client.Activation.*`            |
 
 #### Mapeamento de métodos
 
