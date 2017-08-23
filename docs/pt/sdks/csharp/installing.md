@@ -49,10 +49,9 @@ Você precisará de um identificador e uma chave de acesso para poder se conecta
 
 O identificador e a chave de acesso devem ser definidos no arquivo `application.json` do seu projeto.
 
-Para compilar o projeto, execute os seguintes comandos no diretório da aplicação:
+Para compilar o projeto, execute os seguinte comando no diretório da aplicação:
 
 ```
-dotnet restore
 dotnet build
 ```
 
