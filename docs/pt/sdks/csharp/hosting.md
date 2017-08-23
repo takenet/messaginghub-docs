@@ -13,7 +13,7 @@ Com o .NET Core, existem duas opções de implantação dos binários de sua apl
 
 Para maiores informações, consulte a documentação do [.NET Core](https://docs.microsoft.com/pt-br/dotnet/core/deploying/).
 
-#### Hospedando como um serviço Windows
+#### Hospedando no Windows
 
 Os chatbots criados através do template `blip-console` podem ser instalados como serviços Windows, caso esteja sendo executado neste sistema operacional. Isso permite que o mesmo continue sua execução em um servidor sem a necessidade de uma sessão de usuário conectada a máquina.
 
