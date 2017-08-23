@@ -9,18 +9,29 @@ Uma conexão *TCP* é estabelecida na porta 443 do servidor do BLiP. Esta conex�
 Com o .NET Core, existem duas opções de implantação dos binários de sua aplicação:
 
 - Dependende de estrutura: Neste modo, é necessário que o SDK do .NET Core (e suas dependências) esteja instalado no servidor de destino. Os binários gerados são portáveis.
-- Autocontida: Neste modo, gera-se os binários nativos do sistema operacional e são inclusas todas as dependências, inclusive o runtime. 
+- Auto-contida: Neste modo, gera-se os binários nativos do sistema operacional e são inclusas todas as dependências, inclusive o runtime. 
 
 Para maiores informações, consulte a documentação do [.NET Core](https://docs.microsoft.com/pt-br/dotnet/core/deploying/).
 
 #### Hospedando como um serviço Windows
 
-Os chatbots criados através do template `blip-console` podem ser instalados como serviços Windows, caso esteja sendo executado neste sistema operacional.Isso permite que o mesmo continue sua execução em um servidor sem a necessidade de uma sessão de usuário conectada a máquina.
+Os chatbots criados através do template `blip-console` podem ser instalados como serviços Windows, caso esteja sendo executado neste sistema operacional. Isso permite que o mesmo continue sua execução em um servidor sem a necessidade de uma sessão de usuário conectada a máquina.
 
-Para isso, basta executar o seguinte comando:
+Para instalar o serviço num projeto *dependente de estrutura*, basta executar o seguinte comando:
+
 ```
-mhh.exe install -serviceName NomeDoServico
+dotnet MeuBot.dll --install --service-name NomeDoServico --service-description "Meu chatbot no BLiP"
 ```
+
+Observação: na implantação *dependende de estrutura*, os projetos do tipo *Console application* o binário compilado tem extensão `.dll`. 
+
+Se tiver utilizando a implantação *auto-contida*, o comando é:
+
+```
+MeuBot.exe --install --service-name NomeDoServico --service-description "Meu chatbot no BLiP"
+```
+
+Lembrando que todo o conteúdo da saída da compilação do seu projeto deve estar presente (ex: pasta `Release` do build). 
 
 O serviço criado pode ser iniciado através do utilitário `services.msc` do Windows ou através do comando `sc`, como abaixo:
 ```
@@ -29,5 +40,6 @@ sc start NomeDoServico
 
 Para remover o serviço, utilize o comando abaixo:
 ```
-mhh.exe uninstall -serviceName NomeDoServico
+dotnet MeuBot.dll --uninstall --service-name NomeDoServico
 ```
+
