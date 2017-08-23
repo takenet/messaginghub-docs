@@ -39,9 +39,7 @@ Desta forma, é criado um projeto `MeuBot.csproj` e todos os arquivos necessári
 - **Visual Studio Code** - Editor de código *open-source*, disponível para Windows, Linux e Mac. Baixe [aqui](https://code.visualstudio.com/). É recomendado instalar a extensão C#.
 - **Visual Studio for Mac** - IDE para Mac. Baixe gratis [aqui](https://www.visualstudio.com/vs/visual-studio-mac/).
 
-Na pasta do projeto, é criado o arquivo `application.json` que define todas as configurações da sua aplicação.
-
-Você precisará de um identificador e uma chave de acesso para poder se conectar ao Messaging Hub. Para obtê-los:
+Você precisará de um identificador e uma chave de acesso para poder se conectar ao BLiP. Para obtê-los:
 - Acesse o [Painel BLiP](https://portal.blip.ai).
 - Na aba `Chatbots` clique em `Criar chatbot`.
 - Etapa escolha a opção `SDK` e preencha as informações solicitadas
