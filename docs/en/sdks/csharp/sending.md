@@ -34,6 +34,6 @@ var command = new Command {
     Uri = new LimeUri("/account")
 };
 
-var response = await _sender.SendCommandAsync(command);
+var response = await _sender.ProcessCommandAsync(command, cancellationToken);
 ```
 For this case, the command response is received on a synchronous way.
