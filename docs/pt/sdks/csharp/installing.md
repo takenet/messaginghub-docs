@@ -73,11 +73,11 @@ dotnet ./bin/Release/MeuBot.dll
 
 Você pode optar em não utilizar o template do BLiP e programaticamente criar e configurar seu chatbot, utilizando o cliente apenas para recebimento e envio de mensagens, notificações e comandos. Neste caso, basta instalar o [pacote](https://www.nuget.org/packages/Take.Blip.Client) do cliente, utilizando o seguinte comando:
 
-> Observação: Todo o restante da documentação do SDK considera que o desenvolvedor está utilizando o template de projeto
-
 ```
 dotnet add package Take.Blip.Client
 ```
+
+> Observação: Todo o restante da documentação do SDK considera que o desenvolvedor está utilizando o template de projeto
 
 Para construir uma instância do cliente, utilize a classe `BlipClientBuilder`, informando as configurações do seu chatbot nos métodos desta classe e por fim, chamando o método `Build()` para receber uma instância de `IBlipClient`, que representa a conexão com a plataforma.
 
@@ -92,7 +92,7 @@ await client.StartAsync(
     m =>
     {
         Console.WriteLine("Message '{0}' received from '{1}': {2}", m.Id, m.From, m.Content);
-        return TaskUtil.TrueCompletedTask;
+        return client.SendMessageAsync("Pong!", message.From, cancellationToken);
     },
     n =>
     {
