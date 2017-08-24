@@ -28,8 +28,6 @@ Os templates do BLiP disponíveis atualmente são:
 
 - `blip-console` - Cria o chatbot como um *Console Application*. É o template que **deve ser utilizado para a maioria dos casos**.
 - `blip-web` - Cria o chatbot como um *ASP.NET Core application* (experimental). Para utilizar este template, seu chatbot precisa de ser do tipo **Webhook**.
-- `blip-class-library` - Cria um projeto de chatbot como um *Class Library*, que não pode ser executado diretamente. Pode ser útil caso seu chatbot precise ter mais de um host simultâneamente (ex: *console* e *web*).
-- `blip-console-host` - Cria um projeto do do tipo *Console Application* apenas para hospedar projetos do tipo *Class library*.
 
 O próximo passo é criar o diretório para seu chatbot e criar um novo projeto a partir do template:
 
