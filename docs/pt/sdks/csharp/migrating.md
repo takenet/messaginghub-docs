@@ -38,6 +38,6 @@ Observação: Na maior parte dos métodos da nova versão, é obrigatório infor
 
 No template do SDK antigo, o projeto era baseado em uma *Class library*, sendo hosteado pelo utilitário `mhh.exe`, que não existe mais na nova versão. Isso é pelo fato do novo SDK ser multiplataforma e o executável `mhh.exe` ser exclusivo para Windows. No novo template, o chatbot é criado como um `console application`. Apesar disso, é possível instalá-lo como serviço Windows, de forma semelhante ao SDK antigo. Veja mais detalhes na seção **Hospedagem** desta documentação.
 
-Mas caso deseje que seu chatbot seja ainda um *Class library* por qualquer motivo, utilize o template `blip-class-library` ao criar o projeto. Para executar o chatbot neste caso, será necessário um projeto host. O mesmo pode ser criado através do template `blip-console-host`.
+Mas caso deseje que seu chatbot seja ainda um *Class library* por qualquer motivo, utilize o template `blip-console` ao criar o projeto e o altere para *Class library*. Para executar o chatbot neste caso, será necessário um outro projeto como host.
 
 
