@@ -20,7 +20,8 @@ Allows sending an options menu to customers where the header and options can be 
                 "title": "Welcome to mad hatter",
                 "text": "Here we have the best hats for your head.",
                 "type": "image/jpeg",
-                "uri": "http://petersapparel.parseapp.com/img/item100-thumb.png"
+                "uri": "http://petersapparel.parseapp.com/img/item100-thumb.png",
+                "aspectRatio": "1:1"
             }
         },
         "options": [

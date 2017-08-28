@@ -1,15 +1,15 @@
 ### Enviar
 
-Para o envio de mensagens e notificações, deve-se utilizar uma instância de `IMessagingHubSender`, que é injetada automaticamente nos construtores dos `receivers` registrados no projeto, além da classe `Startup`.
+Para o envio de mensagens e notificações, deve-se utilizar uma instância de `ISender`, que é injetada automaticamente nos construtores dos `receivers` registrados no projeto, além da classe `Startup`.
 
 Abaixo um exemplo de como responder a uma mensagem recebida:
 
 ```csharp
 public class PlainTextMessageReceiver : IMessageReceiver
 {
-    private readonly IMessagingHubSender _sender;
+    private readonly ISender _sender;
 
-    public PlainTextMessageReceiver(IMessagingHubSender sender)
+    public PlainTextMessageReceiver(ISender sender)
     {
         _sender = sender;
     }
@@ -19,7 +19,7 @@ public class PlainTextMessageReceiver : IMessageReceiver
         // Write the received message to the console
         Console.WriteLine(message.Content.ToString());
         // Responds to the received message
-        _sender.SendMessageAsync("Hi. I just received your message!", message.From, cancellationToken);
+        await _sender.SendMessageAsync("Hi. I just received your message!", message.From, cancellationToken);
     }
 }
 ```
@@ -34,6 +34,6 @@ var command = new Command {
     Uri = new LimeUri("/account")
 };
 
-var response = await _sender.SendCommandAsync(command);
+var response = await _sender.ProcessCommandAsync(command, cancellationToken);
 ```
-Neste caso, a resposta do comando é recebida de forma síncrona, na resposta da chamada do método `SendCommandAsync`.
+Neste caso, a resposta do comando é recebida de forma síncrona, na resposta da chamada do método `ProcessCommandAsync`.

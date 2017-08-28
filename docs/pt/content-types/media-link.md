@@ -7,6 +7,8 @@ Permite o envio e recebimento de links para conteúdos multimídia. O link pode 
 
 > Nota: O suporte a metadados varia por canal podendo ser ignorados se não suportado
 
+Alguns canais suportam a definição do *aspect ratio* para certos tipos de conteúdo. Por exemplo, no *Messenger*, utilize o valor `1:1` na propriedade `aspectRatio` para enviar imagens quadradas.
+
 #### Exemplos
 1 - Enviando o link de uma imagem incluindo título, texto descritivo e metadados:
 ```json
@@ -19,7 +21,8 @@ Permite o envio e recebimento de links para conteúdos multimídia. O link pode 
         "text": "Segue uma imagem de um gato",
         "type": "image/jpeg",
         "uri": "http://2.bp.blogspot.com/-pATX0YgNSFs/VP-82AQKcuI/AAAAAAAALSU/Vet9e7Qsjjw/s1600/Cat-hd-wallpapers.jpg",
-        "size": 227791,
+        "aspectRatio": "1:1",
+        "size": 227791,        
         "previewUri": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS8qkelB28RstsNxLi7gbrwCLsBVmobPjb5IrwKJSuqSnGX4IzX",
         "previewType": "image/jpeg"
     }

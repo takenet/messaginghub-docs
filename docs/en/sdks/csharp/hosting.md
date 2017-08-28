@@ -1,38 +1,57 @@
 ### Hosting
 
-Chatbots created using SDK template must be hosted in a particular user server.
+When chatbot is created via SDK, the hosting is the responsibility of the developer. The environment that the application is hosted needs access to the internet in order for the connection to the server to be established.
 
-When application is started a *TCP* connection is established with BLiP MessagingHub server using the port 55321. All communication is made using [Lime](http://limeprotocol.org/) protocol.
+A *TCP* connection is established on port 443 of the BLiP server. This connection will serve as the transport layer of the [Lime protocol](http://limeprotocol.org/), which is the protocol used for communication.
 
-#### Hosting on IIS
+#### Deployment
 
-The `Takenet.MessagingHub.Client.WebTemplate` package enable to create a chatbot as a ASP.NET aplication and than host it on **IIS**. In fact this package is a **OWIN** *wrapper* to start the BLiP client but without use **HTTP** connection. For this reason you must configure the IIS *application pool* to keep your application alive and not be automatically recycled.
+With .NET Core, there are two options for deploying your application binaries:
 
-In order to use this histing option is necessary create a empty web project. On Visual Studio, click on **File > New > Project...** and then **Visual C#**, choice **ASP.NET Web Application** and use a .NET Framework version **4.6.1** or above. On template window choice a **Empty** option and unmark all options on **Add folders and core references** section.
+- Framework-dependend: In this mode, it is required that the .NET Core SDK (and its dependencies) be installed on the destination server. The generated binaries are portable.
+- Self-contained: In this mode, the native operating system binaries are generated and all dependencies, including the runtime, are included.
 
-A empty project will be created only with *Web.config* file. Now you must install the `Takenet.MessagingHub.Client.WebTemplate` package on **Package Manager Console** using the following command:
+For more information, see the [.NET Core](https://docs.microsoft.com/en-us/dotnet/core/deploying/) documentation.
+
+#### Hosting in Windows
+
+Chatbots created through the `blip-console` template can be installed as Windows services if it is running on this operating system. This allows it to continue running on a server without the need for a machine-connected user session.
+
+To install the service on a *framework-dependent*  project, simply run the following command:
 
 ```
-Install-Package Takenet.MessagingHub.Client.WebTemplate
+dotnet MyBot.dll --install --service-name MyBotServiceName --service-description "My BLiP chatbot"
+```
+NOTE: In Deployment *framework-dependent*, projects of type *Console application* the compiled binary have `.dll` extension.
+
+If you are using the * self-contained * deployment, the command is:
+
+```
+MyBot.exe --install --service-name MyBotServiceName --service-description "My BLiP chatbot"
 ```
 
-After install the package you can create your chatbot and configure the `application.json` file normally. Locally tests can be done using Visual Studio *Debug* (run F5). Can be necessary access the application URL to the application be starter on the first time.
+Remember that all the contents of your project's compilation output must be present (eg: `Release` folder of the build).
 
-#### Hosting as a Windows service
+The service created can be started through the Windows `services.msc` utility or through the` sc` command, as below:
 
-It's possible use `mmh.exe` (installed with `Takenet.MessagingHub.Client.Host` package) tool as a Windows service. Thus, your chatbot can continuously run without any user session.
-
-In order to host your chatbot as a server use the following command:
 ```
-mhh.exe install -serviceName ServiceName
+sc start NomeDoServico
 ```
 
-In order to start a previosly created service use the Windows `services.msc` tool with `sc` command:
+To remove the service, use the following command:
+
 ```
-sc start ServiceName
+dotnet MeuBot.dll --uninstall --service-name MyBotServiceName
 ```
 
-In order to uninstall the service use the following command:
-```
-mhh.exe uninstall -serviceName ServiceName
-```
+#### Hosting on Linux
+
+Coming soon.
+
+#### Hosting on Docker
+
+Coming soon.
+
+#### Hosting as a web application
+
+Coming soon.

@@ -1,5 +1,5 @@
 ### SDK C\# 
 
-If you are a C# developer and want create a chatbot with **BLiP Messaging Hub** so you must use the BLiP SDK C#. It was developed to make easy to send and receive BLiP messages.
+The C# SDK makes easier to build chatbots with BLiP platform. It is based on [.NET Core](https://dot.net/core), which allows the creation of multiplatform chatbots.
 
-Go to [Github](https://github.com/takenet/messaginghub-client-csharp/) to see the source code.
+You can check the SDK source code in [Github](https://github.com/takenet/blip-sdk-csharp/).

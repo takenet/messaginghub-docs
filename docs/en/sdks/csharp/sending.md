@@ -1,13 +1,13 @@
 ### Send
 
-In order to send messages and notifications use an instance of `IMessagingHubSender`, wich is automaticaly injected on constructors of registered `receivers` defined on project and on `Startup` class.
+In order to send messages and notifications use an instance of `ISender`, wich is automaticaly injected on constructors of registered `receivers` defined on project and on `Startup` class.
 
 The sample bellow show how to reply a received message:
 
 ```csharp
 public class PlainTextMessageReceiver : IMessageReceiver
 {
-    private readonly IMessagingHubSender _sender;
+    private readonly ISender _sender;
 
     public PlainTextMessageReceiver(IMessagingHubSender sender)
     {
@@ -26,7 +26,7 @@ public class PlainTextMessageReceiver : IMessageReceiver
 
 The process of send message is asynchronous and the status of sent messages is delivered to application by **notifications**.
 
-`IMessagingHubSender` interface also enable send **commands** to the server, as the follow sample:
+`ISender` interface also enable send **commands** to the server, as the follow sample:
 
 ```csharp
 var command = new Command {
@@ -34,6 +34,6 @@ var command = new Command {
     Uri = new LimeUri("/account")
 };
 
-var response = await _sender.SendCommandAsync(command);
+var response = await _sender.ProcessCommandAsync(command, cancellationToken);
 ```
 For this case, the command response is received on a synchronous way.

@@ -4,9 +4,11 @@
 
 In this tutorial, we will demonstrate a way to build a chatbot that automatically responds to text commands sent by users.
 
-The first step is not Visual Studio, create a new project of type *Class Library* and install the SDK package via **NuGet**, through the command:
+The first step is to create a new project using the blip-console template in the command line:
 
-    Install-Package Takenet.MessagingHub.Client.Template
+```
+dotnet new blip-console
+```
   
 In this way, the `application.json` file is added to the project, among other dependencies, where the *receivers* of messages and notifications are registered. **receivers** are the entities responsible for processing messages and notifications received by performing specific actions (invoking APIs, saving information in the database, etc.) and, if necessary, sending a response to the user.
 
@@ -138,11 +140,11 @@ Here we return a complex `MediaLink` type with an image. The third option (`data
 ```csharp
     public class DateMessageReceiver : IMessageReceiver
     {
-        private readonly IMessagingHubSender _sender;
+        private readonly ISender _sender;
         private readonly CultureInfo _cultureInfo;
         private readonly string _messageTemplate;
 
-        public DateMessageReceiver(IMessagingHubSender sender, IDictionary<string, object> settings)
+        public DateMessageReceiver(ISender sender, IDictionary<string, object> settings)
         {
             _sender = sender;
             if (settings.ContainsKey("culture"))
