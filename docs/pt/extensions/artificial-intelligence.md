@@ -342,7 +342,12 @@ Resposta em caso de sucesso:
       {
         "id":"pedir_pizza",
         "name":"Pedir pizza",
-        "score": 0.95
+        "score": 0.95,
+        "answer": {
+          "id": "1",
+          "type": "text/plain",
+          "value": "Obrigado pelo seu pedido"
+        }
       }
     ],
     "entities":[
@@ -385,7 +390,12 @@ Resposta em caso de sucesso:
       {
         "id":"pedir_pizza",
         "name":"Pedir pizza",
-        "score": 0.95
+        "score": 0.95,
+        "answer": {
+          "id": "1",
+          "type": "text/plain",
+          "value": "Obrigado pelo seu pedido"
+        }
       }
     ],
     "entities":[
