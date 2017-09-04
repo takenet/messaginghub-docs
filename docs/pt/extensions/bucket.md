@@ -1,7 +1,7 @@
 ### Armazenamento
 | Endereço              | URI base     | Permissões requeridas   | C#              |
 |-----------------------|--------------|-------------------------|------------------
-| postmaster@msging.net (endereço padrão, não é necessário informar) | /buckets | Nenhuma | [BucketExtension](https://github.com/takenet/blip-sdk-csharp/tree/master/src/Take.Blip.Client/ExtensionsBucket/BucketExtension.cs) |
+| postmaster@msging.net (endereço padrão, não é necessário informar) | /buckets | Nenhuma | [BucketExtension](https://github.com/takenet/blip-sdk-csharp/tree/master/src/Take.Blip.Client/Extensions/Bucket/BucketExtension.cs) |
 
 A extensão **armazenamento** permite o armazenamento de documentos JSON no servidor em um espaço isolado de cada chatbot. Esta extensão é útil armazenar informações de clientes que interagiram com o chatbot, como configurações e estado de navegação.
 

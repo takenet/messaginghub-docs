@@ -1,7 +1,7 @@
 ### Recursos
 | Endereço              | URI base     | Permissões requeridas       | C#              |
 |-----------------------|--------------|-----------------------------|------------------
-| postmaster@msging.net (endereço padrão, não é necessário informar) | /resources | Nenhuma | [ResourceExtension](https://github.com/takenet/blip-sdk-csharp/tree/master/src/Take.Blip.Client/ExtensionsResource/ResourceExtension.cs) |
+| postmaster@msging.net (endereço padrão, não é necessário informar) | /resources | Nenhuma | [ResourceExtension](https://github.com/takenet/blip-sdk-csharp/tree/master/src/Take.Blip.Client/Extensions/Resource/ResourceExtension.cs) |
 
 A extensão **recursos** permite o armazenamento de documentos no servidor em um espaço isolado de cada chatbot, de forma semelhante à extensão **armazenamento**. A diferença principal é que estes documentos podem ser mapeados como **conteúdo de mensagens** enviadas aos destinatários do chatbot, através da **chave** de cada recurso. Isso significa que o desenvolvedor do chatbot pode optar em **armazenar o conteúdo de suas mensagens no servidor**, ao invés de manter no lado da aplicação. 
 
