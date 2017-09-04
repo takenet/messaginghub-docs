@@ -2,7 +2,7 @@
 ### Perfil do chatbot
 | Endereço              | URI base     | Permissões requeridas   | C#              |
 |-----------------------|--------------|-------------------------|-----------------|
-| postmaster@msging.net (endereço padrão, não é necessário informar) | /profile | Nenhuma | [ProfileExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Profile/ProfileExtension.cs) |
+| postmaster@msging.net (endereço padrão, não é necessário informar) | /profile | Nenhuma | [ProfileExtension](https://github.com/takenet/blip-sdk-csharp/tree/master/src/Take.Blip.Client/ExtensionsProfile/ProfileExtension.cs) |
 
 A extensão **perfil** permite a configuração de propriedades de perfil do chatbot, que podem refletir para o usuários nos canais publicados, dependendo do suporte. Cada propriedade é um **documento** de um tipo de conteúdo suportado pela plataforma.
 

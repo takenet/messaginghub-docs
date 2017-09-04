@@ -1,7 +1,7 @@
 ### Event analysis
 | Address               | Base URI     |  C#                 |
 |-----------------------|--------------|---------------------|
-| postmaster@msging.net (default address - not required) | /event-track | [EventTrackExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/EventTrack/EventTrackExtension.cs) |
+| postmaster@msging.net (default address - not required) | /event-track | [EventTrackExtension](https://github.com/takenet/blip-sdk-csharp/tree/master/src/Take.Blip.Client/ExtensionsEventTrack/EventTrackExtension.cs) |
 
 The **event analysis** extension allows the registration of chatbot's events for creation of analytics reports in the portal. The events are agregated by category, action and day. The reports can be generated thought the [portal](https://portal.blip.ai), in the *Panel* -> *Data analysis* option.
 

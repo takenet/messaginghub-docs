@@ -1,7 +1,7 @@
 ### Túnel
 | Endereço                     | URI base      | Permissões requeridas   | C#              |
 |------------------------------|---------------|-------------------------|-----------------|
-| postmaster@tunnel.msging.net | N/A | Nenhuma | [TunnelExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Tunnel/TunnelExtension.cs) |
+| postmaster@tunnel.msging.net | N/A | Nenhuma | [TunnelExtension](https://github.com/takenet/blip-sdk-csharp/tree/master/src/Take.Blip.Client/ExtensionsTunnel/TunnelExtension.cs) |
 
 A extensão **túnel** permite o encaminhamento, troca de mensagens e notificações entre diferentes *chatbots* da plataforma BLiP. Desta forma, um bot **emissor** consegue encaminhar mensagens recebidas para um bot **receptor** de maneira transparente, sendo que a mecânica de recebimento para este é exatamente a mesma das mensagens vindas dos canais externos (Messenger, Telegram, SMS, BLiP Chat, etc.). Portanto, o bot receptor **não precisa ser implementado de maneira específica** para receber mensagens encaminhadas, sendo que as notificações e mensagens de respostas geradas pelos receptores são encaminhadas automaticamente para o emissor.
 

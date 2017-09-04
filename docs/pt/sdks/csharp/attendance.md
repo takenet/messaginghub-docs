@@ -5,7 +5,7 @@ o aplicativo [BLiP Mensagens](https://play.google.com/store/apps/details?id=net.
 Todas as mensagens respondidas a partir do aplicativo ou website serão entregues para os usuários como se tivessem sido geradas pelo seu chatbot, de forma transparente. 
 Obviamente, é necessário que a pessoa que receberá e responderá as mensagens, que será chamada de atendente daqui em diante, instale o aplicativo (se optar por usar o BLiP Mensagens) e esteja online (tanto aplicativo quanto website).
 
-Para encaminhar uma mensagem recebida para o atendente, utilize a extensão [AttendanceExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/AttendanceForwarding/IAttendanceExtension.cs).
+Para encaminhar uma mensagem recebida para o atendente, utilize a extensão [AttendanceExtension](https://github.com/takenet/blip-sdk-csharp/tree/master/src/Take.Blip.Client/ExtensionsAttendanceForwarding/IAttendanceExtension.cs).
 
 Basta fazer uma chamada ao método `ForwardMessageToAttendantAsync` informando o número de celular do atendente (configurado ao instalar o aplicativo BLiP Mensagens, ou na tela de cadastro do BLiP Web).
 Observe que o número deve ser informado com o código internacional (55) e DDD. 

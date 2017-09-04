@@ -1,7 +1,7 @@
 ### Chat history
 | Address               | Base URI     | C#                 |
 |-----------------------|--------------|--------------------|
-| postmaster@msging.net (default address - not required) | /threads | [ThreadExtension](https://github.com/takenet/messaginghub-client-csharp/blob/master/src/Takenet.MessagingHub.Client/Extensions/Threads/ThreadExtension.cs) |
+| postmaster@msging.net (default address - not required) | /threads | [ThreadExtension](https://github.com/takenet/blip-sdk-csharp/tree/master/src/Take.Blip.Client/ExtensionsThreads/ThreadExtension.cs) |
 
 The **chat history** extension allows the chatbot to retrieve the last threads and messages exchanged with the customers.
 

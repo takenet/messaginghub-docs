@@ -2,8 +2,6 @@
 
 **BLiP Messaging Hub** define message types (**cannonical types**) that are automatically parsed to the best available representation on each channel. For more details check the *Concepts > Messages* section of documentation.
 
-For see how to use each **BLiP Messaging Hub** message type check the [Message Types](https://github.com/takenet/messaginghub-client-csharp/tree/master/src/Samples/MessageTypes) chatbot.
-
 ### Text Message (PlainText)
 
 Simple text messages are supported for any channel. However, each channel can have restrictions as for sample the message length.

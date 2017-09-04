@@ -190,4 +190,4 @@ Finally, imagine that your chatbot should return a static error message in case 
       }
     }
 ```    
-The complete code for this tuturial can be found at [Github](https://github.com/takenet/messaginghub-client-csharp/tree/master/src/Samples/Navigation).
+The complete code for this tuturial can be found at [Github](https://github.com/takenet/blip-sdk-csharp/tree/master/src/Samples/Navigation).
