@@ -21,6 +21,13 @@ No momento, o redirecionamento é suportado apenas em chatbots configurados como
     }
 }
 ```
+Em C#:
+```csharp
+var document = new Redirect
+{
+    Address = Node.Parse("atendimento")
+};
+```
 A partir deste momento, as mensagens enviadas pelo cliente serão encaminhadas para o chatbot configurado como serviço *atendimento* na aba configurações do modelo master. Observação: O identificador do cliente **não é o mesmo** no outro bot.
 
 2 - Redirecionando para o chatbot com identificador *mysdkbot*, passando um documento como contexto da conversa.
@@ -37,6 +44,17 @@ A partir deste momento, as mensagens enviadas pelo cliente serão encaminhadas p
         }
     }
 }
+```
+Em C#:
+```csharp
+var document = new Redirect
+{
+    Address = Node.Parse("mysdkbot@msging.net"),
+    Context = new DocumentContainer
+    {
+        Value = new PlainText { Text = "Iniciar" }
+    }
+};
 ```
 Neste exemplo, o chatbot com identificador `mysdkbot` passará a receber as mensagens enviadas pelo cliente, além de receber uma mensagem com o conteúdo definido no contexto, como se tivesse sido enviada pelo cliente:
 
