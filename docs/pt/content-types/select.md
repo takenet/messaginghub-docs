@@ -10,7 +10,7 @@ Alguns canais suportam a limitação do escopo das opções, que determina por q
 Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/content-types.html#select).
 
 #### Exemplo
-Menu com opções numeradas
+1 - Menu com opções numeradas:
 ```json
 {
     "id":"311F87C0-F938-4FF3-991A-7C5AEF7771A5",
@@ -38,6 +38,23 @@ Menu com opções numeradas
         ]
     }
 }
+```
+Utilizando C#:
+```csharp
+var menu = new Select { Text = "Escolha uma opção" };
+            
+var myJson = new JsonDocument();
+myJson.Add("key1", "value1");
+myJson.Add("key2", 2);
+
+menu.Options = new SelectOption[] 
+{
+    new SelectOption { Text = "Primeira opção" },
+    new SelectOption { Text = "Segunda opção", Order = 2 },
+    new SelectOption { Text = "Terceira opção", Order = 3, Value = myJson }
+};
+
+await _sender.SendMessageAsync(menu, to);
 ```
 Quando o usuário seleciona uma opção, uma mensagem é retornada conforme a regra:
 
@@ -82,6 +99,54 @@ E por último ao selecionar a terceira opção:
 ```
 
 O tipo('type') da mensagem de retorno será sempre o mesmo da opção escolhida. Quando não for definido um valor para o campo 'value' o tipo será 'text/plain'.
+
+2 - Menu com escopo imediato:
+```json
+{
+    "id":"311F87C0-F938-4FF3-991A-7C5AEF7771A5",
+    "to":"1042221589186385@messenger.gw.msging.net",
+    "type":"application/vnd.lime.select+json",
+    "content":{
+        "text":"Escolha uma das opções",
+        "scope": "immediate",
+        "options":[
+            {
+                "text":"Primeira opção"
+            },
+            {
+                "text":"Segunda opção"
+            },
+            {
+                "text":"Terceira opção",
+            }
+        ]
+    }
+}
+```
+Utilizado C#:
+```csharp
+var menu = new Select
+{
+    Text = "Escolha uma das opções:",
+    Scope = SelectScope.Immediate,
+    Options = new SelectOption[]{
+        new SelectOption
+        {
+            Text = "Primeira opção"
+        },
+        new SelectOption
+        {
+            Text = "Segunda opção"
+        },
+        new SelectOption
+        {
+            Text = "Terceira opção"
+        }
+    }
+};
+
+await _sender.SendMessageAsync(menu, to, cancellationToken);
+```
 
 ### Mapeamento nos canais
 

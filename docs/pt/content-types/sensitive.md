@@ -20,7 +20,14 @@ Importante: O não armazenamento é **restrito ao servidores do BLiP**, podendo 
     "value": "A sua senha é 123456"
   }
 }
+```
 
+Em C#:
+```csharp
+var document = new SensitiveContainer
+{
+    Value = new PlainText { Text = "A sua senha é 123456" }
+};
 ```
 
 2 - Enviando um link da web:
@@ -37,5 +44,16 @@ Importante: O não armazenamento é **restrito ao servidores do BLiP**, podendo 
     }
   }
 }
+```
 
+Utilizando C#:
+```csharp
+var document = new SensitiveContainer
+{
+    Value = new WebLink 
+    { 
+        Text = "Segue o link para fechamento da sua conta"
+        Uri = new Uri("https://mystore.com/checkout?ID=A8DJS1JFV98AJKS9"),
+    }
+};
 ```

@@ -26,6 +26,25 @@ A execução da regra de validação depende de suporte do canal.
 }
 ```
 
+Em C#:
+```csharp
+var input = new Input
+{
+    Label = new DocumentContainer
+    {
+        Value = new PlainText
+        {
+            Text = "Qual o seu nome?"
+        }
+    },
+    Validation = new InputValidation
+    {
+        Type = PlainText.MediaType,
+        Rule = InputValidationRule.Type
+    }
+};
+```
+
 2 - Solicitando a localização de um usuário:
 ```json
 {
@@ -43,6 +62,25 @@ A execução da regra de validação depende de suporte do canal.
         }
     }
 }
+```
+
+Utilizando C#:
+```csharp
+var locationInput = new Input
+{
+    Label = new DocumentContainer
+    {
+        Value = new PlainText
+        {
+            Text = "Envie sua localização"
+        }
+    },
+    Validation = new InputValidation
+    {
+        Type = Location.MediaType,
+        Rule = InputValidationRule.Type
+    }
+};
 ```
 
 Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/content-types.html#input).

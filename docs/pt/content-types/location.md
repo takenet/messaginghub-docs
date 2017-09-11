@@ -6,7 +6,7 @@
 Permite o envio e recebimento de informações geográficas. 
 
 #### Exemplo
-Enviando uma localização com latitude, longitude e altitude:
+1 - Enviando uma localização com latitude, longitude e altitude:
 ```json
 {
     "id": "1",
@@ -19,6 +19,53 @@ Enviando uma localização com latitude, longitude e altitude:
         "text": "Sede da Take.net"
     }
 }
+```
+
+Em C#:
+```csharp
+var location = new Location
+{
+    Latitude = -19.918899,
+    Longitude = -43.959275,
+    Altitude = 853,
+    Text = "Sede da Take.net"
+};
+```
+
+2 - Enviando uma requisição para localização do usuário:
+```json
+{
+    "type": "application/vnd.lime.input+json",
+    "value": {
+        "label": {
+            "type": "text/plain",
+            "value": "Envie sua localização"
+        },
+        "validation": {
+            "rule": "type",
+            "type": "application/vnd.lime.location+json"
+        }
+    }
+}
+```
+
+Em C#:
+```csharp
+var locationInput = new Input
+{
+    Label = new DocumentContainer
+    {
+        Value = new PlainText
+        {
+            Text = "Envie sua localização"
+        }
+    },
+    Validation = new InputValidation
+    {
+        Type = Location.MediaType,
+        Rule = InputValidationRule.Type
+    }
+};
 ```
 
 Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/content-types.html#location).

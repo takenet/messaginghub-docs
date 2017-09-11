@@ -28,12 +28,19 @@ Enviando estado *digitando* para usuário do Telegram:
 }
 ```
 
+Em C#: 
+```csharp
+    var to = "104222@telegram.gw.msging.net";
+    var chatState = new ChatState() { State = ChatStateEvent.Composing };
+    await _sender.SendMessageAsync(chatState, to);
+```
+
 ### Mapeamento nos canais
 
 | Canal              | Tipo      | Estados suportados      | 
 |--------------------|-----------|-------------------------|
-| BLiP App           | Estado da Conversa | Todos |
+| BLiP Chat          | - | Nenhum |
 | Messenger          | [Sender Actions](https://developers.facebook.com/docs/messenger-platform/send-api-reference/sender-actions) e [Referral](https://developers.facebook.com/docs/messenger-platform/webhook-reference/referral) | *composing* e *paused* (somente envio) e *starting* (referral de uma conversa existente) |
 | SMS                | - | Nenhum |
 | Skype              | - | Nenhum |
-| Telegram           | [SendChatAction](https://core.telegram.org/bots/api#sendchataction) | *composing* (somente envio) |
+| Telegram           | [SendChatAction|(https://core.telegram.org/bots/api#sendchataction) | *composing* (somente envio) |

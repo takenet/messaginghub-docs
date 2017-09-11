@@ -23,6 +23,20 @@ Permite o envio de **múltiplos conteúdos** do mesmo tipo em uma única mensage
 	}
 }
 ```
+Utilizando C#:
+```csharp
+var document = new DocumentCollection
+{
+    ItemType = PlainText.MediaType,
+    Items = new[]
+    {
+        new PlainText { Text = "Texto 1" },
+        new PlainText { Text = "Texto 2" },
+        new PlainText { Text = "Texto 3" }
+    },
+    Total = 3
+};
+```
 
 2 - Uma coleção de tipos diferentes, utilizando **container**
 ```json
@@ -59,9 +73,39 @@ Permite o envio de **múltiplos conteúdos** do mesmo tipo em uma única mensage
 		]
 	}
 }
-
 ```
-
+Utilizando C#:
+```csharp
+var document = new DocumentCollection
+{
+    ItemType = PlainText.MediaType,
+    Items = new[]
+    {
+        new DocumentContainer
+        {
+            Value = new MediaLink
+            {
+                Text = "Seja bem-vindo a nossa loja!",
+                Type = new MediaType(MediaType.DiscreteTypes.Image, MediaType.SubTypes.JPeg),
+                Uri = new Uri("http://petersapparel.parseapp.com/img/item100-thumb.png")
+            }
+        },
+        new DocumentContainer
+        {
+            Value = new Select
+            {
+                Text = "Escolha o que deseja fazer",
+                Options = new SelectOption[]
+                {
+                    new SelectOption { Text = "Ver nosso estoque", Order = 1 },
+                    new SelectOption { Text = "Acompanhar um pedido", Order = 2 }
+                }
+            }
+        }
+    },
+    Total = 2
+};
+```
 3 - Uma coleção de **menu multimídia**
 ```json
 {
@@ -159,7 +203,92 @@ Permite o envio de **múltiplos conteúdos** do mesmo tipo em uma única mensage
     }
 }
 ```
-
+Utilizando C#:
+```csharp
+var document = new DocumentCollection
+{
+    ItemType = DocumentSelect.MediaType,
+    Items = new DocumentSelect[]
+    {
+        new DocumentSelect
+        {
+            Header = new DocumentContainer
+            {
+                Value = new MediaLink
+                {
+                    Title = "Titulo",
+                    Text = "Este é o primeiro item",
+                    Uri = new Uri("http://www.isharearena.com/wp-content/uploads/2012/12/wallpaper-281049.jpg"),
+                    Type = new MediaType(MediaType.DiscreteTypes.Image, MediaType.SubTypes.JPeg)
+                }
+            },
+            Options = new DocumentSelectOption[]
+            {
+                new DocumentSelectOption
+                {
+                    Label = new DocumentContainer
+                    {
+                        Value = new WebLink
+                        {
+                            Title = "Link",
+                            Uri = new Uri("https://server.com/first/link1")
+                        }
+                    }
+                },
+                new DocumentSelectOption
+                {
+                    Label = new DocumentContainer
+                    {
+                        Value = new PlainText{ Text= "Texto 1" }
+                    }
+                },
+            }
+        },
+        new DocumentSelect
+        {
+            Header = new DocumentContainer
+            {
+                Value = new MediaLink
+                {
+                    Title = "Titulo 2",
+                    Text = "Este é outro item",
+                    Uri = new Uri("http://www.freedigitalphotos.net/images/img/homepage/87357.jpg"),
+                    Type = new MediaType(MediaType.DiscreteTypes.Image, MediaType.SubTypes.JPeg)
+                }
+            },
+            Options = new DocumentSelectOption[]
+            {
+                new DocumentSelectOption
+                {
+                    Label = new DocumentContainer
+                    {
+                        Value = new WebLink
+                        {
+                            Title = "Segundo link",
+                            Uri = new Uri("https://server.com/first/link2")
+                        }
+                    }
+                },
+                new DocumentSelectOption
+                {
+                    Label = new DocumentContainer
+                    {
+                        Value = new PlainText{ Text= "Segundo Texto" }
+                    }
+                },
+                new DocumentSelectOption
+                {
+                    Label = new DocumentContainer
+                    {
+                        Value = new PlainText{ Text= "Mais um texto" }
+                    }
+                },
+            }
+        },
+    },
+    Total = 2
+};
+```
 Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/content-types.html#collection).
 
 ### Mapeamento nos canais

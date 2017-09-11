@@ -7,7 +7,7 @@ Permite o envio de um link para uma página da web, podendo incluir metadados co
 
 #### Exemplo
 
-Enviando uma mensagem para um destinatário do BLiP App:
+Enviando uma mensagem para um destinatário do BLiP Chat:
 
 ```json
 {
@@ -20,6 +20,17 @@ Enviando uma mensagem para um destinatário do BLiP App:
         "text": "Segue documentação do web-link"        
     }
 }
+```
+Utilizando C#:
+```csharp
+var webLink = new WebLink
+{
+    Uri = new Uri("http://limeprotocol.org/content-types.html#web-link"),
+    Target = WebLinkTarget.Self,
+    Text = "Segue documentação do web-link"
+};
+
+    await _sender.SendMessageAsync(webLink, to);
 ```
 
 Em alguns canais, é possível definir como a página deve ser exibida - por exemplo, na mesma janela, uma nova ou ocupando parte da tela do dispositivo - através da propriedade `target`. Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/content-types.html#web-link).

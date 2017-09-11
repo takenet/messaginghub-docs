@@ -49,34 +49,55 @@ Permite o envio de um menu de opções aos clientes, podendo o cabeçalho e as o
     }
 }
 ```
-
-2 - Solicitando a localização de um usuário do Messenger:
-```json
+Utilizando C#:
+```csharp
+var select = new DocumentSelect()
 {
-    "id": "2",
-    "to": "1042221589186385@messenger.gw.msging.net",
-    "type": "application/vnd.lime.document-select+json",
-    "content": {
-        "scope": "immediate",
-        "header": {
-            "type": "text/plain",
-            "value": "Por favor, compartilhe sua localização"
-        },
-        "options": [
+    Header = new DocumentContainer
+    {
+        Value = new MediaLink
+        {
+            Title = "Seja bem-vindo ao Chapeleiro Maluco",
+            Text = "Aqui temos o melhor chapéu para sua cabeça.",
+            Type = new MediaType(MediaType.DiscreteTypes.Image, MediaType.SubTypes.JPeg),
+            Uri = new Uri("http://petersapparel.parseapp.com/img/item100-thumb.png"),
+            AspectRatio = "1:1"
+        }
+    },
+    Options = new DocumentSelectOption[]
+    {
+        new DocumentSelectOption
+        {
+            Label = new DocumentContainer
             {
-                "label": {
-                    "type": "application/vnd.lime.input+json",
-                    "value": {                      
-                        "validation": {
-                          "rule": "type",
-                          "type": "application/vnd.lime.location+json"
-                        } 
-                    }
+                Value = new WebLink
+                {
+                    Text = "Visitar site",
+                    Uri = new Uri("https://petersapparel.parseapp.com/view_item?item_id=100")
                 }
             }
-        ]
+        },
+        new DocumentSelectOption
+        {
+            Label = new DocumentContainer
+            {
+                Value = new PlainText
+                {
+                    Text = "Ver Estoque"
+                }
+            },
+            Value = new DocumentContainer
+            {
+                Value = new PlainText
+                {
+                    Text = "show-items"
+                }
+            }
+        }
     }
-}
+};
+
+await _sender.SendMessageAsync(select, to, cancellationToken);
 ```
 
 Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/content-types.html#document-select).

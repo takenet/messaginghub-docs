@@ -17,6 +17,14 @@ Enviando uma mensagem para um destinatário do Messenger:
     "content": "Seja bem-vindo ao nosso serviço! Como podemos te ajudar?"
 }
 ```
+Em C# é possivel usar a classe ``PlainText`` ou enviar diretamente a string: 
+```csharp
+    var to = "128271320123982@messenger.gw.msging.net";
+    var plaiText = new PlainText() { Text = "Seja bem-vindo ao nosso serviço! Como podemos te ajudar" };
+    await _sender.SendMessageAsync(plaiText, to);
+    // or 
+    await _sender.SendMessageAsync("Seja bem-vindo ao nosso serviço! Como podemos te ajudar", to);
+```
 
 Para mais detalhes, consulte a especificação do [protocolo LIME](http://limeprotocol.org/content-types.html#text).
 

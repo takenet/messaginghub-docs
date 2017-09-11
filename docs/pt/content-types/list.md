@@ -49,6 +49,52 @@ Permite o envio de uma lista de documentos diferentes uma única mensagem. É po
  };
 ```
 
+Utilizando C#:
+```csharp
+var document = new Lime.Messaging.Contents.DocumentList
+{
+    Header = new DocumentContainer
+    {
+        Value = new WebLink
+        {
+            Title = "Bots powered by BLiP",
+            Text = "See some bots powered by BLiP",
+            PreviewUri = new Uri("https://blip.ai/wp-content/themes/blipai/assets/img-pack/brand_36dp.png"),
+            PreviewType = new MediaType(MediaType.DiscreteTypes.Image, MediaType.SubTypes.JPeg),
+            Uri = new Uri("https://blip.ai"),
+            Target = WebLinkTarget.SelfTall
+        }
+    },
+    Items = new DocumentContainer[]
+    {
+        new DocumentContainer
+        {
+            Value = new WebLink
+            {
+                Title = "Santander",
+                Text = "Bot oficial do Santander Brasil",
+                PreviewUri = new Uri("http://www.rgconsultoriaempresarial.com.br/site/wp-content/uploads/2014/07/SANTANDER.png"),
+                PreviewType = new MediaType(MediaType.DiscreteTypes.Image, MediaType.SubTypes.JPeg),
+                Uri = new Uri("https://santander.com.br"),
+                Target = WebLinkTarget.SelfTall
+            }
+        },
+        new DocumentContainer
+        {
+            Value = new WebLink
+            {
+                Title = "Localiza",
+                Text = "Bot oficial da Localiza",
+                PreviewUri = new Uri("https://pbs.twimg.com/profile_images/491237647478571008/r12mcMNR.png"),
+                PreviewType = new MediaType(MediaType.DiscreteTypes.Image, MediaType.SubTypes.JPeg),
+                Uri = new Uri("https://www.localiza.com/"),
+                Target = WebLinkTarget.SelfTall
+            }
+        },
+    }
+};
+```
+
 ### Mapeamento nos canais
 
 | Canal              | Tipo                    | 
