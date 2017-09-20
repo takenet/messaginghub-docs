@@ -1,7 +1,7 @@
 ### Histórico de conversas
 | Endereço              | URI base     | Permissões requeridas   | C#                 |
 |-----------------------|--------------|-------------------------|--------------------|
-| postmaster@msging.net (endereço padrão, não é necessário informar) | /threads | Nenhuma | [IThreadExtension](https://github.com/takenet/blip-sdk-csharp/tree/master/src/Take.Blip.Client/ExtensionsThreads/IThreadExtension.cs) |
+| postmaster@msging.net (endereço padrão, não é necessário informar) | /threads | Nenhuma | [IThreadExtension](https://github.com/takenet/blip-sdk-csharp/tree/master/src/Take.Blip.Client/Extensions/Threads/IThreadExtension.cs) |
 
 A extensão **Histórico de conversas** permite o chatbot recuperar as mensagens mais recentes trocadas com um determinado usuário de um canal. O retorno estará sempre em ordem decrescente da data das mensagens, ou seja, as mensagens mais recentes estarão listadas primeiro. 
 

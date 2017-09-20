@@ -1,7 +1,7 @@
 ### Envio em massa
 | Endereço                        | URI base     | Permissões requeridas   | C#                     |
 |---------------------------------|--------------|-------------------------|------------------------|
-| postmaster@broadcast.msging.net | /lists       | Envio de mensagens       | [BroadcastExtension](https://github.com/takenet/blip-sdk-csharp/tree/master/src/Take.Blip.Client/ExtensionsBroadcast/BroadcastExtension.cs) |
+| postmaster@broadcast.msging.net | /lists       | Envio de mensagens       | [BroadcastExtension](https://github.com/takenet/blip-sdk-csharp/tree/master/src/Take.Blip.Client/Extensions/Broadcast/BroadcastExtension.cs) |
 
 A extensão **envio em massa** permite a criação e gestão de listas de distribuição e seus membros para o envio de mensagem em massa. Desta forma, um chatbot que precisa enviar uma mesma mensagem para mais de um destinatário pode criar uma lista com os endereços dos destinatários e realizar o envio apenas uma vez, para o endereço da lista.
 

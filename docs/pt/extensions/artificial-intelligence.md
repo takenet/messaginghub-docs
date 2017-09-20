@@ -1,7 +1,7 @@
 ### Inteligência artificial
 | Endereço                        | C#                                 |
 |---------------------------------|------------------------------------|
-| postmaster@ai.msging.net        | [ArtificialIntelligenceExtension](https://github.com/takenet/blip-sdk-csharp/tree/master/src/Take.Blip.Client/ExtensionsArtificialIntelligence/ArtificialIntelligenceExtension.cs) |
+| postmaster@ai.msging.net        | [ArtificialIntelligenceExtension](https://github.com/takenet/blip-sdk-csharp/tree/master/src/Take.Blip.Client/Extensions/ArtificialIntelligence/ArtificialIntelligenceExtension.cs) |
 
 A extensão **Inteligência Artificial** permite a criação, treinamento e publicação de modelos de inteligência artificial nos provedores associados ao chatbot, além de realizar a análise de sentenças para identificação de intenções e entidades. A configuração dos provedores do chatbot é feita através do menu **Inteligência artificial** no [portal do BLiP](https://portal.blip.ai).
 
