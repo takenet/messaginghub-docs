@@ -25,7 +25,7 @@ Content-Length: 131
 Para mais informações sobre mensagens consulte a [documentação de **Mensagens**](.#/docs/concepts/messages) ou a [documentação do tipos de conteúdo suportados](.#/docs/content-types).
 
 ##### Recebimento notificações
-Caso seja configurada a URL de notificações do chatbot, serão entregues nessa URL as notificações contendo os _status_ das mensagens. Observe que as notificações são enviadas pelo *clientes*, informando se receberam ou não uma mensagem enviada pelo chatbot.
+Caso seja configurada a URL de notificações do chatbot, serão entregues nessa URL as notificações contendo os _status_ das mensagens. Observe que as notificações são enviadas pelos *clientes*, informando se receberam ou não uma mensagem enviada pelo chatbot.
 
 Nesse caso também será realizado um `HTTP POST` com a informação no formato JSON, conforme formato definido pelo [protocolo LIME](http://limeprotocol.org/#notification). Veja um exemplo de uma notificação da mensagem anterior:
 ```
@@ -77,7 +77,7 @@ Content-Length: 131
 
 #### Envio de comandos
 
-O envio de comandos é útil para o uso das extensões da plataforma, como **agendamento** ou **armazenamento**. Estes devem ser enviados na URL `/commands`, se forma similar a mensagens e notificações:
+O envio de comandos é útil para o uso das extensões da plataforma, como **agendamento** ou **armazenamento**. Estes devem ser enviados na URL `/commands`, de forma similar a mensagens e notificações:
 
 Por exemplo, enviando um comando para agendamento de uma mensagem:
 
