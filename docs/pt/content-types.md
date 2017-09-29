@@ -39,3 +39,39 @@ As propriedades `messenger.mdi` e `messenger.seq` são especificas do Messenger,
   }    
 }
 ```
+
+#### Suporte a spinning syntax
+
+O BLiP suporta o envio de textos no formato `spinning syntax` (ou `spintax`), que permite variações do texto que é entregue ao destinatário de forma a tornar a conversa um pouco mais natural. Os valores alternativos são definidos no texto entre chaves (`{` e `}`) separados pelo caracter `|`. A cada entrega da mensagem, uma variação é escolhida de forma aleatória para a construção do texto final.
+
+Por exemplo, a sintaxe `{Oi|Ola}, seja bem-vindo! Como {posso|podemos} te ajudar?` pode gerar qualquer um dos seguintes textos:
+
+- `Oi, seja bem-vindo! Como posso te ajudar?`
+- `Olá, seja bem-vindo! Como posso te ajudar?`
+- `Oi, seja bem-vindo! Como podemos te ajudar?`
+- `Olá, seja bem-vindo! Como podemos te ajudar?`
+
+Para utilizar esta sintaxe, basta incluir o valor `#message.spinText` com o valor `true` nos metadados da mensagem, como no exemplo abaixo:
+
+```json
+{
+    "id": "1",
+    "to": "128271320123982@messenger.gw.msging.net",
+    "type": "text/plain",
+    "content": "{Oi|Ola}, seja bem-vindo! Como {posso|podemos} te ajudar?",
+    "metadata": {
+        "#message.spinText": "true"
+    }
+}
+```
+
+A sintaxe pode ser utilizada em todos os documentos que suportam texto, que são:
+
+- Texto
+- Link de mídia
+- Link da web
+- Menu
+- Menu multimídia
+- Lista
+- Localização
+- Coleção
