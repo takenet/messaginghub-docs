@@ -32,7 +32,7 @@ Para mais detalhes, consulte a especificação do [protocolo LIME](http://limepr
 
 O BLiP suporta o envio de textos no formato `spinning syntax` (ou `spintax`), que permite variações do texto que é entregue ao destinatário de forma a tornar a conversa um pouco mais natural. Os valores alternativos são definidos no texto entre chaves (`{` e `}`) separados pelo caracter `|`. A cada entrega da mensagem, uma variação é escolhida de forma aleatória para a construção do texto final.
 
-Por exemplo, o texto `{Oi|Ola}, seja bem-vindo! Como {posso|podemos} te ajudar?` poderá ser enviado ao cliente das seguintes formas:
+Por exemplo, a sintaxe `{Oi|Ola}, seja bem-vindo! Como {posso|podemos} te ajudar?` pode gerar qualquer um dos seguintes textos:
 
 - `Oi, seja bem-vindo! Como posso te ajudar?`
 - `Olá, seja bem-vindo! Como posso te ajudar?`
