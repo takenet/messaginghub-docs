@@ -40,3 +40,39 @@ The properties `messenger.mdi` and `messenger.seq` are specific to Messenger, bu
   }    
 }
 ```
+
+#### Spinning syntax support
+
+BLiP suports sending text messages using the `spinning syntax` (or `spyntax`) format, which allows variations in the text that is delivered to the destination, creating a more natural conversation. The alternative values are defined in the text between braces (`{` and `}`) separated by pipes (`|`). For each message delivery, a text variation is randomically chosen to build the final text.
+
+For instance, the syntax `{Hi|Hello}, how can {I|we} help you?` can generate any of the following texts:
+
+- `Hi, how can I help you?`
+- `Hello, how can I help you?`
+- `Hi, how can we help you?`
+- `Hello, how can we help you?`
+
+To use the syntax, the sender must provide the `#message.spinText` metadata with the `true` value, like bellow:
+
+```json
+{
+    "id": "1",
+    "to": "128271320123982@messenger.gw.msging.net",
+    "type": "text/plain",
+    "content": "{Hi|Hello}, how can {I|we} help you?",
+    "metadata": {
+        "#message.spinText": "true"
+    }
+}
+```
+
+The syntax can be used in all documents that support text:
+
+- Text
+- Media link
+- Web link
+- Select
+- Multimedia select
+- List
+- Location
+- Collection
