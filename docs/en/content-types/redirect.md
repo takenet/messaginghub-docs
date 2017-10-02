@@ -16,7 +16,7 @@ It is possible to define a document that represents the **context** of the conve
 {
     "id": "1",
     "to": "54f1dd2e-42d2-43f2-9100-68fbbabb9c83@tunnel.msging.net",
-    "type": "application/vnd.iris.redirect+json",
+    "type": "application/vnd.lime.redirect+json",
     "content": {
         "address": "attendance"
     }
@@ -30,7 +30,7 @@ From this moment, the messages sent by the client will be forwarded to the chatb
 {
     "id": "2",
     "to": "54f1dd2e-42d2-43f2-9100-68fbbabb9c83@tunnel.msging.net",
-    "type": "application/vnd.iris.redirect+json",
+    "type": "application/vnd.lime.redirect+json",
     "content": {
         "address": "mysdkbot@msging.net",
         "context": {
