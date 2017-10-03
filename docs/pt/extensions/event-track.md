@@ -1,7 +1,7 @@
 ### Análise de eventos
 | Endereço              | URI base     | Permissões requeridas   | C#                 |
 |-----------------------|--------------|-------------------------|--------------------|
-| postmaster@msging.net (endereço padrão, não é necessário informar) | /event-track | Nenhuma | [EventTrackExtension](https://github.com/takenet/blip-sdk-csharp/blob/master/src/Take.Blip.Client/Extensions/EventTracker/EventTrackExtension.cs) |
+| postmaster@analytics.msging.net | /event-track | Nenhuma | [EventTrackExtension](https://github.com/takenet/blip-sdk-csharp/blob/master/src/Take.Blip.Client/Extensions/EventTracker/EventTrackExtension.cs) |
 
 A extensão **análise de eventos** permite o chatbot registrar eventos no **BLiP Messaging Hub** permitindo assim extrair relatórios. Os relatórios podem ser gerados através do [portal](https://portal.blip.ai), na opção *Painel* -> *Análise de dados*.
 
@@ -21,6 +21,7 @@ Caso seja registrado uma mesma categoria/ação uma segunda vez no mesmo dia ser
 ```json
 {  
   "id": "9494447a-2581-4597-be6a-a5dff33af156",
+  "to": "postmaster@analytics.msging.net",
   "method": "set",
   "type": "application/vnd.iris.eventTrack+json",
   "uri": "/event-track",
@@ -40,7 +41,7 @@ Resposta em caso de sucesso:
   "method": "set",
   "status": "success",
   "id": "9494447a-2581-4597-be6a-a5dff33af156",
-  "from": "postmaster@msging.net/#irismsging1",
+  "from": "postmaster@analytics.msging.net/#irismsging1",
   "to": "contact@msging.net/default"
 }
 ```
@@ -49,6 +50,7 @@ Resposta em caso de sucesso:
 ```json
 {  
   "id": "9494447a-2581-4597-be6a-a5dff33af156",
+  "to": "postmaster@analytics.msging.net",
   "method": "set",
   "type": "application/vnd.iris.eventTrack+json",
   "uri": "/event-track",
@@ -65,7 +67,7 @@ Resposta em caso de sucesso:
   "method": "set",
   "status": "success",
   "id": "9494447a-2581-4597-be6a-a5dff33af156",
-  "from": "postmaster@msging.net/#irismsging1",
+  "from": "postmaster@analytics.msging.net/#irismsging1",
   "to": "contact@msging.net/default"
 }
 ```
@@ -74,6 +76,7 @@ Resposta em caso de sucesso:
 ```json
 {  
   "id": "3",
+  "to": "postmaster@analytics.msging.net",
   "method": "get",
   "uri": "/event-track"
 }
@@ -82,7 +85,7 @@ Resposta em caso de sucesso:
 ```json
 {  
   "id": "3",
-  "from": "postmaster@msging.net/#irismsging1",
+  "from": "postmaster@analytics.msging.net/#irismsging1",
   "to": "contact@msging.net/default",
   "method": "get",
   "status": "success",
@@ -112,6 +115,7 @@ Possíveis filtros via *querystring*:
 ```json
 {  
   "id": "4",
+  "to": "postmaster@analytics.msging.net",
   "method": "get",
   "uri": "/event-track/Boleto?startDate=2016-01-01&$take=10"
 }
@@ -121,7 +125,7 @@ Resposta em caso de sucesso:
 ```json
 {
   "id": "4",
-  "from": "postmaster@msging.net/#irismsging1",
+  "from": "postmaster@analytics.msging.net/#irismsging1",
   "to": "contact@msging.net/default",
   "method": "get",
   "status": "success",  
@@ -158,6 +162,7 @@ Possíveis filtros via *querystring*:
 ```json
 {  
   "id": "5",
+  "to": "postmaster@analytics.msging.net",
   "method": "get",
   "uri": "/event-track/Boleto/Vencido?startDate=2016-01-01&$take=10"
 }
@@ -167,7 +172,7 @@ Resposta em caso de sucesso:
 ```json
 {
   "id": "5",
-  "from": "postmaster@msging.net/#irismsging1",
+  "from": "postmaster@analytics.msging.net/#irismsging1",
   "to": "contact@msging.net/default",
   "method": "get",
   "status": "success",
