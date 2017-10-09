@@ -21,7 +21,7 @@ Caso seja registrado uma mesma categoria/ação uma segunda vez no mesmo dia ser
 ```json
 {  
   "id": "9494447a-2581-4597-be6a-a5dff33af156",
-  "to":"postmaster@analytics.msging.net",
+  "to": "postmaster@analytics.msging.net",
   "method": "set",
   "type": "application/vnd.iris.eventTrack+json",
   "uri": "/event-track",
@@ -50,7 +50,11 @@ Resposta em caso de sucesso:
 ```json
 {  
   "id": "9494447a-2581-4597-be6a-a5dff33af156",
+<<<<<<< HEAD
   "to":"postmaster@analytics.msging.net",
+=======
+  "to": "postmaster@analytics.msging.net",
+>>>>>>> master
   "method": "set",
   "type": "application/vnd.iris.eventTrack+json",
   "uri": "/event-track",
@@ -76,7 +80,11 @@ Resposta em caso de sucesso:
 ```json
 {  
   "id": "3",
+<<<<<<< HEAD
   "to":"postmaster@analytics.msging.net",
+=======
+  "to": "postmaster@analytics.msging.net",
+>>>>>>> master
   "method": "get",
   "uri": "/event-track"
 }
@@ -115,7 +123,11 @@ Possíveis filtros via *querystring*:
 ```json
 {  
   "id": "4",
+<<<<<<< HEAD
   "to":"postmaster@analytics.msging.net",
+=======
+  "to": "postmaster@analytics.msging.net",
+>>>>>>> master
   "method": "get",
   "uri": "/event-track/Boleto?startDate=2016-01-01&$take=10"
 }
@@ -162,7 +174,11 @@ Possíveis filtros via *querystring*:
 ```json
 {  
   "id": "5",
+<<<<<<< HEAD
   "to":"postmaster@analytics.msging.net",
+=======
+  "to": "postmaster@analytics.msging.net",
+>>>>>>> master
   "method": "get",
   "uri": "/event-track/Boleto/Vencido?startDate=2016-01-01&$take=10"
 }

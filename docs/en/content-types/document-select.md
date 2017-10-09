@@ -67,7 +67,7 @@ Allows sending an options menu to customers where the header and options can be 
             {
                 "label": {
                     "type": "application/vnd.lime.input+json",
-                    "value": {                      
+                    "value": {     
                         "validation": {
                           "rule": "type",
                           "type": "application/vnd.lime.location+json"

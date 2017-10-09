@@ -13,7 +13,7 @@ client.connect()
     });
 ```
 
-Neste exemplo, o cliente foi conectado com uma chave de acesso e após a realização da conexão, o foi realizado o envio de uma mensagem através do método `sendMessage`. Para enviar uma notificação, utilize o método `sendNotification`, como no exemplo abaixo:
+Neste exemplo, o cliente foi conectado com uma chave de acesso e após a realização da conexão foi realizado o envio de uma mensagem através do método `sendMessage`. Para enviar uma notificação, utilize o método `sendNotification`, como no exemplo abaixo:
 
 ```javascript
 client.connect()
