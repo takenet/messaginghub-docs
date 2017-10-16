@@ -78,7 +78,7 @@ Utilizando C#:
 ```csharp
 var document = new DocumentCollection
 {
-    ItemType = PlainText.MediaType,
+    ItemType = DocumentContainer.MediaType,
     Items = new[]
     {
         new DocumentContainer
