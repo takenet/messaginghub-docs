@@ -136,6 +136,40 @@ Notificações enviadas pelos membros da lista à lista de distribuição e enca
 }
 ```
 
+6 - Consultando todas as listas de distribuição
+
+Imagine por exemplo que o seu chatbot já tenha 2 listas de distribuição com os identificadores: `list1` and `contact+senders`
+
+```json
+{  
+  "id": "6",
+  "to": "postmaster@broadcast.msging.net",
+  "method": "get",
+  "uri": "/lists"
+}
+```
+
+Resposta em caso de sucesso:
+
+```json
+{
+  "id": "6",
+  "from": "postmaster@broadcast.msging.net/#irismsging1",
+  "to": "contact@msging.net/default",
+  "method": "get",
+  "status": "success",
+  "type": "application/vnd.lime.collection+json",
+  "resource": {
+    "total": 2,
+    "itemType": "application/vnd.lime.identity",
+    "items": [
+      "list1@msging.net",
+      "contact+senders@msging.net"
+    ]
+  }
+}
+```
+
 #### Disponibilidade
 
 O serviço de Broadcast está disponível nos seguintes domínios:

@@ -133,6 +133,40 @@ Notifications sent by list members to the distribution list and forwarded to the
 }
 ```
 
+6 - Getting all distribution lists:
+
+For instance imagine that you already have 2 distribution lists with identifiers: `list1` and `contact+senders`
+
+```json
+{  
+  "id": "6",
+  "to": "postmaster@broadcast.msging.net",
+  "method": "get",
+  "uri": "/lists"
+}
+```
+
+Response on success:
+
+```json
+{
+  "id": "6",
+  "from": "postmaster@broadcast.msging.net/#irismsging1",
+  "to": "contact@msging.net/default",
+  "method": "get",
+  "status": "success",
+  "type": "application/vnd.lime.collection+json",
+  "resource": {
+    "total": 2,
+    "itemType": "application/vnd.lime.identity",
+    "items": [
+      "list1@msging.net",
+      "contact+senders@msging.net"
+    ]
+  }
+}
+```
+
 #### Availability
 
 The Broadcast service is available in the following domains:
