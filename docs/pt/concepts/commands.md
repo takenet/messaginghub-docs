@@ -13,7 +13,7 @@ Cada comando possui:
   * **delete** - Remove um valor existente.
   * **subscribe** - Assina um recurso para recebimento de notificações de mudança do valor definido na **uri**.
   * **unsubscribe** - Remove uma assinatura de um recurso.
-  * **observe** - Notifica sobre mudanças no valor de um recurso e normalmente são emitidos pelo servidor ou uma extensão. Comandos com este método são emitidos são unidirecionais e o destinatário não deve enviar uma resposta aos mesmos. Por este motivo, não possuem **id**.
+  * **observe** - Notifica sobre mudanças no valor de um recurso e normalmente são emitidos pelo servidor ou uma extensão. Comandos com este método são emitidos unidirecionais e o destinatário não deve enviar uma resposta aos mesmos. Por este motivo, não possuem **id**.
 - **type** - Declaração do tipo do valor de **resource**, no formato MIME.
 - **resource** - Representação JSON do recurso. Deve estar presente em requisições dos métodos **set** e **observe** e respostas de sucesso do método **get**.
 
