@@ -3,13 +3,13 @@
 |-----------------------|--------------|-------------------------|--------------------|
 | postmaster@msging.net (endereço padrão, não é necessário informar) | /threads | Nenhuma | [IThreadExtension](https://github.com/takenet/blip-sdk-csharp/tree/master/src/Take.Blip.Client/Extensions/Threads/IThreadExtension.cs) |
 
-A extensão **Histórico de conversas** permite o chatbot recuperar as mensagens mais recentes trocadas com um determinado usuário de um canal. O retorno estará sempre em ordem decrescente da data das mensagens, ou seja, as mensagens mais recentes estarão listadas primeiro. 
+A extensão **Histórico de conversas** permite o chatbot recuperar as mensagens mais recentes trocadas com um determinado usuário de um canal. O retorno estará sempre em ordem decrescente da data das mensagens, ou seja, as mensagens mais recentes estarão listadas primeiro.
 
 #### Exemplos
 1 - Recuperando a mensagem mais recente de cada conversa:
 
 ```json
-{  
+{
   "id": "0094447a-2581-4597-be6a-a5dff33af156",
   "method": "get",
   "uri": "/threads"
@@ -62,7 +62,7 @@ Resposta em caso de sucesso:
 2 - Recuperando as últimas mensagens de uma determinada conversa:
 
 ```json
-{  
+{
   "id": "0094447a-2581-4597-be6a-a5dff33af156",
   "method": "get",
   "uri": "/threads/1180740631991418@messenger.gw.msging.net"
@@ -109,6 +109,39 @@ Resposta em caso de sucesso:
       }
     ]
   }
+}
+```
+
+3 - Recuperando um link para exibir uma conversa passada entre o bot e um dos seus contatos:
+
+O parâmetro `ACCESS_KEY` é obrigatório para essa extenção funcionar.
+
+Além disso, lembre-se de passar o identificador da thread sem a instância; consulte a seção [Endereçamento] (# endereçamento)
+para mais informações sobre instâncias.
+
+```json
+{
+    "id": "0094447a-2581-4597-be6a-a5dff33af156",
+    "method": "get",
+    "uri": "/threads/1180740631991418@messenger.gw.msging.net/transcription?accessKey=<ACCESS_KEY>"
+}
+```
+
+Resposta em caso de sucesso:
+
+```json
+{
+    "type": "application/vnd.lime.web-link+json",
+    "resource": {
+        "target": "blank",
+        "uri": "https://goo.gl/iT3oAW",
+        "text": "Transcription"
+    },
+    "method": "get",
+    "status": "success",
+    "id": "achkadgfaoscj",
+    "from": "postmaster@msging.net/#hmgirismsging2",
+    "to": "botbot2@msging.net"
 }
 ```
 
