@@ -9,7 +9,7 @@ The **chat history** extension allows the chatbot to retrieve the last threads a
 1 - Retrieving the most recent threads:
 
 ```json
-{  
+{
   "id": "0094447a-2581-4597-be6a-a5dff33af156",
   "method": "get",
   "uri": "/threads"
@@ -62,7 +62,7 @@ Response on success:
 2 - Retrieving the last messages of a thread:
 
 ```json
-{  
+{
   "id": "0094447a-2581-4597-be6a-a5dff33af156",
   "method": "get",
   "uri": "/threads/1180740631991418@messenger.gw.msging.net"
@@ -111,4 +111,35 @@ Response on success:
   }
 }
 ```
+3 - Retrieving a link to show a past conversation between the bot and one of its contacts:
 
+The `ACCESS_KEY` parameter is mandatory for this extension to work.
+
+Also, remember to pass the thread identifier without the instance; refer to the [Addressing section](#addressing)
+for more information about instances.
+
+```json
+{
+    "id": "0094447a-2581-4597-be6a-a5dff33af156",
+    "method": "get",
+    "uri": "/threads/1180740631991418@messenger.gw.msging.net/transcription?accessKey=<ACCESS_KEY>"
+}
+```
+
+Response on success:
+
+```json
+{
+    "type": "application/vnd.lime.web-link+json",
+    "resource": {
+        "target": "blank",
+        "uri": "https://goo.gl/iT3oAW",
+        "text": "Transcription"
+    },
+    "method": "get",
+    "status": "success",
+    "id": "achkadgfaoscj",
+    "from": "postmaster@msging.net/#hmgirismsging2",
+    "to": "botbot2@msging.net"
+}
+```
